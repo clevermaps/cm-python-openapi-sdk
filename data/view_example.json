@@ -1,0 +1,52 @@
+{
+        "id": "hhmije8pim3c4itg",
+        "name": "index_exposure_view",
+        "type": "view",
+        "title": "Exposure index",
+        "description": "The Exposure index helps you to understand the importance of any place based on indicators such as: the presence of important points of interest (banks/ATMs, administratiton facilities, shopping centres, transportation hubs, schools, hospitals and healthcare providers), dining and leisure opportunities, and the movement of people.",
+        "content": {
+            "icon": "catchment_area",
+            "dashboard": "/rest/projects/$projectId/md/dashboards?name=index_exposure_dashboard",
+            "markerSelector": "/rest/projects/$projectId/md/markerSelectors?name=marker_selector_top_branch",
+            "defaultDrilled": "/rest/projects/$projectId/md/indicators?name=index_exposure_indicator",
+            "filterGroup": [
+                {
+                    "type": "multiSelect",
+                    "property": "poi.type_en_label",
+                    "orderBy": [
+                        {
+                            "property": "poi.type_en_label",
+                            "direction": "asc"
+                        }
+                    ]
+                },
+                {
+                    "type": "multiSelect",
+                    "property": "poi.subtype_en_label",
+                    "orderBy": [
+                        {
+                            "property": "poi.subtype_en_label",
+                            "direction": "asc"
+                        }
+                    ]
+                }
+            ],
+            "spatialQuery": {
+                "profile": "air",
+                "unit": "distance",
+                "amount": 200
+            },
+            "mapOptions": {
+                "center": {
+                    "lat": 50.056,
+                    "lng": 14.418
+                },
+                "zoom": 12,
+                "minZoom": 11,
+                "maxZoom": 18,
+                "tileLayer": "mapbox"
+            },
+            "exports": [
+			]
+        }
+}
