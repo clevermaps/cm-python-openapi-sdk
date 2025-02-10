@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "openapi_client"
+name = "cm-python-openapi-sdk"
 version = "1.0.0"
-description = "clevermaps-client"
+description = "clevermaps-openapi-client"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "NoLicense"
 readme = "README.md"
