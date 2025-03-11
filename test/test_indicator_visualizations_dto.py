@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.indicator_visualizations_dto import IndicatorVisualizationsDTO
+from cm_python_openapi_sdk.models.indicator_visualizations_dto import IndicatorVisualizationsDTO
 
 class TestIndicatorVisualizationsDTO(unittest.TestCase):
     """IndicatorVisualizationsDTO unit test stubs"""

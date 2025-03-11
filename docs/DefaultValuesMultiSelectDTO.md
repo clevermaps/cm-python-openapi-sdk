@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.default_values_multi_select_dto import DefaultValuesMultiSelectDTO
+from cm_python_openapi_sdk.models.default_values_multi_select_dto import DefaultValuesMultiSelectDTO
 
 # TODO update the JSON string below
 json = "{}"

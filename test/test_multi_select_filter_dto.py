@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.multi_select_filter_dto import MultiSelectFilterDTO
+from cm_python_openapi_sdk.models.multi_select_filter_dto import MultiSelectFilterDTO
 
 class TestMultiSelectFilterDTO(unittest.TestCase):
     """MultiSelectFilterDTO unit test stubs"""
@@ -38,7 +38,7 @@ class TestMultiSelectFilterDTO(unittest.TestCase):
                 type = 'multiSelect',
                 var_property = 'awat5ikwowtta-3mh2lcafqw3zhes.i16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwscq-4zge8f37mn0',
                 order_by = [
-                    openapi_client.models.order_by_dto.OrderByDTO(
+                    cm_python_openapi_sdk.models.order_by_dto.OrderByDTO(
                         property = 'awat5ikwowtta-3mh2lcafqw3zhes.i16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwscq-4zge8f37mn0', 
                         direction = 'asc', )
                     ]

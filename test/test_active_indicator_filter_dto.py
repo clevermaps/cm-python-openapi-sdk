@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.active_indicator_filter_dto import ActiveIndicatorFilterDTO
+from cm_python_openapi_sdk.models.active_indicator_filter_dto import ActiveIndicatorFilterDTO
 
 class TestActiveIndicatorFilterDTO(unittest.TestCase):
     """ActiveIndicatorFilterDTO unit test stubs"""
@@ -35,7 +35,7 @@ class TestActiveIndicatorFilterDTO(unittest.TestCase):
         model = ActiveIndicatorFilterDTO()
         if include_optional:
             return ActiveIndicatorFilterDTO(
-                default_values = openapi_client.models.default_values_indicator_dto.DefaultValuesIndicatorDTO(
+                default_values = cm_python_openapi_sdk.models.default_values_indicator_dto.DefaultValuesIndicatorDTO(
                     values = [
                         1.337
                         ], 
@@ -52,7 +52,7 @@ class TestActiveIndicatorFilterDTO(unittest.TestCase):
             )
         else:
             return ActiveIndicatorFilterDTO(
-                default_values = openapi_client.models.default_values_indicator_dto.DefaultValuesIndicatorDTO(
+                default_values = cm_python_openapi_sdk.models.default_values_indicator_dto.DefaultValuesIndicatorDTO(
                     values = [
                         1.337
                         ], 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.indicator_filter_dto import IndicatorFilterDTO
+from cm_python_openapi_sdk.models.indicator_filter_dto import IndicatorFilterDTO
 
 # TODO update the JSON string below
 json = "{}"

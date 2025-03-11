@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.map_context_menu_dto import MapContextMenuDTO
+from cm_python_openapi_sdk.models.map_context_menu_dto import MapContextMenuDTO
 
 class TestMapContextMenuDTO(unittest.TestCase):
     """MapContextMenuDTO unit test stubs"""

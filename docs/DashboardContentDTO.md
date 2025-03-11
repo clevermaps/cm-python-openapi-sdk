@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.dashboard_content_dto import DashboardContentDTO
+from cm_python_openapi_sdk.models.dashboard_content_dto import DashboardContentDTO
 
 # TODO update the JSON string below
 json = "{}"

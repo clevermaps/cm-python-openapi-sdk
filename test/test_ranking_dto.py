@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.ranking_dto import RankingDTO
+from cm_python_openapi_sdk.models.ranking_dto import RankingDTO
 
 class TestRankingDTO(unittest.TestCase):
     """RankingDTO unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.static_scale_option_dto_breaks import StaticScaleOptionDTOBreaks
+from cm_python_openapi_sdk.models.static_scale_option_dto_breaks import StaticScaleOptionDTOBreaks
 
 class TestStaticScaleOptionDTOBreaks(unittest.TestCase):
     """StaticScaleOptionDTOBreaks unit test stubs"""

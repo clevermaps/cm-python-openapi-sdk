@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.google_earth_dto import GoogleEarthDTO
+from cm_python_openapi_sdk.models.google_earth_dto import GoogleEarthDTO
 
 # TODO update the JSON string below
 json = "{}"

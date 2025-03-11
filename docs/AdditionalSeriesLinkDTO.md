@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.additional_series_link_dto import AdditionalSeriesLinkDTO
+from cm_python_openapi_sdk.models.additional_series_link_dto import AdditionalSeriesLinkDTO
 
 # TODO update the JSON string below
 json = "{}"

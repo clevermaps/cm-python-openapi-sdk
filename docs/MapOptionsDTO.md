@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.map_options_dto import MapOptionsDTO
+from cm_python_openapi_sdk.models.map_options_dto import MapOptionsDTO
 
 # TODO update the JSON string below
 json = "{}"

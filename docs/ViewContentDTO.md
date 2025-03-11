@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.view_content_dto import ViewContentDTO
+from cm_python_openapi_sdk.models.view_content_dto import ViewContentDTO
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.map_dto import MapDTO
+from cm_python_openapi_sdk.models.map_dto import MapDTO
 
 class TestMapDTO(unittest.TestCase):
     """MapDTO unit test stubs"""
@@ -40,28 +40,28 @@ class TestMapDTO(unittest.TestCase):
                 type = 'dataset',
                 title = '0',
                 description = '',
-                content = openapi_client.models.map_content_dto.MapContentDTO(
-                    options = openapi_client.models.map_content_dto_options.MapContentDTO_options(
-                        center = openapi_client.models.center_dto.CenterDTO(
+                content = cm_python_openapi_sdk.models.map_content_dto.MapContentDTO(
+                    options = cm_python_openapi_sdk.models.map_content_dto_options.MapContentDTO_options(
+                        center = cm_python_openapi_sdk.models.center_dto.CenterDTO(
                             lat = 1.337, 
                             lng = 1.337, ), 
                         zoom = 56, 
                         min_zoom = 0, 
                         max_zoom = 56, ), 
-                    base_layer = openapi_client.models.map_content_dto_base_layer.MapContentDTO_baseLayer(
+                    base_layer = cm_python_openapi_sdk.models.map_content_dto_base_layer.MapContentDTO_baseLayer(
                         menu = True, 
                         type = 'mapbox', 
                         url = 'mapbox://styles/jUR,rZ#UM/?R,Fp^l6$ARj', 
                         access_token = '', ), 
-                    context_menu = openapi_client.models.map_context_menu_dto.MapContextMenuDTO(
+                    context_menu = cm_python_openapi_sdk.models.map_context_menu_dto.MapContextMenuDTO(
                         items = [
                             null
                             ], ), 
                     layers = [
-                        openapi_client.models.layer_dto.LayerDTO(
+                        cm_python_openapi_sdk.models.layer_dto.LayerDTO(
                             name = 'awat5ikwowtta-3mh2lcafqw3zhes', 
                             indicator = 'inherit', 
-                            base_style = openapi_client.models.style_dto.StyleDTO(
+                            base_style = cm_python_openapi_sdk.models.style_dto.StyleDTO(
                                 fill_color = 'purple', 
                                 fill_hex_color = '#62ECB0', 
                                 fill_opacity = 1.337, 
@@ -77,11 +77,11 @@ class TestMapDTO(unittest.TestCase):
                             default_dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 
                             default_visualization = 'dotmap', 
                             datasets = [
-                                openapi_client.models.layer_dto_datasets_inner.LayerDTO_datasets_inner(
+                                cm_python_openapi_sdk.models.layer_dto_datasets_inner.LayerDTO_datasets_inner(
                                     dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 
                                     visualization = 'dotmap', 
                                     attribute_styles = [
-                                        openapi_client.models.layer_dto_datasets_inner_attribute_styles_inner.LayerDTO_datasets_inner_attributeStyles_inner(
+                                        cm_python_openapi_sdk.models.layer_dto_datasets_inner_attribute_styles_inner.LayerDTO_datasets_inner_attributeStyles_inner(
                                             attribute_style = '/rest/projects/8q6zgckec0l3o4gi/md/attributeStyles?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', )
                                         ], )
                                 ], )
@@ -90,28 +90,28 @@ class TestMapDTO(unittest.TestCase):
         else:
             return MapDTO(
                 name = 'awat5ikwowtta-3mh2lcafqw3zhes',
-                content = openapi_client.models.map_content_dto.MapContentDTO(
-                    options = openapi_client.models.map_content_dto_options.MapContentDTO_options(
-                        center = openapi_client.models.center_dto.CenterDTO(
+                content = cm_python_openapi_sdk.models.map_content_dto.MapContentDTO(
+                    options = cm_python_openapi_sdk.models.map_content_dto_options.MapContentDTO_options(
+                        center = cm_python_openapi_sdk.models.center_dto.CenterDTO(
                             lat = 1.337, 
                             lng = 1.337, ), 
                         zoom = 56, 
                         min_zoom = 0, 
                         max_zoom = 56, ), 
-                    base_layer = openapi_client.models.map_content_dto_base_layer.MapContentDTO_baseLayer(
+                    base_layer = cm_python_openapi_sdk.models.map_content_dto_base_layer.MapContentDTO_baseLayer(
                         menu = True, 
                         type = 'mapbox', 
                         url = 'mapbox://styles/jUR,rZ#UM/?R,Fp^l6$ARj', 
                         access_token = '', ), 
-                    context_menu = openapi_client.models.map_context_menu_dto.MapContextMenuDTO(
+                    context_menu = cm_python_openapi_sdk.models.map_context_menu_dto.MapContextMenuDTO(
                         items = [
                             null
                             ], ), 
                     layers = [
-                        openapi_client.models.layer_dto.LayerDTO(
+                        cm_python_openapi_sdk.models.layer_dto.LayerDTO(
                             name = 'awat5ikwowtta-3mh2lcafqw3zhes', 
                             indicator = 'inherit', 
-                            base_style = openapi_client.models.style_dto.StyleDTO(
+                            base_style = cm_python_openapi_sdk.models.style_dto.StyleDTO(
                                 fill_color = 'purple', 
                                 fill_hex_color = '#62ECB0', 
                                 fill_opacity = 1.337, 
@@ -127,11 +127,11 @@ class TestMapDTO(unittest.TestCase):
                             default_dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 
                             default_visualization = 'dotmap', 
                             datasets = [
-                                openapi_client.models.layer_dto_datasets_inner.LayerDTO_datasets_inner(
+                                cm_python_openapi_sdk.models.layer_dto_datasets_inner.LayerDTO_datasets_inner(
                                     dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 
                                     visualization = 'dotmap', 
                                     attribute_styles = [
-                                        openapi_client.models.layer_dto_datasets_inner_attribute_styles_inner.LayerDTO_datasets_inner_attributeStyles_inner(
+                                        cm_python_openapi_sdk.models.layer_dto_datasets_inner_attribute_styles_inner.LayerDTO_datasets_inner_attributeStyles_inner(
                                             attribute_style = '/rest/projects/8q6zgckec0l3o4gi/md/attributeStyles?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', )
                                         ], )
                                 ], )

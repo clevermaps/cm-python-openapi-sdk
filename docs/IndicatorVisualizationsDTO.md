@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.indicator_visualizations_dto import IndicatorVisualizationsDTO
+from cm_python_openapi_sdk.models.indicator_visualizations_dto import IndicatorVisualizationsDTO
 
 # TODO update the JSON string below
 json = "{}"

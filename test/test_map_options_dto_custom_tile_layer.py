@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.map_options_dto_custom_tile_layer import MapOptionsDTOCustomTileLayer
+from cm_python_openapi_sdk.models.map_options_dto_custom_tile_layer import MapOptionsDTOCustomTileLayer
 
 class TestMapOptionsDTOCustomTileLayer(unittest.TestCase):
     """MapOptionsDTOCustomTileLayer unit test stubs"""

@@ -1,4 +1,4 @@
-from openapi_client.models.view_dto import ViewDTO
+from cm_python_openapi_sdk.models.view_dto import ViewDTO
 
 with open("./data/view_example.json", "r") as file:
     json_data = file.read()

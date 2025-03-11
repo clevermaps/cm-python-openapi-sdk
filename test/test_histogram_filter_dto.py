@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.histogram_filter_dto import HistogramFilterDTO
+from cm_python_openapi_sdk.models.histogram_filter_dto import HistogramFilterDTO
 
 class TestHistogramFilterDTO(unittest.TestCase):
     """HistogramFilterDTO unit test stubs"""
@@ -37,7 +37,7 @@ class TestHistogramFilterDTO(unittest.TestCase):
             return HistogramFilterDTO(
                 type = 'histogram',
                 var_property = 'awat5ikwowtta-3mh2lcafqw3zhes.i16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwscq-4zge8f37mn0',
-                format = openapi_client.models.format_dto.FormatDTO(
+                format = cm_python_openapi_sdk.models.format_dto.FormatDTO(
                     type = 'number', 
                     fraction = 0, 
                     symbol = '', )

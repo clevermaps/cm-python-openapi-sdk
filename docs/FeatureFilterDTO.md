@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.feature_filter_dto import FeatureFilterDTO
+from cm_python_openapi_sdk.models.feature_filter_dto import FeatureFilterDTO
 
 # TODO update the JSON string below
 json = "{}"

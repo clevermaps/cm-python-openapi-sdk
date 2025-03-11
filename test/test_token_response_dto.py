@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.token_response_dto import TokenResponseDTO
+from cm_python_openapi_sdk.models.token_response_dto import TokenResponseDTO
 
 class TestTokenResponseDTO(unittest.TestCase):
     """TokenResponseDTO unit test stubs"""

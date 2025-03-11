@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.static_scale_option_dto_breaks import StaticScaleOptionDTOBreaks
+from cm_python_openapi_sdk.models.static_scale_option_dto_breaks import StaticScaleOptionDTOBreaks
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.center_dto import CenterDTO
+from cm_python_openapi_sdk.models.center_dto import CenterDTO
 
 class TestCenterDTO(unittest.TestCase):
     """CenterDTO unit test stubs"""

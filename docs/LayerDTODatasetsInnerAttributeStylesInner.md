@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.layer_dto_datasets_inner_attribute_styles_inner import LayerDTODatasetsInnerAttributeStylesInner
+from cm_python_openapi_sdk.models.layer_dto_datasets_inner_attribute_styles_inner import LayerDTODatasetsInnerAttributeStylesInner
 
 # TODO update the JSON string below
 json = "{}"

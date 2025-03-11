@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.block_row_dto import BlockRowDTO
+from cm_python_openapi_sdk.models.block_row_dto import BlockRowDTO
 
 class TestBlockRowDTO(unittest.TestCase):
     """BlockRowDTO unit test stubs"""
@@ -37,7 +37,7 @@ class TestBlockRowDTO(unittest.TestCase):
             return BlockRowDTO(
                 type = 'blockRow',
                 blocks = [
-                    openapi_client.models.indicator_link_dto.IndicatorLinkDTO(
+                    cm_python_openapi_sdk.models.indicator_link_dto.IndicatorLinkDTO(
                         type = 'indicator', 
                         title = '', 
                         indicator = '/rest/projects/8q6zgckec0l3o4gi/md/indicators?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 
@@ -53,7 +53,7 @@ class TestBlockRowDTO(unittest.TestCase):
             return BlockRowDTO(
                 type = 'blockRow',
                 blocks = [
-                    openapi_client.models.indicator_link_dto.IndicatorLinkDTO(
+                    cm_python_openapi_sdk.models.indicator_link_dto.IndicatorLinkDTO(
                         type = 'indicator', 
                         title = '', 
                         indicator = '/rest/projects/8q6zgckec0l3o4gi/md/indicators?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.google_street_view_dto import GoogleStreetViewDTO
+from cm_python_openapi_sdk.models.google_street_view_dto import GoogleStreetViewDTO
 
 class TestGoogleStreetViewDTO(unittest.TestCase):
     """GoogleStreetViewDTO unit test stubs"""

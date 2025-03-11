@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.views_api import ViewsApi
+from cm_python_openapi_sdk.api.views_api import ViewsApi
 
 
 class TestViewsApi(unittest.TestCase):

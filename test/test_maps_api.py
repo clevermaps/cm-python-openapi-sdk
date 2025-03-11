@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.maps_api import MapsApi
+from cm_python_openapi_sdk.api.maps_api import MapsApi
 
 
 class TestMapsApi(unittest.TestCase):

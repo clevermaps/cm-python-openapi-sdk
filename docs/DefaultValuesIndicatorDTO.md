@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.default_values_indicator_dto import DefaultValuesIndicatorDTO
+from cm_python_openapi_sdk.models.default_values_indicator_dto import DefaultValuesIndicatorDTO
 
 # TODO update the JSON string below
 json = "{}"

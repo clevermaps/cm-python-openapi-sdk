@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.format_dto import FormatDTO
+from cm_python_openapi_sdk.models.format_dto import FormatDTO
 
 # TODO update the JSON string below
 json = "{}"

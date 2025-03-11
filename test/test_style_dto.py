@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.style_dto import StyleDTO
+from cm_python_openapi_sdk.models.style_dto import StyleDTO
 
 class TestStyleDTO(unittest.TestCase):
     """StyleDTO unit test stubs"""

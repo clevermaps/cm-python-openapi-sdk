@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.map_context_menu_item_abstract_type import MapContextMenuItemAbstractType
+from cm_python_openapi_sdk.models.map_context_menu_item_abstract_type import MapContextMenuItemAbstractType
 
 class TestMapContextMenuItemAbstractType(unittest.TestCase):
     """MapContextMenuItemAbstractType unit test stubs"""

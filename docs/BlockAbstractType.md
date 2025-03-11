@@ -33,7 +33,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.block_abstract_type import BlockAbstractType
+from cm_python_openapi_sdk.models.block_abstract_type import BlockAbstractType
 
 # TODO update the JSON string below
 json = "{}"

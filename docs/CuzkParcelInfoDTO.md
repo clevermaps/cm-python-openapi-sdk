@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.cuzk_parcel_info_dto import CuzkParcelInfoDTO
+from cm_python_openapi_sdk.models.cuzk_parcel_info_dto import CuzkParcelInfoDTO
 
 # TODO update the JSON string below
 json = "{}"

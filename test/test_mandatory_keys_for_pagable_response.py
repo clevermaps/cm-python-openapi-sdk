@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.mandatory_keys_for_pagable_response import MandatoryKeysForPagableResponse
+from cm_python_openapi_sdk.models.mandatory_keys_for_pagable_response import MandatoryKeysForPagableResponse
 
 class TestMandatoryKeysForPagableResponse(unittest.TestCase):
     """MandatoryKeysForPagableResponse unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.date_range_function import DateRangeFunction
+from cm_python_openapi_sdk.models.date_range_function import DateRangeFunction
 
 class TestDateRangeFunction(unittest.TestCase):
     """DateRangeFunction unit test stubs"""
@@ -35,11 +35,11 @@ class TestDateRangeFunction(unittest.TestCase):
         model = DateRangeFunction()
         if include_optional:
             return DateRangeFunction(
-                function = None
+                function = cm_python_openapi_sdk.models.function.function()
             )
         else:
             return DateRangeFunction(
-                function = None,
+                function = cm_python_openapi_sdk.models.function.function(),
         )
         """
 

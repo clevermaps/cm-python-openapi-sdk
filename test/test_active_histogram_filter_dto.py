@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.active_histogram_filter_dto import ActiveHistogramFilterDTO
+from cm_python_openapi_sdk.models.active_histogram_filter_dto import ActiveHistogramFilterDTO
 
 class TestActiveHistogramFilterDTO(unittest.TestCase):
     """ActiveHistogramFilterDTO unit test stubs"""
@@ -35,21 +35,21 @@ class TestActiveHistogramFilterDTO(unittest.TestCase):
         model = ActiveHistogramFilterDTO()
         if include_optional:
             return ActiveHistogramFilterDTO(
-                default_values = openapi_client.models.default_values_histogram_dto.DefaultValuesHistogramDTO(
+                default_values = cm_python_openapi_sdk.models.default_values_histogram_dto.DefaultValuesHistogramDTO(
                     values = [
                         1.337
                         ], 
                     null_filtered = True, ),
                 type = 'histogram',
                 var_property = 'awat5ikwowtta-3mh2lcafqw3zhes.i16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwscq-4zge8f37mn0',
-                format = openapi_client.models.format_dto.FormatDTO(
+                format = cm_python_openapi_sdk.models.format_dto.FormatDTO(
                     type = 'number', 
                     fraction = 0, 
                     symbol = '', )
             )
         else:
             return ActiveHistogramFilterDTO(
-                default_values = openapi_client.models.default_values_histogram_dto.DefaultValuesHistogramDTO(
+                default_values = cm_python_openapi_sdk.models.default_values_histogram_dto.DefaultValuesHistogramDTO(
                     values = [
                         1.337
                         ], 

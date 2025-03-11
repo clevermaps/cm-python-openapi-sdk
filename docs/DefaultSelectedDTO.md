@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.default_selected_dto import DefaultSelectedDTO
+from cm_python_openapi_sdk.models.default_selected_dto import DefaultSelectedDTO
 
 # TODO update the JSON string below
 json = "{}"

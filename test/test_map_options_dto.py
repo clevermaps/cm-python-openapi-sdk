@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.map_options_dto import MapOptionsDTO
+from cm_python_openapi_sdk.models.map_options_dto import MapOptionsDTO
 
 class TestMapOptionsDTO(unittest.TestCase):
     """MapOptionsDTO unit test stubs"""
@@ -35,7 +35,7 @@ class TestMapOptionsDTO(unittest.TestCase):
         model = MapOptionsDTO()
         if include_optional:
             return MapOptionsDTO(
-                center = openapi_client.models.center_dto.CenterDTO(
+                center = cm_python_openapi_sdk.models.center_dto.CenterDTO(
                     lat = 1.337, 
                     lng = 1.337, ),
                 zoom = 56,
@@ -43,7 +43,7 @@ class TestMapOptionsDTO(unittest.TestCase):
                 max_zoom = 56,
                 tile_layer_menu = True,
                 tile_layer = 'mapbox',
-                custom_tile_layer = openapi_client.models.map_options_dto_custom_tile_layer.MapOptionsDTO_customTileLayer(
+                custom_tile_layer = cm_python_openapi_sdk.models.map_options_dto_custom_tile_layer.MapOptionsDTO_customTileLayer(
                     url = 'mapbox://styles/jUR,rZ#UM/?R,Fp^l6$ARj', 
                     access_token = '0', )
             )

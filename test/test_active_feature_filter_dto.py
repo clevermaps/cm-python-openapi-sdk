@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.active_feature_filter_dto import ActiveFeatureFilterDTO
+from cm_python_openapi_sdk.models.active_feature_filter_dto import ActiveFeatureFilterDTO
 
 class TestActiveFeatureFilterDTO(unittest.TestCase):
     """ActiveFeatureFilterDTO unit test stubs"""
@@ -35,7 +35,7 @@ class TestActiveFeatureFilterDTO(unittest.TestCase):
         model = ActiveFeatureFilterDTO()
         if include_optional:
             return ActiveFeatureFilterDTO(
-                default_values = openapi_client.models.default_values_feature_dto.DefaultValuesFeatureDTO(
+                default_values = cm_python_openapi_sdk.models.default_values_feature_dto.DefaultValuesFeatureDTO(
                     values = [
                         ''
                         ], ),
@@ -45,7 +45,7 @@ class TestActiveFeatureFilterDTO(unittest.TestCase):
             )
         else:
             return ActiveFeatureFilterDTO(
-                default_values = openapi_client.models.default_values_feature_dto.DefaultValuesFeatureDTO(
+                default_values = cm_python_openapi_sdk.models.default_values_feature_dto.DefaultValuesFeatureDTO(
                     values = [
                         ''
                         ], ),

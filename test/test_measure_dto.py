@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.measure_dto import MeasureDTO
+from cm_python_openapi_sdk.models.measure_dto import MeasureDTO
 
 class TestMeasureDTO(unittest.TestCase):
     """MeasureDTO unit test stubs"""
@@ -37,22 +37,22 @@ class TestMeasureDTO(unittest.TestCase):
             return MeasureDTO(
                 type = 'line',
                 points = [
-                    openapi_client.models.isochrone_dto.IsochroneDTO(
+                    cm_python_openapi_sdk.models.isochrone_dto.IsochroneDTO(
                         lat = -180.0, 
                         lng = -180.0, 
                         profile = 'car', 
                         unit = 'time', 
                         amount = 1, 
-                        geometry = null, )
+                        geometry = cm_python_openapi_sdk.models.geometry.geometry(), )
                     ],
                 zones = [
-                    openapi_client.models.isochrone_dto.IsochroneDTO(
+                    cm_python_openapi_sdk.models.isochrone_dto.IsochroneDTO(
                         lat = -180.0, 
                         lng = -180.0, 
                         profile = 'car', 
                         unit = 'time', 
                         amount = 1, 
-                        geometry = null, )
+                        geometry = cm_python_openapi_sdk.models.geometry.geometry(), )
                     ]
             )
         else:

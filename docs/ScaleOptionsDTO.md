@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.scale_options_dto import ScaleOptionsDTO
+from cm_python_openapi_sdk.models.scale_options_dto import ScaleOptionsDTO
 
 # TODO update the JSON string below
 json = "{}"

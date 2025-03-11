@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.indicator_drill_content_dto import IndicatorDrillContentDTO
+from cm_python_openapi_sdk.models.indicator_drill_content_dto import IndicatorDrillContentDTO
 
 class TestIndicatorDrillContentDTO(unittest.TestCase):
     """IndicatorDrillContentDTO unit test stubs"""

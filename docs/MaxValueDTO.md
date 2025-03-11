@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.max_value_dto import MaxValueDTO
+from cm_python_openapi_sdk.models.max_value_dto import MaxValueDTO
 
 # TODO update the JSON string below
 json = "{}"

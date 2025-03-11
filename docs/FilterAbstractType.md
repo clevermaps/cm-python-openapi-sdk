@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.filter_abstract_type import FilterAbstractType
+from cm_python_openapi_sdk.models.filter_abstract_type import FilterAbstractType
 
 # TODO update the JSON string below
 json = "{}"

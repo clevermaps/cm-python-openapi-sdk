@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.default_distribution_dto import DefaultDistributionDTO
+from cm_python_openapi_sdk.models.default_distribution_dto import DefaultDistributionDTO
 
 class TestDefaultDistributionDTO(unittest.TestCase):
     """DefaultDistributionDTO unit test stubs"""

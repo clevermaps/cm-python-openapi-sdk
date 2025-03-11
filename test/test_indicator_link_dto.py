@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.indicator_link_dto import IndicatorLinkDTO
+from cm_python_openapi_sdk.models.indicator_link_dto import IndicatorLinkDTO
 
 class TestIndicatorLinkDTO(unittest.TestCase):
     """IndicatorLinkDTO unit test stubs"""

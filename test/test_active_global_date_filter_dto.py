@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.active_global_date_filter_dto import ActiveGlobalDateFilterDTO
+from cm_python_openapi_sdk.models.active_global_date_filter_dto import ActiveGlobalDateFilterDTO
 
 class TestActiveGlobalDateFilterDTO(unittest.TestCase):
     """ActiveGlobalDateFilterDTO unit test stubs"""
@@ -35,7 +35,7 @@ class TestActiveGlobalDateFilterDTO(unittest.TestCase):
         model = ActiveGlobalDateFilterDTO()
         if include_optional:
             return ActiveGlobalDateFilterDTO(
-                default_values = openapi_client.models.default_values_date_dto.DefaultValuesDateDTO(
+                default_values = cm_python_openapi_sdk.models.default_values_date_dto.DefaultValuesDateDTO(
                     start_date = null, 
                     end_date = null, ),
                 type = 'globalDate',
@@ -43,7 +43,7 @@ class TestActiveGlobalDateFilterDTO(unittest.TestCase):
             )
         else:
             return ActiveGlobalDateFilterDTO(
-                default_values = openapi_client.models.default_values_date_dto.DefaultValuesDateDTO(
+                default_values = cm_python_openapi_sdk.models.default_values_date_dto.DefaultValuesDateDTO(
                     start_date = null, 
                     end_date = null, ),
                 type = 'globalDate',

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.additional_series_link_dto import AdditionalSeriesLinkDTO
+from cm_python_openapi_sdk.models.additional_series_link_dto import AdditionalSeriesLinkDTO
 
 class TestAdditionalSeriesLinkDTO(unittest.TestCase):
     """AdditionalSeriesLinkDTO unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.max_value_dto import MaxValueDTO
+from cm_python_openapi_sdk.models.max_value_dto import MaxValueDTO
 
 class TestMaxValueDTO(unittest.TestCase):
     """MaxValueDTO unit test stubs"""

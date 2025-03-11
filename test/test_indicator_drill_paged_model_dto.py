@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.indicator_drill_paged_model_dto import IndicatorDrillPagedModelDTO
+from cm_python_openapi_sdk.models.indicator_drill_paged_model_dto import IndicatorDrillPagedModelDTO
 
 class TestIndicatorDrillPagedModelDTO(unittest.TestCase):
     """IndicatorDrillPagedModelDTO unit test stubs"""
@@ -36,13 +36,13 @@ class TestIndicatorDrillPagedModelDTO(unittest.TestCase):
         if include_optional:
             return IndicatorDrillPagedModelDTO(
                 content = [
-                    openapi_client.models.indicator_drill_dto.IndicatorDrillDTO(
+                    cm_python_openapi_sdk.models.indicator_drill_dto.IndicatorDrillDTO(
                         id = '', 
                         name = 'awat5ikwowtta-3mh2lcafqw3zhes', 
                         type = 'dataset', 
                         title = '0', 
                         description = '', 
-                        content = openapi_client.models.indicator_drill_content_dto.IndicatorDrillContentDTO(
+                        content = cm_python_openapi_sdk.models.indicator_drill_content_dto.IndicatorDrillContentDTO(
                             blocks = [
                                 null
                                 ], ), )
@@ -50,7 +50,7 @@ class TestIndicatorDrillPagedModelDTO(unittest.TestCase):
                 links = [
                     None
                     ],
-                page = openapi_client.models.mandatory_keys_for_pagable_response.mandatory keys for pagable response(
+                page = cm_python_openapi_sdk.models.mandatory_keys_for_pagable_response.mandatory keys for pagable response(
                     size = 56, 
                     total_elements = null, 
                     total_pages = 56, 

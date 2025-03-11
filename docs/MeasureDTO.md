@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.measure_dto import MeasureDTO
+from cm_python_openapi_sdk.models.measure_dto import MeasureDTO
 
 # TODO update the JSON string below
 json = "{}"

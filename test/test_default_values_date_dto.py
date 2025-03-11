@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.default_values_date_dto import DefaultValuesDateDTO
+from cm_python_openapi_sdk.models.default_values_date_dto import DefaultValuesDateDTO
 
 class TestDefaultValuesDateDTO(unittest.TestCase):
     """DefaultValuesDateDTO unit test stubs"""

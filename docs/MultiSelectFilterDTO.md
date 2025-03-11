@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.multi_select_filter_dto import MultiSelectFilterDTO
+from cm_python_openapi_sdk.models.multi_select_filter_dto import MultiSelectFilterDTO
 
 # TODO update the JSON string below
 json = "{}"

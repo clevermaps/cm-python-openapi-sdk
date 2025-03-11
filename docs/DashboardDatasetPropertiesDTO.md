@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.dashboard_dataset_properties_dto import DashboardDatasetPropertiesDTO
+from cm_python_openapi_sdk.models.dashboard_dataset_properties_dto import DashboardDatasetPropertiesDTO
 
 # TODO update the JSON string below
 json = "{}"

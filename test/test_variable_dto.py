@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.variable_dto import VariableDTO
+from cm_python_openapi_sdk.models.variable_dto import VariableDTO
 
 class TestVariableDTO(unittest.TestCase):
     """VariableDTO unit test stubs"""
@@ -40,7 +40,7 @@ class TestVariableDTO(unittest.TestCase):
                 min_value = 1.337,
                 max_value = 1.337,
                 default_value = 1.337,
-                format = openapi_client.models.format_dto.FormatDTO(
+                format = cm_python_openapi_sdk.models.format_dto.FormatDTO(
                     type = 'number', 
                     fraction = 0, 
                     symbol = '', )
@@ -52,7 +52,7 @@ class TestVariableDTO(unittest.TestCase):
                 min_value = 1.337,
                 max_value = 1.337,
                 default_value = 1.337,
-                format = openapi_client.models.format_dto.FormatDTO(
+                format = cm_python_openapi_sdk.models.format_dto.FormatDTO(
                     type = 'number', 
                     fraction = 0, 
                     symbol = '', ),

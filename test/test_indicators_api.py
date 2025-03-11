@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.indicators_api import IndicatorsApi
+from cm_python_openapi_sdk.api.indicators_api import IndicatorsApi
 
 
 class TestIndicatorsApi(unittest.TestCase):

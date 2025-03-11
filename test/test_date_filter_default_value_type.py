@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.date_filter_default_value_type import DateFilterDefaultValueType
+from cm_python_openapi_sdk.models.date_filter_default_value_type import DateFilterDefaultValueType
 
 class TestDateFilterDefaultValueType(unittest.TestCase):
     """DateFilterDefaultValueType unit test stubs"""
@@ -36,12 +36,12 @@ class TestDateFilterDefaultValueType(unittest.TestCase):
         if include_optional:
             return DateFilterDefaultValueType(
                 value = '0',
-                function = openapi_client.models.function.function()
+                function = cm_python_openapi_sdk.models.function.function()
             )
         else:
             return DateFilterDefaultValueType(
                 value = '0',
-                function = openapi_client.models.function.function(),
+                function = cm_python_openapi_sdk.models.function.function(),
         )
         """
 
