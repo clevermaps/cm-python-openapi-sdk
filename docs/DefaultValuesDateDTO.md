@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.default_values_date_dto import DefaultValuesDateDTO
+from cm_python_openapi_sdk.models.default_values_date_dto import DefaultValuesDateDTO
 
 # TODO update the JSON string below
 json = "{}"

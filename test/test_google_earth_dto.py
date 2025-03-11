@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.google_earth_dto import GoogleEarthDTO
+from cm_python_openapi_sdk.models.google_earth_dto import GoogleEarthDTO
 
 class TestGoogleEarthDTO(unittest.TestCase):
     """GoogleEarthDTO unit test stubs"""

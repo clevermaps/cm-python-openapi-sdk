@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.indicator_drill_dto import IndicatorDrillDTO
+from cm_python_openapi_sdk.models.indicator_drill_dto import IndicatorDrillDTO
 
 class TestIndicatorDrillDTO(unittest.TestCase):
     """IndicatorDrillDTO unit test stubs"""
@@ -40,7 +40,7 @@ class TestIndicatorDrillDTO(unittest.TestCase):
                 type = 'dataset',
                 title = '0',
                 description = '',
-                content = openapi_client.models.indicator_drill_content_dto.IndicatorDrillContentDTO(
+                content = cm_python_openapi_sdk.models.indicator_drill_content_dto.IndicatorDrillContentDTO(
                     blocks = [
                         null
                         ], )
@@ -48,7 +48,7 @@ class TestIndicatorDrillDTO(unittest.TestCase):
         else:
             return IndicatorDrillDTO(
                 name = 'awat5ikwowtta-3mh2lcafqw3zhes',
-                content = openapi_client.models.indicator_drill_content_dto.IndicatorDrillContentDTO(
+                content = cm_python_openapi_sdk.models.indicator_drill_content_dto.IndicatorDrillContentDTO(
                     blocks = [
                         null
                         ], ),

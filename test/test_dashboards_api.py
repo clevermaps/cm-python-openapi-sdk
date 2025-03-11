@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.dashboards_api import DashboardsApi
+from cm_python_openapi_sdk.api.dashboards_api import DashboardsApi
 
 
 class TestDashboardsApi(unittest.TestCase):

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.annotation_link_dto import AnnotationLinkDTO
+from cm_python_openapi_sdk.models.annotation_link_dto import AnnotationLinkDTO
 
 class TestAnnotationLinkDTO(unittest.TestCase):
     """AnnotationLinkDTO unit test stubs"""

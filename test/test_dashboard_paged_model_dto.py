@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.dashboard_paged_model_dto import DashboardPagedModelDTO
+from cm_python_openapi_sdk.models.dashboard_paged_model_dto import DashboardPagedModelDTO
 
 class TestDashboardPagedModelDTO(unittest.TestCase):
     """DashboardPagedModelDTO unit test stubs"""
@@ -36,25 +36,25 @@ class TestDashboardPagedModelDTO(unittest.TestCase):
         if include_optional:
             return DashboardPagedModelDTO(
                 content = [
-                    openapi_client.models.dashboard_dto.DashboardDTO(
+                    cm_python_openapi_sdk.models.dashboard_dto.DashboardDTO(
                         id = '', 
                         name = 'awat5ikwowtta-3mh2lcafqw3zhes', 
                         type = 'dataset', 
                         title = '0', 
                         description = '0', 
-                        content = openapi_client.models.dashboard_content_dto.DashboardContentDTO(
+                        content = cm_python_openapi_sdk.models.dashboard_content_dto.DashboardContentDTO(
                             block_rows = [
                                 null
                                 ], 
                             dataset_properties = [
-                                openapi_client.models.dashboard_dataset_properties_dto.DashboardDatasetPropertiesDTO(
+                                cm_python_openapi_sdk.models.dashboard_dataset_properties_dto.DashboardDatasetPropertiesDTO(
                                     dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 
                                     default_search = 'enable', 
                                     feature_attributes = [
-                                        openapi_client.models.feature_attribute_dto.FeatureAttributeDTO(
+                                        cm_python_openapi_sdk.models.feature_attribute_dto.FeatureAttributeDTO(
                                             type = 'property', 
                                             value = '', 
-                                            format = openapi_client.models.attribute_format_dto.AttributeFormatDTO(
+                                            format = cm_python_openapi_sdk.models.attribute_format_dto.AttributeFormatDTO(
                                                 type = 'text', 
                                                 fraction = 0, 
                                                 symbol = '', ), 
@@ -65,7 +65,7 @@ class TestDashboardPagedModelDTO(unittest.TestCase):
                 links = [
                     None
                     ],
-                page = openapi_client.models.mandatory_keys_for_pagable_response.mandatory keys for pagable response(
+                page = cm_python_openapi_sdk.models.mandatory_keys_for_pagable_response.mandatory keys for pagable response(
                     size = 56, 
                     total_elements = null, 
                     total_pages = 56, 

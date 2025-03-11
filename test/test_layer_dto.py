@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.layer_dto import LayerDTO
+from cm_python_openapi_sdk.models.layer_dto import LayerDTO
 
 class TestLayerDTO(unittest.TestCase):
     """LayerDTO unit test stubs"""
@@ -37,7 +37,7 @@ class TestLayerDTO(unittest.TestCase):
             return LayerDTO(
                 name = 'awat5ikwowtta-3mh2lcafqw3zhes',
                 indicator = 'inherit',
-                base_style = openapi_client.models.style_dto.StyleDTO(
+                base_style = cm_python_openapi_sdk.models.style_dto.StyleDTO(
                     fill_color = 'purple', 
                     fill_hex_color = '#62ECB0', 
                     fill_opacity = 1.337, 
@@ -53,11 +53,11 @@ class TestLayerDTO(unittest.TestCase):
                 default_dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc',
                 default_visualization = 'dotmap',
                 datasets = [
-                    openapi_client.models.layer_dto_datasets_inner.LayerDTO_datasets_inner(
+                    cm_python_openapi_sdk.models.layer_dto_datasets_inner.LayerDTO_datasets_inner(
                         dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 
                         visualization = 'dotmap', 
                         attribute_styles = [
-                            openapi_client.models.layer_dto_datasets_inner_attribute_styles_inner.LayerDTO_datasets_inner_attributeStyles_inner(
+                            cm_python_openapi_sdk.models.layer_dto_datasets_inner_attribute_styles_inner.LayerDTO_datasets_inner_attributeStyles_inner(
                                 attribute_style = '/rest/projects/8q6zgckec0l3o4gi/md/attributeStyles?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', )
                             ], )
                     ]
@@ -67,11 +67,11 @@ class TestLayerDTO(unittest.TestCase):
                 name = 'awat5ikwowtta-3mh2lcafqw3zhes',
                 indicator = 'inherit',
                 datasets = [
-                    openapi_client.models.layer_dto_datasets_inner.LayerDTO_datasets_inner(
+                    cm_python_openapi_sdk.models.layer_dto_datasets_inner.LayerDTO_datasets_inner(
                         dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 
                         visualization = 'dotmap', 
                         attribute_styles = [
-                            openapi_client.models.layer_dto_datasets_inner_attribute_styles_inner.LayerDTO_datasets_inner_attributeStyles_inner(
+                            cm_python_openapi_sdk.models.layer_dto_datasets_inner_attribute_styles_inner.LayerDTO_datasets_inner_attributeStyles_inner(
                                 attribute_style = '/rest/projects/8q6zgckec0l3o4gi/md/attributeStyles?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', )
                             ], )
                     ],

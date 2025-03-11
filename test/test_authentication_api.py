@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.authentication_api import AuthenticationApi
+from cm_python_openapi_sdk.api.authentication_api import AuthenticationApi
 
 
 class TestAuthenticationApi(unittest.TestCase):

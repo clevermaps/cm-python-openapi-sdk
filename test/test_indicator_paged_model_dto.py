@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.indicator_paged_model_dto import IndicatorPagedModelDTO
+from cm_python_openapi_sdk.models.indicator_paged_model_dto import IndicatorPagedModelDTO
 
 class TestIndicatorPagedModelDTO(unittest.TestCase):
     """IndicatorPagedModelDTO unit test stubs"""
@@ -36,17 +36,17 @@ class TestIndicatorPagedModelDTO(unittest.TestCase):
         if include_optional:
             return IndicatorPagedModelDTO(
                 content = [
-                    openapi_client.models.indicator_dto.IndicatorDTO(
+                    cm_python_openapi_sdk.models.indicator_dto.IndicatorDTO(
                         id = '', 
                         name = 'awat5ikwowtta-3mh2lcafqw3zhes', 
                         type = 'dataset', 
                         title = '0', 
                         description = '', 
-                        content = openapi_client.models.indicator_content_dto.IndicatorContentDTO(
+                        content = cm_python_openapi_sdk.models.indicator_content_dto.IndicatorContentDTO(
                             metric = '/rest/projects/8q6zgckec0l3o4gi/md/metrics?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 
                             scale = 'standard', 
                             distribution = 'geometric', 
-                            visualizations = openapi_client.models.indicator_visualizations_dto.IndicatorVisualizationsDTO(
+                            visualizations = cm_python_openapi_sdk.models.indicator_visualizations_dto.IndicatorVisualizationsDTO(
                                 areas = True, 
                                 grid = True, 
                                 zones = True, 
@@ -55,18 +55,18 @@ class TestIndicatorPagedModelDTO(unittest.TestCase):
                                 heatmap = True, 
                                 dominance = True, 
                                 heatmap_scale_factor = 1.337, ), 
-                            format = openapi_client.models.format_dto.FormatDTO(
+                            format = cm_python_openapi_sdk.models.format_dto.FormatDTO(
                                 type = 'number', 
                                 fraction = 0, 
                                 symbol = '', ), 
-                            relations = openapi_client.models.relations_dto.RelationsDTO(
+                            relations = cm_python_openapi_sdk.models.relations_dto.RelationsDTO(
                                 type = 'self', 
                                 reversed_metric = '/rest/projects/8q6zgckec0l3o4gi/md/metrics?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', ), 
-                            scale_options = openapi_client.models.scale_options_dto.ScaleOptionsDTO(
+                            scale_options = cm_python_openapi_sdk.models.scale_options_dto.ScaleOptionsDTO(
                                 static = [
-                                    openapi_client.models.static_scale_option_dto.StaticScaleOptionDTO(
+                                    cm_python_openapi_sdk.models.static_scale_option_dto.StaticScaleOptionDTO(
                                         dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 
-                                        breaks = openapi_client.models.static_scale_option_dto_breaks.StaticScaleOptionDTO_breaks(
+                                        breaks = cm_python_openapi_sdk.models.static_scale_option_dto_breaks.StaticScaleOptionDTO_breaks(
                                             global = [
                                                 1.337
                                                 ], 
@@ -74,11 +74,11 @@ class TestIndicatorPagedModelDTO(unittest.TestCase):
                                                 1.337
                                                 ], ), 
                                         max_values = [
-                                            openapi_client.models.max_value_dto.MaxValueDTO(
+                                            cm_python_openapi_sdk.models.max_value_dto.MaxValueDTO(
                                                 zoom = 2, )
                                             ], )
                                     ], 
-                                default_distribution = openapi_client.models.default_distribution_dto.DefaultDistributionDTO(
+                                default_distribution = cm_python_openapi_sdk.models.default_distribution_dto.DefaultDistributionDTO(
                                     range = [
                                         1.337
                                         ], 
@@ -89,7 +89,7 @@ class TestIndicatorPagedModelDTO(unittest.TestCase):
                 links = [
                     None
                     ],
-                page = openapi_client.models.mandatory_keys_for_pagable_response.mandatory keys for pagable response(
+                page = cm_python_openapi_sdk.models.mandatory_keys_for_pagable_response.mandatory keys for pagable response(
                     size = 56, 
                     total_elements = null, 
                     total_pages = 56, 

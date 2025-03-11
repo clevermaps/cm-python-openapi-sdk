@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.feature_attribute_dto import FeatureAttributeDTO
+from cm_python_openapi_sdk.models.feature_attribute_dto import FeatureAttributeDTO
 
 class TestFeatureAttributeDTO(unittest.TestCase):
     """FeatureAttributeDTO unit test stubs"""
@@ -37,7 +37,7 @@ class TestFeatureAttributeDTO(unittest.TestCase):
             return FeatureAttributeDTO(
                 type = 'property',
                 value = '',
-                format = openapi_client.models.attribute_format_dto.AttributeFormatDTO(
+                format = cm_python_openapi_sdk.models.attribute_format_dto.AttributeFormatDTO(
                     type = 'text', 
                     fraction = 0, 
                     symbol = '', ),

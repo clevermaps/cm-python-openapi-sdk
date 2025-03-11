@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.indicator_group_dto import IndicatorGroupDTO
+from cm_python_openapi_sdk.models.indicator_group_dto import IndicatorGroupDTO
 
 class TestIndicatorGroupDTO(unittest.TestCase):
     """IndicatorGroupDTO unit test stubs"""

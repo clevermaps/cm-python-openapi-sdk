@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.isochrone_dto import IsochroneDTO
+from cm_python_openapi_sdk.models.isochrone_dto import IsochroneDTO
 
 class TestIsochroneDTO(unittest.TestCase):
     """IsochroneDTO unit test stubs"""
@@ -40,7 +40,7 @@ class TestIsochroneDTO(unittest.TestCase):
                 profile = 'car',
                 unit = 'time',
                 amount = 1,
-                geometry = None
+                geometry = cm_python_openapi_sdk.models.geometry.geometry()
             )
         else:
             return IsochroneDTO(

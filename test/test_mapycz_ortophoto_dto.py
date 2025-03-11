@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.mapycz_ortophoto_dto import MapyczOrtophotoDTO
+from cm_python_openapi_sdk.models.mapycz_ortophoto_dto import MapyczOrtophotoDTO
 
 class TestMapyczOrtophotoDTO(unittest.TestCase):
     """MapyczOrtophotoDTO unit test stubs"""

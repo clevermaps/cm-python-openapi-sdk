@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.google_satellite_dto import GoogleSatelliteDTO
+from cm_python_openapi_sdk.models.google_satellite_dto import GoogleSatelliteDTO
 
 class TestGoogleSatelliteDTO(unittest.TestCase):
     """GoogleSatelliteDTO unit test stubs"""

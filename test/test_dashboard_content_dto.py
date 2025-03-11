@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.dashboard_content_dto import DashboardContentDTO
+from cm_python_openapi_sdk.models.dashboard_content_dto import DashboardContentDTO
 
 class TestDashboardContentDTO(unittest.TestCase):
     """DashboardContentDTO unit test stubs"""
@@ -39,14 +39,14 @@ class TestDashboardContentDTO(unittest.TestCase):
                     null
                     ],
                 dataset_properties = [
-                    openapi_client.models.dashboard_dataset_properties_dto.DashboardDatasetPropertiesDTO(
+                    cm_python_openapi_sdk.models.dashboard_dataset_properties_dto.DashboardDatasetPropertiesDTO(
                         dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 
                         default_search = 'enable', 
                         feature_attributes = [
-                            openapi_client.models.feature_attribute_dto.FeatureAttributeDTO(
+                            cm_python_openapi_sdk.models.feature_attribute_dto.FeatureAttributeDTO(
                                 type = 'property', 
                                 value = '', 
-                                format = openapi_client.models.attribute_format_dto.AttributeFormatDTO(
+                                format = cm_python_openapi_sdk.models.attribute_format_dto.AttributeFormatDTO(
                                     type = 'text', 
                                     fraction = 0, 
                                     symbol = '', ), 

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.view_dto import ViewDTO
+from cm_python_openapi_sdk.models.view_dto import ViewDTO
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.mandatory_keys_for_pagable_response import MandatoryKeysForPagableResponse
+from cm_python_openapi_sdk.models.mandatory_keys_for_pagable_response import MandatoryKeysForPagableResponse
 
 # TODO update the JSON string below
 json = "{}"

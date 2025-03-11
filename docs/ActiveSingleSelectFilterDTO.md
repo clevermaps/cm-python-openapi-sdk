@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.active_single_select_filter_dto import ActiveSingleSelectFilterDTO
+from cm_python_openapi_sdk.models.active_single_select_filter_dto import ActiveSingleSelectFilterDTO
 
 # TODO update the JSON string below
 json = "{}"

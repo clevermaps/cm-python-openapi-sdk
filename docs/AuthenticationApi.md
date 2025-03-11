@@ -1,4 +1,4 @@
-# openapi_client.AuthenticationApi
+# cm_python_openapi_sdk.AuthenticationApi
 
 All URIs are relative to *https://staging.dev.clevermaps.io/rest*
 
@@ -18,24 +18,24 @@ The token endpoint is used to obtain a Bearer token by presenting a valid Access
 
 
 ```python
-import openapi_client
-from openapi_client.models.token_request_dto import TokenRequestDTO
-from openapi_client.models.token_response_dto import TokenResponseDTO
-from openapi_client.rest import ApiException
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.token_request_dto import TokenRequestDTO
+from cm_python_openapi_sdk.models.token_response_dto import TokenResponseDTO
+from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cm_python_openapi_sdk.Configuration(
     host = "https://staging.dev.clevermaps.io/rest"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.AuthenticationApi(api_client)
-    token_request_dto = openapi_client.TokenRequestDTO() # TokenRequestDTO |  (optional)
+    api_instance = cm_python_openapi_sdk.AuthenticationApi(api_client)
+    token_request_dto = cm_python_openapi_sdk.TokenRequestDTO() # TokenRequestDTO |  (optional)
 
     try:
         # Get bearer token

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.histogram_filter_dto import HistogramFilterDTO
+from cm_python_openapi_sdk.models.histogram_filter_dto import HistogramFilterDTO
 
 # TODO update the JSON string below
 json = "{}"

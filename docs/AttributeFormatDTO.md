@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.attribute_format_dto import AttributeFormatDTO
+from cm_python_openapi_sdk.models.attribute_format_dto import AttributeFormatDTO
 
 # TODO update the JSON string below
 json = "{}"

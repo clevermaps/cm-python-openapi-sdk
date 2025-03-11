@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.export_link_dto import ExportLinkDTO
+from cm_python_openapi_sdk.models.export_link_dto import ExportLinkDTO
 
 class TestExportLinkDTO(unittest.TestCase):
     """ExportLinkDTO unit test stubs"""

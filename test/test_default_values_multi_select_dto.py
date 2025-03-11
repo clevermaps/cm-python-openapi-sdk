@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.default_values_multi_select_dto import DefaultValuesMultiSelectDTO
+from cm_python_openapi_sdk.models.default_values_multi_select_dto import DefaultValuesMultiSelectDTO
 
 class TestDefaultValuesMultiSelectDTO(unittest.TestCase):
     """DefaultValuesMultiSelectDTO unit test stubs"""

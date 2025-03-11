@@ -18,13 +18,13 @@ Python 3.8+
 If the python package is hosted on a repository, you can install directly using:
 
 ```sh
-pip install git+https://github.com/clevermaps/cm-python-openapi-sdk.git
+pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 ```
 (you may need to run `pip` with root permission: `sudo pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git`)
 
 Then import the package:
 ```python
-import openapi_client
+import cm_python_openapi_sdk
 ```
 
 ### Setuptools
@@ -38,7 +38,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import openapi_client
+import cm_python_openapi_sdk
 ```
 
 ### Tests
@@ -51,31 +51,42 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```python
 
-import openapi_client
-from openapi_client.rest import ApiException
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cm_python_openapi_sdk.Configuration(
     host = "https://staging.dev.clevermaps.io/rest"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = cm_python_openapi_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.AuthenticationApi(api_client)
-    token_request_dto = openapi_client.TokenRequestDTO() # TokenRequestDTO |  (optional)
+    api_instance = cm_python_openapi_sdk.AttributeStylesApi(api_client)
+    project_id = 'project_id_example' # str | Id of the project
+    attribute_style_dto = cm_python_openapi_sdk.AttributeStyleDTO() # AttributeStyleDTO | 
+    x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:
-        # Get bearer token
-        api_response = api_instance.get_token(token_request_dto=token_request_dto)
-        print("The response of AuthenticationApi->get_token:\n")
+        # Creates new attribute style
+        api_response = api_instance.create_attribute_style(project_id, attribute_style_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+        print("The response of AttributeStylesApi->create_attribute_style:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AuthenticationApi->get_token: %s\n" % e)
+        print("Exception when calling AttributeStylesApi->create_attribute_style: %s\n" % e)
 
 ```
 
@@ -85,12 +96,34 @@ All URIs are relative to *https://staging.dev.clevermaps.io/rest*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AttributeStylesApi* | [**create_attribute_style**](docs/AttributeStylesApi.md#create_attribute_style) | **POST** /projects/{projectId}/md/attributeStyles | Creates new attribute style
+*AttributeStylesApi* | [**delete_attribute_style_by_id**](docs/AttributeStylesApi.md#delete_attribute_style_by_id) | **DELETE** /projects/{projectId}/md/attributeStyles/{id} | Deletes attribute style by id
+*AttributeStylesApi* | [**get_all_attribute_styles**](docs/AttributeStylesApi.md#get_all_attribute_styles) | **GET** /projects/{projectId}/md/attributeStyles | Returns paged collection of all Attribute Styles in a project
+*AttributeStylesApi* | [**get_attribute_style_by_id**](docs/AttributeStylesApi.md#get_attribute_style_by_id) | **GET** /projects/{projectId}/md/attributeStyles/{id} | Gets attribute style by id
+*AttributeStylesApi* | [**update_attribute_style_by_id**](docs/AttributeStylesApi.md#update_attribute_style_by_id) | **PUT** /projects/{projectId}/md/attributeStyles/{id} | Updates attribute style by id
 *AuthenticationApi* | [**get_token**](docs/AuthenticationApi.md#get_token) | **POST** /oauth/token | Get bearer token
 *DashboardsApi* | [**create_dashboard**](docs/DashboardsApi.md#create_dashboard) | **POST** /projects/{projectId}/md/dashboards | Creates new dashboard
 *DashboardsApi* | [**delete_dashboard_by_id**](docs/DashboardsApi.md#delete_dashboard_by_id) | **DELETE** /projects/{projectId}/md/dashboards/{id} | Deletes dashboard by id
 *DashboardsApi* | [**get_all_dashboards**](docs/DashboardsApi.md#get_all_dashboards) | **GET** /projects/{projectId}/md/dashboards | Returns paged collection of all Dashboards in a project
 *DashboardsApi* | [**get_dashboard_by_id**](docs/DashboardsApi.md#get_dashboard_by_id) | **GET** /projects/{projectId}/md/dashboards/{id} | Gets dashboard by id
 *DashboardsApi* | [**update_dashboard_by_id**](docs/DashboardsApi.md#update_dashboard_by_id) | **PUT** /projects/{projectId}/md/dashboards/{id} | Updates dashboard by id
+*DataPermissionsApi* | [**create_data_permission**](docs/DataPermissionsApi.md#create_data_permission) | **POST** /projects/{projectId}/md/dataPermissions | Creates new data permission
+*DataPermissionsApi* | [**delete_data_permission_by_id**](docs/DataPermissionsApi.md#delete_data_permission_by_id) | **DELETE** /projects/{projectId}/md/dataPermissions/{id} | Deletes data permission by id
+*DataPermissionsApi* | [**get_all_data_permissions**](docs/DataPermissionsApi.md#get_all_data_permissions) | **GET** /projects/{projectId}/md/dataPermissions | Returns paged collection of all data permissions in a project
+*DataPermissionsApi* | [**get_data_permission_by_id**](docs/DataPermissionsApi.md#get_data_permission_by_id) | **GET** /projects/{projectId}/md/dataPermissions/{id} | Gets data permission by id
+*DataPermissionsApi* | [**update_data_permission_by_id**](docs/DataPermissionsApi.md#update_data_permission_by_id) | **PUT** /projects/{projectId}/md/dataPermissions/{id} | Updates data permission by id
+*DataSourcesApi* | [**get_all_data_sources**](docs/DataSourcesApi.md#get_all_data_sources) | **GET** /projects/{projectId}/md/dataSources | Return list of all unique data sources specified in datasets of a project
+*DatasetsApi* | [**create_dataset**](docs/DatasetsApi.md#create_dataset) | **POST** /projects/{projectId}/md/datasets | Creates new dataset
+*DatasetsApi* | [**delete_dataset_by_id**](docs/DatasetsApi.md#delete_dataset_by_id) | **DELETE** /projects/{projectId}/md/datasets/{id} | Deletes dataset by id
+*DatasetsApi* | [**generate_dataset_from_csv**](docs/DatasetsApi.md#generate_dataset_from_csv) | **POST** /projects/{projectId}/md/datasets/generateDataset | Generate dataset from CSV
+*DatasetsApi* | [**get_all_datasets**](docs/DatasetsApi.md#get_all_datasets) | **GET** /projects/{projectId}/md/datasets | Returns paged collection of all datasets in a project
+*DatasetsApi* | [**get_dataset_by_id**](docs/DatasetsApi.md#get_dataset_by_id) | **GET** /projects/{projectId}/md/datasets/{id} | Gets dataset by id
+*DatasetsApi* | [**update_dataset_by_id**](docs/DatasetsApi.md#update_dataset_by_id) | **PUT** /projects/{projectId}/md/datasets/{id} | Updates dataset by id
+*ExportsApi* | [**create_export**](docs/ExportsApi.md#create_export) | **POST** /projects/{projectId}/md/exports | Creates new export
+*ExportsApi* | [**delete_export_by_id**](docs/ExportsApi.md#delete_export_by_id) | **DELETE** /projects/{projectId}/md/exports/{id} | Deletes export by id
+*ExportsApi* | [**get_all_exports**](docs/ExportsApi.md#get_all_exports) | **GET** /projects/{projectId}/md/exports | Returns paged collection of all Exports in a project
+*ExportsApi* | [**get_export_by_id**](docs/ExportsApi.md#get_export_by_id) | **GET** /projects/{projectId}/md/exports/{id} | Gets export by id
+*ExportsApi* | [**update_export_by_id**](docs/ExportsApi.md#update_export_by_id) | **PUT** /projects/{projectId}/md/exports/{id} | Updates export by id
 *IndicatorDrillsApi* | [**create_indicator_drill**](docs/IndicatorDrillsApi.md#create_indicator_drill) | **POST** /projects/{projectId}/md/indicatorDrills | Creates new Indicator Drill.
 *IndicatorDrillsApi* | [**delete_indicator_drill_by_id**](docs/IndicatorDrillsApi.md#delete_indicator_drill_by_id) | **DELETE** /projects/{projectId}/md/indicatorDrills/{id} | Deletes indicator drill by id
 *IndicatorDrillsApi* | [**get_all_indicator_drills**](docs/IndicatorDrillsApi.md#get_all_indicator_drills) | **GET** /projects/{projectId}/md/indicatorDrills | Returns paged collection of all Indicator Drills in a project.
@@ -101,11 +134,57 @@ Class | Method | HTTP request | Description
 *IndicatorsApi* | [**get_all_indicators**](docs/IndicatorsApi.md#get_all_indicators) | **GET** /projects/{projectId}/md/indicators | Returns paged collection of all Indicators in a project.
 *IndicatorsApi* | [**get_indicator_by_id**](docs/IndicatorsApi.md#get_indicator_by_id) | **GET** /projects/{projectId}/md/indicators/{id} | Gets indicator by id
 *IndicatorsApi* | [**update_indicator_by_id**](docs/IndicatorsApi.md#update_indicator_by_id) | **PUT** /projects/{projectId}/md/indicators/{id} | Updates indicator by id
+*IsochroneApi* | [**get_isochrone**](docs/IsochroneApi.md#get_isochrone) | **GET** /isochrone | 
+*JobsApi* | [**get_job_status**](docs/JobsApi.md#get_job_status) | **GET** /jobs/{jobId} | 
+*JobsApi* | [**get_jobs_history**](docs/JobsApi.md#get_jobs_history) | **GET** /jobs/history | 
+*JobsApi* | [**submit_job_execution**](docs/JobsApi.md#submit_job_execution) | **POST** /jobs | 
 *MapsApi* | [**create_map**](docs/MapsApi.md#create_map) | **POST** /projects/{projectId}/md/maps | Creates new Map.
 *MapsApi* | [**delete_map_by_id**](docs/MapsApi.md#delete_map_by_id) | **DELETE** /projects/{projectId}/md/maps/{id} | Deletes map by id
 *MapsApi* | [**get_all_maps**](docs/MapsApi.md#get_all_maps) | **GET** /projects/{projectId}/md/maps | Returns paged collection of all Maps in a project.
 *MapsApi* | [**get_map_by_id**](docs/MapsApi.md#get_map_by_id) | **GET** /projects/{projectId}/md/maps/{id} | Gets map by id
 *MapsApi* | [**update_map_by_id**](docs/MapsApi.md#update_map_by_id) | **PUT** /projects/{projectId}/md/maps/{id} | Updates map by id
+*MarkerSelectorsApi* | [**create_marker_selector**](docs/MarkerSelectorsApi.md#create_marker_selector) | **POST** /projects/{projectId}/md/markerSelectors | Creates new Marker Selector.
+*MarkerSelectorsApi* | [**delete_marker_selector_by_id**](docs/MarkerSelectorsApi.md#delete_marker_selector_by_id) | **DELETE** /projects/{projectId}/md/markerSelectors/{id} | Deletes marker selector by id
+*MarkerSelectorsApi* | [**get_all_marker_selectors**](docs/MarkerSelectorsApi.md#get_all_marker_selectors) | **GET** /projects/{projectId}/md/markerSelectors | Returns paged collection of all Marker Selectors in a project.
+*MarkerSelectorsApi* | [**get_marker_selector_by_id**](docs/MarkerSelectorsApi.md#get_marker_selector_by_id) | **GET** /projects/{projectId}/md/markerSelectors/{id} | Gets marker selector by id
+*MarkerSelectorsApi* | [**update_marker_selector_by_id**](docs/MarkerSelectorsApi.md#update_marker_selector_by_id) | **PUT** /projects/{projectId}/md/markerSelectors/{id} | Updates marker selector by id
+*MarkersApi* | [**create_marker**](docs/MarkersApi.md#create_marker) | **POST** /projects/{projectId}/md/markers | Creates new Marker.
+*MarkersApi* | [**delete_marker_by_id**](docs/MarkersApi.md#delete_marker_by_id) | **DELETE** /projects/{projectId}/md/markers/{id} | Deletes marker by id
+*MarkersApi* | [**get_all_markers**](docs/MarkersApi.md#get_all_markers) | **GET** /projects/{projectId}/md/markers | Returns paged collection of all Markers in a project.
+*MarkersApi* | [**get_marker_by_id**](docs/MarkersApi.md#get_marker_by_id) | **GET** /projects/{projectId}/md/markers/{id} | Gets marker by id
+*MarkersApi* | [**update_marker_by_id**](docs/MarkersApi.md#update_marker_by_id) | **PUT** /projects/{projectId}/md/markers/{id} | Updates marker by id
+*MembersApi* | [**add_project_member**](docs/MembersApi.md#add_project_member) | **POST** /projects/{projectId}/members | Add new project member and assign a role.
+*MembersApi* | [**delete_membership**](docs/MembersApi.md#delete_membership) | **DELETE** /projects/{projectId}/members/{membershipId} | Deletes membership of user in project.
+*MembersApi* | [**get_membership_by_id**](docs/MembersApi.md#get_membership_by_id) | **GET** /projects/{projectId}/members/{membershipId} | Get detail of user membership in project by membership id.
+*MembersApi* | [**get_project_members**](docs/MembersApi.md#get_project_members) | **GET** /projects/{projectId}/members | Get list of project members.
+*MembersApi* | [**update_membership**](docs/MembersApi.md#update_membership) | **PUT** /projects/{projectId}/members/{membershipId} | Update membership by changing role or status in project.
+*MetricsApi* | [**create_metric**](docs/MetricsApi.md#create_metric) | **POST** /projects/{projectId}/md/metrics | Creates new metric.
+*MetricsApi* | [**delete_metric_by_id**](docs/MetricsApi.md#delete_metric_by_id) | **DELETE** /projects/{projectId}/md/metrics/{id} | Deletes metric by id
+*MetricsApi* | [**get_all_metrics**](docs/MetricsApi.md#get_all_metrics) | **GET** /projects/{projectId}/md/metrics | Returns paged collection of all Metrics in a project.
+*MetricsApi* | [**get_metric_by_id**](docs/MetricsApi.md#get_metric_by_id) | **GET** /projects/{projectId}/md/metrics/{id} | Gets metric by id
+*MetricsApi* | [**update_metric_by_id**](docs/MetricsApi.md#update_metric_by_id) | **PUT** /projects/{projectId}/md/metrics/{id} | Updates metric by id
+*OrganizationsApi* | [**create_organization**](docs/OrganizationsApi.md#create_organization) | **POST** /organizations | Creates a new organization.
+*OrganizationsApi* | [**delete_organization**](docs/OrganizationsApi.md#delete_organization) | **DELETE** /organizations/{organizationId} | Delete an organization.
+*OrganizationsApi* | [**get_organization_by_id**](docs/OrganizationsApi.md#get_organization_by_id) | **GET** /organizations/{organizationId} | Get organization detail.
+*OrganizationsApi* | [**get_organizations**](docs/OrganizationsApi.md#get_organizations) | **GET** /organizations | Get all organizations available for authenticated user.
+*OrganizationsApi* | [**update_organization**](docs/OrganizationsApi.md#update_organization) | **PUT** /organizations/{organizationId} | Update organization.
+*ProjectSettingsApi* | [**create_project_settings**](docs/ProjectSettingsApi.md#create_project_settings) | **POST** /projects/{projectId}/md/projectSettings | Creates new project settings
+*ProjectSettingsApi* | [**delete_project_settings_by_id**](docs/ProjectSettingsApi.md#delete_project_settings_by_id) | **DELETE** /projects/{projectId}/md/projectSettings/{id} | Deletes project settings by id
+*ProjectSettingsApi* | [**get_all_project_settings**](docs/ProjectSettingsApi.md#get_all_project_settings) | **GET** /projects/{projectId}/md/projectSettings | Returns paged collection of all Project Settings objects in a project. This page will always contain only one object.
+*ProjectSettingsApi* | [**get_project_settings_by_id**](docs/ProjectSettingsApi.md#get_project_settings_by_id) | **GET** /projects/{projectId}/md/projectSettings/{id} | Gets project settings by id
+*ProjectSettingsApi* | [**update_project_settings_by_id**](docs/ProjectSettingsApi.md#update_project_settings_by_id) | **PUT** /projects/{projectId}/md/projectSettings/{id} | Updates project settings by id
+*ProjectInvitationsApi* | [**create_invitation**](docs/ProjectInvitationsApi.md#create_invitation) | **POST** /projects/{projectId}/invitations | Create new invitation to the project for a user.
+*ProjectInvitationsApi* | [**delete_invitation**](docs/ProjectInvitationsApi.md#delete_invitation) | **DELETE** /projects/{projectId}/invitations/{invitationId} | Delete invitation.
+*ProjectInvitationsApi* | [**get_invitation_by_id**](docs/ProjectInvitationsApi.md#get_invitation_by_id) | **GET** /projects/{projectId}/invitations/{invitationId} | Get detail of an invitation.
+*ProjectInvitationsApi* | [**get_invitations**](docs/ProjectInvitationsApi.md#get_invitations) | **GET** /projects/{projectId}/invitations | Get list of project invitations.
+*ProjectInvitationsApi* | [**update_invitation**](docs/ProjectInvitationsApi.md#update_invitation) | **PUT** /projects/{projectId}/invitations/{invitationId} | Update invitation.
+*ProjectsApi* | [**create_project**](docs/ProjectsApi.md#create_project) | **POST** /projects | Create new project
+*ProjectsApi* | [**delete_project**](docs/ProjectsApi.md#delete_project) | **DELETE** /projects/{projectId} | Delete project.
+*ProjectsApi* | [**get_all_projects**](docs/ProjectsApi.md#get_all_projects) | **GET** /projects | Get list of projects for authenticated account.
+*ProjectsApi* | [**get_project_by_id**](docs/ProjectsApi.md#get_project_by_id) | **GET** /projects/{projectId} | Get project by given project id.
+*ProjectsApi* | [**update_project**](docs/ProjectsApi.md#update_project) | **PUT** /projects/{projectId} | Update the project.
+*UserInvitationsApi* | [**accept_user_invitation**](docs/UserInvitationsApi.md#accept_user_invitation) | **POST** /invitations/{invitationHash} | Accept invitation.
+*UserInvitationsApi* | [**get_user_invitation**](docs/UserInvitationsApi.md#get_user_invitation) | **GET** /invitations/{invitationHash} | Get detail of an invitation.
 *ViewsApi* | [**create_view**](docs/ViewsApi.md#create_view) | **POST** /projects/{projectId}/md/views | Creates new view
 *ViewsApi* | [**delete_view_by_id**](docs/ViewsApi.md#delete_view_by_id) | **DELETE** /projects/{projectId}/md/views/{id} | Deletes view by id
 *ViewsApi* | [**get_all_views**](docs/ViewsApi.md#get_all_views) | **GET** /projects/{projectId}/md/views | Returns collection of all views in a project
@@ -126,16 +205,53 @@ Class | Method | HTTP request | Description
  - [AdditionalSeriesLinkDTO](docs/AdditionalSeriesLinkDTO.md)
  - [AnnotationLinkDTO](docs/AnnotationLinkDTO.md)
  - [AttributeFormatDTO](docs/AttributeFormatDTO.md)
+ - [AttributeStyleCategoryDTO](docs/AttributeStyleCategoryDTO.md)
+ - [AttributeStyleContentDTO](docs/AttributeStyleContentDTO.md)
+ - [AttributeStyleDTO](docs/AttributeStyleDTO.md)
+ - [AttributeStyleFallbackCategoryDTO](docs/AttributeStyleFallbackCategoryDTO.md)
+ - [AttributeStylePagedModelDTO](docs/AttributeStylePagedModelDTO.md)
  - [BlockAbstractType](docs/BlockAbstractType.md)
  - [BlockRowAbstractType](docs/BlockRowAbstractType.md)
  - [BlockRowDTO](docs/BlockRowDTO.md)
+ - [BulkPointQueryJobRequest](docs/BulkPointQueryJobRequest.md)
+ - [BulkPointQueryPointQueriesOptionIsochrone](docs/BulkPointQueryPointQueriesOptionIsochrone.md)
+ - [BulkPointQueryPointQueriesOptionNearest](docs/BulkPointQueryPointQueriesOptionNearest.md)
+ - [BulkPointQueryRequest](docs/BulkPointQueryRequest.md)
+ - [BulkPointQueryRequestPointQueriesInner](docs/BulkPointQueryRequestPointQueriesInner.md)
+ - [BulkPointQueryRequestPointQueriesInnerOptions](docs/BulkPointQueryRequestPointQueriesInnerOptions.md)
+ - [BulkPointQueryRequestPointsInner](docs/BulkPointQueryRequestPointsInner.md)
  - [CategoriesDTO](docs/CategoriesDTO.md)
+ - [CategoryDTO](docs/CategoryDTO.md)
  - [CenterDTO](docs/CenterDTO.md)
+ - [CreateInvitation](docs/CreateInvitation.md)
+ - [CreateMembershipDTO](docs/CreateMembershipDTO.md)
+ - [CreateOrganizationDTO](docs/CreateOrganizationDTO.md)
+ - [CreateProjectDTO](docs/CreateProjectDTO.md)
  - [CuzkParcelInfoDTO](docs/CuzkParcelInfoDTO.md)
  - [DashboardContentDTO](docs/DashboardContentDTO.md)
  - [DashboardDTO](docs/DashboardDTO.md)
  - [DashboardDatasetPropertiesDTO](docs/DashboardDatasetPropertiesDTO.md)
  - [DashboardPagedModelDTO](docs/DashboardPagedModelDTO.md)
+ - [DataDumpJobRequest](docs/DataDumpJobRequest.md)
+ - [DataDumpRequest](docs/DataDumpRequest.md)
+ - [DataPermissionContentDTO](docs/DataPermissionContentDTO.md)
+ - [DataPermissionDTO](docs/DataPermissionDTO.md)
+ - [DataPermissionPagedModelDTO](docs/DataPermissionPagedModelDTO.md)
+ - [DataPullJobRequest](docs/DataPullJobRequest.md)
+ - [DataPullRequest](docs/DataPullRequest.md)
+ - [DataPullRequestCsvOptions](docs/DataPullRequestCsvOptions.md)
+ - [DataPullRequestHttpsUpload](docs/DataPullRequestHttpsUpload.md)
+ - [DataPullRequestS3Upload](docs/DataPullRequestS3Upload.md)
+ - [DataSourceDTO](docs/DataSourceDTO.md)
+ - [DataSourcePagedModelDTO](docs/DataSourcePagedModelDTO.md)
+ - [DatasetDTO](docs/DatasetDTO.md)
+ - [DatasetDwhTypeDTO](docs/DatasetDwhTypeDTO.md)
+ - [DatasetH3GridTypeDTO](docs/DatasetH3GridTypeDTO.md)
+ - [DatasetPagedModelDTO](docs/DatasetPagedModelDTO.md)
+ - [DatasetPropertiesDTO](docs/DatasetPropertiesDTO.md)
+ - [DatasetType](docs/DatasetType.md)
+ - [DatasetVisualizationDTO](docs/DatasetVisualizationDTO.md)
+ - [DatasetVtTypeDTO](docs/DatasetVtTypeDTO.md)
  - [DateFilterDTO](docs/DateFilterDTO.md)
  - [DateFilterDefaultValueType](docs/DateFilterDefaultValueType.md)
  - [DateRangeFunction](docs/DateRangeFunction.md)
@@ -148,17 +264,61 @@ Class | Method | HTTP request | Description
  - [DefaultValuesIndicatorDTO](docs/DefaultValuesIndicatorDTO.md)
  - [DefaultValuesMultiSelectDTO](docs/DefaultValuesMultiSelectDTO.md)
  - [DefaultValuesSingleSelectDTO](docs/DefaultValuesSingleSelectDTO.md)
+ - [DisplayOptionsDTO](docs/DisplayOptionsDTO.md)
  - [DistributionDTO](docs/DistributionDTO.md)
+ - [DwhAbstractProperty](docs/DwhAbstractProperty.md)
+ - [DwhForeignKeyDTO](docs/DwhForeignKeyDTO.md)
+ - [DwhGeometryDTO](docs/DwhGeometryDTO.md)
+ - [DwhPropertyDTO](docs/DwhPropertyDTO.md)
+ - [DwhQueryFunctionTypes](docs/DwhQueryFunctionTypes.md)
+ - [DwhQueryMetricType](docs/DwhQueryMetricType.md)
+ - [DwhQueryNumberType](docs/DwhQueryNumberType.md)
+ - [DwhQueryPropertyType](docs/DwhQueryPropertyType.md)
+ - [ExportContentDTO](docs/ExportContentDTO.md)
+ - [ExportDTO](docs/ExportDTO.md)
+ - [ExportJobRequest](docs/ExportJobRequest.md)
  - [ExportLinkDTO](docs/ExportLinkDTO.md)
+ - [ExportPagedModelDTO](docs/ExportPagedModelDTO.md)
+ - [ExportRequest](docs/ExportRequest.md)
+ - [ExportRequestCsvOptions](docs/ExportRequestCsvOptions.md)
  - [FeatureAttributeDTO](docs/FeatureAttributeDTO.md)
  - [FeatureFilterDTO](docs/FeatureFilterDTO.md)
+ - [FeatureFunctionDTO](docs/FeatureFunctionDTO.md)
+ - [FeaturePropertyDTO](docs/FeaturePropertyDTO.md)
+ - [FeaturePropertyType](docs/FeaturePropertyType.md)
+ - [FeatureTextDTO](docs/FeatureTextDTO.md)
  - [FilterAbstractType](docs/FilterAbstractType.md)
  - [FormatDTO](docs/FormatDTO.md)
+ - [FunctionAggTypeGeneral](docs/FunctionAggTypeGeneral.md)
+ - [FunctionArithmTypeGeneral](docs/FunctionArithmTypeGeneral.md)
+ - [FunctionConditionTypeGeneral](docs/FunctionConditionTypeGeneral.md)
+ - [FunctionDateTrunc](docs/FunctionDateTrunc.md)
+ - [FunctionDateTruncOptions](docs/FunctionDateTruncOptions.md)
+ - [FunctionDistance](docs/FunctionDistance.md)
+ - [FunctionDistanceOptions](docs/FunctionDistanceOptions.md)
+ - [FunctionDistanceOptionsCentralPoint](docs/FunctionDistanceOptionsCentralPoint.md)
+ - [FunctionH3Grid](docs/FunctionH3Grid.md)
+ - [FunctionH3GridOptions](docs/FunctionH3GridOptions.md)
+ - [FunctionInterval](docs/FunctionInterval.md)
+ - [FunctionNtile](docs/FunctionNtile.md)
+ - [FunctionNtileOptions](docs/FunctionNtileOptions.md)
+ - [FunctionPercentToTotalTypeGeneral](docs/FunctionPercentToTotalTypeGeneral.md)
+ - [FunctionPercentile](docs/FunctionPercentile.md)
+ - [FunctionPropertyType](docs/FunctionPropertyType.md)
+ - [FunctionRank](docs/FunctionRank.md)
+ - [FunctionRoundTypeGeneral](docs/FunctionRoundTypeGeneral.md)
+ - [FunctionRowNumber](docs/FunctionRowNumber.md)
+ - [FunctionToday](docs/FunctionToday.md)
+ - [GetOrganizations200Response](docs/GetOrganizations200Response.md)
+ - [GetProjectMembers200Response](docs/GetProjectMembers200Response.md)
  - [GlobalDateFilterDTO](docs/GlobalDateFilterDTO.md)
  - [GoogleEarthDTO](docs/GoogleEarthDTO.md)
  - [GoogleSatelliteDTO](docs/GoogleSatelliteDTO.md)
  - [GoogleStreetViewDTO](docs/GoogleStreetViewDTO.md)
+ - [GranularityCategoryDTO](docs/GranularityCategoryDTO.md)
  - [HistogramFilterDTO](docs/HistogramFilterDTO.md)
+ - [ImportProjectJobRequest](docs/ImportProjectJobRequest.md)
+ - [ImportProjectRequest](docs/ImportProjectRequest.md)
  - [IndicatorContentDTO](docs/IndicatorContentDTO.md)
  - [IndicatorDTO](docs/IndicatorDTO.md)
  - [IndicatorDrillContentDTO](docs/IndicatorDrillContentDTO.md)
@@ -170,10 +330,16 @@ Class | Method | HTTP request | Description
  - [IndicatorLinkDTOBlockRowsInner](docs/IndicatorLinkDTOBlockRowsInner.md)
  - [IndicatorPagedModelDTO](docs/IndicatorPagedModelDTO.md)
  - [IndicatorVisualizationsDTO](docs/IndicatorVisualizationsDTO.md)
+ - [InvitationDTO](docs/InvitationDTO.md)
+ - [InvitationPagedModelDTO](docs/InvitationPagedModelDTO.md)
  - [IsochroneDTO](docs/IsochroneDTO.md)
+ - [IsochronePagedModelDTO](docs/IsochronePagedModelDTO.md)
+ - [JobDetailResponse](docs/JobDetailResponse.md)
+ - [JobHistoryPagedModelDTO](docs/JobHistoryPagedModelDTO.md)
  - [LayerDTO](docs/LayerDTO.md)
  - [LayerDTODatasetsInner](docs/LayerDTODatasetsInner.md)
  - [LayerDTODatasetsInnerAttributeStylesInner](docs/LayerDTODatasetsInnerAttributeStylesInner.md)
+ - [LinkedLayerDTO](docs/LinkedLayerDTO.md)
  - [MandatoryKeysForPagableResponse](docs/MandatoryKeysForPagableResponse.md)
  - [MapContentDTO](docs/MapContentDTO.md)
  - [MapContentDTOBaseLayer](docs/MapContentDTOBaseLayer.md)
@@ -186,10 +352,34 @@ Class | Method | HTTP request | Description
  - [MapPagedModelDTO](docs/MapPagedModelDTO.md)
  - [MapyczOrtophotoDTO](docs/MapyczOrtophotoDTO.md)
  - [MapyczPanoramaDTO](docs/MapyczPanoramaDTO.md)
+ - [MarkerContentDTO](docs/MarkerContentDTO.md)
+ - [MarkerContentDTOPropertyFiltersInner](docs/MarkerContentDTOPropertyFiltersInner.md)
+ - [MarkerDTO](docs/MarkerDTO.md)
+ - [MarkerLinkDTO](docs/MarkerLinkDTO.md)
+ - [MarkerPagedModelDTO](docs/MarkerPagedModelDTO.md)
+ - [MarkerSelectorContentDTO](docs/MarkerSelectorContentDTO.md)
+ - [MarkerSelectorContentDTOKeepFiltered](docs/MarkerSelectorContentDTOKeepFiltered.md)
+ - [MarkerSelectorDTO](docs/MarkerSelectorDTO.md)
+ - [MarkerSelectorPagedModelDTO](docs/MarkerSelectorPagedModelDTO.md)
  - [MaxValueDTO](docs/MaxValueDTO.md)
  - [MeasureDTO](docs/MeasureDTO.md)
+ - [MembershipDTO](docs/MembershipDTO.md)
+ - [MembershipPagedModelDTO](docs/MembershipPagedModelDTO.md)
+ - [MetricDTO](docs/MetricDTO.md)
+ - [MetricPagedModelDTO](docs/MetricPagedModelDTO.md)
  - [MultiSelectFilterDTO](docs/MultiSelectFilterDTO.md)
  - [OrderByDTO](docs/OrderByDTO.md)
+ - [OrganizationPagedModelDTO](docs/OrganizationPagedModelDTO.md)
+ - [OrganizationResponseDTO](docs/OrganizationResponseDTO.md)
+ - [OutputDTO](docs/OutputDTO.md)
+ - [ProjectPagedModelDTO](docs/ProjectPagedModelDTO.md)
+ - [ProjectResponseDTO](docs/ProjectResponseDTO.md)
+ - [ProjectSettingsContentDTO](docs/ProjectSettingsContentDTO.md)
+ - [ProjectSettingsDTO](docs/ProjectSettingsDTO.md)
+ - [ProjectSettingsPagedModelDTO](docs/ProjectSettingsPagedModelDTO.md)
+ - [ProjectTemplateDTO](docs/ProjectTemplateDTO.md)
+ - [PropertyFilterCompareDTO](docs/PropertyFilterCompareDTO.md)
+ - [PropertyFilterInDTO](docs/PropertyFilterInDTO.md)
  - [RankingDTO](docs/RankingDTO.md)
  - [RelationsDTO](docs/RelationsDTO.md)
  - [ScaleOptionsDTO](docs/ScaleOptionsDTO.md)
@@ -197,14 +387,26 @@ Class | Method | HTTP request | Description
  - [StaticScaleOptionDTO](docs/StaticScaleOptionDTO.md)
  - [StaticScaleOptionDTOBreaks](docs/StaticScaleOptionDTOBreaks.md)
  - [StyleDTO](docs/StyleDTO.md)
+ - [SubmitJobExecutionRequest](docs/SubmitJobExecutionRequest.md)
+ - [TemplateDatasetDTO](docs/TemplateDatasetDTO.md)
  - [TimeSeriesDTO](docs/TimeSeriesDTO.md)
  - [TokenRequestDTO](docs/TokenRequestDTO.md)
  - [TokenResponseDTO](docs/TokenResponseDTO.md)
+ - [TruncateJobRequest](docs/TruncateJobRequest.md)
+ - [UpdateInvitation](docs/UpdateInvitation.md)
+ - [UpdateMembership](docs/UpdateMembership.md)
+ - [UpdateOrganizationDTO](docs/UpdateOrganizationDTO.md)
+ - [UpdateProjectDTO](docs/UpdateProjectDTO.md)
+ - [ValidateJobRequest](docs/ValidateJobRequest.md)
+ - [ValidateRequest](docs/ValidateRequest.md)
+ - [ValueOptionDTO](docs/ValueOptionDTO.md)
  - [VariableDTO](docs/VariableDTO.md)
+ - [VariableType](docs/VariableType.md)
  - [VariablesDTO](docs/VariablesDTO.md)
  - [ViewContentDTO](docs/ViewContentDTO.md)
  - [ViewDTO](docs/ViewDTO.md)
  - [ViewPagedModelDTO](docs/ViewPagedModelDTO.md)
+ - [ZoomDTO](docs/ZoomDTO.md)
 
 
 <a id="documentation-for-authorization"></a>

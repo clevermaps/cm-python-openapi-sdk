@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.time_series_dto import TimeSeriesDTO
+from cm_python_openapi_sdk.models.time_series_dto import TimeSeriesDTO
 
 class TestTimeSeriesDTO(unittest.TestCase):
     """TimeSeriesDTO unit test stubs"""
@@ -42,11 +42,11 @@ class TestTimeSeriesDTO(unittest.TestCase):
                 visualized = True,
                 default_period = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc',
                 additional_series = [
-                    openapi_client.models.additional_series_link_dto.AdditionalSeriesLinkDTO(
+                    cm_python_openapi_sdk.models.additional_series_link_dto.AdditionalSeriesLinkDTO(
                         indicator = '/rest/projects/8q6zgckec0l3o4gi/md/indicators?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', )
                     ],
                 annotations = [
-                    openapi_client.models.annotation_link_dto.AnnotationLinkDTO(
+                    cm_python_openapi_sdk.models.annotation_link_dto.AnnotationLinkDTO(
                         dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', )
                     ]
             )

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.static_scale_option_dto import StaticScaleOptionDTO
+from cm_python_openapi_sdk.models.static_scale_option_dto import StaticScaleOptionDTO
 
 class TestStaticScaleOptionDTO(unittest.TestCase):
     """StaticScaleOptionDTO unit test stubs"""
@@ -36,7 +36,7 @@ class TestStaticScaleOptionDTO(unittest.TestCase):
         if include_optional:
             return StaticScaleOptionDTO(
                 dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc',
-                breaks = openapi_client.models.static_scale_option_dto_breaks.StaticScaleOptionDTO_breaks(
+                breaks = cm_python_openapi_sdk.models.static_scale_option_dto_breaks.StaticScaleOptionDTO_breaks(
                     global = [
                         1.337
                         ], 
@@ -44,7 +44,7 @@ class TestStaticScaleOptionDTO(unittest.TestCase):
                         1.337
                         ], ),
                 max_values = [
-                    openapi_client.models.max_value_dto.MaxValueDTO(
+                    cm_python_openapi_sdk.models.max_value_dto.MaxValueDTO(
                         zoom = 2, 
                         global = 0, 
                         selection = 0, )
@@ -52,7 +52,7 @@ class TestStaticScaleOptionDTO(unittest.TestCase):
             )
         else:
             return StaticScaleOptionDTO(
-                breaks = openapi_client.models.static_scale_option_dto_breaks.StaticScaleOptionDTO_breaks(
+                breaks = cm_python_openapi_sdk.models.static_scale_option_dto_breaks.StaticScaleOptionDTO_breaks(
                     global = [
                         1.337
                         ], 

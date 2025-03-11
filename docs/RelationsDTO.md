@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.relations_dto import RelationsDTO
+from cm_python_openapi_sdk.models.relations_dto import RelationsDTO
 
 # TODO update the JSON string below
 json = "{}"

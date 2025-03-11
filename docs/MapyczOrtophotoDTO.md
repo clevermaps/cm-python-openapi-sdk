@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.mapycz_ortophoto_dto import MapyczOrtophotoDTO
+from cm_python_openapi_sdk.models.mapycz_ortophoto_dto import MapyczOrtophotoDTO
 
 # TODO update the JSON string below
 json = "{}"

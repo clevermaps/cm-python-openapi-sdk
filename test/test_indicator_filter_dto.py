@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.indicator_filter_dto import IndicatorFilterDTO
+from cm_python_openapi_sdk.models.indicator_filter_dto import IndicatorFilterDTO
 
 class TestIndicatorFilterDTO(unittest.TestCase):
     """IndicatorFilterDTO unit test stubs"""

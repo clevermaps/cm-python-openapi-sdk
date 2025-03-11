@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.default_values_feature_dto import DefaultValuesFeatureDTO
+from cm_python_openapi_sdk.models.default_values_feature_dto import DefaultValuesFeatureDTO
 
 class TestDefaultValuesFeatureDTO(unittest.TestCase):
     """DefaultValuesFeatureDTO unit test stubs"""

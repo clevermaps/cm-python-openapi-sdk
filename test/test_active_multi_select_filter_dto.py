@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.active_multi_select_filter_dto import ActiveMultiSelectFilterDTO
+from cm_python_openapi_sdk.models.active_multi_select_filter_dto import ActiveMultiSelectFilterDTO
 
 class TestActiveMultiSelectFilterDTO(unittest.TestCase):
     """ActiveMultiSelectFilterDTO unit test stubs"""
@@ -35,21 +35,21 @@ class TestActiveMultiSelectFilterDTO(unittest.TestCase):
         model = ActiveMultiSelectFilterDTO()
         if include_optional:
             return ActiveMultiSelectFilterDTO(
-                default_values = openapi_client.models.default_values_multi_select_dto.DefaultValuesMultiSelectDTO(
+                default_values = cm_python_openapi_sdk.models.default_values_multi_select_dto.DefaultValuesMultiSelectDTO(
                     values = [
                         null
                         ], ),
                 type = 'multiSelect',
                 var_property = 'awat5ikwowtta-3mh2lcafqw3zhes.i16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwscq-4zge8f37mn0',
                 order_by = [
-                    openapi_client.models.order_by_dto.OrderByDTO(
+                    cm_python_openapi_sdk.models.order_by_dto.OrderByDTO(
                         property = 'awat5ikwowtta-3mh2lcafqw3zhes.i16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwscq-4zge8f37mn0', 
                         direction = 'asc', )
                     ]
             )
         else:
             return ActiveMultiSelectFilterDTO(
-                default_values = openapi_client.models.default_values_multi_select_dto.DefaultValuesMultiSelectDTO(
+                default_values = cm_python_openapi_sdk.models.default_values_multi_select_dto.DefaultValuesMultiSelectDTO(
                     values = [
                         null
                         ], ),

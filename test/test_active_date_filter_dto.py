@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.active_date_filter_dto import ActiveDateFilterDTO
+from cm_python_openapi_sdk.models.active_date_filter_dto import ActiveDateFilterDTO
 
 class TestActiveDateFilterDTO(unittest.TestCase):
     """ActiveDateFilterDTO unit test stubs"""
@@ -35,7 +35,7 @@ class TestActiveDateFilterDTO(unittest.TestCase):
         model = ActiveDateFilterDTO()
         if include_optional:
             return ActiveDateFilterDTO(
-                default_values = openapi_client.models.default_values_date_dto.DefaultValuesDateDTO(
+                default_values = cm_python_openapi_sdk.models.default_values_date_dto.DefaultValuesDateDTO(
                     start_date = null, 
                     end_date = null, ),
                 type = 'date',
@@ -43,7 +43,7 @@ class TestActiveDateFilterDTO(unittest.TestCase):
             )
         else:
             return ActiveDateFilterDTO(
-                default_values = openapi_client.models.default_values_date_dto.DefaultValuesDateDTO(
+                default_values = cm_python_openapi_sdk.models.default_values_date_dto.DefaultValuesDateDTO(
                     start_date = null, 
                     end_date = null, ),
                 type = 'date',

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.date_range_value import DateRangeValue
+from cm_python_openapi_sdk.models.date_range_value import DateRangeValue
 
 class TestDateRangeValue(unittest.TestCase):
     """DateRangeValue unit test stubs"""

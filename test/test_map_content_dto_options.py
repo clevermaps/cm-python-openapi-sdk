@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.map_content_dto_options import MapContentDTOOptions
+from cm_python_openapi_sdk.models.map_content_dto_options import MapContentDTOOptions
 
 class TestMapContentDTOOptions(unittest.TestCase):
     """MapContentDTOOptions unit test stubs"""
@@ -35,7 +35,7 @@ class TestMapContentDTOOptions(unittest.TestCase):
         model = MapContentDTOOptions()
         if include_optional:
             return MapContentDTOOptions(
-                center = openapi_client.models.center_dto.CenterDTO(
+                center = cm_python_openapi_sdk.models.center_dto.CenterDTO(
                     lat = 1.337, 
                     lng = 1.337, ),
                 zoom = 56,

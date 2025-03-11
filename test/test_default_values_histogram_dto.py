@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.default_values_histogram_dto import DefaultValuesHistogramDTO
+from cm_python_openapi_sdk.models.default_values_histogram_dto import DefaultValuesHistogramDTO
 
 class TestDefaultValuesHistogramDTO(unittest.TestCase):
     """DefaultValuesHistogramDTO unit test stubs"""

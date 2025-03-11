@@ -1,4 +1,4 @@
-# openapi_client.DashboardsApi
+# cm_python_openapi_sdk.DashboardsApi
 
 All URIs are relative to *https://staging.dev.clevermaps.io/rest*
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_dashboard**
-> DashboardDTO create_dashboard(project_id, dashboard_dto)
+> DashboardDTO create_dashboard(project_id, dashboard_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Creates new dashboard
 
@@ -23,14 +23,14 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 * Bearer Authentication (bearerAuth):
 
 ```python
-import openapi_client
-from openapi_client.models.dashboard_dto import DashboardDTO
-from openapi_client.rest import ApiException
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.dashboard_dto import DashboardDTO
+from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cm_python_openapi_sdk.Configuration(
     host = "https://staging.dev.clevermaps.io/rest"
 )
 
@@ -40,20 +40,21 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: bearerAuth
-configuration = openapi_client.Configuration(
+configuration = cm_python_openapi_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DashboardsApi(api_client)
+    api_instance = cm_python_openapi_sdk.DashboardsApi(api_client)
     project_id = 'project_id_example' # str | Id of the project
-    dashboard_dto = openapi_client.DashboardDTO() # DashboardDTO | 
+    dashboard_dto = cm_python_openapi_sdk.DashboardDTO() # DashboardDTO | 
+    x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:
         # Creates new dashboard
-        api_response = api_instance.create_dashboard(project_id, dashboard_dto)
+        api_response = api_instance.create_dashboard(project_id, dashboard_dto, x_can_strict_json_validation=x_can_strict_json_validation)
         print("The response of DashboardsApi->create_dashboard:\n")
         pprint(api_response)
     except Exception as e:
@@ -69,6 +70,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| Id of the project | 
  **dashboard_dto** | [**DashboardDTO**](DashboardDTO.md)|  | 
+ **x_can_strict_json_validation** | **bool**|  | [optional] [default to False]
 
 ### Return type
 
@@ -105,13 +107,13 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 * Bearer Authentication (bearerAuth):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cm_python_openapi_sdk.Configuration(
     host = "https://staging.dev.clevermaps.io/rest"
 )
 
@@ -121,14 +123,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: bearerAuth
-configuration = openapi_client.Configuration(
+configuration = cm_python_openapi_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DashboardsApi(api_client)
+    api_instance = cm_python_openapi_sdk.DashboardsApi(api_client)
     project_id = 'project_id_example' # str | Id of the project
     id = 'id_example' # str | Id of the dashboard
 
@@ -181,14 +183,14 @@ Returns paged collection of all Dashboards in a project
 * Bearer Authentication (bearerAuth):
 
 ```python
-import openapi_client
-from openapi_client.models.dashboard_paged_model_dto import DashboardPagedModelDTO
-from openapi_client.rest import ApiException
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.dashboard_paged_model_dto import DashboardPagedModelDTO
+from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cm_python_openapi_sdk.Configuration(
     host = "https://staging.dev.clevermaps.io/rest"
 )
 
@@ -198,14 +200,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: bearerAuth
-configuration = openapi_client.Configuration(
+configuration = cm_python_openapi_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DashboardsApi(api_client)
+    api_instance = cm_python_openapi_sdk.DashboardsApi(api_client)
     project_id = 'project_id_example' # str | Id of the project
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
@@ -263,14 +265,14 @@ Gets dashboard by id
 * Bearer Authentication (bearerAuth):
 
 ```python
-import openapi_client
-from openapi_client.models.dashboard_dto import DashboardDTO
-from openapi_client.rest import ApiException
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.dashboard_dto import DashboardDTO
+from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cm_python_openapi_sdk.Configuration(
     host = "https://staging.dev.clevermaps.io/rest"
 )
 
@@ -280,14 +282,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: bearerAuth
-configuration = openapi_client.Configuration(
+configuration = cm_python_openapi_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DashboardsApi(api_client)
+    api_instance = cm_python_openapi_sdk.DashboardsApi(api_client)
     project_id = 'project_id_example' # str | Id of the project
     id = 'id_example' # str | Id of the dashboard
 
@@ -333,7 +335,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_dashboard_by_id**
-> DashboardDTO update_dashboard_by_id(project_id, id, if_match, dashboard_dto)
+> DashboardDTO update_dashboard_by_id(project_id, id, if_match, dashboard_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Updates dashboard by id
 
@@ -344,14 +346,14 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 * Bearer Authentication (bearerAuth):
 
 ```python
-import openapi_client
-from openapi_client.models.dashboard_dto import DashboardDTO
-from openapi_client.rest import ApiException
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.dashboard_dto import DashboardDTO
+from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cm_python_openapi_sdk.Configuration(
     host = "https://staging.dev.clevermaps.io/rest"
 )
 
@@ -361,22 +363,23 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: bearerAuth
-configuration = openapi_client.Configuration(
+configuration = cm_python_openapi_sdk.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DashboardsApi(api_client)
+    api_instance = cm_python_openapi_sdk.DashboardsApi(api_client)
     project_id = 'project_id_example' # str | Id of the project
     id = 'id_example' # str | Id of the dashboard
     if_match = 'if_match_example' # str | ETag value used for conditional updates
-    dashboard_dto = openapi_client.DashboardDTO() # DashboardDTO | 
+    dashboard_dto = cm_python_openapi_sdk.DashboardDTO() # DashboardDTO | 
+    x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:
         # Updates dashboard by id
-        api_response = api_instance.update_dashboard_by_id(project_id, id, if_match, dashboard_dto)
+        api_response = api_instance.update_dashboard_by_id(project_id, id, if_match, dashboard_dto, x_can_strict_json_validation=x_can_strict_json_validation)
         print("The response of DashboardsApi->update_dashboard_by_id:\n")
         pprint(api_response)
     except Exception as e:
@@ -394,6 +397,7 @@ Name | Type | Description  | Notes
  **id** | **str**| Id of the dashboard | 
  **if_match** | **str**| ETag value used for conditional updates | 
  **dashboard_dto** | [**DashboardDTO**](DashboardDTO.md)|  | 
+ **x_can_strict_json_validation** | **bool**|  | [optional] [default to False]
 
 ### Return type
 

@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.cuzk_parcel_info_dto import CuzkParcelInfoDTO
+from cm_python_openapi_sdk.models.cuzk_parcel_info_dto import CuzkParcelInfoDTO
 
 class TestCuzkParcelInfoDTO(unittest.TestCase):
     """CuzkParcelInfoDTO unit test stubs"""

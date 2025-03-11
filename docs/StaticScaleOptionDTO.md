@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.static_scale_option_dto import StaticScaleOptionDTO
+from cm_python_openapi_sdk.models.static_scale_option_dto import StaticScaleOptionDTO
 
 # TODO update the JSON string below
 json = "{}"

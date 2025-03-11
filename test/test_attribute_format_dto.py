@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.attribute_format_dto import AttributeFormatDTO
+from cm_python_openapi_sdk.models.attribute_format_dto import AttributeFormatDTO
 
 class TestAttributeFormatDTO(unittest.TestCase):
     """AttributeFormatDTO unit test stubs"""

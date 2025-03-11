@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.view_content_dto import ViewContentDTO
+from cm_python_openapi_sdk.models.view_content_dto import ViewContentDTO
 
 class TestViewContentDTO(unittest.TestCase):
     """ViewContentDTO unit test stubs"""
@@ -55,32 +55,32 @@ class TestViewContentDTO(unittest.TestCase):
                     null
                     ],
                 variables = [
-                    openapi_client.models.variables_dto.VariablesDTO(
+                    cm_python_openapi_sdk.models.variables_dto.VariablesDTO(
                         type = 'variables', 
                         title = '0', 
                         variables = [
-                            openapi_client.models.variable_dto.VariableDTO(
+                            cm_python_openapi_sdk.models.variable_dto.VariableDTO(
                                 name = 'awat5ikwowtta-3mh2lcafqw3zhes', 
                                 title = '0', 
                                 min_value = 1.337, 
                                 max_value = 1.337, 
                                 default_value = 1.337, 
-                                format = openapi_client.models.format_dto.FormatDTO(
+                                format = cm_python_openapi_sdk.models.format_dto.FormatDTO(
                                     type = 'number', 
                                     fraction = 0, 
                                     symbol = '', ), )
                             ], )
                     ],
-                spatial_query = openapi_client.models.isochrone_dto.IsochroneDTO(
+                spatial_query = cm_python_openapi_sdk.models.isochrone_dto.IsochroneDTO(
                     lat = -180.0, 
                     lng = -180.0, 
                     profile = 'car', 
                     unit = 'time', 
                     amount = 1, 
-                    geometry = null, ),
+                    geometry = cm_python_openapi_sdk.models.geometry.geometry(), ),
                 fitness_groups = 3,
-                map_options = openapi_client.models.map_options_dto.MapOptionsDTO(
-                    center = openapi_client.models.center_dto.CenterDTO(
+                map_options = cm_python_openapi_sdk.models.map_options_dto.MapOptionsDTO(
+                    center = cm_python_openapi_sdk.models.center_dto.CenterDTO(
                         lat = 1.337, 
                         lng = 1.337, ), 
                     zoom = 56, 
@@ -88,44 +88,44 @@ class TestViewContentDTO(unittest.TestCase):
                     max_zoom = 56, 
                     tile_layer_menu = True, 
                     tile_layer = 'mapbox', 
-                    custom_tile_layer = openapi_client.models.map_options_dto_custom_tile_layer.MapOptionsDTO_customTileLayer(
+                    custom_tile_layer = cm_python_openapi_sdk.models.map_options_dto_custom_tile_layer.MapOptionsDTO_customTileLayer(
                         url = 'mapbox://styles/jUR,rZ#UM/?R,Fp^l6$ARj', 
                         access_token = '0', ), ),
-                map_context_menu = openapi_client.models.map_context_menu_dto.MapContextMenuDTO(
+                map_context_menu = cm_python_openapi_sdk.models.map_context_menu_dto.MapContextMenuDTO(
                     items = [
                         null
                         ], ),
                 exports = [
-                    openapi_client.models.export_link_dto.ExportLinkDTO(
+                    cm_python_openapi_sdk.models.export_link_dto.ExportLinkDTO(
                         export = '/rest/projects/8q6zgckec0l3o4gi/md/exports?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', )
                     ],
-                measure = openapi_client.models.measure_dto.MeasureDTO(
+                measure = cm_python_openapi_sdk.models.measure_dto.MeasureDTO(
                     type = 'line', 
                     points = [
-                        openapi_client.models.isochrone_dto.IsochroneDTO(
+                        cm_python_openapi_sdk.models.isochrone_dto.IsochroneDTO(
                             lat = -180.0, 
                             lng = -180.0, 
                             profile = 'car', 
                             unit = 'time', 
                             amount = 1, 
-                            geometry = null, )
+                            geometry = cm_python_openapi_sdk.models.geometry.geometry(), )
                         ], 
                     zones = [
-                        openapi_client.models.isochrone_dto.IsochroneDTO(
+                        cm_python_openapi_sdk.models.isochrone_dto.IsochroneDTO(
                             lat = -180.0, 
                             lng = -180.0, 
                             profile = 'car', 
                             unit = 'time', 
                             amount = 1, 
-                            geometry = null, )
+                            geometry = cm_python_openapi_sdk.models.geometry.geometry(), )
                         ], ),
-                default_selected = openapi_client.models.default_selected_dto.DefaultSelectedDTO(
+                default_selected = cm_python_openapi_sdk.models.default_selected_dto.DefaultSelectedDTO(
                     dataset = '/rest/projects/8q6zgckec0l3o4gi/md/datasets?name=lcafqw3zheseh16mckwqaot6282x4vh6wt7cgd04d0gu12zwv6v61pi05te5cj19uo1-vud_-tc_vbqgp4vj0u4t9xwduicwsc', 
                     ids = [
                         null
                         ], 
                     coordinates = [
-                        openapi_client.models.center_dto.CenterDTO(
+                        cm_python_openapi_sdk.models.center_dto.CenterDTO(
                             lat = 1.337, 
                             lng = 1.337, )
                         ], ),

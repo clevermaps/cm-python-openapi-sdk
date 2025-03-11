@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.mapycz_panorama_dto import MapyczPanoramaDTO
+from cm_python_openapi_sdk.models.mapycz_panorama_dto import MapyczPanoramaDTO
 
 class TestMapyczPanoramaDTO(unittest.TestCase):
     """MapyczPanoramaDTO unit test stubs"""

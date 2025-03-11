@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.default_values_single_select_dto import DefaultValuesSingleSelectDTO
+from cm_python_openapi_sdk.models.default_values_single_select_dto import DefaultValuesSingleSelectDTO
 
 class TestDefaultValuesSingleSelectDTO(unittest.TestCase):
     """DefaultValuesSingleSelectDTO unit test stubs"""

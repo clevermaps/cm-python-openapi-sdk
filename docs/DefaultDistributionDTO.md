@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.default_distribution_dto import DefaultDistributionDTO
+from cm_python_openapi_sdk.models.default_distribution_dto import DefaultDistributionDTO
 
 # TODO update the JSON string below
 json = "{}"

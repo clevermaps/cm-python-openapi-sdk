@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.map_context_menu_item_abstract_type import MapContextMenuItemAbstractType
+from cm_python_openapi_sdk.models.map_context_menu_item_abstract_type import MapContextMenuItemAbstractType
 
 # TODO update the JSON string below
 json = "{}"

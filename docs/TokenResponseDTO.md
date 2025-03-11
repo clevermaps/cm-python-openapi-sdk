@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.token_response_dto import TokenResponseDTO
+from cm_python_openapi_sdk.models.token_response_dto import TokenResponseDTO
 
 # TODO update the JSON string below
 json = "{}"

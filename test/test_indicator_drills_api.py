@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.api.indicator_drills_api import IndicatorDrillsApi
+from cm_python_openapi_sdk.api.indicator_drills_api import IndicatorDrillsApi
 
 
 class TestIndicatorDrillsApi(unittest.TestCase):

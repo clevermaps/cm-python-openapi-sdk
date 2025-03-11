@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.active_date_filter_dto import ActiveDateFilterDTO
+from cm_python_openapi_sdk.models.active_date_filter_dto import ActiveDateFilterDTO
 
 # TODO update the JSON string below
 json = "{}"

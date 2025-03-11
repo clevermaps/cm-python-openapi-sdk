@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.annotation_link_dto import AnnotationLinkDTO
+from cm_python_openapi_sdk.models.annotation_link_dto import AnnotationLinkDTO
 
 # TODO update the JSON string below
 json = "{}"

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.feature_attribute_dto import FeatureAttributeDTO
+from cm_python_openapi_sdk.models.feature_attribute_dto import FeatureAttributeDTO
 
 # TODO update the JSON string below
 json = "{}"

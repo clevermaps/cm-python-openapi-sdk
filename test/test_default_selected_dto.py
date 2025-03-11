@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.default_selected_dto import DefaultSelectedDTO
+from cm_python_openapi_sdk.models.default_selected_dto import DefaultSelectedDTO
 
 class TestDefaultSelectedDTO(unittest.TestCase):
     """DefaultSelectedDTO unit test stubs"""
@@ -40,7 +40,7 @@ class TestDefaultSelectedDTO(unittest.TestCase):
                     null
                     ],
                 coordinates = [
-                    openapi_client.models.center_dto.CenterDTO(
+                    cm_python_openapi_sdk.models.center_dto.CenterDTO(
                         lat = 1.337, 
                         lng = 1.337, )
                     ]

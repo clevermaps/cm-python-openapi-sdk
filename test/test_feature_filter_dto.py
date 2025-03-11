@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.feature_filter_dto import FeatureFilterDTO
+from cm_python_openapi_sdk.models.feature_filter_dto import FeatureFilterDTO
 
 class TestFeatureFilterDTO(unittest.TestCase):
     """FeatureFilterDTO unit test stubs"""

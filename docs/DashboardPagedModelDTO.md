@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.dashboard_paged_model_dto import DashboardPagedModelDTO
+from cm_python_openapi_sdk.models.dashboard_paged_model_dto import DashboardPagedModelDTO
 
 # TODO update the JSON string below
 json = "{}"

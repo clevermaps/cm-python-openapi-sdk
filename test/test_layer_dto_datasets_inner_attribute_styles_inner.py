@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.layer_dto_datasets_inner_attribute_styles_inner import LayerDTODatasetsInnerAttributeStylesInner
+from cm_python_openapi_sdk.models.layer_dto_datasets_inner_attribute_styles_inner import LayerDTODatasetsInnerAttributeStylesInner
 
 class TestLayerDTODatasetsInnerAttributeStylesInner(unittest.TestCase):
     """LayerDTODatasetsInnerAttributeStylesInner unit test stubs"""

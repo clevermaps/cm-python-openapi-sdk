@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.order_by_dto import OrderByDTO
+from cm_python_openapi_sdk.models.order_by_dto import OrderByDTO
 
 class TestOrderByDTO(unittest.TestCase):
     """OrderByDTO unit test stubs"""

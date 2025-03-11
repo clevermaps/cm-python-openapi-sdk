@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.map_content_dto_base_layer import MapContentDTOBaseLayer
+from cm_python_openapi_sdk.models.map_content_dto_base_layer import MapContentDTOBaseLayer
 
 # TODO update the JSON string below
 json = "{}"

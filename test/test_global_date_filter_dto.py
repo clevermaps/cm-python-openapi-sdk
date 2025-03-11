@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.global_date_filter_dto import GlobalDateFilterDTO
+from cm_python_openapi_sdk.models.global_date_filter_dto import GlobalDateFilterDTO
 
 class TestGlobalDateFilterDTO(unittest.TestCase):
     """GlobalDateFilterDTO unit test stubs"""

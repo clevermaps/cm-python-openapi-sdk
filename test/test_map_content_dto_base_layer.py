@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.map_content_dto_base_layer import MapContentDTOBaseLayer
+from cm_python_openapi_sdk.models.map_content_dto_base_layer import MapContentDTOBaseLayer
 
 class TestMapContentDTOBaseLayer(unittest.TestCase):
     """MapContentDTOBaseLayer unit test stubs"""

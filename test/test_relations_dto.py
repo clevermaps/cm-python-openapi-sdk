@@ -14,7 +14,7 @@
 
 import unittest
 
-from openapi_client.models.relations_dto import RelationsDTO
+from cm_python_openapi_sdk.models.relations_dto import RelationsDTO
 
 class TestRelationsDTO(unittest.TestCase):
     """RelationsDTO unit test stubs"""
