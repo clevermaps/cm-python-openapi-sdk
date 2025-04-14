@@ -16,7 +16,11 @@ Method | HTTP request | Description
 
 Create new invitation to the project for a user.
 
-User is specified by email address and invitation contains a project role.  **Security:** Restricted to ADMIN project role. 
+User is specified by email address and invitation contains a project role.
+
+**Security:**
+Restricted to ADMIN project role.
+
 
 ### Example
 
@@ -97,7 +101,12 @@ Name | Type | Description  | Notes
 
 Delete invitation.
 
-If an invitation has status `PENDING`, project Admin can cancel it by calling the `DELETE` method. Calling the `DELETE` method is equivalent to sending a `PUT` request with the status `CANCELED` as described above.  **Security:** Restricted to ADMIN project role. 
+If an invitation has status `PENDING`, project Admin can cancel it by calling the `DELETE` method.
+Calling the `DELETE` method is equivalent to sending a `PUT` request with the status `CANCELED` as described above.
+
+**Security:**
+Restricted to ADMIN project role.
+
 
 ### Example
 
@@ -177,7 +186,15 @@ Name | Type | Description  | Notes
 
 Get detail of an invitation.
 
-An invitation status value is one of: - PENDING - ACCEPTED - CANCELED - EXPIRED  **Security:** Restricted to ADMIN project role. 
+An invitation status value is one of:
+- PENDING
+- ACCEPTED
+- CANCELED
+- EXPIRED
+
+**Security:**
+Restricted to ADMIN project role.
+
 
 ### Example
 
@@ -257,7 +274,9 @@ Name | Type | Description  | Notes
 
 Get list of project invitations.
 
-**Security:** Restricted to ADMIN project role. 
+**Security:**
+Restricted to ADMIN project role.
+
 
 ### Example
 
@@ -343,7 +362,22 @@ Name | Type | Description  | Notes
 
 Update invitation.
 
-Cancel or resend project invitation. If an invitation has status `PENDING`, project Admin can cancel it. If the invitation has status `CANCELED`, `EXPIRED` or `PENDING`, user can activate it or resend the invitation email by PUTing the status `PENDING`.  Invitations with status `ACCEPTED` cannot be updated anymore.       **Allowed status transitions:**  | Original Status | PUT Request | New Status | |---------------|------------|------------| | CANCELED      | PENDING    | PENDING    | | EXPIRED      | PENDING    | PENDING    | | PENDING      | CANCELED   | CANCELED   |  **Security:** Restricted to ADMIN project role. 
+Cancel or resend project invitation. If an invitation has status `PENDING`, project Admin can cancel it.
+If the invitation has status `CANCELED`, `EXPIRED` or `PENDING`, user can activate it or resend the invitation email by PUTing the status `PENDING`.
+
+Invitations with status `ACCEPTED` cannot be updated anymore.
+
+**Allowed status transitions:**
+
+| Original Status | PUT Request | New Status |
+|---------------|------------|------------|
+| CANCELED      | PENDING    | PENDING    |
+| EXPIRED      | PENDING    | PENDING    |
+| PENDING      | CANCELED   | CANCELED   |
+
+**Security:**
+Restricted to ADMIN project role.
+
 
 ### Example
 

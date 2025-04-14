@@ -2,10 +2,10 @@
 name = "cm_python_openapi_sdk"
 version = "1.0.0"
 description = "clevermaps-client"
-authors = ["OpenAPI Generator Community <team@openapitools.org>"]
-license = "NoLicense"
+authors = ["CleverMaps, a.s. <support@clevermaps.io>"]
+license = "MIT"
 readme = "README.md"
-repository = "https://github.com/GIT_USER_ID/GIT_REPO_ID"
+repository = "https://github.com/clevermaps/cm-python-openapi-sdk"
 keywords = ["OpenAPI", "OpenAPI-Generator", "clevermaps-client"]
 include = ["cm_python_openapi_sdk/py.typed"]
 

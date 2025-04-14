@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **type** | **str** |  | 
-**content** | **List[object]** |  | 
+**content** | [**List[FunctionNtileContentInner]**](FunctionNtileContentInner.md) |  | 
 **options** | **object** |  | 
 
 ## Example

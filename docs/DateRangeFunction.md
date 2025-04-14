@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**function** | **object** |  | 
+**function** | [**DateRangeFunctionFunction**](DateRangeFunctionFunction.md) |  | 
 
 ## Example
 

@@ -4,15 +4,30 @@ All URIs are relative to *https://staging.dev.clevermaps.io/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_isochrone**](IsochroneApi.md#get_isochrone) | **GET** /isochrone | 
+[**get_isochrone**](IsochroneApi.md#get_isochrone) | **GET** /isochrone | Get isochrone
 
 
 # **get_isochrone**
 > IsochronePagedModelDTO get_isochrone(lat, lng, profile, unit, amount, size=size, page=page)
 
+Get isochrone
 
+Calculates a list of isochrones for the given point(s).
+An **isochrone** is a line that connects points of equal travel time around a given location.
+It can be calculated as:
 
-Calculates a list of isochrones for the given point(s).  An **isochrone** is a line that connects points of equal travel time around a given location.   It can be calculated as:    - **Travel Time-Based Isochrone**: Represents the area reachable within a specified amount of time.     Supported for the following travel modes:     - `car`     - `bike`     - `foot`    - **Distance-Based Isochrone**: Represents a circular area defined by a specified distance (in meters) from a point.     Supported for the `air` travel mode.  Endpoint accepts multiple points split by comma. For each point you must also define profile, unit and amount, split by comma. E.g. for two points - profile=foot,car unit=time,time amount=5.20 
+- **Travel Time-Based Isochrone**: Represents the area reachable within a specified amount of time.
+  Supported for the following travel modes:
+  - `car`
+  - `bike`
+  - `foot`
+
+- **Distance-Based Isochrone**: Represents a circular area defined by a specified distance (in meters) from a point.
+  Supported for the `air` travel mode.
+
+Endpoint accepts multiple points split by comma. For each point you must also define profile, unit and amount, split by comma.
+E.g. for two points - profile=foot,car unit=time,time amount=5.20
+
 
 ### Example
 
@@ -53,6 +68,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     page = 0 # int | Number of the page (optional) (default to 0)
 
     try:
+        # Get isochrone
         api_response = api_instance.get_isochrone(lat, lng, profile, unit, amount, size=size, page=page)
         print("The response of IsochroneApi->get_isochrone:\n")
         pprint(api_response)

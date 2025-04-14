@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dataset** | **str** |  | 
-**central_point** | [**FunctionDistanceOptionsCentralPoint**](FunctionDistanceOptionsCentralPoint.md) |  | 
+**central_point** | [**CentralPoint**](CentralPoint.md) |  | 
 
 ## Example
 

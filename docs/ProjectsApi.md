@@ -95,7 +95,9 @@ Name | Type | Description  | Notes
 
 Delete project.
 
-**Security:** Restricted to ADMIN project role. 
+**Security:**
+Restricted to ADMIN project role.
+
 
 ### Example
 
@@ -170,7 +172,9 @@ void (empty response body)
 
 Get list of projects for authenticated account.
 
-**Security:** Resource returns only those projects where the authenticated user is a member. 
+**Security:**
+Resource returns only those projects where the authenticated user is a member.
+
 
 ### Example
 
@@ -258,7 +262,9 @@ Name | Type | Description  | Notes
 
 Get project by given project id.
 
-**Security:** Access is restricted only to users that are members of given project. 
+**Security:**
+Access is restricted only to users that are members of given project.
+
 
 ### Example
 
@@ -338,7 +344,9 @@ Name | Type | Description  | Notes
 
 Update the project.
 
-**Security:** Restricted to ADMIN project role. 
+**Security:**
+Restricted to ADMIN project role.
+
 
 ### Example
 

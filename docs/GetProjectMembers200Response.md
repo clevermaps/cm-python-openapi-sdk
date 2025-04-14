@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **role** | **str** |  | 
 **created_at** | **str** |  | [optional] 
 **modified_at** | **str** |  | [optional] 
-**account** | **object** |  | [optional] 
+**account** | [**AccountDTO**](AccountDTO.md) |  | [optional] 
 
 ## Example
 

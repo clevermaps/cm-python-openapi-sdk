@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | [optional] 
 **type** | **str** |  | 
 **content** | [**List[DwhQueryNumberType]**](DwhQueryNumberType.md) |  | 
-**options** | [**FunctionDateTruncOptions**](FunctionDateTruncOptions.md) |  | 
+**options** | [**FunctionDateTruncateOptions**](FunctionDateTruncateOptions.md) |  | 
 
 ## Example
 

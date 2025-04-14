@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**range** | **List[Optional[float]]** |  | [optional] 
+**range** | **List[float]** |  | [optional] 
 **breaks** | **List[float]** |  | [optional] 
 **display_intervals** | **List[float]** |  | [optional] 
 

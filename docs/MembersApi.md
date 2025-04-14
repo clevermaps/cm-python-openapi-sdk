@@ -16,7 +16,12 @@ Method | HTTP request | Description
 
 Add new project member and assign a role.
 
-The user is added into the project without any cooperation (acknowledgement) with invited user.  See the Project Invitation resource too. It allows to invite a new member by email address and sends an invitation email.  **Security:** Restricted to ADMIN project role. 
+The user is added into the project without any cooperation (acknowledgement) with invited user.
+See the Project Invitation resource too. It allows to invite a new member by email address and sends an invitation email.
+
+**Security:**
+Restricted to ADMIN project role.
+
 
 ### Example
 
@@ -97,7 +102,11 @@ Name | Type | Description  | Notes
 
 Deletes membership of user in project.
 
-The user will be not able to access the project anymore.  **Security:** Restricted to ADMIN project role. 
+The user will be not able to access the project anymore.
+
+**Security:**
+Restricted to ADMIN project role.
+
 
 ### Example
 
@@ -166,7 +175,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | Membership was successfully deleted |  -  |
-**400** | Code 400005 means delete of the last project ADMIN denied. There always needs to be at least one user in ADMIN role in each project. |  -  |
+**400** | Deletion of the last project ADMIN denied. There always needs to be at least one user in ADMIN role in each project. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -175,7 +184,9 @@ void (empty response body)
 
 Get detail of user membership in project by membership id.
 
-**Security:** Restricted to ADMIN project role. 
+**Security:**
+Restricted to ADMIN project role.
+
 
 ### Example
 
@@ -255,7 +266,14 @@ Name | Type | Description  | Notes
 
 Get list of project members.
 
-See list of user role: https://docs.clevermaps.io/docs/projects-and-users#UserrolesandPermissions-Userroles  **Security:** Restricted to ADMIN project role, unless `accountId` is provided. See Constraints for more info  Constraints: - If `accountId` is provided, other query parameters (`size`, `sort`, etc.) must NOT be used. Also endpoint will return single member. 
+See list of user role: https://docs.clevermaps.io/docs/projects-and-users#UserrolesandPermissions-Userroles
+
+**Security:**
+Restricted to ADMIN project role, unless `accountId` is provided. See Constraints for more info
+
+Constraints:
+- If `accountId` is provided, other query parameters (`size`, `sort`, etc.) must NOT be used. Also endpoint will return single member.
+
 
 ### Example
 
@@ -343,7 +361,9 @@ Name | Type | Description  | Notes
 
 Update membership by changing role or status in project.
 
-**Security:** Restricted to ADMIN project role. 
+**Security:**
+Restricted to ADMIN project role.
+
 
 ### Example
 
@@ -418,7 +438,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful update |  -  |
-**400** | Code 400005 means update of the last project ADMIN denied. There always needs to be at least one user in ADMIN role in each project. |  -  |
+**400** | Update of the last project ADMIN denied. There always needs to be at least one user in ADMIN role in each project. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

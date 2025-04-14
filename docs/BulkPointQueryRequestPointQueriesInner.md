@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **query_id** | **str** |  | [optional] 
 **type** | **str** |  | 
-**options** | [**BulkPointQueryRequestPointQueriesInnerOptions**](BulkPointQueryRequestPointQueriesInnerOptions.md) |  | [optional] 
+**options** | [**BulkPointQueryPointQueriesOptionNearest**](BulkPointQueryPointQueriesOptionNearest.md) |  | 
 **dataset** | **str** |  | 
 **execution_content** | **object** |  | [optional] 
 **properties** | **List[object]** |  | [optional] 
