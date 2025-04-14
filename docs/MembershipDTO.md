@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **role** | **str** |  | 
 **created_at** | **str** |  | [optional] 
 **modified_at** | **str** |  | [optional] 
-**account** | **object** |  | [optional] 
+**account** | [**AccountDTO**](AccountDTO.md) |  | [optional] 
 **links** | **List[object]** | define keys links and page that are mandatory for all pageble responses | [optional] 
 
 ## Example

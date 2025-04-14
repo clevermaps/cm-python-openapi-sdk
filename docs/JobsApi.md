@@ -4,17 +4,25 @@ All URIs are relative to *https://staging.dev.clevermaps.io/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_job_status**](JobsApi.md#get_job_status) | **GET** /jobs/{jobId} | 
-[**get_jobs_history**](JobsApi.md#get_jobs_history) | **GET** /jobs/history | 
-[**submit_job_execution**](JobsApi.md#submit_job_execution) | **POST** /jobs | 
+[**get_job_status**](JobsApi.md#get_job_status) | **GET** /jobs/{jobId} | Get job status
+[**get_jobs_history**](JobsApi.md#get_jobs_history) | **GET** /jobs/history | Get jobs history
+[**submit_job_execution**](JobsApi.md#submit_job_execution) | **POST** /jobs | Submit job execution
 
 
 # **get_job_status**
 > JobDetailResponse get_job_status(job_id, type)
 
+Get job status
 
+Checks the current status of a given job.
 
-Checks the current status of a given job.  ### Job Statuses - **RUNNING**: The job is currently running or waiting in the queue. - **SUCCEEDED**: The job was successfully processed. - **FAILED**: The job execution failed. - **TIMED_OUT**: The job execution exceeded the allowed time limit. - **ABORTED**: The job execution was manually or systemically aborted. 
+### Job Statuses
+- **RUNNING**: The job is currently running or waiting in the queue.
+- **SUCCEEDED**: The job was successfully processed.
+- **FAILED**: The job execution failed.
+- **TIMED_OUT**: The job execution exceeded the allowed time limit.
+- **ABORTED**: The job execution was manually or systemically aborted.
+
 
 ### Example
 
@@ -50,6 +58,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     type = 'dataDump' # str | Jobs type
 
     try:
+        # Get job status
         api_response = api_instance.get_job_status(job_id, type)
         print("The response of JobsApi->get_job_status:\n")
         pprint(api_response)
@@ -89,11 +98,21 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_jobs_history**
-> JobHistoryPagedModelDTO get_jobs_history(project_id, account_id=account_id, type=type, dataset=dataset, last_evaluated_timestamp=last_evaluated_timestamp, size=size, sort_direction=sort_direction)
+> JobHistoryPagedModelDTO get_jobs_history(project_id, account_id=account_id, sort_direction=sort_direction, last_evaluated_timestamp=last_evaluated_timestamp, type=type, dataset=dataset)
 
+Get jobs history
 
+Retrieves the job history for a project.
 
-Retrieves the job history for a project.  ### Supported Job Types - **dataPull**: Loads a CSV file into a dataset. - **dataDump**: Dumps a dataset to a CSV file. - **export**: Executes a DWH query and exports the result as a CSV file. - **bulkPointQuery**: Executes DWH queries for a given list of points (latitude, longitude). - **validate**: Validates the project. - **truncate**: Truncates the project's data, dropping all DWH, metadata, and full-text search data. - **importProject**: Imports a project into another one (server-side cloning). 
+### Supported Job Types
+- **dataPull**: Loads a CSV file into a dataset.
+- **dataDump**: Dumps a dataset to a CSV file.
+- **export**: Executes a DWH query and exports the result as a CSV file.
+- **bulkPointQuery**: Executes DWH queries for a given list of points (latitude, longitude).
+- **validate**: Validates the project.
+- **truncate**: Truncates the project's data, dropping all DWH, metadata, and full-text search data.
+- **importProject**: Imports a project into another one (server-side cloning).
+
 
 ### Example
 
@@ -125,16 +144,16 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.JobsApi(api_client)
-    project_id = 'vb2b3d8v91jao331' # str | projectId for which to retrieve jobs history
-    account_id = '00ubfu6dpmnTMIQKs0h7' # str | AccountId that started the job executions (optional)
+    project_id = 'project_id_example' # str | Id of the project, used as query parameter
+    account_id = 'account_id_example' # str | Id of the account, used in query parameters (optional)
+    sort_direction = 'ASC' # str | Sort direction (optional)
+    last_evaluated_timestamp = '2020-11-18T08:39:56,199' # str | Last evaluated timestamp when requesting next page (UTC timestamp format) (optional)
     type = 'export' # str | Jobs type (optional)
     dataset = 'dataset_example' # str |  (optional)
-    last_evaluated_timestamp = '2020-11-18T08:39:56,199' # str | Last evaluated timestamp when requesting next page (UTC timestamp format) (optional)
-    size = 100 # int | The count of records to return for one page (optional) (default to 100)
-    sort_direction = 'ASC' # str | Sort direction (optional)
 
     try:
-        api_response = api_instance.get_jobs_history(project_id, account_id=account_id, type=type, dataset=dataset, last_evaluated_timestamp=last_evaluated_timestamp, size=size, sort_direction=sort_direction)
+        # Get jobs history
+        api_response = api_instance.get_jobs_history(project_id, account_id=account_id, sort_direction=sort_direction, last_evaluated_timestamp=last_evaluated_timestamp, type=type, dataset=dataset)
         print("The response of JobsApi->get_jobs_history:\n")
         pprint(api_response)
     except Exception as e:
@@ -148,13 +167,12 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **project_id** | **str**| projectId for which to retrieve jobs history | 
- **account_id** | **str**| AccountId that started the job executions | [optional] 
+ **project_id** | **str**| Id of the project, used as query parameter | 
+ **account_id** | **str**| Id of the account, used in query parameters | [optional] 
+ **sort_direction** | **str**| Sort direction | [optional] 
+ **last_evaluated_timestamp** | **str**| Last evaluated timestamp when requesting next page (UTC timestamp format) | [optional] 
  **type** | **str**| Jobs type | [optional] 
  **dataset** | **str**|  | [optional] 
- **last_evaluated_timestamp** | **str**| Last evaluated timestamp when requesting next page (UTC timestamp format) | [optional] 
- **size** | **int**| The count of records to return for one page | [optional] [default to 100]
- **sort_direction** | **str**| Sort direction | [optional] 
 
 ### Return type
 
@@ -180,9 +198,25 @@ Name | Type | Description  | Notes
 # **submit_job_execution**
 > JobDetailResponse submit_job_execution(submit_job_execution_request)
 
+Submit job execution
 
+Starts the execution of a new project task. Tasks are processed asynchronously, and all jobs are added to a queue.
 
-Starts the execution of a new project task. Tasks are processed asynchronously, and all jobs are added to a queue.  ### Supported Job Types - **dataPull**: Loads a CSV file into a dataset. - **dataDump**: Dumps a dataset to a CSV file. - **export**: Executes a DWH query and exports the result as a CSV file. - **bulkPointQuery**: Executes DWH queries for a given list of points (latitude, longitude); limited to 1,000 points per request. - **validate**: Validates the project. - **truncate**: Truncates the project's data, dropping all DWH, metadata, and full-text search data. - **importProject**: Imports a project into another one (server-side cloning).  ### Security - **dataPull, importProject**: Requires `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles. - **dataDump, truncate**: Requires the `ADMIN` project role. - **export, bulkPointQuery**: Requires `VIEWER`, `VIEW_CREATOR`, `METADATA_EDITOR`, `DATA_EDITOR`, `VIEW_CREATOR`, or `ADMIN` project roles. - **validate**: Requires `METADATA_EDITOR`, `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles. 
+### Supported Job Types
+- **dataPull**: Loads a CSV file into a dataset.
+- **dataDump**: Dumps a dataset to a CSV file.
+- **export**: Executes a DWH query and exports the result as a CSV file.
+- **bulkPointQuery**: Executes DWH queries for a given list of points (latitude, longitude); limited to 1,000 points per request.
+- **validate**: Validates the project.
+- **truncate**: Truncates the project's data, dropping all DWH, metadata, and full-text search data.
+- **importProject**: Imports a project into another one (server-side cloning).
+
+### Security
+- **dataPull, importProject**: Requires `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles.
+- **dataDump, truncate**: Requires the `ADMIN` project role.
+- **export, bulkPointQuery**: Requires `VIEWER`, `VIEW_CREATOR`, `METADATA_EDITOR`, `DATA_EDITOR`, `VIEW_CREATOR`, or `ADMIN` project roles.
+- **validate**: Requires `METADATA_EDITOR`, `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles.
+
 
 ### Example
 
@@ -218,6 +252,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     submit_job_execution_request = cm_python_openapi_sdk.SubmitJobExecutionRequest() # SubmitJobExecutionRequest | Successful response
 
     try:
+        # Submit job execution
         api_response = api_instance.submit_job_execution(submit_job_execution_request)
         print("The response of JobsApi->submit_job_execution:\n")
         pprint(api_response)

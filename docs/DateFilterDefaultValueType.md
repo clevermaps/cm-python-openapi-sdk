@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **value** | **str** |  | 
-**function** | **object** |  | 
+**function** | [**DateRangeFunctionFunction**](DateRangeFunctionFunction.md) |  | 
 
 ## Example
 

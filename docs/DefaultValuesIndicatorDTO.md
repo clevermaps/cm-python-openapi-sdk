@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**values** | **List[Optional[float]]** |  | [optional] 
+**values** | **List[float]** |  | [optional] 
 **breaks** | **List[float]** |  | [optional] 
 **display_intervals** | **List[int]** |  | [optional] 
 **granularity** | **str** |  | [optional] 

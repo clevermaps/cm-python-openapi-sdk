@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**values** | **List[Optional[float]]** |  | [optional] 
+**values** | **List[float]** |  | [optional] 
 **null_filtered** | **bool** |  | [optional] 
 
 ## Example

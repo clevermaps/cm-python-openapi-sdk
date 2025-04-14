@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **account_id** | **str** |  | 
-**filters** | **List[object]** |  | 
+**filters** | [**List[FilterBy]**](FilterBy.md) |  | 
 
 ## Example
 

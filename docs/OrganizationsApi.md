@@ -16,7 +16,9 @@ Method | HTTP request | Description
 
 Creates a new organization.
 
-**Security:** Creating of organization is restricted to CleverMaps platform administrators. 
+**Security:**
+Creating of organization is restricted to CleverMaps platform administrators.
+
 
 ### Example
 
@@ -95,7 +97,9 @@ Name | Type | Description  | Notes
 
 Delete an organization.
 
-**Security:** Deleting of organization is restricted to CleverMaps platform administrators. 
+**Security:**
+Deleting of organization is restricted to CleverMaps platform administrators.
+
 
 ### Example
 
@@ -326,7 +330,9 @@ Name | Type | Description  | Notes
 
 Update organization.
 
-**Security:** Updating of organization is restricted to CleverMaps platform administrators. 
+**Security:**
+Updating of organization is restricted to CleverMaps platform administrators.
+
 
 ### Example
 
