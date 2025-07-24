@@ -36,7 +36,7 @@ class TestTokenRequestDTO(unittest.TestCase):
         model = TokenRequestDTO()
         if include_optional:
             return TokenRequestDTO(
-                refresh_token = 'z01234567891011121314151617181920212223242526272829'
+                refresh_token = '2'
             )
         else:
             return TokenRequestDTO(

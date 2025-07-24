@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from cm_python_openapi_sdk.models.data_source_dto import DataSourceDTO
-from cm_python_openapi_sdk.models.mandatory_keys_for_pagable_response import MandatoryKeysForPagableResponse
+from cm_python_openapi_sdk.models.page_dto import PageDTO
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +31,7 @@ class DataSourcePagedModelDTO(BaseModel):
     """ # noqa: E501
     content: Optional[List[DataSourceDTO]] = None
     links: Optional[List[Dict[str, Any]]] = Field(default=None, description="define keys links and page that are mandatory for all pageble responses")
-    page: Optional[MandatoryKeysForPagableResponse] = None
+    page: Optional[PageDTO] = None
     __properties: ClassVar[List[str]] = ["content", "links", "page"]
 
     model_config = ConfigDict(
@@ -97,7 +97,7 @@ class DataSourcePagedModelDTO(BaseModel):
         _obj = cls.model_validate({
             "content": [DataSourceDTO.from_dict(_item) for _item in obj["content"]] if obj.get("content") is not None else None,
             "links": obj.get("links"),
-            "page": MandatoryKeysForPagableResponse.from_dict(obj["page"]) if obj.get("page") is not None else None
+            "page": PageDTO.from_dict(obj["page"]) if obj.get("page") is not None else None
         })
         return _obj
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **var_property** | **str** |  | [optional] 
 **value** | **object** |  | [optional] 
-**function** | [**DwhQueryPropertyTypes**](DwhQueryPropertyTypes.md) |  | [optional] 
+**function** | [**DwhQueryPropertyTypesFilterComp**](DwhQueryPropertyTypesFilterComp.md) |  | [optional] 
 **operator** | **str** |  | 
 
 ## Example

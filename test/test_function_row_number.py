@@ -41,7 +41,7 @@ class TestFunctionRowNumber(unittest.TestCase):
                 content = [
                     null
                     ],
-                options = None
+                options = cm_python_openapi_sdk.models.options.options()
             )
         else:
             return FunctionRowNumber(
@@ -49,7 +49,7 @@ class TestFunctionRowNumber(unittest.TestCase):
                 content = [
                     null
                     ],
-                options = None,
+                options = cm_python_openapi_sdk.models.options.options(),
         )
         """
 

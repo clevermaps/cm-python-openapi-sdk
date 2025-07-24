@@ -22,8 +22,8 @@ from typing import Optional
 from typing_extensions import Annotated
 from cm_python_openapi_sdk.models.create_membership_dto import CreateMembershipDTO
 from cm_python_openapi_sdk.models.get_project_members200_response import GetProjectMembers200Response
-from cm_python_openapi_sdk.models.membership_dto import MembershipDTO
-from cm_python_openapi_sdk.models.update_membership import UpdateMembership
+from cm_python_openapi_sdk.models.membership_response_dto import MembershipResponseDTO
+from cm_python_openapi_sdk.models.update_membership_dto import UpdateMembershipDTO
 
 from cm_python_openapi_sdk.api_client import ApiClient, RequestSerialized
 from cm_python_openapi_sdk.api_response import ApiResponse
@@ -60,10 +60,10 @@ class MembersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> MembershipDTO:
+    ) -> MembershipResponseDTO:
         """Add new project member and assign a role.
 
-        The user is added into the project without any cooperation (acknowledgement) with invited user. See the Project Invitation resource too. It allows to invite a new member by email address and sends an invitation email.  **Security:** Restricted to ADMIN project role. 
+        The user is added into the project without any cooperation (acknowledgement) with invited user. You can add user by accountId or email.  See the Project Invitation resource too. It allows to invite a new member by email address and sends an invitation email.  **Security:** Restricted to ADMIN project role. 
 
         :param project_id: Id of the project (required)
         :type project_id: str
@@ -101,7 +101,7 @@ class MembersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MembershipDTO",
+            '200': "MembershipResponseDTO",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -131,10 +131,10 @@ class MembersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[MembershipDTO]:
+    ) -> ApiResponse[MembershipResponseDTO]:
         """Add new project member and assign a role.
 
-        The user is added into the project without any cooperation (acknowledgement) with invited user. See the Project Invitation resource too. It allows to invite a new member by email address and sends an invitation email.  **Security:** Restricted to ADMIN project role. 
+        The user is added into the project without any cooperation (acknowledgement) with invited user. You can add user by accountId or email.  See the Project Invitation resource too. It allows to invite a new member by email address and sends an invitation email.  **Security:** Restricted to ADMIN project role. 
 
         :param project_id: Id of the project (required)
         :type project_id: str
@@ -172,7 +172,7 @@ class MembersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MembershipDTO",
+            '200': "MembershipResponseDTO",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -205,7 +205,7 @@ class MembersApi:
     ) -> RESTResponseType:
         """Add new project member and assign a role.
 
-        The user is added into the project without any cooperation (acknowledgement) with invited user. See the Project Invitation resource too. It allows to invite a new member by email address and sends an invitation email.  **Security:** Restricted to ADMIN project role. 
+        The user is added into the project without any cooperation (acknowledgement) with invited user. You can add user by accountId or email.  See the Project Invitation resource too. It allows to invite a new member by email address and sends an invitation email.  **Security:** Restricted to ADMIN project role. 
 
         :param project_id: Id of the project (required)
         :type project_id: str
@@ -243,7 +243,7 @@ class MembersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MembershipDTO",
+            '200': "MembershipResponseDTO",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -621,7 +621,7 @@ class MembersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> MembershipDTO:
+    ) -> MembershipResponseDTO:
         """Get detail of user membership in project by membership id.
 
         **Security:** Restricted to ADMIN project role. 
@@ -662,7 +662,7 @@ class MembersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MembershipDTO",
+            '200': "MembershipResponseDTO",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -692,7 +692,7 @@ class MembersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[MembershipDTO]:
+    ) -> ApiResponse[MembershipResponseDTO]:
         """Get detail of user membership in project by membership id.
 
         **Security:** Restricted to ADMIN project role. 
@@ -733,7 +733,7 @@ class MembersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MembershipDTO",
+            '200': "MembershipResponseDTO",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -804,7 +804,7 @@ class MembersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MembershipDTO",
+            '200': "MembershipResponseDTO",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -1231,7 +1231,7 @@ class MembersApi:
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project")],
         membership_id: Annotated[str, Field(strict=True, description="Id of the membership")],
-        update_membership: UpdateMembership,
+        update_membership_dto: UpdateMembershipDTO,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1244,7 +1244,7 @@ class MembersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> MembershipDTO:
+    ) -> MembershipResponseDTO:
         """Update membership by changing role or status in project.
 
         **Security:** Restricted to ADMIN project role. 
@@ -1253,8 +1253,8 @@ class MembersApi:
         :type project_id: str
         :param membership_id: Id of the membership (required)
         :type membership_id: str
-        :param update_membership: (required)
-        :type update_membership: UpdateMembership
+        :param update_membership_dto: (required)
+        :type update_membership_dto: UpdateMembershipDTO
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1280,7 +1280,7 @@ class MembersApi:
         _param = self._update_membership_serialize(
             project_id=project_id,
             membership_id=membership_id,
-            update_membership=update_membership,
+            update_membership_dto=update_membership_dto,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1288,7 +1288,7 @@ class MembersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MembershipDTO",
+            '200': "MembershipResponseDTO",
             '400': None,
         }
         response_data = self.api_client.call_api(
@@ -1307,7 +1307,7 @@ class MembersApi:
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project")],
         membership_id: Annotated[str, Field(strict=True, description="Id of the membership")],
-        update_membership: UpdateMembership,
+        update_membership_dto: UpdateMembershipDTO,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1320,7 +1320,7 @@ class MembersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[MembershipDTO]:
+    ) -> ApiResponse[MembershipResponseDTO]:
         """Update membership by changing role or status in project.
 
         **Security:** Restricted to ADMIN project role. 
@@ -1329,8 +1329,8 @@ class MembersApi:
         :type project_id: str
         :param membership_id: Id of the membership (required)
         :type membership_id: str
-        :param update_membership: (required)
-        :type update_membership: UpdateMembership
+        :param update_membership_dto: (required)
+        :type update_membership_dto: UpdateMembershipDTO
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1356,7 +1356,7 @@ class MembersApi:
         _param = self._update_membership_serialize(
             project_id=project_id,
             membership_id=membership_id,
-            update_membership=update_membership,
+            update_membership_dto=update_membership_dto,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1364,7 +1364,7 @@ class MembersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MembershipDTO",
+            '200': "MembershipResponseDTO",
             '400': None,
         }
         response_data = self.api_client.call_api(
@@ -1383,7 +1383,7 @@ class MembersApi:
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project")],
         membership_id: Annotated[str, Field(strict=True, description="Id of the membership")],
-        update_membership: UpdateMembership,
+        update_membership_dto: UpdateMembershipDTO,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1405,8 +1405,8 @@ class MembersApi:
         :type project_id: str
         :param membership_id: Id of the membership (required)
         :type membership_id: str
-        :param update_membership: (required)
-        :type update_membership: UpdateMembership
+        :param update_membership_dto: (required)
+        :type update_membership_dto: UpdateMembershipDTO
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1432,7 +1432,7 @@ class MembersApi:
         _param = self._update_membership_serialize(
             project_id=project_id,
             membership_id=membership_id,
-            update_membership=update_membership,
+            update_membership_dto=update_membership_dto,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1440,7 +1440,7 @@ class MembersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MembershipDTO",
+            '200': "MembershipResponseDTO",
             '400': None,
         }
         response_data = self.api_client.call_api(
@@ -1454,7 +1454,7 @@ class MembersApi:
         self,
         project_id,
         membership_id,
-        update_membership,
+        update_membership_dto,
         _request_auth,
         _content_type,
         _headers,
@@ -1484,8 +1484,8 @@ class MembersApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if update_membership is not None:
-            _body_params = update_membership
+        if update_membership_dto is not None:
+            _body_params = update_membership_dto
 
 
         # set the HTTP header `Accept`

@@ -55,6 +55,13 @@ class TestDataPermissionsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_data_permission_by_name(self) -> None:
+        """Test case for get_data_permission_by_name
+
+        Gets data permission by name
+        """
+        pass
+
     def test_update_data_permission_by_id(self) -> None:
         """Test case for update_data_permission_by_id
 

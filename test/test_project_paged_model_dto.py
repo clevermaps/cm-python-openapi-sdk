@@ -40,7 +40,7 @@ class TestProjectPagedModelDTO(unittest.TestCase):
                     None
                     ],
                 content = [
-                    {organizationId=organizationId, createdAt=createdAt, modifiedAt=modifiedAt, description=description, share=PRIVATE, links=[{}, {}], id=id, membership={accountId=accountId, createdAt=createdAt, role=ANONYMOUS, modifiedAt=modifiedAt, links=[{}, {}], id=id, account={preferences={sendNewsletter=true, lastActiveOrganization=lastActiveOrganization, language=language, lastActiveProject=lastActiveProject}, phoneNumber=phoneNumber, requireAdditionalAttributes=true, fullName=fullName, anonymous=true, onboarding={introShown=[introShown, introShown], tipsShown=[tipsShown, tipsShown]}, links=[{}, {}], id=id, consentGranted=true, jobInfo={companyName=companyName, industry=industry, jobPosition=jobPosition}, email=email, status=ENABLED}, status=ENABLED}, services={}, title=title, status=ENABLED}
+                    {organizationId=organizationId, createdAt=createdAt, modifiedAt=modifiedAt, description=description, share=PRIVATE, links=[{}, {}], id=id, membership={accountId=accountId, createdAt=createdAt, role=ANONYMOUS, modifiedAt=modifiedAt, links=[{}, {}], id=id, account={preferences={sendNewsletter=true, lastActiveOrganization=lastActiveOrganization, language=language, lastActiveProject=lastActiveProject}, phoneNumber=phoneNumber, fullName=fullName, anonymous=true, onboarding={introShown=[introShown, introShown], tipsShown=[tipsShown, tipsShown]}, links=[{}, {}], id=id, consentGranted=true, email=email, status=ENABLED}, status=ENABLED}, services={dwh=dwh, md=md, kbc=kbc}, title=title, status=ENABLED}
                     ],
                 page = {number=1, size=0, totalPages=6, totalElements=}
             )

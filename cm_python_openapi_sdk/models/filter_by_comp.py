@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from cm_python_openapi_sdk.models.dwh_query_property_types import DwhQueryPropertyTypes
+from cm_python_openapi_sdk.models.dwh_query_property_types_filter_comp import DwhQueryPropertyTypesFilterComp
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +31,7 @@ class FilterByComp(BaseModel):
     """ # noqa: E501
     var_property: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, alias="property")
     value: Optional[Any] = None
-    function: Optional[DwhQueryPropertyTypes] = None
+    function: Optional[DwhQueryPropertyTypesFilterComp] = None
     operator: StrictStr
     __properties: ClassVar[List[str]] = ["property", "value", "function", "operator"]
 
@@ -113,7 +113,7 @@ class FilterByComp(BaseModel):
         _obj = cls.model_validate({
             "property": obj.get("property"),
             "value": obj.get("value"),
-            "function": DwhQueryPropertyTypes.from_dict(obj["function"]) if obj.get("function") is not None else None,
+            "function": DwhQueryPropertyTypesFilterComp.from_dict(obj["function"]) if obj.get("function") is not None else None,
             "operator": obj.get("operator")
         })
         return _obj

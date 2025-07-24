@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **content** | [**List[QueryResponseItemWrapper]**](QueryResponseItemWrapper.md) |  | 
 **execution_detail** | [**ExecutionDetail**](ExecutionDetail.md) |  | [optional] 
 **links** | **List[object]** | define keys links and page that are mandatory for all pageble responses | 
-**page** | [**MandatoryKeysForPagableResponse**](MandatoryKeysForPagableResponse.md) |  | 
+**page** | [**PageDTO**](PageDTO.md) |  | 
 
 ## Example
 

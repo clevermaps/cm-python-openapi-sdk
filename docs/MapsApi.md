@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**delete_map_by_id**](MapsApi.md#delete_map_by_id) | **DELETE** /projects/{projectId}/md/maps/{id} | Deletes map by id
 [**get_all_maps**](MapsApi.md#get_all_maps) | **GET** /projects/{projectId}/md/maps | Returns paged collection of all Maps in a project.
 [**get_map_by_id**](MapsApi.md#get_map_by_id) | **GET** /projects/{projectId}/md/maps/{id} | Gets map by id
+[**get_map_by_name**](MapsApi.md#get_map_by_name) | **GET** /projects/{projectId}/md/maps/{name} | Gets map by name
 [**update_map_by_id**](MapsApi.md#update_map_by_id) | **PUT** /projects/{projectId}/md/maps/{id} | Updates map by id
 
 
 # **create_map**
-> MapDTO create_map(project_id, map_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> MapResponseDTO create_map(project_id, map_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Creates new Map.
 
@@ -25,6 +26,7 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.map_dto import MapDTO
+from cm_python_openapi_sdk.models.map_response_dto import MapResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -74,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MapDTO**](MapDTO.md)
+[**MapResponseDTO**](MapResponseDTO.md)
 
 ### Authorization
 
@@ -256,7 +258,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_map_by_id**
-> MapDTO get_map_by_id(project_id, id)
+> MapResponseDTO get_map_by_id(project_id, id)
 
 Gets map by id
 
@@ -266,7 +268,7 @@ Gets map by id
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.map_dto import MapDTO
+from cm_python_openapi_sdk.models.map_response_dto import MapResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -314,7 +316,86 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MapDTO**](MapDTO.md)
+[**MapResponseDTO**](MapResponseDTO.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+**404** | Map not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_map_by_name**
+> MapResponseDTO get_map_by_name(project_id, name)
+
+Gets map by name
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+
+```python
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.map_response_dto import MapResponseDTO
+from cm_python_openapi_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cm_python_openapi_sdk.Configuration(
+    host = "https://staging.dev.clevermaps.io/rest"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = cm_python_openapi_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cm_python_openapi_sdk.MapsApi(api_client)
+    project_id = 'project_id_example' # str | Id of the project
+    name = 'name_example' # str | Name of the map
+
+    try:
+        # Gets map by name
+        api_response = api_instance.get_map_by_name(project_id, name)
+        print("The response of MapsApi->get_map_by_name:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MapsApi->get_map_by_name: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **str**| Id of the project | 
+ **name** | **str**| Name of the map | 
+
+### Return type
+
+[**MapResponseDTO**](MapResponseDTO.md)
 
 ### Authorization
 
@@ -335,7 +416,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_map_by_id**
-> MapDTO update_map_by_id(project_id, id, if_match, map_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> MapResponseDTO update_map_by_id(project_id, id, if_match, map_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Updates map by id
 
@@ -348,6 +429,7 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.map_dto import MapDTO
+from cm_python_openapi_sdk.models.map_response_dto import MapResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -401,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MapDTO**](MapDTO.md)
+[**MapResponseDTO**](MapResponseDTO.md)
 
 ### Authorization
 

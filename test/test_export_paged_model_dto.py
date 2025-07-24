@@ -37,7 +37,7 @@ class TestExportPagedModelDTO(unittest.TestCase):
         if include_optional:
             return ExportPagedModelDTO(
                 content = [
-                    {name=name, description=description, id=id, type=dataset, title=title, content={output={filename=filename, format=csv, header=basic, type=file}, properties=[properties, properties]}}
+                    {name=name, description=description, links=[{}, {}], id=id, page={number=1, size=0, totalPages=6, totalElements=}, accessInfo={createdAt=createdAt, createdBy=createdBy, modifiedAt=modifiedAt, modifiedBy=modifiedBy}, type=dataset, title=title, version=0, content={output={filename=filename, format=csv, header=basic, type=file}, properties=[properties, properties]}}
                     ],
                 links = [
                     None

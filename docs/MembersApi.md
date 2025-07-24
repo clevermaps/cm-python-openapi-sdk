@@ -12,11 +12,13 @@ Method | HTTP request | Description
 
 
 # **add_project_member**
-> MembershipDTO add_project_member(project_id, create_membership_dto)
+> MembershipResponseDTO add_project_member(project_id, create_membership_dto)
 
 Add new project member and assign a role.
 
-The user is added into the project without any cooperation (acknowledgement) with invited user.
+The user is added into the project without any cooperation (acknowledgement) with invited user. You can add user
+by accountId or email.
+
 See the Project Invitation resource too. It allows to invite a new member by email address and sends an invitation email.
 
 **Security:**
@@ -30,7 +32,7 @@ Restricted to ADMIN project role.
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.create_membership_dto import CreateMembershipDTO
-from cm_python_openapi_sdk.models.membership_dto import MembershipDTO
+from cm_python_openapi_sdk.models.membership_response_dto import MembershipResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -78,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MembershipDTO**](MembershipDTO.md)
+[**MembershipResponseDTO**](MembershipResponseDTO.md)
 
 ### Authorization
 
@@ -180,7 +182,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_membership_by_id**
-> MembershipDTO get_membership_by_id(project_id, membership_id)
+> MembershipResponseDTO get_membership_by_id(project_id, membership_id)
 
 Get detail of user membership in project by membership id.
 
@@ -194,7 +196,7 @@ Restricted to ADMIN project role.
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.membership_dto import MembershipDTO
+from cm_python_openapi_sdk.models.membership_response_dto import MembershipResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -242,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MembershipDTO**](MembershipDTO.md)
+[**MembershipResponseDTO**](MembershipResponseDTO.md)
 
 ### Authorization
 
@@ -357,7 +359,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_membership**
-> MembershipDTO update_membership(project_id, membership_id, update_membership)
+> MembershipResponseDTO update_membership(project_id, membership_id, update_membership_dto)
 
 Update membership by changing role or status in project.
 
@@ -371,8 +373,8 @@ Restricted to ADMIN project role.
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.membership_dto import MembershipDTO
-from cm_python_openapi_sdk.models.update_membership import UpdateMembership
+from cm_python_openapi_sdk.models.membership_response_dto import MembershipResponseDTO
+from cm_python_openapi_sdk.models.update_membership_dto import UpdateMembershipDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -398,11 +400,11 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     api_instance = cm_python_openapi_sdk.MembersApi(api_client)
     project_id = 'project_id_example' # str | Id of the project
     membership_id = 'membership_id_example' # str | Id of the membership
-    update_membership = cm_python_openapi_sdk.UpdateMembership() # UpdateMembership | 
+    update_membership_dto = cm_python_openapi_sdk.UpdateMembershipDTO() # UpdateMembershipDTO | 
 
     try:
         # Update membership by changing role or status in project.
-        api_response = api_instance.update_membership(project_id, membership_id, update_membership)
+        api_response = api_instance.update_membership(project_id, membership_id, update_membership_dto)
         print("The response of MembersApi->update_membership:\n")
         pprint(api_response)
     except Exception as e:
@@ -418,11 +420,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| Id of the project | 
  **membership_id** | **str**| Id of the membership | 
- **update_membership** | [**UpdateMembership**](UpdateMembership.md)|  | 
+ **update_membership_dto** | [**UpdateMembershipDTO**](UpdateMembershipDTO.md)|  | 
 
 ### Return type
 
-[**MembershipDTO**](MembershipDTO.md)
+[**MembershipResponseDTO**](MembershipResponseDTO.md)
 
 ### Authorization
 

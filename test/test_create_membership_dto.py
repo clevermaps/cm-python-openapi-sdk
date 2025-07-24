@@ -36,14 +36,13 @@ class TestCreateMembershipDTO(unittest.TestCase):
         model = CreateMembershipDTO()
         if include_optional:
             return CreateMembershipDTO(
+                email = '',
                 account_id = '',
                 status = 'ENABLED',
                 role = 'ANONYMOUS'
             )
         else:
             return CreateMembershipDTO(
-                account_id = '',
-                status = 'ENABLED',
                 role = 'ANONYMOUS',
         )
         """

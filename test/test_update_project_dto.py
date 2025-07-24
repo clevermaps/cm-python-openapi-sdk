@@ -40,7 +40,7 @@ class TestUpdateProjectDTO(unittest.TestCase):
                 description = '',
                 organization_id = 'w8q6zgckec0l3o4g',
                 status = 'ENABLED',
-                services = None
+                services = {dwh=dwh, md=md, kbc=kbc}
             )
         else:
             return UpdateProjectDTO(

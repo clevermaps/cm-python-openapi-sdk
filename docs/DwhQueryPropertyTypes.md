@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **type** | **str** |  | 
 **value** | **str** |  | 
 **metric** | **str** |  | 
-**content** | **List[object]** |  | 
-**options** | **object** |  | [optional] 
+**content** | [**List[DwhQueryPropertyTypesFunctionRowNumber]**](DwhQueryPropertyTypesFunctionRowNumber.md) |  | 
+**options** | **object** |  | 
 
 ## Example
 

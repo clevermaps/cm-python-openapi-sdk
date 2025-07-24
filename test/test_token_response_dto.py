@@ -39,7 +39,6 @@ class TestTokenResponseDTO(unittest.TestCase):
                 token_type = '',
                 expires_in = 56,
                 access_token = '',
-                scope = '',
                 refresh_token = '',
                 id_token = ''
             )

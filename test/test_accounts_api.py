@@ -34,13 +34,6 @@ class TestAccountsApi(unittest.TestCase):
         """
         pass
 
-    def test_change_password(self) -> None:
-        """Test case for change_password
-
-        Change password
-        """
-        pass
-
     def test_change_preferences(self) -> None:
         """Test case for change_preferences
 
@@ -73,13 +66,6 @@ class TestAccountsApi(unittest.TestCase):
         """Test case for get_current_account
 
         Get current account.
-        """
-        pass
-
-    def test_register_account(self) -> None:
-        """Test case for register_account
-
-        Register new account
         """
         pass
 

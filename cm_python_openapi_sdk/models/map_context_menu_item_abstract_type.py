@@ -55,6 +55,9 @@ class MapContextMenuItemAbstractType(BaseModel):
     )
 
 
+    discriminator_value_class_map: Dict[str, str] = {
+    }
+
     def __init__(self, *args, **kwargs) -> None:
         if args:
             if len(args) > 1:
@@ -119,6 +122,71 @@ class MapContextMenuItemAbstractType(BaseModel):
         instance = cls.model_construct()
         error_messages = []
         match = 0
+
+        # use oneOf discriminator to lookup the data type
+        _data_type = json.loads(json_str).get("type")
+        if not _data_type:
+            raise ValueError("Failed to lookup data type from the field `type` in the input.")
+
+        # check if data type is `CuzkParcelInfoDTO`
+        if _data_type == "cuzkParcelInfo":
+            instance.actual_instance = CuzkParcelInfoDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `GoogleEarthDTO`
+        if _data_type == "googleEarth":
+            instance.actual_instance = GoogleEarthDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `GoogleSatelliteDTO`
+        if _data_type == "googleSatellite":
+            instance.actual_instance = GoogleSatelliteDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `GoogleStreetViewDTO`
+        if _data_type == "googleStreetView":
+            instance.actual_instance = GoogleStreetViewDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `MapyczOrtophotoDTO`
+        if _data_type == "mapyczOrtophoto":
+            instance.actual_instance = MapyczOrtophotoDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `MapyczPanoramaDTO`
+        if _data_type == "mapyczPanorama":
+            instance.actual_instance = MapyczPanoramaDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `CuzkParcelInfoDTO`
+        if _data_type == "CuzkParcelInfoDTO":
+            instance.actual_instance = CuzkParcelInfoDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `GoogleEarthDTO`
+        if _data_type == "GoogleEarthDTO":
+            instance.actual_instance = GoogleEarthDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `GoogleSatelliteDTO`
+        if _data_type == "GoogleSatelliteDTO":
+            instance.actual_instance = GoogleSatelliteDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `GoogleStreetViewDTO`
+        if _data_type == "GoogleStreetViewDTO":
+            instance.actual_instance = GoogleStreetViewDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `MapyczOrtophotoDTO`
+        if _data_type == "MapyczOrtophotoDTO":
+            instance.actual_instance = MapyczOrtophotoDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `MapyczPanoramaDTO`
+        if _data_type == "MapyczPanoramaDTO":
+            instance.actual_instance = MapyczPanoramaDTO.from_json(json_str)
+            return instance
 
         # deserialize data into GoogleSatelliteDTO
         try:

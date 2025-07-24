@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | **List[object]** | define keys links and page that are mandatory for all pageble responses | [optional] 
 **content** | [**List[OrganizationResponseDTO]**](OrganizationResponseDTO.md) |  | [optional] 
-**page** | [**MandatoryKeysForPagableResponse**](MandatoryKeysForPagableResponse.md) |  | [optional] 
+**page** | [**PageDTO**](PageDTO.md) |  | [optional] 
 **id** | **str** |  | [optional] 
 **title** | **str** |  | [optional] 
 **invitation_email** | **str** |  | [optional] 

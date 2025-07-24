@@ -49,6 +49,9 @@ class IndicatorLinkDTOBlockRowsInner(BaseModel):
     )
 
 
+    discriminator_value_class_map: Dict[str, str] = {
+    }
+
     def __init__(self, *args, **kwargs) -> None:
         if args:
             if len(args) > 1:
@@ -103,6 +106,51 @@ class IndicatorLinkDTOBlockRowsInner(BaseModel):
         instance = cls.model_construct()
         error_messages = []
         match = 0
+
+        # use oneOf discriminator to lookup the data type
+        _data_type = json.loads(json_str).get("type")
+        if not _data_type:
+            raise ValueError("Failed to lookup data type from the field `type` in the input.")
+
+        # check if data type is `CategoriesDTO`
+        if _data_type == "categories":
+            instance.actual_instance = CategoriesDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `DistributionDTO`
+        if _data_type == "distribution":
+            instance.actual_instance = DistributionDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `RankingDTO`
+        if _data_type == "ranking":
+            instance.actual_instance = RankingDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `TimeSeriesDTO`
+        if _data_type == "timeSeries":
+            instance.actual_instance = TimeSeriesDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `CategoriesDTO`
+        if _data_type == "CategoriesDTO":
+            instance.actual_instance = CategoriesDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `DistributionDTO`
+        if _data_type == "DistributionDTO":
+            instance.actual_instance = DistributionDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `RankingDTO`
+        if _data_type == "RankingDTO":
+            instance.actual_instance = RankingDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `TimeSeriesDTO`
+        if _data_type == "TimeSeriesDTO":
+            instance.actual_instance = TimeSeriesDTO.from_json(json_str)
+            return instance
 
         # deserialize data into CategoriesDTO
         try:

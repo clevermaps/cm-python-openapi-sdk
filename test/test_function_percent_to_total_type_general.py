@@ -41,7 +41,7 @@ class TestFunctionPercentToTotalTypeGeneral(unittest.TestCase):
                 content = [
                     null
                     ],
-                options = None
+                options = cm_python_openapi_sdk.models.options.options()
             )
         else:
             return FunctionPercentToTotalTypeGeneral(

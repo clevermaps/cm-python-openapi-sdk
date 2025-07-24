@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**delete_marker_by_id**](MarkersApi.md#delete_marker_by_id) | **DELETE** /projects/{projectId}/md/markers/{id} | Deletes marker by id
 [**get_all_markers**](MarkersApi.md#get_all_markers) | **GET** /projects/{projectId}/md/markers | Returns paged collection of all Markers in a project.
 [**get_marker_by_id**](MarkersApi.md#get_marker_by_id) | **GET** /projects/{projectId}/md/markers/{id} | Gets marker by id
+[**get_marker_by_name**](MarkersApi.md#get_marker_by_name) | **GET** /projects/{projectId}/md/markers/{name} | Gets marker by name
 [**update_marker_by_id**](MarkersApi.md#update_marker_by_id) | **PUT** /projects/{projectId}/md/markers/{id} | Updates marker by id
 
 
 # **create_marker**
-> MarkerDTO create_marker(project_id, marker_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> MarkerResponseDTO create_marker(project_id, marker_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Creates new Marker.
 
@@ -25,6 +26,7 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.marker_dto import MarkerDTO
+from cm_python_openapi_sdk.models.marker_response_dto import MarkerResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -74,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MarkerDTO**](MarkerDTO.md)
+[**MarkerResponseDTO**](MarkerResponseDTO.md)
 
 ### Authorization
 
@@ -256,7 +258,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_marker_by_id**
-> MarkerDTO get_marker_by_id(project_id, id)
+> MarkerResponseDTO get_marker_by_id(project_id, id)
 
 Gets marker by id
 
@@ -266,7 +268,7 @@ Gets marker by id
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.marker_dto import MarkerDTO
+from cm_python_openapi_sdk.models.marker_response_dto import MarkerResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -314,7 +316,86 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MarkerDTO**](MarkerDTO.md)
+[**MarkerResponseDTO**](MarkerResponseDTO.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+**404** | Marker not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_marker_by_name**
+> MarkerResponseDTO get_marker_by_name(project_id, name)
+
+Gets marker by name
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+
+```python
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.marker_response_dto import MarkerResponseDTO
+from cm_python_openapi_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cm_python_openapi_sdk.Configuration(
+    host = "https://staging.dev.clevermaps.io/rest"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = cm_python_openapi_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cm_python_openapi_sdk.MarkersApi(api_client)
+    project_id = 'project_id_example' # str | Id of the project
+    name = 'name_example' # str | Name of the marker
+
+    try:
+        # Gets marker by name
+        api_response = api_instance.get_marker_by_name(project_id, name)
+        print("The response of MarkersApi->get_marker_by_name:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MarkersApi->get_marker_by_name: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **str**| Id of the project | 
+ **name** | **str**| Name of the marker | 
+
+### Return type
+
+[**MarkerResponseDTO**](MarkerResponseDTO.md)
 
 ### Authorization
 
@@ -335,7 +416,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_marker_by_id**
-> MarkerDTO update_marker_by_id(project_id, id, if_match, marker_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> MarkerResponseDTO update_marker_by_id(project_id, id, if_match, marker_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Updates marker by id
 
@@ -348,6 +429,7 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.marker_dto import MarkerDTO
+from cm_python_openapi_sdk.models.marker_response_dto import MarkerResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -401,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MarkerDTO**](MarkerDTO.md)
+[**MarkerResponseDTO**](MarkerResponseDTO.md)
 
 ### Authorization
 

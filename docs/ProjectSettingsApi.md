@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**delete_project_settings_by_id**](ProjectSettingsApi.md#delete_project_settings_by_id) | **DELETE** /projects/{projectId}/md/projectSettings/{id} | Deletes project settings by id
 [**get_all_project_settings**](ProjectSettingsApi.md#get_all_project_settings) | **GET** /projects/{projectId}/md/projectSettings | Returns paged collection of all Project Settings objects in a project. This page will always contain only one object.
 [**get_project_settings_by_id**](ProjectSettingsApi.md#get_project_settings_by_id) | **GET** /projects/{projectId}/md/projectSettings/{id} | Gets project settings by id
+[**get_project_settings_by_name**](ProjectSettingsApi.md#get_project_settings_by_name) | **GET** /projects/{projectId}/md/projectSettings/{name} | Gets projectSettings by name
 [**update_project_settings_by_id**](ProjectSettingsApi.md#update_project_settings_by_id) | **PUT** /projects/{projectId}/md/projectSettings/{id} | Updates project settings by id
 
 
 # **create_project_settings**
-> ProjectSettingsDTO create_project_settings(project_id, project_settings_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> ProjectSettingsResponseDTO create_project_settings(project_id, project_settings_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Creates new project settings
 
@@ -25,6 +26,7 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.project_settings_dto import ProjectSettingsDTO
+from cm_python_openapi_sdk.models.project_settings_response_dto import ProjectSettingsResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -74,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectSettingsDTO**](ProjectSettingsDTO.md)
+[**ProjectSettingsResponseDTO**](ProjectSettingsResponseDTO.md)
 
 ### Authorization
 
@@ -256,7 +258,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_project_settings_by_id**
-> ProjectSettingsDTO get_project_settings_by_id(project_id, id)
+> ProjectSettingsResponseDTO get_project_settings_by_id(project_id, id)
 
 Gets project settings by id
 
@@ -266,7 +268,7 @@ Gets project settings by id
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.project_settings_dto import ProjectSettingsDTO
+from cm_python_openapi_sdk.models.project_settings_response_dto import ProjectSettingsResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -314,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectSettingsDTO**](ProjectSettingsDTO.md)
+[**ProjectSettingsResponseDTO**](ProjectSettingsResponseDTO.md)
 
 ### Authorization
 
@@ -334,8 +336,87 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_project_settings_by_name**
+> ProjectSettingsResponseDTO get_project_settings_by_name(project_id, name)
+
+Gets projectSettings by name
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+
+```python
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.project_settings_response_dto import ProjectSettingsResponseDTO
+from cm_python_openapi_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cm_python_openapi_sdk.Configuration(
+    host = "https://staging.dev.clevermaps.io/rest"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = cm_python_openapi_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cm_python_openapi_sdk.ProjectSettingsApi(api_client)
+    project_id = 'project_id_example' # str | Id of the project
+    name = 'name_example' # str | Name of the projectSettings
+
+    try:
+        # Gets projectSettings by name
+        api_response = api_instance.get_project_settings_by_name(project_id, name)
+        print("The response of ProjectSettingsApi->get_project_settings_by_name:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ProjectSettingsApi->get_project_settings_by_name: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **str**| Id of the project | 
+ **name** | **str**| Name of the projectSettings | 
+
+### Return type
+
+[**ProjectSettingsResponseDTO**](ProjectSettingsResponseDTO.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+**404** | ProjectSettings not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **update_project_settings_by_id**
-> ProjectSettingsDTO update_project_settings_by_id(project_id, id, if_match, project_settings_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> ProjectSettingsResponseDTO update_project_settings_by_id(project_id, id, if_match, project_settings_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Updates project settings by id
 
@@ -348,6 +429,7 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.project_settings_dto import ProjectSettingsDTO
+from cm_python_openapi_sdk.models.project_settings_response_dto import ProjectSettingsResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -401,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProjectSettingsDTO**](ProjectSettingsDTO.md)
+[**ProjectSettingsResponseDTO**](ProjectSettingsResponseDTO.md)
 
 ### Authorization
 

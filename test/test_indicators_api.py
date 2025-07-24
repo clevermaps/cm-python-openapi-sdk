@@ -55,6 +55,13 @@ class TestIndicatorsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_indicator_by_name(self) -> None:
+        """Test case for get_indicator_by_name
+
+        Gets indicator by name
+        """
+        pass
+
     def test_update_indicator_by_id(self) -> None:
         """Test case for update_indicator_by_id
 

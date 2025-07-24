@@ -28,7 +28,7 @@ class DefaultValuesIndicatorDTO(BaseModel):
     """
     DefaultValuesIndicatorDTO
     """ # noqa: E501
-    values: Optional[Annotated[List[Any], Field(min_length=2, max_length=2)]] = None
+    values: Optional[Annotated[List[Union[StrictFloat, StrictInt]], Field(min_length=2, max_length=2)]] = None
     breaks: Optional[Annotated[List[Union[StrictFloat, StrictInt]], Field(min_length=1)]] = None
     display_intervals: Optional[List[StrictInt]] = Field(default=None, alias="displayIntervals")
     granularity: Optional[Annotated[str, Field(strict=True)]] = None

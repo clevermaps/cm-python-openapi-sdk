@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **share** | **str** |  | 
 **created_at** | **str** |  | 
 **modified_at** | **str** |  | [optional] 
-**membership** | [**MembershipDTO**](MembershipDTO.md) |  | [optional] 
-**services** | **object** |  | [optional] 
+**membership** | [**MembershipResponseDTO**](MembershipResponseDTO.md) |  | [optional] 
+**services** | [**ProjectResponseDTOServices**](ProjectResponseDTOServices.md) |  | [optional] 
 **links** | **List[object]** | define keys links and page that are mandatory for all pageble responses | 
 
 ## Example

@@ -21,7 +21,8 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from cm_python_openapi_sdk.models.membership_dto import MembershipDTO
+from cm_python_openapi_sdk.models.membership_response_dto import MembershipResponseDTO
+from cm_python_openapi_sdk.models.project_response_dto_services import ProjectResponseDTOServices
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -37,8 +38,8 @@ class ProjectResponseDTO(BaseModel):
     share: StrictStr
     created_at: StrictStr = Field(alias="createdAt")
     modified_at: Optional[StrictStr] = Field(default=None, alias="modifiedAt")
-    membership: Optional[MembershipDTO] = None
-    services: Optional[Dict[str, Any]] = None
+    membership: Optional[MembershipResponseDTO] = None
+    services: Optional[ProjectResponseDTOServices] = None
     links: List[Dict[str, Any]] = Field(description="define keys links and page that are mandatory for all pageble responses")
     __properties: ClassVar[List[str]] = ["id", "title", "description", "organizationId", "status", "share", "createdAt", "modifiedAt", "membership", "services", "links"]
 
@@ -112,6 +113,9 @@ class ProjectResponseDTO(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of membership
         if self.membership:
             _dict['membership'] = self.membership.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of services
+        if self.services:
+            _dict['services'] = self.services.to_dict()
         return _dict
 
     @classmethod
@@ -132,8 +136,8 @@ class ProjectResponseDTO(BaseModel):
             "share": obj.get("share"),
             "createdAt": obj.get("createdAt"),
             "modifiedAt": obj.get("modifiedAt"),
-            "membership": MembershipDTO.from_dict(obj["membership"]) if obj.get("membership") is not None else None,
-            "services": obj.get("services"),
+            "membership": MembershipResponseDTO.from_dict(obj["membership"]) if obj.get("membership") is not None else None,
+            "services": ProjectResponseDTOServices.from_dict(obj["services"]) if obj.get("services") is not None else None,
             "links": obj.get("links")
         })
         return _obj

@@ -58,6 +58,9 @@ class ActiveFilterAbstractType(BaseModel):
     )
 
 
+    discriminator_value_class_map: Dict[str, str] = {
+    }
+
     def __init__(self, *args, **kwargs) -> None:
         if args:
             if len(args) > 1:
@@ -127,6 +130,81 @@ class ActiveFilterAbstractType(BaseModel):
         instance = cls.model_construct()
         error_messages = []
         match = 0
+
+        # use oneOf discriminator to lookup the data type
+        _data_type = json.loads(json_str).get("type")
+        if not _data_type:
+            raise ValueError("Failed to lookup data type from the field `type` in the input.")
+
+        # check if data type is `ActiveDateFilterDTO`
+        if _data_type == "date":
+            instance.actual_instance = ActiveDateFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveFeatureFilterDTO`
+        if _data_type == "feature":
+            instance.actual_instance = ActiveFeatureFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveGlobalDateFilterDTO`
+        if _data_type == "globalDate":
+            instance.actual_instance = ActiveGlobalDateFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveHistogramFilterDTO`
+        if _data_type == "histogram":
+            instance.actual_instance = ActiveHistogramFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveIndicatorFilterDTO`
+        if _data_type == "indicator":
+            instance.actual_instance = ActiveIndicatorFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveMultiSelectFilterDTO`
+        if _data_type == "multiSelect":
+            instance.actual_instance = ActiveMultiSelectFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveSingleSelectFilterDTO`
+        if _data_type == "singleSelect":
+            instance.actual_instance = ActiveSingleSelectFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveDateFilterDTO`
+        if _data_type == "ActiveDateFilterDTO":
+            instance.actual_instance = ActiveDateFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveFeatureFilterDTO`
+        if _data_type == "ActiveFeatureFilterDTO":
+            instance.actual_instance = ActiveFeatureFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveGlobalDateFilterDTO`
+        if _data_type == "ActiveGlobalDateFilterDTO":
+            instance.actual_instance = ActiveGlobalDateFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveHistogramFilterDTO`
+        if _data_type == "ActiveHistogramFilterDTO":
+            instance.actual_instance = ActiveHistogramFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveIndicatorFilterDTO`
+        if _data_type == "ActiveIndicatorFilterDTO":
+            instance.actual_instance = ActiveIndicatorFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveMultiSelectFilterDTO`
+        if _data_type == "ActiveMultiSelectFilterDTO":
+            instance.actual_instance = ActiveMultiSelectFilterDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `ActiveSingleSelectFilterDTO`
+        if _data_type == "ActiveSingleSelectFilterDTO":
+            instance.actual_instance = ActiveSingleSelectFilterDTO.from_json(json_str)
+            return instance
 
         # deserialize data into ActiveDateFilterDTO
         try:

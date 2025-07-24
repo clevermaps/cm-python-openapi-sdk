@@ -50,6 +50,9 @@ class FilterBy(BaseModel):
     )
 
 
+    discriminator_value_class_map: Dict[str, str] = {
+    }
+
     def __init__(self, *args, **kwargs) -> None:
         if args:
             if len(args) > 1:
@@ -109,6 +112,106 @@ class FilterBy(BaseModel):
         instance = cls.model_construct()
         error_messages = []
         match = 0
+
+        # use oneOf discriminator to lookup the data type
+        _data_type = json.loads(json_str).get("operator")
+        if not _data_type:
+            raise ValueError("Failed to lookup data type from the field `operator` in the input.")
+
+        # check if data type is `FilterByBoolean`
+        if _data_type == "and":
+            instance.actual_instance = FilterByBoolean.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByComp`
+        if _data_type == "eq":
+            instance.actual_instance = FilterByComp.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByComp`
+        if _data_type == "gt":
+            instance.actual_instance = FilterByComp.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByComp`
+        if _data_type == "gte":
+            instance.actual_instance = FilterByComp.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByIn`
+        if _data_type == "in":
+            instance.actual_instance = FilterByIn.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByAttribute`
+        if _data_type == "inAttribute":
+            instance.actual_instance = FilterByAttribute.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByUnary`
+        if _data_type == "isNotNull":
+            instance.actual_instance = FilterByUnary.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByUnary`
+        if _data_type == "isNull":
+            instance.actual_instance = FilterByUnary.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByComp`
+        if _data_type == "lt":
+            instance.actual_instance = FilterByComp.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByComp`
+        if _data_type == "lte":
+            instance.actual_instance = FilterByComp.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByComp`
+        if _data_type == "ne":
+            instance.actual_instance = FilterByComp.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByBoolean`
+        if _data_type == "not":
+            instance.actual_instance = FilterByBoolean.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByAttribute`
+        if _data_type == "notInAttribute":
+            instance.actual_instance = FilterByAttribute.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByBoolean`
+        if _data_type == "or":
+            instance.actual_instance = FilterByBoolean.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByAttribute`
+        if _data_type == "FilterByAttribute":
+            instance.actual_instance = FilterByAttribute.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByBoolean`
+        if _data_type == "FilterByBoolean":
+            instance.actual_instance = FilterByBoolean.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByComp`
+        if _data_type == "FilterByComp":
+            instance.actual_instance = FilterByComp.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByIn`
+        if _data_type == "FilterByIn":
+            instance.actual_instance = FilterByIn.from_json(json_str)
+            return instance
+
+        # check if data type is `FilterByUnary`
+        if _data_type == "FilterByUnary":
+            instance.actual_instance = FilterByUnary.from_json(json_str)
+            return instance
 
         # deserialize data into FilterByComp
         try:

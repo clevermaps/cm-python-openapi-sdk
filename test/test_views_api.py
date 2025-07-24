@@ -55,6 +55,13 @@ class TestViewsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_view_by_name(self) -> None:
+        """Test case for get_view_by_name
+
+        Gets view by name
+        """
+        pass
+
     def test_update_view_by_id(self) -> None:
         """Test case for update_view_by_id
 

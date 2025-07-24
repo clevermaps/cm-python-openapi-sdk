@@ -5,8 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **str** |  | 
-**status** | **str** |  | 
+**email** | **str** |  | [optional] 
+**account_id** | **str** |  | [optional] 
+**status** | **str** |  | [optional] 
 **role** | **str** |  | 
 
 ## Example

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **description** | **str** |  | [optional] 
 **organization_id** | **str** |  | [optional] 
 **status** | **str** |  | [optional] 
-**services** | **object** |  | [optional] 
+**services** | [**ProjectResponseDTOServices**](ProjectResponseDTOServices.md) |  | [optional] 
 
 ## Example
 

@@ -21,7 +21,6 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from cm_python_openapi_sdk.models.account_job_info import AccountJobInfo
 from cm_python_openapi_sdk.models.account_onboarding_parameters import AccountOnboardingParameters
 from cm_python_openapi_sdk.models.account_preferences import AccountPreferences
 from typing import Optional, Set
@@ -38,12 +37,10 @@ class AccountDTO(BaseModel):
     status: Optional[StrictStr] = None
     anonymous: Optional[StrictBool] = None
     phone_number: Optional[Annotated[str, Field(min_length=6, strict=True, max_length=20)]] = Field(default=None, alias="phoneNumber")
-    require_additional_attributes: Optional[StrictBool] = Field(default=None, alias="requireAdditionalAttributes")
     preferences: Optional[AccountPreferences] = None
     onboarding: Optional[AccountOnboardingParameters] = None
-    job_info: Optional[AccountJobInfo] = Field(default=None, alias="jobInfo")
     links: Optional[List[Dict[str, Any]]] = Field(default=None, description="define keys links and page that are mandatory for all pageble responses")
-    __properties: ClassVar[List[str]] = ["id", "fullName", "email", "consentGranted", "status", "anonymous", "phoneNumber", "requireAdditionalAttributes", "preferences", "onboarding", "jobInfo", "links"]
+    __properties: ClassVar[List[str]] = ["id", "fullName", "email", "consentGranted", "status", "anonymous", "phoneNumber", "preferences", "onboarding", "links"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -100,9 +97,6 @@ class AccountDTO(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of onboarding
         if self.onboarding:
             _dict['onboarding'] = self.onboarding.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of job_info
-        if self.job_info:
-            _dict['jobInfo'] = self.job_info.to_dict()
         return _dict
 
     @classmethod
@@ -122,10 +116,8 @@ class AccountDTO(BaseModel):
             "status": obj.get("status"),
             "anonymous": obj.get("anonymous"),
             "phoneNumber": obj.get("phoneNumber"),
-            "requireAdditionalAttributes": obj.get("requireAdditionalAttributes"),
             "preferences": AccountPreferences.from_dict(obj["preferences"]) if obj.get("preferences") is not None else None,
             "onboarding": AccountOnboardingParameters.from_dict(obj["onboarding"]) if obj.get("onboarding") is not None else None,
-            "jobInfo": AccountJobInfo.from_dict(obj["jobInfo"]) if obj.get("jobInfo") is not None else None,
             "links": obj.get("links")
         })
         return _obj

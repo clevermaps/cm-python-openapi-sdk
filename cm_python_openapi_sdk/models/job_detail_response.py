@@ -18,7 +18,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
@@ -31,8 +31,8 @@ class JobDetailResponse(BaseModel):
     id: Annotated[str, Field(min_length=1, strict=True)]
     type: Annotated[str, Field(min_length=1, strict=True)]
     status: StrictStr
-    start_date: Optional[Dict[str, Any]] = Field(default=None, alias="startDate")
-    end_date: Optional[Dict[str, Any]] = Field(default=None, alias="endDate")
+    start_date: Optional[StrictInt] = Field(default=None, alias="startDate")
+    end_date: Optional[StrictInt] = Field(default=None, alias="endDate")
     message: Optional[StrictStr] = None
     result: Optional[Dict[str, Any]] = None
     links: Optional[List[Dict[str, Any]]] = Field(default=None, description="define keys links and page that are mandatory for all pageble responses")

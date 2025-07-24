@@ -34,13 +34,6 @@ class TestSearchApi(unittest.TestCase):
         """
         pass
 
-    def test_geographic_search(self) -> None:
-        """Test case for geographic_search
-
-        Geographic search
-        """
-        pass
-
 
 if __name__ == '__main__':
     unittest.main()

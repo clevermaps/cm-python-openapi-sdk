@@ -55,6 +55,13 @@ class TestExportsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_export_by_name(self) -> None:
+        """Test case for get_export_by_name
+
+        Gets export by name
+        """
+        pass
+
     def test_update_export_by_id(self) -> None:
         """Test case for update_export_by_id
 

@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**delete_attribute_style_by_id**](AttributeStylesApi.md#delete_attribute_style_by_id) | **DELETE** /projects/{projectId}/md/attributeStyles/{id} | Deletes attribute style by id
 [**get_all_attribute_styles**](AttributeStylesApi.md#get_all_attribute_styles) | **GET** /projects/{projectId}/md/attributeStyles | Returns paged collection of all Attribute Styles in a project
 [**get_attribute_style_by_id**](AttributeStylesApi.md#get_attribute_style_by_id) | **GET** /projects/{projectId}/md/attributeStyles/{id} | Gets attribute style by id
+[**get_attribute_style_by_name**](AttributeStylesApi.md#get_attribute_style_by_name) | **GET** /projects/{projectId}/md/attributeStyles/{name} | Gets attribute style by name
 [**update_attribute_style_by_id**](AttributeStylesApi.md#update_attribute_style_by_id) | **PUT** /projects/{projectId}/md/attributeStyles/{id} | Updates attribute style by id
 
 
 # **create_attribute_style**
-> AttributeStyleDTO create_attribute_style(project_id, attribute_style_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> AttributeStyleResponseDTO create_attribute_style(project_id, attribute_style_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Creates new attribute style
 
@@ -25,6 +26,7 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.attribute_style_dto import AttributeStyleDTO
+from cm_python_openapi_sdk.models.attribute_style_response_dto import AttributeStyleResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -74,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AttributeStyleDTO**](AttributeStyleDTO.md)
+[**AttributeStyleResponseDTO**](AttributeStyleResponseDTO.md)
 
 ### Authorization
 
@@ -256,7 +258,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_attribute_style_by_id**
-> AttributeStyleDTO get_attribute_style_by_id(project_id, id)
+> AttributeStyleResponseDTO get_attribute_style_by_id(project_id, id)
 
 Gets attribute style by id
 
@@ -266,7 +268,7 @@ Gets attribute style by id
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.attribute_style_dto import AttributeStyleDTO
+from cm_python_openapi_sdk.models.attribute_style_response_dto import AttributeStyleResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -314,7 +316,86 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AttributeStyleDTO**](AttributeStyleDTO.md)
+[**AttributeStyleResponseDTO**](AttributeStyleResponseDTO.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+**404** | Attribute style not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_attribute_style_by_name**
+> AttributeStyleResponseDTO get_attribute_style_by_name(project_id, name)
+
+Gets attribute style by name
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+
+```python
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.attribute_style_response_dto import AttributeStyleResponseDTO
+from cm_python_openapi_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cm_python_openapi_sdk.Configuration(
+    host = "https://staging.dev.clevermaps.io/rest"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = cm_python_openapi_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cm_python_openapi_sdk.AttributeStylesApi(api_client)
+    project_id = 'project_id_example' # str | Id of the project
+    name = 'name_example' # str | Name of the attribute style
+
+    try:
+        # Gets attribute style by name
+        api_response = api_instance.get_attribute_style_by_name(project_id, name)
+        print("The response of AttributeStylesApi->get_attribute_style_by_name:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AttributeStylesApi->get_attribute_style_by_name: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **str**| Id of the project | 
+ **name** | **str**| Name of the attribute style | 
+
+### Return type
+
+[**AttributeStyleResponseDTO**](AttributeStyleResponseDTO.md)
 
 ### Authorization
 
@@ -335,7 +416,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_attribute_style_by_id**
-> AttributeStyleDTO update_attribute_style_by_id(project_id, id, if_match, attribute_style_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> AttributeStyleResponseDTO update_attribute_style_by_id(project_id, id, if_match, attribute_style_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Updates attribute style by id
 
@@ -348,6 +429,7 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.attribute_style_dto import AttributeStyleDTO
+from cm_python_openapi_sdk.models.attribute_style_response_dto import AttributeStyleResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -401,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AttributeStyleDTO**](AttributeStyleDTO.md)
+[**AttributeStyleResponseDTO**](AttributeStyleResponseDTO.md)
 
 ### Authorization
 

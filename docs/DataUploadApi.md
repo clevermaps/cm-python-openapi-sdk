@@ -139,7 +139,7 @@ To upload a large CSV file in multiple parts, follow these steps:
 2. **Receive a response** containing:
   - An `id` identifying the upload.
   - A list of **uploadUrls**, which are S3 pre-signed URLs, one for each part.
-3. **Split the CSV file** and upload each part to its corresponding URL using: PUT {uploadUrl}
+3. **Split the CSV file**, compress each part with GZIP and upload each part to its corresponding URL using: PUT {uploadUrl}
   - No additional authentication is required.
 4. **Complete the upload**
   - Once all parts are uploaded, send the [Complete Multipart Data Upload](#operation/completeMultipartUpload) request.

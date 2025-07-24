@@ -44,9 +44,7 @@ class TestGetAccountByAccountId200Response(unittest.TestCase):
                 consent_granted = True,
                 anonymous = True,
                 phone_number = '012345',
-                require_additional_attributes = True,
                 onboarding = {introShown=[introShown, introShown], tipsShown=[tipsShown, tipsShown]},
-                job_info = {companyName=companyName, industry=industry, jobPosition=jobPosition},
                 links = [
                     None
                     ]

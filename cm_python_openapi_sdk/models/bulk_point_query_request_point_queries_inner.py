@@ -43,6 +43,9 @@ class BulkPointQueryRequestPointQueriesInner(BaseModel):
     )
 
 
+    discriminator_value_class_map: Dict[str, str] = {
+    }
+
     def __init__(self, *args, **kwargs) -> None:
         if args:
             if len(args) > 1:
@@ -87,6 +90,31 @@ class BulkPointQueryRequestPointQueriesInner(BaseModel):
         instance = cls.model_construct()
         error_messages = []
         match = 0
+
+        # use oneOf discriminator to lookup the data type
+        _data_type = json.loads(json_str).get("type")
+        if not _data_type:
+            raise ValueError("Failed to lookup data type from the field `type` in the input.")
+
+        # check if data type is `BulkPointQueryRequestPointQueriesIsochrone`
+        if _data_type == "isochrone":
+            instance.actual_instance = BulkPointQueryRequestPointQueriesIsochrone.from_json(json_str)
+            return instance
+
+        # check if data type is `BulkPointQueryRequestPointQueriesNearest`
+        if _data_type == "nearest":
+            instance.actual_instance = BulkPointQueryRequestPointQueriesNearest.from_json(json_str)
+            return instance
+
+        # check if data type is `BulkPointQueryRequestPointQueriesIsochrone`
+        if _data_type == "BulkPointQueryRequestPointQueriesIsochrone":
+            instance.actual_instance = BulkPointQueryRequestPointQueriesIsochrone.from_json(json_str)
+            return instance
+
+        # check if data type is `BulkPointQueryRequestPointQueriesNearest`
+        if _data_type == "BulkPointQueryRequestPointQueriesNearest":
+            instance.actual_instance = BulkPointQueryRequestPointQueriesNearest.from_json(json_str)
+            return instance
 
         # deserialize data into BulkPointQueryRequestPointQueriesIsochrone
         try:

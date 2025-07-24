@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | [**List[SearchQueryHit]**](SearchQueryHit.md) |  | 
 **links** | **List[object]** |  | 
-**page** | [**MandatoryKeysForPagableResponse**](MandatoryKeysForPagableResponse.md) |  | 
+**page** | [**PageDTO**](PageDTO.md) |  | 
 
 ## Example
 
