@@ -55,6 +55,13 @@ class TestIndicatorDrillsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_indicator_drill_by_name(self) -> None:
+        """Test case for get_indicator_drill_by_name
+
+        Gets indicator drill by name
+        """
+        pass
+
     def test_update_indicator_drill_by_id(self) -> None:
         """Test case for update_indicator_drill_by_id
 

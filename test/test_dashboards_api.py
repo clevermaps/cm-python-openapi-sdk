@@ -55,6 +55,13 @@ class TestDashboardsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_dashboard_by_name(self) -> None:
+        """Test case for get_dashboard_by_name
+
+        Gets dashboard by name
+        """
+        pass
+
     def test_update_dashboard_by_id(self) -> None:
         """Test case for update_dashboard_by_id
 

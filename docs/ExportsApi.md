@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**delete_export_by_id**](ExportsApi.md#delete_export_by_id) | **DELETE** /projects/{projectId}/md/exports/{id} | Deletes export by id
 [**get_all_exports**](ExportsApi.md#get_all_exports) | **GET** /projects/{projectId}/md/exports | Returns paged collection of all Exports in a project
 [**get_export_by_id**](ExportsApi.md#get_export_by_id) | **GET** /projects/{projectId}/md/exports/{id} | Gets export by id
+[**get_export_by_name**](ExportsApi.md#get_export_by_name) | **GET** /projects/{projectId}/md/exports/{name} | Gets export by name
 [**update_export_by_id**](ExportsApi.md#update_export_by_id) | **PUT** /projects/{projectId}/md/exports/{id} | Updates export by id
 
 
 # **create_export**
-> ExportDTO create_export(project_id, export_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> ExportResponseDTO create_export(project_id, export_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Creates new export
 
@@ -25,6 +26,7 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.export_dto import ExportDTO
+from cm_python_openapi_sdk.models.export_response_dto import ExportResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -74,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExportDTO**](ExportDTO.md)
+[**ExportResponseDTO**](ExportResponseDTO.md)
 
 ### Authorization
 
@@ -256,7 +258,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_export_by_id**
-> ExportDTO get_export_by_id(project_id, id)
+> ExportResponseDTO get_export_by_id(project_id, id)
 
 Gets export by id
 
@@ -266,7 +268,7 @@ Gets export by id
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.export_dto import ExportDTO
+from cm_python_openapi_sdk.models.export_response_dto import ExportResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -314,7 +316,86 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExportDTO**](ExportDTO.md)
+[**ExportResponseDTO**](ExportResponseDTO.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+**404** | Export not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_export_by_name**
+> ExportResponseDTO get_export_by_name(project_id, name)
+
+Gets export by name
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+
+```python
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.export_response_dto import ExportResponseDTO
+from cm_python_openapi_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cm_python_openapi_sdk.Configuration(
+    host = "https://staging.dev.clevermaps.io/rest"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = cm_python_openapi_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cm_python_openapi_sdk.ExportsApi(api_client)
+    project_id = 'project_id_example' # str | Id of the project
+    name = 'name_example' # str | Name of the export
+
+    try:
+        # Gets export by name
+        api_response = api_instance.get_export_by_name(project_id, name)
+        print("The response of ExportsApi->get_export_by_name:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ExportsApi->get_export_by_name: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **str**| Id of the project | 
+ **name** | **str**| Name of the export | 
+
+### Return type
+
+[**ExportResponseDTO**](ExportResponseDTO.md)
 
 ### Authorization
 
@@ -335,7 +416,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_export_by_id**
-> ExportDTO update_export_by_id(project_id, id, if_match, export_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> ExportResponseDTO update_export_by_id(project_id, id, if_match, export_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Updates export by id
 
@@ -348,6 +429,7 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.export_dto import ExportDTO
+from cm_python_openapi_sdk.models.export_response_dto import ExportResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -401,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExportDTO**](ExportDTO.md)
+[**ExportResponseDTO**](ExportResponseDTO.md)
 
 ### Authorization
 

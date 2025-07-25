@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **type** | **str** |  | 
-**content** | [**List[FunctionNtileContentInner]**](FunctionNtileContentInner.md) |  | 
+**content** | [**List[DwhQueryPropertyTypesFunctionRowNumber]**](DwhQueryPropertyTypesFunctionRowNumber.md) |  | 
 **options** | **object** |  | 
 
 ## Example

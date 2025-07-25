@@ -55,6 +55,13 @@ class TestProjectSettingsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_project_settings_by_name(self) -> None:
+        """Test case for get_project_settings_by_name
+
+        Gets projectSettings by name
+        """
+        pass
+
     def test_update_project_settings_by_id(self) -> None:
         """Test case for update_project_settings_by_id
 

@@ -386,6 +386,8 @@ class QueriesApi:
         project_id: Annotated[str, Field(strict=True, description="Id of the project")],
         dwh_cluster_id: Annotated[str, Field(strict=True, description="Id of the dwh cluster")],
         dwh_cache_id: Annotated[str, Field(strict=True, description="Id of the dwh cache")],
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="Number of the page")] = None,
+        size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="The count of records to return for one page")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -409,6 +411,10 @@ class QueriesApi:
         :type dwh_cluster_id: str
         :param dwh_cache_id: Id of the dwh cache (required)
         :type dwh_cache_id: str
+        :param page: Number of the page
+        :type page: int
+        :param size: The count of records to return for one page
+        :type size: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -435,6 +441,8 @@ class QueriesApi:
             project_id=project_id,
             dwh_cluster_id=dwh_cluster_id,
             dwh_cache_id=dwh_cache_id,
+            page=page,
+            size=size,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -462,6 +470,8 @@ class QueriesApi:
         project_id: Annotated[str, Field(strict=True, description="Id of the project")],
         dwh_cluster_id: Annotated[str, Field(strict=True, description="Id of the dwh cluster")],
         dwh_cache_id: Annotated[str, Field(strict=True, description="Id of the dwh cache")],
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="Number of the page")] = None,
+        size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="The count of records to return for one page")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -485,6 +495,10 @@ class QueriesApi:
         :type dwh_cluster_id: str
         :param dwh_cache_id: Id of the dwh cache (required)
         :type dwh_cache_id: str
+        :param page: Number of the page
+        :type page: int
+        :param size: The count of records to return for one page
+        :type size: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -511,6 +525,8 @@ class QueriesApi:
             project_id=project_id,
             dwh_cluster_id=dwh_cluster_id,
             dwh_cache_id=dwh_cache_id,
+            page=page,
+            size=size,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -538,6 +554,8 @@ class QueriesApi:
         project_id: Annotated[str, Field(strict=True, description="Id of the project")],
         dwh_cluster_id: Annotated[str, Field(strict=True, description="Id of the dwh cluster")],
         dwh_cache_id: Annotated[str, Field(strict=True, description="Id of the dwh cache")],
+        page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="Number of the page")] = None,
+        size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="The count of records to return for one page")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -561,6 +579,10 @@ class QueriesApi:
         :type dwh_cluster_id: str
         :param dwh_cache_id: Id of the dwh cache (required)
         :type dwh_cache_id: str
+        :param page: Number of the page
+        :type page: int
+        :param size: The count of records to return for one page
+        :type size: int
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -587,6 +609,8 @@ class QueriesApi:
             project_id=project_id,
             dwh_cluster_id=dwh_cluster_id,
             dwh_cache_id=dwh_cache_id,
+            page=page,
+            size=size,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -609,6 +633,8 @@ class QueriesApi:
         project_id,
         dwh_cluster_id,
         dwh_cache_id,
+        page,
+        size,
         _request_auth,
         _content_type,
         _headers,
@@ -637,6 +663,14 @@ class QueriesApi:
         if dwh_cache_id is not None:
             _path_params['dwhCacheId'] = dwh_cache_id
         # process the query parameters
+        if page is not None:
+            
+            _query_params.append(('page', page))
+            
+        if size is not None:
+            
+            _query_params.append(('size', size))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter

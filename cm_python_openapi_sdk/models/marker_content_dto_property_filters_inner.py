@@ -43,6 +43,9 @@ class MarkerContentDTOPropertyFiltersInner(BaseModel):
     )
 
 
+    discriminator_value_class_map: Dict[str, str] = {
+    }
+
     def __init__(self, *args, **kwargs) -> None:
         if args:
             if len(args) > 1:
@@ -87,6 +90,56 @@ class MarkerContentDTOPropertyFiltersInner(BaseModel):
         instance = cls.model_construct()
         error_messages = []
         match = 0
+
+        # use oneOf discriminator to lookup the data type
+        _data_type = json.loads(json_str).get("operator")
+        if not _data_type:
+            raise ValueError("Failed to lookup data type from the field `operator` in the input.")
+
+        # check if data type is `PropertyFilterCompareDTO`
+        if _data_type == "eq":
+            instance.actual_instance = PropertyFilterCompareDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `PropertyFilterCompareDTO`
+        if _data_type == "gt":
+            instance.actual_instance = PropertyFilterCompareDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `PropertyFilterCompareDTO`
+        if _data_type == "gte":
+            instance.actual_instance = PropertyFilterCompareDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `PropertyFilterInDTO`
+        if _data_type == "in":
+            instance.actual_instance = PropertyFilterInDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `PropertyFilterCompareDTO`
+        if _data_type == "lt":
+            instance.actual_instance = PropertyFilterCompareDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `PropertyFilterCompareDTO`
+        if _data_type == "lte":
+            instance.actual_instance = PropertyFilterCompareDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `PropertyFilterCompareDTO`
+        if _data_type == "ne":
+            instance.actual_instance = PropertyFilterCompareDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `PropertyFilterCompareDTO`
+        if _data_type == "PropertyFilterCompareDTO":
+            instance.actual_instance = PropertyFilterCompareDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `PropertyFilterInDTO`
+        if _data_type == "PropertyFilterInDTO":
+            instance.actual_instance = PropertyFilterInDTO.from_json(json_str)
+            return instance
 
         # deserialize data into PropertyFilterCompareDTO
         try:

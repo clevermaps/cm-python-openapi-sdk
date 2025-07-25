@@ -62,6 +62,13 @@ class TestDatasetsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_dataset_by_name(self) -> None:
+        """Test case for get_dataset_by_name
+
+        Gets dataset by name
+        """
+        pass
+
     def test_update_dataset_by_id(self) -> None:
         """Test case for update_dataset_by_id
 

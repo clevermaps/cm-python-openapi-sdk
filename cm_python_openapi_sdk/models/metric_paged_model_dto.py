@@ -20,8 +20,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from cm_python_openapi_sdk.models.mandatory_keys_for_pagable_response import MandatoryKeysForPagableResponse
-from cm_python_openapi_sdk.models.metric_dto import MetricDTO
+from cm_python_openapi_sdk.models.metric_response_dto import MetricResponseDTO
+from cm_python_openapi_sdk.models.page_dto import PageDTO
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,9 +29,9 @@ class MetricPagedModelDTO(BaseModel):
     """
     MetricPagedModelDTO
     """ # noqa: E501
-    content: Optional[List[MetricDTO]] = None
+    content: Optional[List[MetricResponseDTO]] = None
     links: Optional[List[Dict[str, Any]]] = Field(default=None, description="define keys links and page that are mandatory for all pageble responses")
-    page: Optional[MandatoryKeysForPagableResponse] = None
+    page: Optional[PageDTO] = None
     __properties: ClassVar[List[str]] = ["content", "links", "page"]
 
     model_config = ConfigDict(
@@ -95,9 +95,9 @@ class MetricPagedModelDTO(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "content": [MetricDTO.from_dict(_item) for _item in obj["content"]] if obj.get("content") is not None else None,
+            "content": [MetricResponseDTO.from_dict(_item) for _item in obj["content"]] if obj.get("content") is not None else None,
             "links": obj.get("links"),
-            "page": MandatoryKeysForPagableResponse.from_dict(obj["page"]) if obj.get("page") is not None else None
+            "page": PageDTO.from_dict(obj["page"]) if obj.get("page") is not None else None
         })
         return _obj
 

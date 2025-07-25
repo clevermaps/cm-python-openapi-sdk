@@ -43,10 +43,8 @@ class TestAccountDTO(unittest.TestCase):
                 status = 'ENABLED',
                 anonymous = True,
                 phone_number = '012345',
-                require_additional_attributes = True,
                 preferences = {sendNewsletter=true, lastActiveOrganization=lastActiveOrganization, language=language, lastActiveProject=lastActiveProject},
                 onboarding = {introShown=[introShown, introShown], tipsShown=[tipsShown, tipsShown]},
-                job_info = {companyName=companyName, industry=industry, jobPosition=jobPosition},
                 links = [
                     None
                     ]

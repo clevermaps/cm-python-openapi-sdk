@@ -46,6 +46,9 @@ class FeaturePropertyType(BaseModel):
     )
 
 
+    discriminator_value_class_map: Dict[str, str] = {
+    }
+
     def __init__(self, *args, **kwargs) -> None:
         if args:
             if len(args) > 1:
@@ -95,6 +98,41 @@ class FeaturePropertyType(BaseModel):
         instance = cls.model_construct()
         error_messages = []
         match = 0
+
+        # use oneOf discriminator to lookup the data type
+        _data_type = json.loads(json_str).get("type")
+        if not _data_type:
+            raise ValueError("Failed to lookup data type from the field `type` in the input.")
+
+        # check if data type is `FeatureFunctionDTO`
+        if _data_type == "function":
+            instance.actual_instance = FeatureFunctionDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `FeaturePropertyDTO`
+        if _data_type == "property":
+            instance.actual_instance = FeaturePropertyDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `FeatureTextDTO`
+        if _data_type == "text":
+            instance.actual_instance = FeatureTextDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `FeatureFunctionDTO`
+        if _data_type == "FeatureFunctionDTO":
+            instance.actual_instance = FeatureFunctionDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `FeaturePropertyDTO`
+        if _data_type == "FeaturePropertyDTO":
+            instance.actual_instance = FeaturePropertyDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `FeatureTextDTO`
+        if _data_type == "FeatureTextDTO":
+            instance.actual_instance = FeatureTextDTO.from_json(json_str)
+            return instance
 
         # deserialize data into FeaturePropertyDTO
         try:

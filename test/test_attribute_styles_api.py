@@ -55,6 +55,13 @@ class TestAttributeStylesApi(unittest.TestCase):
         """
         pass
 
+    def test_get_attribute_style_by_name(self) -> None:
+        """Test case for get_attribute_style_by_name
+
+        Gets attribute style by name
+        """
+        pass
+
     def test_update_attribute_style_by_id(self) -> None:
         """Test case for update_attribute_style_by_id
 

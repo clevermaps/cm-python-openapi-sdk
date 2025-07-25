@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
 **type** | **str** |  | 
-**content** | [**List[FunctionNtileContentInner]**](FunctionNtileContentInner.md) |  | 
+**content** | [**List[DwhQueryPropertyTypesFunctionNtile]**](DwhQueryPropertyTypesFunctionNtile.md) |  | 
 **options** | [**FunctionNtileOptions**](FunctionNtileOptions.md) |  | [optional] 
 
 ## Example

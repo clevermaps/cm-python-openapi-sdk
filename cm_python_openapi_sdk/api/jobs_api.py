@@ -20,9 +20,9 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr, field_validator
 from typing import Optional
 from typing_extensions import Annotated
+from cm_python_openapi_sdk.models.general_job_request import GeneralJobRequest
 from cm_python_openapi_sdk.models.job_detail_response import JobDetailResponse
 from cm_python_openapi_sdk.models.job_history_paged_model_dto import JobHistoryPagedModelDTO
-from cm_python_openapi_sdk.models.submit_job_execution_request import SubmitJobExecutionRequest
 
 from cm_python_openapi_sdk.api_client import ApiClient, RequestSerialized
 from cm_python_openapi_sdk.api_response import ApiResponse
@@ -671,7 +671,7 @@ class JobsApi:
     @validate_call
     def submit_job_execution(
         self,
-        submit_job_execution_request: Annotated[SubmitJobExecutionRequest, Field(description="Successful response")],
+        general_job_request: Annotated[GeneralJobRequest, Field(description="Successful response")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -689,8 +689,8 @@ class JobsApi:
 
         Starts the execution of a new project task. Tasks are processed asynchronously, and all jobs are added to a queue.  ### Supported Job Types - **dataPull**: Loads a CSV file into a dataset. - **dataDump**: Dumps a dataset to a CSV file. - **export**: Executes a DWH query and exports the result as a CSV file. - **bulkPointQuery**: Executes DWH queries for a given list of points (latitude, longitude); limited to 1,000 points per request. - **validate**: Validates the project. - **truncate**: Truncates the project's data, dropping all DWH, metadata, and full-text search data. - **importProject**: Imports a project into another one (server-side cloning).  ### Security - **dataPull, importProject**: Requires `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles. - **dataDump, truncate**: Requires the `ADMIN` project role. - **export, bulkPointQuery**: Requires `VIEWER`, `VIEW_CREATOR`, `METADATA_EDITOR`, `DATA_EDITOR`, `VIEW_CREATOR`, or `ADMIN` project roles. - **validate**: Requires `METADATA_EDITOR`, `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles. 
 
-        :param submit_job_execution_request: Successful response (required)
-        :type submit_job_execution_request: SubmitJobExecutionRequest
+        :param general_job_request: Successful response (required)
+        :type general_job_request: GeneralJobRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -714,7 +714,7 @@ class JobsApi:
         """ # noqa: E501
 
         _param = self._submit_job_execution_serialize(
-            submit_job_execution_request=submit_job_execution_request,
+            general_job_request=general_job_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -738,7 +738,7 @@ class JobsApi:
     @validate_call
     def submit_job_execution_with_http_info(
         self,
-        submit_job_execution_request: Annotated[SubmitJobExecutionRequest, Field(description="Successful response")],
+        general_job_request: Annotated[GeneralJobRequest, Field(description="Successful response")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -756,8 +756,8 @@ class JobsApi:
 
         Starts the execution of a new project task. Tasks are processed asynchronously, and all jobs are added to a queue.  ### Supported Job Types - **dataPull**: Loads a CSV file into a dataset. - **dataDump**: Dumps a dataset to a CSV file. - **export**: Executes a DWH query and exports the result as a CSV file. - **bulkPointQuery**: Executes DWH queries for a given list of points (latitude, longitude); limited to 1,000 points per request. - **validate**: Validates the project. - **truncate**: Truncates the project's data, dropping all DWH, metadata, and full-text search data. - **importProject**: Imports a project into another one (server-side cloning).  ### Security - **dataPull, importProject**: Requires `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles. - **dataDump, truncate**: Requires the `ADMIN` project role. - **export, bulkPointQuery**: Requires `VIEWER`, `VIEW_CREATOR`, `METADATA_EDITOR`, `DATA_EDITOR`, `VIEW_CREATOR`, or `ADMIN` project roles. - **validate**: Requires `METADATA_EDITOR`, `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles. 
 
-        :param submit_job_execution_request: Successful response (required)
-        :type submit_job_execution_request: SubmitJobExecutionRequest
+        :param general_job_request: Successful response (required)
+        :type general_job_request: GeneralJobRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -781,7 +781,7 @@ class JobsApi:
         """ # noqa: E501
 
         _param = self._submit_job_execution_serialize(
-            submit_job_execution_request=submit_job_execution_request,
+            general_job_request=general_job_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -805,7 +805,7 @@ class JobsApi:
     @validate_call
     def submit_job_execution_without_preload_content(
         self,
-        submit_job_execution_request: Annotated[SubmitJobExecutionRequest, Field(description="Successful response")],
+        general_job_request: Annotated[GeneralJobRequest, Field(description="Successful response")],
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -823,8 +823,8 @@ class JobsApi:
 
         Starts the execution of a new project task. Tasks are processed asynchronously, and all jobs are added to a queue.  ### Supported Job Types - **dataPull**: Loads a CSV file into a dataset. - **dataDump**: Dumps a dataset to a CSV file. - **export**: Executes a DWH query and exports the result as a CSV file. - **bulkPointQuery**: Executes DWH queries for a given list of points (latitude, longitude); limited to 1,000 points per request. - **validate**: Validates the project. - **truncate**: Truncates the project's data, dropping all DWH, metadata, and full-text search data. - **importProject**: Imports a project into another one (server-side cloning).  ### Security - **dataPull, importProject**: Requires `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles. - **dataDump, truncate**: Requires the `ADMIN` project role. - **export, bulkPointQuery**: Requires `VIEWER`, `VIEW_CREATOR`, `METADATA_EDITOR`, `DATA_EDITOR`, `VIEW_CREATOR`, or `ADMIN` project roles. - **validate**: Requires `METADATA_EDITOR`, `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles. 
 
-        :param submit_job_execution_request: Successful response (required)
-        :type submit_job_execution_request: SubmitJobExecutionRequest
+        :param general_job_request: Successful response (required)
+        :type general_job_request: GeneralJobRequest
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -848,7 +848,7 @@ class JobsApi:
         """ # noqa: E501
 
         _param = self._submit_job_execution_serialize(
-            submit_job_execution_request=submit_job_execution_request,
+            general_job_request=general_job_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -867,7 +867,7 @@ class JobsApi:
 
     def _submit_job_execution_serialize(
         self,
-        submit_job_execution_request,
+        general_job_request,
         _request_auth,
         _content_type,
         _headers,
@@ -893,8 +893,8 @@ class JobsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if submit_job_execution_request is not None:
-            _body_params = submit_job_execution_request
+        if general_job_request is not None:
+            _body_params = general_job_request
 
 
         # set the HTTP header `Accept`

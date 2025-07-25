@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content** | [**List[MarkerSelectorDTO]**](MarkerSelectorDTO.md) |  | [optional] 
+**content** | [**List[MarkerSelectorResponseDTO]**](MarkerSelectorResponseDTO.md) |  | [optional] 
 **links** | **List[object]** | define keys links and page that are mandatory for all pageble responses | [optional] 
-**page** | [**MandatoryKeysForPagableResponse**](MandatoryKeysForPagableResponse.md) |  | [optional] 
+**page** | [**PageDTO**](PageDTO.md) |  | [optional] 
 
 ## Example
 

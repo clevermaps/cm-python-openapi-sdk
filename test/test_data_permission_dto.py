@@ -41,12 +41,12 @@ class TestDataPermissionDTO(unittest.TestCase):
                 type = 'dataset',
                 title = '0',
                 description = '',
-                content = {accountId=accountId, filters=[{function={id=id, type=number, value=0.8008281904610115}, property=property, value=, operator=eq}, {function={id=id, type=number, value=0.8008281904610115}, property=property, value=, operator=eq}]}
+                content = {accountId=accountId, filters=[{function={id=id, type=number, value=0.8008281904610115}, property=property, value=, operator=eq}, {function={id=id, type=number, value=0.8008281904610115}, property=property, value=, operator=eq}], email=email}
             )
         else:
             return DataPermissionDTO(
                 name = 'awat5ikwowtta-3mh2lcafqw3zhes',
-                content = {accountId=accountId, filters=[{function={id=id, type=number, value=0.8008281904610115}, property=property, value=, operator=eq}, {function={id=id, type=number, value=0.8008281904610115}, property=property, value=, operator=eq}]},
+                content = {accountId=accountId, filters=[{function={id=id, type=number, value=0.8008281904610115}, property=property, value=, operator=eq}, {function={id=id, type=number, value=0.8008281904610115}, property=property, value=, operator=eq}], email=email},
         )
         """
 

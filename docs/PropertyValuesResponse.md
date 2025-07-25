@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | [**List[PropertyValuesResponseContentInner]**](PropertyValuesResponseContentInner.md) |  | 
 **links** | **List[object]** | define keys links and page that are mandatory for all pageble responses | 
-**page** | [**MandatoryKeysForPagableResponse**](MandatoryKeysForPagableResponse.md) |  | 
+**page** | [**PageDTO**](PageDTO.md) |  | 
 
 ## Example
 

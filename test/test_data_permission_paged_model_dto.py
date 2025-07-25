@@ -37,7 +37,7 @@ class TestDataPermissionPagedModelDTO(unittest.TestCase):
         if include_optional:
             return DataPermissionPagedModelDTO(
                 content = [
-                    {name=name, description=description, id=id, type=dataset, title=title, content={accountId=accountId, filters=[{function={id=id, type=number, value=0.8008281904610115}, property=property, value=, operator=eq}, {function={id=id, type=number, value=0.8008281904610115}, property=property, value=, operator=eq}]}}
+                    {name=name, description=description, links=[{}, {}], id=id, page={number=1, size=0, totalPages=6, totalElements=}, accessInfo={createdAt=createdAt, createdBy=createdBy, modifiedAt=modifiedAt, modifiedBy=modifiedBy}, type=dataset, title=title, version=6, content={accountId=accountId, filters=[{function={id=id, type=number, value=0.8008281904610115}, property=property, value=, operator=eq}, {function={id=id, type=number, value=0.8008281904610115}, property=property, value=, operator=eq}], email=email}}
                     ],
                 links = [
                     None

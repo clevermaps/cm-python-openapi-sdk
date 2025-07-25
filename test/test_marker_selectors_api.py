@@ -55,6 +55,13 @@ class TestMarkerSelectorsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_marker_selector_by_name(self) -> None:
+        """Test case for get_marker_selector_by_name
+
+        Gets marker selector by name
+        """
+        pass
+
     def test_update_marker_selector_by_id(self) -> None:
         """Test case for update_marker_selector_by_id
 

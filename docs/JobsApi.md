@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **submit_job_execution**
-> JobDetailResponse submit_job_execution(submit_job_execution_request)
+> JobDetailResponse submit_job_execution(general_job_request)
 
 Submit job execution
 
@@ -224,8 +224,8 @@ Starts the execution of a new project task. Tasks are processed asynchronously, 
 
 ```python
 import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.general_job_request import GeneralJobRequest
 from cm_python_openapi_sdk.models.job_detail_response import JobDetailResponse
-from cm_python_openapi_sdk.models.submit_job_execution_request import SubmitJobExecutionRequest
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -249,11 +249,11 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.JobsApi(api_client)
-    submit_job_execution_request = cm_python_openapi_sdk.SubmitJobExecutionRequest() # SubmitJobExecutionRequest | Successful response
+    general_job_request = cm_python_openapi_sdk.GeneralJobRequest() # GeneralJobRequest | Successful response
 
     try:
         # Submit job execution
-        api_response = api_instance.submit_job_execution(submit_job_execution_request)
+        api_response = api_instance.submit_job_execution(general_job_request)
         print("The response of JobsApi->submit_job_execution:\n")
         pprint(api_response)
     except Exception as e:
@@ -267,7 +267,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **submit_job_execution_request** | [**SubmitJobExecutionRequest**](SubmitJobExecutionRequest.md)| Successful response | 
+ **general_job_request** | [**GeneralJobRequest**](GeneralJobRequest.md)| Successful response | 
 
 ### Return type
 

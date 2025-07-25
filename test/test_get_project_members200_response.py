@@ -40,7 +40,7 @@ class TestGetProjectMembers200Response(unittest.TestCase):
                     None
                     ],
                 content = [
-                    {accountId=accountId, createdAt=createdAt, role=ANONYMOUS, modifiedAt=modifiedAt, links=[{}, {}], id=id, account={preferences={sendNewsletter=true, lastActiveOrganization=lastActiveOrganization, language=language, lastActiveProject=lastActiveProject}, phoneNumber=phoneNumber, requireAdditionalAttributes=true, fullName=fullName, anonymous=true, onboarding={introShown=[introShown, introShown], tipsShown=[tipsShown, tipsShown]}, links=[{}, {}], id=id, consentGranted=true, jobInfo={companyName=companyName, industry=industry, jobPosition=jobPosition}, email=email, status=ENABLED}, status=ENABLED}
+                    {accountId=accountId, createdAt=createdAt, role=ANONYMOUS, modifiedAt=modifiedAt, links=[{}, {}], id=id, account={preferences={sendNewsletter=true, lastActiveOrganization=lastActiveOrganization, language=language, lastActiveProject=lastActiveProject}, phoneNumber=phoneNumber, fullName=fullName, anonymous=true, onboarding={introShown=[introShown, introShown], tipsShown=[tipsShown, tipsShown]}, links=[{}, {}], id=id, consentGranted=true, email=email, status=ENABLED}, status=ENABLED}
                     ],
                 page = {number=1, size=0, totalPages=6, totalElements=},
                 id = '',
@@ -49,7 +49,7 @@ class TestGetProjectMembers200Response(unittest.TestCase):
                 role = 'ANONYMOUS',
                 created_at = '',
                 modified_at = '',
-                account = {preferences={sendNewsletter=true, lastActiveOrganization=lastActiveOrganization, language=language, lastActiveProject=lastActiveProject}, phoneNumber=phoneNumber, requireAdditionalAttributes=true, fullName=fullName, anonymous=true, onboarding={introShown=[introShown, introShown], tipsShown=[tipsShown, tipsShown]}, links=[{}, {}], id=id, consentGranted=true, jobInfo={companyName=companyName, industry=industry, jobPosition=jobPosition}, email=email, status=ENABLED}
+                account = {preferences={sendNewsletter=true, lastActiveOrganization=lastActiveOrganization, language=language, lastActiveProject=lastActiveProject}, phoneNumber=phoneNumber, fullName=fullName, anonymous=true, onboarding={introShown=[introShown, introShown], tipsShown=[tipsShown, tipsShown]}, links=[{}, {}], id=id, consentGranted=true, email=email, status=ENABLED}
             )
         else:
             return GetProjectMembers200Response(

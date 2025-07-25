@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**delete_metric_by_id**](MetricsApi.md#delete_metric_by_id) | **DELETE** /projects/{projectId}/md/metrics/{id} | Deletes metric by id
 [**get_all_metrics**](MetricsApi.md#get_all_metrics) | **GET** /projects/{projectId}/md/metrics | Returns paged collection of all Metrics in a project.
 [**get_metric_by_id**](MetricsApi.md#get_metric_by_id) | **GET** /projects/{projectId}/md/metrics/{id} | Gets metric by id
+[**get_metric_by_name**](MetricsApi.md#get_metric_by_name) | **GET** /projects/{projectId}/md/metrics/{name} | Gets metric by name
 [**update_metric_by_id**](MetricsApi.md#update_metric_by_id) | **PUT** /projects/{projectId}/md/metrics/{id} | Updates metric by id
 
 
 # **create_metric**
-> MetricDTO create_metric(project_id, metric_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> MetricResponseDTO create_metric(project_id, metric_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Creates new metric.
 
@@ -25,6 +26,7 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.metric_dto import MetricDTO
+from cm_python_openapi_sdk.models.metric_response_dto import MetricResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -74,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MetricDTO**](MetricDTO.md)
+[**MetricResponseDTO**](MetricResponseDTO.md)
 
 ### Authorization
 
@@ -256,7 +258,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_metric_by_id**
-> MetricDTO get_metric_by_id(project_id, id)
+> MetricResponseDTO get_metric_by_id(project_id, id)
 
 Gets metric by id
 
@@ -266,7 +268,7 @@ Gets metric by id
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.metric_dto import MetricDTO
+from cm_python_openapi_sdk.models.metric_response_dto import MetricResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -314,7 +316,86 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MetricDTO**](MetricDTO.md)
+[**MetricResponseDTO**](MetricResponseDTO.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+**404** | Metric not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_metric_by_name**
+> MetricResponseDTO get_metric_by_name(project_id, name)
+
+Gets metric by name
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+
+```python
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.metric_response_dto import MetricResponseDTO
+from cm_python_openapi_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cm_python_openapi_sdk.Configuration(
+    host = "https://staging.dev.clevermaps.io/rest"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = cm_python_openapi_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cm_python_openapi_sdk.MetricsApi(api_client)
+    project_id = 'project_id_example' # str | Id of the project
+    name = 'name_example' # str | Name of the metric
+
+    try:
+        # Gets metric by name
+        api_response = api_instance.get_metric_by_name(project_id, name)
+        print("The response of MetricsApi->get_metric_by_name:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling MetricsApi->get_metric_by_name: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **str**| Id of the project | 
+ **name** | **str**| Name of the metric | 
+
+### Return type
+
+[**MetricResponseDTO**](MetricResponseDTO.md)
 
 ### Authorization
 
@@ -335,7 +416,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_metric_by_id**
-> MetricDTO update_metric_by_id(project_id, id, if_match, metric_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> MetricResponseDTO update_metric_by_id(project_id, id, if_match, metric_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Updates metric by id
 
@@ -348,6 +429,7 @@ Restricted to EDITOR project role that has the permission to update metadata of 
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.metric_dto import MetricDTO
+from cm_python_openapi_sdk.models.metric_response_dto import MetricResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -401,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MetricDTO**](MetricDTO.md)
+[**MetricResponseDTO**](MetricResponseDTO.md)
 
 ### Authorization
 

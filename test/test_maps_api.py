@@ -55,6 +55,13 @@ class TestMapsApi(unittest.TestCase):
         """
         pass
 
+    def test_get_map_by_name(self) -> None:
+        """Test case for get_map_by_name
+
+        Gets map by name
+        """
+        pass
+
     def test_update_map_by_id(self) -> None:
         """Test case for update_map_by_id
 

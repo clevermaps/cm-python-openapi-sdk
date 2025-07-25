@@ -30,10 +30,9 @@ class TokenResponseDTO(BaseModel):
     token_type: Optional[StrictStr] = None
     expires_in: Optional[StrictInt] = None
     access_token: StrictStr
-    scope: Optional[StrictStr] = None
     refresh_token: Optional[StrictStr] = None
     id_token: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["token_type", "expires_in", "access_token", "scope", "refresh_token", "id_token"]
+    __properties: ClassVar[List[str]] = ["token_type", "expires_in", "access_token", "refresh_token", "id_token"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,7 +88,6 @@ class TokenResponseDTO(BaseModel):
             "token_type": obj.get("token_type"),
             "expires_in": obj.get("expires_in"),
             "access_token": obj.get("access_token"),
-            "scope": obj.get("scope"),
             "refresh_token": obj.get("refresh_token"),
             "id_token": obj.get("id_token")
         })

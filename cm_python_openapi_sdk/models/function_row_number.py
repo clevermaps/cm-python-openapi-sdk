@@ -21,7 +21,6 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from cm_python_openapi_sdk.models.function_ntile_content_inner import FunctionNtileContentInner
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +30,7 @@ class FunctionRowNumber(BaseModel):
     """ # noqa: E501
     id: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=60)]] = None
     type: StrictStr
-    content: Annotated[List[FunctionNtileContentInner], Field(min_length=1)]
+    content: Annotated[List[DwhQueryPropertyTypesFunctionRowNumber], Field(min_length=1)]
     options: Dict[str, Any]
     __properties: ClassVar[List[str]] = ["id", "type", "content", "options"]
 
@@ -112,9 +111,12 @@ class FunctionRowNumber(BaseModel):
         _obj = cls.model_validate({
             "id": obj.get("id"),
             "type": obj.get("type"),
-            "content": [FunctionNtileContentInner.from_dict(_item) for _item in obj["content"]] if obj.get("content") is not None else None,
+            "content": [DwhQueryPropertyTypesFunctionRowNumber.from_dict(_item) for _item in obj["content"]] if obj.get("content") is not None else None,
             "options": obj.get("options")
         })
         return _obj
 
+from cm_python_openapi_sdk.models.dwh_query_property_types_function_row_number import DwhQueryPropertyTypesFunctionRowNumber
+# TODO: Rewrite to not use raise_errors
+FunctionRowNumber.model_rebuild(raise_errors=False)
 

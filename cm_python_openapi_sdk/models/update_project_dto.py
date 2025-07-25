@@ -21,6 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from cm_python_openapi_sdk.models.project_response_dto_services import ProjectResponseDTOServices
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +33,7 @@ class UpdateProjectDTO(BaseModel):
     description: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     organization_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, alias="organizationId")
     status: Optional[StrictStr] = None
-    services: Optional[Dict[str, Any]] = None
+    services: Optional[ProjectResponseDTOServices] = None
     __properties: ClassVar[List[str]] = ["title", "description", "organizationId", "status", "services"]
 
     @field_validator('organization_id')
@@ -94,6 +95,9 @@ class UpdateProjectDTO(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of services
+        if self.services:
+            _dict['services'] = self.services.to_dict()
         return _dict
 
     @classmethod
@@ -110,7 +114,7 @@ class UpdateProjectDTO(BaseModel):
             "description": obj.get("description"),
             "organizationId": obj.get("organizationId"),
             "status": obj.get("status"),
-            "services": obj.get("services")
+            "services": ProjectResponseDTOServices.from_dict(obj["services"]) if obj.get("services") is not None else None
         })
         return _obj
 

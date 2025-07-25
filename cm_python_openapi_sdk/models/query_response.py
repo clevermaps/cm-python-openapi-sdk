@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from cm_python_openapi_sdk.models.execution_detail import ExecutionDetail
-from cm_python_openapi_sdk.models.mandatory_keys_for_pagable_response import MandatoryKeysForPagableResponse
+from cm_python_openapi_sdk.models.page_dto import PageDTO
 from cm_python_openapi_sdk.models.query_response_item_wrapper import QueryResponseItemWrapper
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,7 +33,7 @@ class QueryResponse(BaseModel):
     content: List[QueryResponseItemWrapper]
     execution_detail: Optional[ExecutionDetail] = Field(default=None, alias="executionDetail")
     links: List[Dict[str, Any]] = Field(description="define keys links and page that are mandatory for all pageble responses")
-    page: MandatoryKeysForPagableResponse
+    page: PageDTO
     __properties: ClassVar[List[str]] = ["content", "executionDetail", "links", "page"]
 
     model_config = ConfigDict(
@@ -103,7 +103,7 @@ class QueryResponse(BaseModel):
             "content": [QueryResponseItemWrapper.from_dict(_item) for _item in obj["content"]] if obj.get("content") is not None else None,
             "executionDetail": ExecutionDetail.from_dict(obj["executionDetail"]) if obj.get("executionDetail") is not None else None,
             "links": obj.get("links"),
-            "page": MandatoryKeysForPagableResponse.from_dict(obj["page"]) if obj.get("page") is not None else None
+            "page": PageDTO.from_dict(obj["page"]) if obj.get("page") is not None else None
         })
         return _obj
 

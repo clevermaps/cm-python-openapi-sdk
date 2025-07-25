@@ -52,6 +52,9 @@ class DateRangeFunctionFunction(BaseModel):
     )
 
 
+    discriminator_value_class_map: Dict[str, str] = {
+    }
+
     def __init__(self, *args, **kwargs) -> None:
         if args:
             if len(args) > 1:
@@ -111,6 +114,126 @@ class DateRangeFunctionFunction(BaseModel):
         instance = cls.model_construct()
         error_messages = []
         match = 0
+
+        # use oneOf discriminator to lookup the data type
+        _data_type = json.loads(json_str).get("type")
+        if not _data_type:
+            raise ValueError("Failed to lookup data type from the field `type` in the input.")
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_avg":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_count":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_count_dist":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionDateTrunc`
+        if _data_type == "function_date_trunc":
+            instance.actual_instance = FunctionDateTrunc.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionArithmTypeGeneral`
+        if _data_type == "function_divide":
+            instance.actual_instance = FunctionArithmTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionInterval`
+        if _data_type == "function_interval":
+            instance.actual_instance = FunctionInterval.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_max":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_min":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionArithmTypeGeneral`
+        if _data_type == "function_minus":
+            instance.actual_instance = FunctionArithmTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionArithmTypeGeneral`
+        if _data_type == "function_modulo":
+            instance.actual_instance = FunctionArithmTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionArithmTypeGeneral`
+        if _data_type == "function_multiply":
+            instance.actual_instance = FunctionArithmTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionArithmTypeGeneral`
+        if _data_type == "function_plus":
+            instance.actual_instance = FunctionArithmTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_stddev_pop":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_stddev_samp":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_sum":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionToday`
+        if _data_type == "function_today":
+            instance.actual_instance = FunctionToday.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_var_pop":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_var_samp":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "FunctionAggTypeGeneral":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionArithmTypeGeneral`
+        if _data_type == "FunctionArithmTypeGeneral":
+            instance.actual_instance = FunctionArithmTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionDateTrunc`
+        if _data_type == "FunctionDateTrunc":
+            instance.actual_instance = FunctionDateTrunc.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionInterval`
+        if _data_type == "FunctionInterval":
+            instance.actual_instance = FunctionInterval.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionToday`
+        if _data_type == "FunctionToday":
+            instance.actual_instance = FunctionToday.from_json(json_str)
+            return instance
 
         # deserialize data into FunctionAggTypeGeneral
         try:

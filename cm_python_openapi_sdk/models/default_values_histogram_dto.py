@@ -18,8 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
@@ -28,7 +28,7 @@ class DefaultValuesHistogramDTO(BaseModel):
     """
     DefaultValuesHistogramDTO
     """ # noqa: E501
-    values: Optional[Annotated[List[Any], Field(min_length=2, max_length=2)]] = None
+    values: Optional[Annotated[List[Union[StrictFloat, StrictInt]], Field(min_length=2, max_length=2)]] = None
     null_filtered: Optional[StrictBool] = Field(default=None, alias="nullFiltered")
     __properties: ClassVar[List[str]] = ["values", "nullFiltered"]
 

@@ -37,7 +37,7 @@ class TestMarkerPagedModelDTO(unittest.TestCase):
         if include_optional:
             return MarkerPagedModelDTO(
                 content = [
-                    {name=name, description=description, id=id, type=dataset, title=title, content={propertyFilters=[{propertyName=propertyName, value=, operator=eq}, {propertyName=propertyName, value=, operator=eq}], style=style}}
+                    {name=name, description=description, links=[{}, {}], id=id, page={number=1, size=0, totalPages=6, totalElements=}, accessInfo={createdAt=createdAt, createdBy=createdBy, modifiedAt=modifiedAt, modifiedBy=modifiedBy}, type=dataset, title=title, version=0, content={propertyFilters=[{propertyName=propertyName, value=, operator=eq}, {propertyName=propertyName, value=, operator=eq}], style=style}}
                     ],
                 links = [
                     None

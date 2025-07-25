@@ -13,9 +13,7 @@ Name | Type | Description | Notes
 **consent_granted** | **bool** |  | [optional] 
 **anonymous** | **bool** |  | [optional] 
 **phone_number** | **str** |  | [optional] 
-**require_additional_attributes** | **bool** |  | [optional] 
 **onboarding** | [**AccountOnboardingParameters**](AccountOnboardingParameters.md) |  | [optional] 
-**job_info** | [**AccountJobInfo**](AccountJobInfo.md) |  | [optional] 
 **links** | **List[object]** | define keys links and page that are mandatory for all pageble responses | [optional] 
 
 ## Example

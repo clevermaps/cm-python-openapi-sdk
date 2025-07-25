@@ -36,14 +36,14 @@ class TestDataPermissionContentDTO(unittest.TestCase):
         model = DataPermissionContentDTO()
         if include_optional:
             return DataPermissionContentDTO(
-                account_id = 'gCu2LC4aWwWL9Y864DZt',
+                email = '',
+                account_id = '62ECB020-8429-30cc-01FF-CCfeEe150AC3',
                 filters = [
                     null
                     ]
             )
         else:
             return DataPermissionContentDTO(
-                account_id = 'gCu2LC4aWwWL9Y864DZt',
                 filters = [
                     null
                     ],

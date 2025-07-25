@@ -39,8 +39,8 @@ class TestJobDetailResponse(unittest.TestCase):
                 id = '0',
                 type = '0',
                 status = 'RUNNING',
-                start_date = None,
-                end_date = None,
+                start_date = 56,
+                end_date = 56,
                 message = '',
                 result = None,
                 links = [

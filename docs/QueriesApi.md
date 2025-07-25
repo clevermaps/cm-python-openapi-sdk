@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_queries**
-> QueryResponse get_queries(project_id, dwh_cluster_id, dwh_cache_id)
+> QueryResponse get_queries(project_id, dwh_cluster_id, dwh_cache_id, page=page, size=size)
 
 Get queries
 
@@ -154,10 +154,12 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     project_id = 'project_id_example' # str | Id of the project
     dwh_cluster_id = 'dwh_cluster_id_example' # str | Id of the dwh cluster
     dwh_cache_id = 'q:vb2b3d8v91jao331:DqBZN5IjSwfufj-7rDMAOQ' # str | Id of the dwh cache
+    page = 0 # int | Number of the page (optional) (default to 0)
+    size = 100 # int | The count of records to return for one page (optional) (default to 100)
 
     try:
         # Get queries
-        api_response = api_instance.get_queries(project_id, dwh_cluster_id, dwh_cache_id)
+        api_response = api_instance.get_queries(project_id, dwh_cluster_id, dwh_cache_id, page=page, size=size)
         print("The response of QueriesApi->get_queries:\n")
         pprint(api_response)
     except Exception as e:
@@ -174,6 +176,8 @@ Name | Type | Description  | Notes
  **project_id** | **str**| Id of the project | 
  **dwh_cluster_id** | **str**| Id of the dwh cluster | 
  **dwh_cache_id** | **str**| Id of the dwh cache | 
+ **page** | **int**| Number of the page | [optional] [default to 0]
+ **size** | **int**| The count of records to return for one page | [optional] [default to 100]
 
 ### Return type
 

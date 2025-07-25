@@ -2,7 +2,6 @@
 
 # import apis into api package
 from cm_python_openapi_sdk.api.accounts_api import AccountsApi
-from cm_python_openapi_sdk.api.accounts_reset_password_api import AccountsResetPasswordApi
 from cm_python_openapi_sdk.api.attribute_styles_api import AttributeStylesApi
 from cm_python_openapi_sdk.api.audit_log_api import AuditLogApi
 from cm_python_openapi_sdk.api.authentication_api import AuthenticationApi
@@ -18,6 +17,7 @@ from cm_python_openapi_sdk.api.date_ranges_api import DateRangesApi
 from cm_python_openapi_sdk.api.explain_api import ExplainApi
 from cm_python_openapi_sdk.api.export_api import ExportApi
 from cm_python_openapi_sdk.api.exports_api import ExportsApi
+from cm_python_openapi_sdk.api.geosearch_api import GeosearchApi
 from cm_python_openapi_sdk.api.indicator_drills_api import IndicatorDrillsApi
 from cm_python_openapi_sdk.api.indicators_api import IndicatorsApi
 from cm_python_openapi_sdk.api.invitation_api import InvitationApi
@@ -38,5 +38,6 @@ from cm_python_openapi_sdk.api.property_values_api import PropertyValuesApi
 from cm_python_openapi_sdk.api.property_values_distribution_api import PropertyValuesDistributionApi
 from cm_python_openapi_sdk.api.queries_api import QueriesApi
 from cm_python_openapi_sdk.api.search_api import SearchApi
+from cm_python_openapi_sdk.api.vector_tiles_api import VectorTilesApi
 from cm_python_openapi_sdk.api.views_api import ViewsApi
 

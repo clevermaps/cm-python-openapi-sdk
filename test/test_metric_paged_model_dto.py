@@ -37,7 +37,7 @@ class TestMetricPagedModelDTO(unittest.TestCase):
         if include_optional:
             return MetricPagedModelDTO(
                 content = [
-                    {name=name, description=description, id=id, type=dataset, title=title, content={id=id, type=number, value=0.8008281904610115}}
+                    {name=name, description=description, links=[{}, {}], id=id, page={number=1, size=0, totalPages=6, totalElements=}, accessInfo={createdAt=createdAt, createdBy=createdBy, modifiedAt=modifiedAt, modifiedBy=modifiedBy}, type=dataset, title=title, version=0, content={id=id, type=number, value=0.8008281904610115}}
                     ],
                 links = [
                     None

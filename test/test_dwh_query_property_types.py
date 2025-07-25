@@ -43,7 +43,7 @@ class TestDwhQueryPropertyTypes(unittest.TestCase):
                 content = [
                     null
                     ],
-                options = cm_python_openapi_sdk.models.function_options_arithm.FunctionOptionsArithm()
+                options = cm_python_openapi_sdk.models.options.options()
             )
         else:
             return DwhQueryPropertyTypes(
@@ -53,6 +53,7 @@ class TestDwhQueryPropertyTypes(unittest.TestCase):
                 content = [
                     null
                     ],
+                options = cm_python_openapi_sdk.models.options.options(),
         )
         """
 

@@ -5,9 +5,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content** | [**List[IndicatorDrillDTO]**](IndicatorDrillDTO.md) |  | [optional] 
+**content** | [**List[IndicatorDrillResponseDTO]**](IndicatorDrillResponseDTO.md) |  | [optional] 
 **links** | **List[object]** | define keys links and page that are mandatory for all pageble responses | [optional] 
-**page** | [**MandatoryKeysForPagableResponse**](MandatoryKeysForPagableResponse.md) |  | [optional] 
+**page** | [**PageDTO**](PageDTO.md) |  | [optional] 
 
 ## Example
 

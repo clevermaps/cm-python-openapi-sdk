@@ -5,7 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**account_id** | **str** |  | 
+**email** | **str** |  | [optional] 
+**account_id** | **str** |  | [optional] 
 **filters** | [**List[FilterBy]**](FilterBy.md) |  | 
 
 ## Example

@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | **List[object]** | define keys links and page that are mandatory for all pageble responses | [optional] 
-**content** | [**List[MembershipDTO]**](MembershipDTO.md) |  | [optional] 
-**page** | [**MandatoryKeysForPagableResponse**](MandatoryKeysForPagableResponse.md) |  | [optional] 
+**content** | [**List[MembershipResponseDTO]**](MembershipResponseDTO.md) |  | [optional] 
+**page** | [**PageDTO**](PageDTO.md) |  | [optional] 
 
 ## Example
 

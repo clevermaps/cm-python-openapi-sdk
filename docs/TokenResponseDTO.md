@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **token_type** | **str** |  | [optional] 
 **expires_in** | **int** |  | [optional] 
 **access_token** | **str** |  | 
-**scope** | **str** |  | [optional] 
 **refresh_token** | **str** |  | [optional] 
 **id_token** | **str** |  | [optional] 
 

@@ -38,15 +38,13 @@ class TestDataDumpJobRequest(unittest.TestCase):
             return DataDumpJobRequest(
                 type = 'E',
                 project_id = 'w8q6zgckec0l3o4g',
-                content = cm_python_openapi_sdk.models.data_dump_request.DataDumpRequest(
-                    dataset = '0', )
+                content = {dataset=dataset}
             )
         else:
             return DataDumpJobRequest(
                 type = 'E',
                 project_id = 'w8q6zgckec0l3o4g',
-                content = cm_python_openapi_sdk.models.data_dump_request.DataDumpRequest(
-                    dataset = '0', ),
+                content = {dataset=dataset},
         )
         """
 

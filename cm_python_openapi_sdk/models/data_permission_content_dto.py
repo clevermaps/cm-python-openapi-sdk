@@ -18,8 +18,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from cm_python_openapi_sdk.models.filter_by import FilterBy
 from typing import Optional, Set
@@ -29,15 +29,19 @@ class DataPermissionContentDTO(BaseModel):
     """
     DataPermissionContentDTO
     """ # noqa: E501
-    account_id: Annotated[str, Field(strict=True)] = Field(alias="accountId")
+    email: Optional[StrictStr] = None
+    account_id: Optional[Annotated[str, Field(strict=True)]] = Field(default=None, alias="accountId")
     filters: List[FilterBy]
-    __properties: ClassVar[List[str]] = ["accountId", "filters"]
+    __properties: ClassVar[List[str]] = ["email", "accountId", "filters"]
 
     @field_validator('account_id')
     def account_id_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if not re.match(r"^[a-zA-Z0-9]{20}$", value):
-            raise ValueError(r"must validate the regular expression /^[a-zA-Z0-9]{20}$/")
+        if value is None:
+            return value
+
+        if not re.match(r"^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$", value):
+            raise ValueError(r"must validate the regular expression /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/")
         return value
 
     model_config = ConfigDict(
@@ -98,6 +102,7 @@ class DataPermissionContentDTO(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "email": obj.get("email"),
             "accountId": obj.get("accountId"),
             "filters": [FilterBy.from_dict(_item) for _item in obj["filters"]] if obj.get("filters") is not None else None
         })

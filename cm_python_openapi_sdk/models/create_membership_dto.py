@@ -19,7 +19,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,14 +27,18 @@ class CreateMembershipDTO(BaseModel):
     """
     CreateMembershipDTO
     """ # noqa: E501
-    account_id: StrictStr = Field(alias="accountId")
-    status: StrictStr
+    email: Optional[StrictStr] = None
+    account_id: Optional[StrictStr] = Field(default=None, alias="accountId")
+    status: Optional[StrictStr] = None
     role: StrictStr
-    __properties: ClassVar[List[str]] = ["accountId", "status", "role"]
+    __properties: ClassVar[List[str]] = ["email", "accountId", "status", "role"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
         """Validates the enum"""
+        if value is None:
+            return value
+
         if value not in set(['ENABLED', 'DISABLED']):
             raise ValueError("must be one of enum values ('ENABLED', 'DISABLED')")
         return value
@@ -97,6 +101,7 @@ class CreateMembershipDTO(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "email": obj.get("email"),
             "accountId": obj.get("accountId"),
             "status": obj.get("status"),
             "role": obj.get("role")

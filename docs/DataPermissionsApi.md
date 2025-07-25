@@ -8,11 +8,12 @@ Method | HTTP request | Description
 [**delete_data_permission_by_id**](DataPermissionsApi.md#delete_data_permission_by_id) | **DELETE** /projects/{projectId}/md/dataPermissions/{id} | Deletes data permission by id
 [**get_all_data_permissions**](DataPermissionsApi.md#get_all_data_permissions) | **GET** /projects/{projectId}/md/dataPermissions | Returns paged collection of all data permissions in a project
 [**get_data_permission_by_id**](DataPermissionsApi.md#get_data_permission_by_id) | **GET** /projects/{projectId}/md/dataPermissions/{id} | Gets data permission by id
+[**get_data_permission_by_name**](DataPermissionsApi.md#get_data_permission_by_name) | **GET** /projects/{projectId}/md/dataPermissions/{name} | Gets data permission by name
 [**update_data_permission_by_id**](DataPermissionsApi.md#update_data_permission_by_id) | **PUT** /projects/{projectId}/md/dataPermissions/{id} | Updates data permission by id
 
 
 # **create_data_permission**
-> DataPermissionDTO create_data_permission(project_id, data_permission_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> DataPermissionResponseDTO create_data_permission(project_id, data_permission_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Creates new data permission
 
@@ -25,6 +26,7 @@ Restricted to ADMIN project role that has the permission to update data permissi
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.data_permission_dto import DataPermissionDTO
+from cm_python_openapi_sdk.models.data_permission_response_dto import DataPermissionResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -74,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPermissionDTO**](DataPermissionDTO.md)
+[**DataPermissionResponseDTO**](DataPermissionResponseDTO.md)
 
 ### Authorization
 
@@ -258,7 +260,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_data_permission_by_id**
-> DataPermissionDTO get_data_permission_by_id(project_id, id)
+> DataPermissionResponseDTO get_data_permission_by_id(project_id, id)
 
 Gets data permission by id
 
@@ -270,7 +272,7 @@ Restricted to ADMIN project role that has the permission to update data permissi
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.data_permission_dto import DataPermissionDTO
+from cm_python_openapi_sdk.models.data_permission_response_dto import DataPermissionResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -318,7 +320,88 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPermissionDTO**](DataPermissionDTO.md)
+[**DataPermissionResponseDTO**](DataPermissionResponseDTO.md)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful response |  -  |
+**404** | Data permission not found |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_data_permission_by_name**
+> DataPermissionResponseDTO get_data_permission_by_name(project_id, name)
+
+Gets data permission by name
+
+Restricted to ADMIN project role that has the permission to update data permissions of the project.
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+
+```python
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.data_permission_response_dto import DataPermissionResponseDTO
+from cm_python_openapi_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cm_python_openapi_sdk.Configuration(
+    host = "https://staging.dev.clevermaps.io/rest"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = cm_python_openapi_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cm_python_openapi_sdk.DataPermissionsApi(api_client)
+    project_id = 'project_id_example' # str | Id of the project
+    name = 'name_example' # str | Name of the data permission
+
+    try:
+        # Gets data permission by name
+        api_response = api_instance.get_data_permission_by_name(project_id, name)
+        print("The response of DataPermissionsApi->get_data_permission_by_name:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DataPermissionsApi->get_data_permission_by_name: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **str**| Id of the project | 
+ **name** | **str**| Name of the data permission | 
+
+### Return type
+
+[**DataPermissionResponseDTO**](DataPermissionResponseDTO.md)
 
 ### Authorization
 
@@ -339,7 +422,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_data_permission_by_id**
-> DataPermissionDTO update_data_permission_by_id(project_id, id, if_match, data_permission_dto, x_can_strict_json_validation=x_can_strict_json_validation)
+> DataPermissionResponseDTO update_data_permission_by_id(project_id, id, if_match, data_permission_dto, x_can_strict_json_validation=x_can_strict_json_validation)
 
 Updates data permission by id
 
@@ -352,6 +435,7 @@ Restricted to ADMIN project role that has the permission to update data permissi
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.data_permission_dto import DataPermissionDTO
+from cm_python_openapi_sdk.models.data_permission_response_dto import DataPermissionResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -405,7 +489,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DataPermissionDTO**](DataPermissionDTO.md)
+[**DataPermissionResponseDTO**](DataPermissionResponseDTO.md)
 
 ### Authorization
 

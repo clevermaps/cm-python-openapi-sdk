@@ -28,7 +28,7 @@ class TokenRequestDTO(BaseModel):
     """
     TokenRequestDTO
     """ # noqa: E501
-    refresh_token: Optional[Annotated[str, Field(min_length=30, strict=True, max_length=50)]] = None
+    refresh_token: Optional[Annotated[str, Field(strict=True, max_length=2000)]] = None
     __properties: ClassVar[List[str]] = ["refresh_token"]
 
     @field_validator('refresh_token')
@@ -37,8 +37,8 @@ class TokenRequestDTO(BaseModel):
         if value is None:
             return value
 
-        if not re.match(r"^[\w_-]+$", value):
-            raise ValueError(r"must validate the regular expression /^[\w_-]+$/")
+        if not re.match(r"^[\w._-]+$", value):
+            raise ValueError(r"must validate the regular expression /^[\w._-]+$/")
         return value
 
     model_config = ConfigDict(

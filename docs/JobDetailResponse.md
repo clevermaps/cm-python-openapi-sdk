@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **type** | **str** |  | 
 **status** | **str** |  | 
-**start_date** | **object** |  | [optional] 
-**end_date** | **object** |  | [optional] 
+**start_date** | **int** |  | [optional] 
+**end_date** | **int** |  | [optional] 
 **message** | **str** |  | [optional] 
 **result** | **object** |  | [optional] 
 **links** | **List[object]** | define keys links and page that are mandatory for all pageble responses | [optional] 

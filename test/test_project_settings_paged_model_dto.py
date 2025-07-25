@@ -37,7 +37,7 @@ class TestProjectSettingsPagedModelDTO(unittest.TestCase):
         if include_optional:
             return ProjectSettingsPagedModelDTO(
                 content = [
-                    {name=name, description=description, id=id, type=dataset, title=title, content={defaultViews=[defaultViews, defaultViews], geoSearchCountries=[geoSearchCountries, geoSearchCountries], trustedOrigins=[trustedOrigins, trustedOrigins], geoSearchProviders=[Mapbox, Mapbox], projectTemplate={templateDatasets=[{dataset=dataset}, {dataset=dataset}]}, allowUnsecuredOrigins=false}}
+                    {name=name, description=description, links=[{}, {}], id=id, page={number=1, size=0, totalPages=6, totalElements=}, accessInfo={createdAt=createdAt, createdBy=createdBy, modifiedAt=modifiedAt, modifiedBy=modifiedBy}, type=dataset, title=title, version=0, content={defaultViews=[defaultViews, defaultViews], geoSearchCountries=[geoSearchCountries, geoSearchCountries], trustedOrigins=[trustedOrigins, trustedOrigins], geoSearchProviders=[Mapbox, Mapbox], projectTemplate={templateDatasets=[{dataset=dataset}, {dataset=dataset}]}, allowUnsecuredOrigins=false}}
                     ],
                 links = [
                     None
