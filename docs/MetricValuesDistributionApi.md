@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **accept_metric_values_distributions**
-> QueriesResponse2 accept_metric_values_distributions(project_id, dwh_cluster_id, dwh_metric_values_distribution_request)
+> QueriesResponse accept_metric_values_distributions(project_id, dwh_cluster_id, dwh_metric_values_distribution_request)
 
 Executes a multidimensional query and returns the data distribution of given metric.
 
@@ -45,7 +45,7 @@ The minimal required number of breakpoints is 2, it returns count of elements in
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.dwh_metric_values_distribution_request import DwhMetricValuesDistributionRequest
-from cm_python_openapi_sdk.models.queries_response2 import QueriesResponse2
+from cm_python_openapi_sdk.models.queries_response import QueriesResponse
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QueriesResponse2**](QueriesResponse2.md)
+[**QueriesResponse**](QueriesResponse.md)
 
 ### Authorization
 

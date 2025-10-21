@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **accept_property_values**
-> QueriesResponse1 accept_property_values(project_id, dwh_cluster_id, dwh_property_values_request, size=size, page=page, sort=sort)
+> QueriesResponse accept_property_values(project_id, dwh_cluster_id, dwh_property_values_request, size=size, page=page, sort=sort)
 
 Accept property values
 
@@ -27,7 +27,7 @@ This request starts an asynchronous action, which computes the property values r
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.dwh_property_values_request import DwhPropertyValuesRequest
-from cm_python_openapi_sdk.models.queries_response1 import QueriesResponse1
+from cm_python_openapi_sdk.models.queries_response import QueriesResponse
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QueriesResponse1**](QueriesResponse1.md)
+[**QueriesResponse**](QueriesResponse.md)
 
 ### Authorization
 

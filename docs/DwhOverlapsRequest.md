@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **operators** | **List[str]** |  | 
 **objects** | [**List[FilterBy]**](FilterBy.md) |  | 
 **granularity** | **str** |  | 
-**query** | [**DwhQueryRequest3**](DwhQueryRequest3.md) |  | 
+**query** | [**DwhQueryRequest1**](DwhQueryRequest1.md) |  | 
 
 ## Example
 

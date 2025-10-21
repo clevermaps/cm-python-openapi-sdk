@@ -21,7 +21,7 @@ from pydantic import Field, field_validator
 from typing_extensions import Annotated
 from cm_python_openapi_sdk.models.dwh_overlaps_request import DwhOverlapsRequest
 from cm_python_openapi_sdk.models.dwh_overlaps_response import DwhOverlapsResponse
-from cm_python_openapi_sdk.models.queries_response2 import QueriesResponse2
+from cm_python_openapi_sdk.models.queries_response import QueriesResponse
 
 from cm_python_openapi_sdk.api_client import ApiClient, RequestSerialized
 from cm_python_openapi_sdk.api_response import ApiResponse
@@ -59,7 +59,7 @@ class OverlapsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> QueriesResponse2:
+    ) -> QueriesResponse:
         """Accept overlaps
 
         Computes set of operations between two objects for given metric on selected granularity level. The result is the metric value for the areas.  Supported operations:   * `subtract` - metric value for areas exclusively covered by one object (areas covered by objectA subtract areas covered by objectB)   * `intersect` - metric value for areas covered by both objects (areas covered by objectA and by objectB)   * `major_dominance` - metric value for areas where an object has a major dominance (a value of it's metric is more than 90% in compare with the other object)   * `minor_dominance` - metric value for areas where an object has minor dominance (a value of it's metric is less than 90% but more than 60% in compare with the other object)   * `equivalent_dominance` - metric value for areas where both objects have a similar share (a ratio of metric's values is between 40 - 60%)  This request starts an asynchronous action, which computes the overlaps result and returns the location URI of the result in `location` response header. To get the result, client must make another GET request on this URI (see [getOverlaps](#operation/getOverlaps)). 
@@ -103,7 +103,7 @@ class OverlapsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse2",
+            '202': "QueriesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -134,7 +134,7 @@ class OverlapsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[QueriesResponse2]:
+    ) -> ApiResponse[QueriesResponse]:
         """Accept overlaps
 
         Computes set of operations between two objects for given metric on selected granularity level. The result is the metric value for the areas.  Supported operations:   * `subtract` - metric value for areas exclusively covered by one object (areas covered by objectA subtract areas covered by objectB)   * `intersect` - metric value for areas covered by both objects (areas covered by objectA and by objectB)   * `major_dominance` - metric value for areas where an object has a major dominance (a value of it's metric is more than 90% in compare with the other object)   * `minor_dominance` - metric value for areas where an object has minor dominance (a value of it's metric is less than 90% but more than 60% in compare with the other object)   * `equivalent_dominance` - metric value for areas where both objects have a similar share (a ratio of metric's values is between 40 - 60%)  This request starts an asynchronous action, which computes the overlaps result and returns the location URI of the result in `location` response header. To get the result, client must make another GET request on this URI (see [getOverlaps](#operation/getOverlaps)). 
@@ -178,7 +178,7 @@ class OverlapsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse2",
+            '202': "QueriesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -253,7 +253,7 @@ class OverlapsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse2",
+            '202': "QueriesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

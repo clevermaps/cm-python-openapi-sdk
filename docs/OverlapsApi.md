@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **accept_overlaps**
-> QueriesResponse2 accept_overlaps(project_id, dwh_cluster_id, dwh_overlaps_request)
+> QueriesResponse accept_overlaps(project_id, dwh_cluster_id, dwh_overlaps_request)
 
 Accept overlaps
 
@@ -32,7 +32,7 @@ This request starts an asynchronous action, which computes the overlaps result a
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.dwh_overlaps_request import DwhOverlapsRequest
-from cm_python_openapi_sdk.models.queries_response2 import QueriesResponse2
+from cm_python_openapi_sdk.models.queries_response import QueriesResponse
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QueriesResponse2**](QueriesResponse2.md)
+[**QueriesResponse**](QueriesResponse.md)
 
 ### Authorization
 

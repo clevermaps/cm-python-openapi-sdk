@@ -21,7 +21,7 @@ from pydantic import Field, field_validator
 from typing_extensions import Annotated
 from cm_python_openapi_sdk.models.dwh_date_range_request import DwhDateRangeRequest
 from cm_python_openapi_sdk.models.dwh_date_range_response import DwhDateRangeResponse
-from cm_python_openapi_sdk.models.queries_response1 import QueriesResponse1
+from cm_python_openapi_sdk.models.queries_response import QueriesResponse
 
 from cm_python_openapi_sdk.api_client import ApiClient, RequestSerialized
 from cm_python_openapi_sdk.api_response import ApiResponse
@@ -59,7 +59,7 @@ class DateRangesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> QueriesResponse1:
+    ) -> QueriesResponse:
         """Accept date ranges
 
         Accepts a date ranges request. This endpoint returns date ranges for date property in fact table and connected date dimension (if present).  There is one mandatory key `from` that defines the date property in a fact table. Optionally, request can specify `filter` for selecting a date range. In `filter`, it's possible to specify either `function`, or `value` as `startDate` and `endDate`. See the Request body example.  This request starts an asynchronous action, which computes the date ranges result and returns the location URI of the result in the `location` response header. To get the result, client must make another GET request on this URI (see [getDateRanges](#operation/getDateRanges)). 
@@ -103,7 +103,7 @@ class DateRangesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse1",
+            '202': "QueriesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -134,7 +134,7 @@ class DateRangesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[QueriesResponse1]:
+    ) -> ApiResponse[QueriesResponse]:
         """Accept date ranges
 
         Accepts a date ranges request. This endpoint returns date ranges for date property in fact table and connected date dimension (if present).  There is one mandatory key `from` that defines the date property in a fact table. Optionally, request can specify `filter` for selecting a date range. In `filter`, it's possible to specify either `function`, or `value` as `startDate` and `endDate`. See the Request body example.  This request starts an asynchronous action, which computes the date ranges result and returns the location URI of the result in the `location` response header. To get the result, client must make another GET request on this URI (see [getDateRanges](#operation/getDateRanges)). 
@@ -178,7 +178,7 @@ class DateRangesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse1",
+            '202': "QueriesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -253,7 +253,7 @@ class DateRangesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse1",
+            '202': "QueriesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

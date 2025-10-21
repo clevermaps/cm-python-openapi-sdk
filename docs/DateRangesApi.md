@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **accept_date_ranges**
-> QueriesResponse1 accept_date_ranges(project_id, dwh_cluster_id, dwh_date_range_request)
+> QueriesResponse accept_date_ranges(project_id, dwh_cluster_id, dwh_date_range_request)
 
 Accept date ranges
 
@@ -27,7 +27,7 @@ This request starts an asynchronous action, which computes the date ranges resul
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.dwh_date_range_request import DwhDateRangeRequest
-from cm_python_openapi_sdk.models.queries_response1 import QueriesResponse1
+from cm_python_openapi_sdk.models.queries_response import QueriesResponse
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QueriesResponse1**](QueriesResponse1.md)
+[**QueriesResponse**](QueriesResponse.md)
 
 ### Authorization
 

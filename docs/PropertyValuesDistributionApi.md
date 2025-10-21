@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **accept_property_values_distribution**
-> QueriesResponse1 accept_property_values_distribution(project_id, dwh_cluster_id, dwh_property_values_distribution_request)
+> QueriesResponse accept_property_values_distribution(project_id, dwh_cluster_id, dwh_property_values_distribution_request)
 
 Computes the distribution (frequency) of given fact (numeric dataset property). Result is split into required number of equal size buckets. The frequency is the count of occurrences of given metric in these buckets.
 
@@ -25,7 +25,7 @@ This request starts an asynchronous action, which computes the property values d
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.dwh_property_values_distribution_request import DwhPropertyValuesDistributionRequest
-from cm_python_openapi_sdk.models.queries_response1 import QueriesResponse1
+from cm_python_openapi_sdk.models.queries_response import QueriesResponse
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QueriesResponse1**](QueriesResponse1.md)
+[**QueriesResponse**](QueriesResponse.md)
 
 ### Authorization
 

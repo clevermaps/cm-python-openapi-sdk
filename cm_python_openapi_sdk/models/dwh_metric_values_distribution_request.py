@@ -20,7 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from cm_python_openapi_sdk.models.dwh_query_request3 import DwhQueryRequest3
+from cm_python_openapi_sdk.models.dwh_query_request1 import DwhQueryRequest1
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,7 +30,7 @@ class DwhMetricValuesDistributionRequest(BaseModel):
     """ # noqa: E501
     buckets: Optional[StrictInt] = None
     breakpoints: Optional[List[Union[StrictFloat, StrictInt]]] = None
-    query: DwhQueryRequest3
+    query: DwhQueryRequest1
     __properties: ClassVar[List[str]] = ["buckets", "breakpoints", "query"]
 
     model_config = ConfigDict(
@@ -89,7 +89,7 @@ class DwhMetricValuesDistributionRequest(BaseModel):
         _obj = cls.model_validate({
             "buckets": obj.get("buckets"),
             "breakpoints": obj.get("breakpoints"),
-            "query": DwhQueryRequest3.from_dict(obj["query"]) if obj.get("query") is not None else None
+            "query": DwhQueryRequest1.from_dict(obj["query"]) if obj.get("query") is not None else None
         })
         return _obj
 

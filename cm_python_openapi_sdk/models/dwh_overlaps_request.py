@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List
 from typing_extensions import Annotated
-from cm_python_openapi_sdk.models.dwh_query_request3 import DwhQueryRequest3
+from cm_python_openapi_sdk.models.dwh_query_request1 import DwhQueryRequest1
 from cm_python_openapi_sdk.models.filter_by import FilterBy
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,7 +33,7 @@ class DwhOverlapsRequest(BaseModel):
     operators: Annotated[List[StrictStr], Field(min_length=1)]
     objects: Annotated[List[FilterBy], Field(min_length=2, max_length=2)]
     granularity: Annotated[str, Field(strict=True)]
-    query: DwhQueryRequest3
+    query: DwhQueryRequest1
     __properties: ClassVar[List[str]] = ["operators", "objects", "granularity", "query"]
 
     @field_validator('operators')
@@ -115,7 +115,7 @@ class DwhOverlapsRequest(BaseModel):
             "operators": obj.get("operators"),
             "objects": [FilterBy.from_dict(_item) for _item in obj["objects"]] if obj.get("objects") is not None else None,
             "granularity": obj.get("granularity"),
-            "query": DwhQueryRequest3.from_dict(obj["query"]) if obj.get("query") is not None else None
+            "query": DwhQueryRequest1.from_dict(obj["query"]) if obj.get("query") is not None else None
         })
         return _obj
 
