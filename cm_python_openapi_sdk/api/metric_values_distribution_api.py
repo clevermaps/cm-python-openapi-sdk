@@ -21,7 +21,7 @@ from pydantic import Field, field_validator
 from typing_extensions import Annotated
 from cm_python_openapi_sdk.models.dwh_metric_values_distribution_request import DwhMetricValuesDistributionRequest
 from cm_python_openapi_sdk.models.dwh_metric_values_distribution_response1 import DwhMetricValuesDistributionResponse1
-from cm_python_openapi_sdk.models.queries_response2 import QueriesResponse2
+from cm_python_openapi_sdk.models.queries_response import QueriesResponse
 
 from cm_python_openapi_sdk.api_client import ApiClient, RequestSerialized
 from cm_python_openapi_sdk.api_response import ApiResponse
@@ -59,7 +59,7 @@ class MetricValuesDistributionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> QueriesResponse2:
+    ) -> QueriesResponse:
         """accept_metric_values_distributions
 
         Executes a multidimensional query and returns the data distribution of given metric.  This resource is typically used for the histogram filter distribution.  This request starts an asynchronous action, which computes the metric values distributions result and returns the location URI of the result in `location` response header. To get the result, client must make another GET request on this URI (see [getMetricValuesDistribution](#operation/getMetricValuesDistribution)).  **Distribution methods**  There are currently supported two distribution methods for counting number of elements. Each method has a custom parameter in request body (see request examples bellow): - buckets (int) - number of bucket for the dynamic splitting - breakpoints (array) - array of breakpoints for static segments  **Dynamic buckets split**  Metric range is split into required number of equal size buckets.  The frequency is the count of occurrences of given metric in these buckets. The range values depends on a granularity - that is defined by query properties.  **Static breakpoints for segments**  Executes a multidimensional query and returns the number of records in each segment.  Segments are defined as static breakpoints of the metric distribution.  To the first segment are counted all regions whose value of metric is between <breakpoint[0], breakpoint[1]>.  The interval for second segment is (breakpoint[1], breakpoint[2]>. And the last segment is (breakpoint[last-1], breakpoint[last]>.  The minimal required number of breakpoints is 2, it returns count of elements in one segment. 
@@ -103,7 +103,7 @@ class MetricValuesDistributionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse2",
+            '202': "QueriesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -134,7 +134,7 @@ class MetricValuesDistributionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[QueriesResponse2]:
+    ) -> ApiResponse[QueriesResponse]:
         """accept_metric_values_distributions
 
         Executes a multidimensional query and returns the data distribution of given metric.  This resource is typically used for the histogram filter distribution.  This request starts an asynchronous action, which computes the metric values distributions result and returns the location URI of the result in `location` response header. To get the result, client must make another GET request on this URI (see [getMetricValuesDistribution](#operation/getMetricValuesDistribution)).  **Distribution methods**  There are currently supported two distribution methods for counting number of elements. Each method has a custom parameter in request body (see request examples bellow): - buckets (int) - number of bucket for the dynamic splitting - breakpoints (array) - array of breakpoints for static segments  **Dynamic buckets split**  Metric range is split into required number of equal size buckets.  The frequency is the count of occurrences of given metric in these buckets. The range values depends on a granularity - that is defined by query properties.  **Static breakpoints for segments**  Executes a multidimensional query and returns the number of records in each segment.  Segments are defined as static breakpoints of the metric distribution.  To the first segment are counted all regions whose value of metric is between <breakpoint[0], breakpoint[1]>.  The interval for second segment is (breakpoint[1], breakpoint[2]>. And the last segment is (breakpoint[last-1], breakpoint[last]>.  The minimal required number of breakpoints is 2, it returns count of elements in one segment. 
@@ -178,7 +178,7 @@ class MetricValuesDistributionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse2",
+            '202': "QueriesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -253,7 +253,7 @@ class MetricValuesDistributionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse2",
+            '202': "QueriesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -20,7 +20,7 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr, field_validator
 from typing import Optional
 from typing_extensions import Annotated
-from cm_python_openapi_sdk.models.dwh_query_request4 import DwhQueryRequest4
+from cm_python_openapi_sdk.models.dwh_query_request1 import DwhQueryRequest1
 
 from cm_python_openapi_sdk.api_client import ApiClient, RequestSerialized
 from cm_python_openapi_sdk.api_response import ApiResponse
@@ -45,7 +45,7 @@ class ExplainApi:
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project")],
         dwh_cluster_id: Annotated[str, Field(strict=True, description="Id of the dwh cluster")],
-        dwh_query_request4: DwhQueryRequest4,
+        dwh_query_request1: DwhQueryRequest1,
         page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="Number of the page")] = None,
         size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="The count of records to return for one page")] = None,
         _request_timeout: Union[
@@ -69,8 +69,8 @@ class ExplainApi:
         :type project_id: str
         :param dwh_cluster_id: Id of the dwh cluster (required)
         :type dwh_cluster_id: str
-        :param dwh_query_request4: (required)
-        :type dwh_query_request4: DwhQueryRequest4
+        :param dwh_query_request1: (required)
+        :type dwh_query_request1: DwhQueryRequest1
         :param page: Number of the page
         :type page: int
         :param size: The count of records to return for one page
@@ -100,7 +100,7 @@ class ExplainApi:
         _param = self._explain_serialize(
             project_id=project_id,
             dwh_cluster_id=dwh_cluster_id,
-            dwh_query_request4=dwh_query_request4,
+            dwh_query_request1=dwh_query_request1,
             page=page,
             size=size,
             _request_auth=_request_auth,
@@ -128,7 +128,7 @@ class ExplainApi:
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project")],
         dwh_cluster_id: Annotated[str, Field(strict=True, description="Id of the dwh cluster")],
-        dwh_query_request4: DwhQueryRequest4,
+        dwh_query_request1: DwhQueryRequest1,
         page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="Number of the page")] = None,
         size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="The count of records to return for one page")] = None,
         _request_timeout: Union[
@@ -152,8 +152,8 @@ class ExplainApi:
         :type project_id: str
         :param dwh_cluster_id: Id of the dwh cluster (required)
         :type dwh_cluster_id: str
-        :param dwh_query_request4: (required)
-        :type dwh_query_request4: DwhQueryRequest4
+        :param dwh_query_request1: (required)
+        :type dwh_query_request1: DwhQueryRequest1
         :param page: Number of the page
         :type page: int
         :param size: The count of records to return for one page
@@ -183,7 +183,7 @@ class ExplainApi:
         _param = self._explain_serialize(
             project_id=project_id,
             dwh_cluster_id=dwh_cluster_id,
-            dwh_query_request4=dwh_query_request4,
+            dwh_query_request1=dwh_query_request1,
             page=page,
             size=size,
             _request_auth=_request_auth,
@@ -211,7 +211,7 @@ class ExplainApi:
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project")],
         dwh_cluster_id: Annotated[str, Field(strict=True, description="Id of the dwh cluster")],
-        dwh_query_request4: DwhQueryRequest4,
+        dwh_query_request1: DwhQueryRequest1,
         page: Annotated[Optional[Annotated[int, Field(strict=True, ge=0)]], Field(description="Number of the page")] = None,
         size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="The count of records to return for one page")] = None,
         _request_timeout: Union[
@@ -235,8 +235,8 @@ class ExplainApi:
         :type project_id: str
         :param dwh_cluster_id: Id of the dwh cluster (required)
         :type dwh_cluster_id: str
-        :param dwh_query_request4: (required)
-        :type dwh_query_request4: DwhQueryRequest4
+        :param dwh_query_request1: (required)
+        :type dwh_query_request1: DwhQueryRequest1
         :param page: Number of the page
         :type page: int
         :param size: The count of records to return for one page
@@ -266,7 +266,7 @@ class ExplainApi:
         _param = self._explain_serialize(
             project_id=project_id,
             dwh_cluster_id=dwh_cluster_id,
-            dwh_query_request4=dwh_query_request4,
+            dwh_query_request1=dwh_query_request1,
             page=page,
             size=size,
             _request_auth=_request_auth,
@@ -289,7 +289,7 @@ class ExplainApi:
         self,
         project_id,
         dwh_cluster_id,
-        dwh_query_request4,
+        dwh_query_request1,
         page,
         size,
         _request_auth,
@@ -329,8 +329,8 @@ class ExplainApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if dwh_query_request4 is not None:
-            _body_params = dwh_query_request4
+        if dwh_query_request1 is not None:
+            _body_params = dwh_query_request1
 
 
         # set the HTTP header `Accept`

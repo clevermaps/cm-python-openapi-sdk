@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **buckets** | **int** |  | [optional] 
 **breakpoints** | **List[float]** |  | [optional] 
-**query** | [**DwhQueryRequest3**](DwhQueryRequest3.md) |  | 
+**query** | [**DwhQueryRequest1**](DwhQueryRequest1.md) |  | 
 
 ## Example
 

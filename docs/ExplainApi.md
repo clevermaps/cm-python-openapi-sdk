@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **explain**
-> str explain(project_id, dwh_cluster_id, dwh_query_request4, page=page, size=size)
+> str explain(project_id, dwh_cluster_id, dwh_query_request1, page=page, size=size)
 
 Explain query
 
@@ -21,7 +21,7 @@ This resource is useful for debugging and tuning DWH queries. The resource accep
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.dwh_query_request4 import DwhQueryRequest4
+from cm_python_openapi_sdk.models.dwh_query_request1 import DwhQueryRequest1
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -47,13 +47,13 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     api_instance = cm_python_openapi_sdk.ExplainApi(api_client)
     project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
-    dwh_query_request4 = cm_python_openapi_sdk.DwhQueryRequest4() # DwhQueryRequest4 | 
+    dwh_query_request1 = cm_python_openapi_sdk.DwhQueryRequest1() # DwhQueryRequest1 | 
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
 
     try:
         # Explain query
-        api_response = api_instance.explain(project_id, dwh_cluster_id, dwh_query_request4, page=page, size=size)
+        api_response = api_instance.explain(project_id, dwh_cluster_id, dwh_query_request1, page=page, size=size)
         print("The response of ExplainApi->explain:\n")
         pprint(api_response)
     except Exception as e:
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| Id of the project | 
  **dwh_cluster_id** | **str**| Id of the dwh cluster | 
- **dwh_query_request4** | [**DwhQueryRequest4**](DwhQueryRequest4.md)|  | 
+ **dwh_query_request1** | [**DwhQueryRequest1**](DwhQueryRequest1.md)|  | 
  **page** | **int**| Number of the page | [optional] [default to 0]
  **size** | **int**| The count of records to return for one page | [optional] [default to 100]
 

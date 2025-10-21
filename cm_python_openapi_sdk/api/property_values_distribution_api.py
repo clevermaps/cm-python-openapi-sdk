@@ -21,7 +21,7 @@ from pydantic import Field, StrictStr, field_validator
 from typing_extensions import Annotated
 from cm_python_openapi_sdk.models.dwh_metric_values_distribution_response import DwhMetricValuesDistributionResponse
 from cm_python_openapi_sdk.models.dwh_property_values_distribution_request import DwhPropertyValuesDistributionRequest
-from cm_python_openapi_sdk.models.queries_response1 import QueriesResponse1
+from cm_python_openapi_sdk.models.queries_response import QueriesResponse
 
 from cm_python_openapi_sdk.api_client import ApiClient, RequestSerialized
 from cm_python_openapi_sdk.api_response import ApiResponse
@@ -59,7 +59,7 @@ class PropertyValuesDistributionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> QueriesResponse1:
+    ) -> QueriesResponse:
         """accept_property_values_distribution
 
         Computes the distribution (frequency) of given fact (numeric dataset property). Result is split into required number of equal size buckets. The frequency is the count of occurrences of given metric in these buckets.  This resource is typically used for the histogram filter distribution.  This request starts an asynchronous action, which computes the property values distributions result and returns the location URI of the result in `location` response header. To get the result, client must make another GET request on this URI (see [getPropertyValuesDistribution](#operation/getPropertyValuesDistribution)). 
@@ -103,7 +103,7 @@ class PropertyValuesDistributionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse1",
+            '202': "QueriesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -134,7 +134,7 @@ class PropertyValuesDistributionApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[QueriesResponse1]:
+    ) -> ApiResponse[QueriesResponse]:
         """accept_property_values_distribution
 
         Computes the distribution (frequency) of given fact (numeric dataset property). Result is split into required number of equal size buckets. The frequency is the count of occurrences of given metric in these buckets.  This resource is typically used for the histogram filter distribution.  This request starts an asynchronous action, which computes the property values distributions result and returns the location URI of the result in `location` response header. To get the result, client must make another GET request on this URI (see [getPropertyValuesDistribution](#operation/getPropertyValuesDistribution)). 
@@ -178,7 +178,7 @@ class PropertyValuesDistributionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse1",
+            '202': "QueriesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -253,7 +253,7 @@ class PropertyValuesDistributionApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse1",
+            '202': "QueriesResponse",
         }
         response_data = self.api_client.call_api(
             *_param,
