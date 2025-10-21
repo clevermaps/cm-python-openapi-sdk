@@ -50,7 +50,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.SearchApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     query = 'Birmingham' # str | Query search phrase. It is split into terms and the resource return dataset's object that contains all terms in their `title` or `subtitle`.
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)

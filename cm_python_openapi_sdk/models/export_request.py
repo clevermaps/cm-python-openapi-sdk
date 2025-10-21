@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
+from cm_python_openapi_sdk.models.csv_header_override import CsvHeaderOverride
 from cm_python_openapi_sdk.models.export_request_csv_options import ExportRequestCsvOptions
 from typing import Optional, Set
 from typing_extensions import Self
@@ -29,11 +30,12 @@ class ExportRequest(BaseModel):
     ExportRequest
     """ # noqa: E501
     format: StrictStr
+    csv_header_overrides: Optional[List[CsvHeaderOverride]] = Field(default=None, alias="csvHeaderOverrides")
     csv_header_format: Optional[StrictStr] = Field(default=None, alias="csvHeaderFormat")
     query: Dict[str, Any]
     csv_options: Optional[ExportRequestCsvOptions] = Field(default=None, alias="csvOptions")
     xlsx_options: Optional[Dict[str, Any]] = Field(default=None, alias="xlsxOptions")
-    __properties: ClassVar[List[str]] = ["format", "csvHeaderFormat", "query", "csvOptions", "xlsxOptions"]
+    __properties: ClassVar[List[str]] = ["format", "csvHeaderOverrides", "csvHeaderFormat", "query", "csvOptions", "xlsxOptions"]
 
     @field_validator('format')
     def format_validate_enum(cls, value):
@@ -91,6 +93,13 @@ class ExportRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in csv_header_overrides (list)
+        _items = []
+        if self.csv_header_overrides:
+            for _item_csv_header_overrides in self.csv_header_overrides:
+                if _item_csv_header_overrides:
+                    _items.append(_item_csv_header_overrides.to_dict())
+            _dict['csvHeaderOverrides'] = _items
         # override the default output from pydantic by calling `to_dict()` of csv_options
         if self.csv_options:
             _dict['csvOptions'] = self.csv_options.to_dict()
@@ -107,6 +116,7 @@ class ExportRequest(BaseModel):
 
         _obj = cls.model_validate({
             "format": obj.get("format"),
+            "csvHeaderOverrides": [CsvHeaderOverride.from_dict(_item) for _item in obj["csvHeaderOverrides"]] if obj.get("csvHeaderOverrides") is not None else None,
             "csvHeaderFormat": obj.get("csvHeaderFormat"),
             "query": obj.get("query"),
             "csvOptions": ExportRequestCsvOptions.from_dict(obj["csvOptions"]) if obj.get("csvOptions") is not None else None,

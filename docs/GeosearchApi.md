@@ -50,7 +50,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
     country = 'GB' # str | Array of ISO 3166 alpha-2 country codes to limit the search. (optional)
     language = 'en' # str | Language to use for query results as defined by ISO 639-1. (optional)
-    types = 'city, locality, address' # str | Array of place types, available types are [region, district, city, locality, address, postcode] (optional)
+    types = 'city,locality,address' # str | Array of place types, available types are [region, district, city, street, locality, address, postcode] (optional)
 
     try:
         # Geographic search
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
  **size** | **int**| The count of records to return for one page | [optional] [default to 100]
  **country** | **str**| Array of ISO 3166 alpha-2 country codes to limit the search. | [optional] 
  **language** | **str**| Language to use for query results as defined by ISO 639-1. | [optional] 
- **types** | **str**| Array of place types, available types are [region, district, city, locality, address, postcode] | [optional] 
+ **types** | **str**| Array of place types, available types are [region, district, city, street, locality, address, postcode] | [optional] 
 
 ### Return type
 

@@ -20,8 +20,8 @@ from typing_extensions import Annotated
 from pydantic import Field, field_validator
 from typing_extensions import Annotated
 from cm_python_openapi_sdk.models.dwh_metric_range_response import DwhMetricRangeResponse
-from cm_python_openapi_sdk.models.dwh_query_request1 import DwhQueryRequest1
-from cm_python_openapi_sdk.models.queries_response import QueriesResponse
+from cm_python_openapi_sdk.models.dwh_query_request2 import DwhQueryRequest2
+from cm_python_openapi_sdk.models.queries_response1 import QueriesResponse1
 
 from cm_python_openapi_sdk.api_client import ApiClient, RequestSerialized
 from cm_python_openapi_sdk.api_response import ApiResponse
@@ -46,7 +46,7 @@ class MetricRangesApi:
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project")],
         dwh_cluster_id: Annotated[str, Field(strict=True, description="Id of the dwh cluster")],
-        dwh_query_request1: DwhQueryRequest1,
+        dwh_query_request2: DwhQueryRequest2,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -59,7 +59,7 @@ class MetricRangesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> QueriesResponse:
+    ) -> QueriesResponse1:
         """Accept metric ranges
 
         Accepts a metric ranges request and returns the range values for all given metrics. The range values depend on selected granularity defined in the query properties. Metric Ranges is used for the map legend range.  This request starts an asynchronous action, which computes the metric ranges result and returns the location URI of the result in `location` response header. To get the result, client must make another GET request on this URI (see [getMetricRanges](#operation/getMetricRanges)). 
@@ -68,8 +68,8 @@ class MetricRangesApi:
         :type project_id: str
         :param dwh_cluster_id: Id of the dwh cluster (required)
         :type dwh_cluster_id: str
-        :param dwh_query_request1: (required)
-        :type dwh_query_request1: DwhQueryRequest1
+        :param dwh_query_request2: (required)
+        :type dwh_query_request2: DwhQueryRequest2
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -95,7 +95,7 @@ class MetricRangesApi:
         _param = self._accept_metric_ranges_serialize(
             project_id=project_id,
             dwh_cluster_id=dwh_cluster_id,
-            dwh_query_request1=dwh_query_request1,
+            dwh_query_request2=dwh_query_request2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -103,7 +103,7 @@ class MetricRangesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse",
+            '202': "QueriesResponse1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -121,7 +121,7 @@ class MetricRangesApi:
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project")],
         dwh_cluster_id: Annotated[str, Field(strict=True, description="Id of the dwh cluster")],
-        dwh_query_request1: DwhQueryRequest1,
+        dwh_query_request2: DwhQueryRequest2,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -134,7 +134,7 @@ class MetricRangesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[QueriesResponse]:
+    ) -> ApiResponse[QueriesResponse1]:
         """Accept metric ranges
 
         Accepts a metric ranges request and returns the range values for all given metrics. The range values depend on selected granularity defined in the query properties. Metric Ranges is used for the map legend range.  This request starts an asynchronous action, which computes the metric ranges result and returns the location URI of the result in `location` response header. To get the result, client must make another GET request on this URI (see [getMetricRanges](#operation/getMetricRanges)). 
@@ -143,8 +143,8 @@ class MetricRangesApi:
         :type project_id: str
         :param dwh_cluster_id: Id of the dwh cluster (required)
         :type dwh_cluster_id: str
-        :param dwh_query_request1: (required)
-        :type dwh_query_request1: DwhQueryRequest1
+        :param dwh_query_request2: (required)
+        :type dwh_query_request2: DwhQueryRequest2
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -170,7 +170,7 @@ class MetricRangesApi:
         _param = self._accept_metric_ranges_serialize(
             project_id=project_id,
             dwh_cluster_id=dwh_cluster_id,
-            dwh_query_request1=dwh_query_request1,
+            dwh_query_request2=dwh_query_request2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -178,7 +178,7 @@ class MetricRangesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse",
+            '202': "QueriesResponse1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -196,7 +196,7 @@ class MetricRangesApi:
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project")],
         dwh_cluster_id: Annotated[str, Field(strict=True, description="Id of the dwh cluster")],
-        dwh_query_request1: DwhQueryRequest1,
+        dwh_query_request2: DwhQueryRequest2,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -218,8 +218,8 @@ class MetricRangesApi:
         :type project_id: str
         :param dwh_cluster_id: Id of the dwh cluster (required)
         :type dwh_cluster_id: str
-        :param dwh_query_request1: (required)
-        :type dwh_query_request1: DwhQueryRequest1
+        :param dwh_query_request2: (required)
+        :type dwh_query_request2: DwhQueryRequest2
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -245,7 +245,7 @@ class MetricRangesApi:
         _param = self._accept_metric_ranges_serialize(
             project_id=project_id,
             dwh_cluster_id=dwh_cluster_id,
-            dwh_query_request1=dwh_query_request1,
+            dwh_query_request2=dwh_query_request2,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -253,7 +253,7 @@ class MetricRangesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse",
+            '202': "QueriesResponse1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -266,7 +266,7 @@ class MetricRangesApi:
         self,
         project_id,
         dwh_cluster_id,
-        dwh_query_request1,
+        dwh_query_request2,
         _request_auth,
         _content_type,
         _headers,
@@ -296,8 +296,8 @@ class MetricRangesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if dwh_query_request1 is not None:
-            _body_params = dwh_query_request1
+        if dwh_query_request2 is not None:
+            _body_params = dwh_query_request2
 
 
         # set the HTTP header `Accept`

@@ -48,7 +48,7 @@ class GeosearchApi:
         size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="The count of records to return for one page")] = None,
         country: Annotated[Optional[StrictStr], Field(description="Array of ISO 3166 alpha-2 country codes to limit the search.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language to use for query results as defined by ISO 639-1.")] = None,
-        types: Annotated[Optional[StrictStr], Field(description="Array of place types, available types are [region, district, city, locality, address, postcode]")] = None,
+        types: Annotated[Optional[StrictStr], Field(description="Array of place types, available types are [region, district, city, street, locality, address, postcode]")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -76,7 +76,7 @@ class GeosearchApi:
         :type country: str
         :param language: Language to use for query results as defined by ISO 639-1.
         :type language: str
-        :param types: Array of place types, available types are [region, district, city, locality, address, postcode]
+        :param types: Array of place types, available types are [region, district, city, street, locality, address, postcode]
         :type types: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -135,7 +135,7 @@ class GeosearchApi:
         size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="The count of records to return for one page")] = None,
         country: Annotated[Optional[StrictStr], Field(description="Array of ISO 3166 alpha-2 country codes to limit the search.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language to use for query results as defined by ISO 639-1.")] = None,
-        types: Annotated[Optional[StrictStr], Field(description="Array of place types, available types are [region, district, city, locality, address, postcode]")] = None,
+        types: Annotated[Optional[StrictStr], Field(description="Array of place types, available types are [region, district, city, street, locality, address, postcode]")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -163,7 +163,7 @@ class GeosearchApi:
         :type country: str
         :param language: Language to use for query results as defined by ISO 639-1.
         :type language: str
-        :param types: Array of place types, available types are [region, district, city, locality, address, postcode]
+        :param types: Array of place types, available types are [region, district, city, street, locality, address, postcode]
         :type types: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -222,7 +222,7 @@ class GeosearchApi:
         size: Annotated[Optional[Annotated[int, Field(strict=True, ge=1)]], Field(description="The count of records to return for one page")] = None,
         country: Annotated[Optional[StrictStr], Field(description="Array of ISO 3166 alpha-2 country codes to limit the search.")] = None,
         language: Annotated[Optional[StrictStr], Field(description="Language to use for query results as defined by ISO 639-1.")] = None,
-        types: Annotated[Optional[StrictStr], Field(description="Array of place types, available types are [region, district, city, locality, address, postcode]")] = None,
+        types: Annotated[Optional[StrictStr], Field(description="Array of place types, available types are [region, district, city, street, locality, address, postcode]")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -250,7 +250,7 @@ class GeosearchApi:
         :type country: str
         :param language: Language to use for query results as defined by ISO 639-1.
         :type language: str
-        :param types: Array of place types, available types are [region, district, city, locality, address, postcode]
+        :param types: Array of place types, available types are [region, district, city, street, locality, address, postcode]
         :type types: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

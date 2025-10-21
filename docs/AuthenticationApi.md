@@ -35,7 +35,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.AuthenticationApi(api_client)
-    token_request_dto = cm_python_openapi_sdk.TokenRequestDTO() # TokenRequestDTO |  (optional)
+    token_request_dto = {"refresh_token":"eyJjdHk...QsRvrA"} # TokenRequestDTO |  (optional)
 
     try:
         # Get bearer token

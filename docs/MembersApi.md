@@ -56,8 +56,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MembersApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    create_membership_dto = cm_python_openapi_sdk.CreateMembershipDTO() # CreateMembershipDTO | 
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    create_membership_dto = {"accountId":"b2754484-4551-7915-c82d-abb453bahlf6","role":"VIEWER","status":"ENABLED"} # CreateMembershipDTO | 
 
     try:
         # Add new project member and assign a role.
@@ -139,7 +139,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MembersApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     membership_id = 'membership_id_example' # str | Id of the membership
 
     try:
@@ -220,7 +220,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MembersApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     membership_id = 'membership_id_example' # str | Id of the membership
 
     try:
@@ -307,7 +307,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MembersApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
     page = 0 # int | Number of the page (optional) (default to 0)
     sort = 'name,desc' # str | Name of the attribute to use for sorting the results, together with direction (asc or desc) (optional)
@@ -398,9 +398,9 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MembersApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     membership_id = 'membership_id_example' # str | Id of the membership
-    update_membership_dto = cm_python_openapi_sdk.UpdateMembershipDTO() # UpdateMembershipDTO | 
+    update_membership_dto = {"role":"EDITOR","status":"DISABLED"} # UpdateMembershipDTO | 
 
     try:
         # Update membership by changing role or status in project.

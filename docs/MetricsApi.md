@@ -50,8 +50,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MetricsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    metric_dto = cm_python_openapi_sdk.MetricDTO() # MetricDTO | 
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    metric_dto = {"name":"average_purchase_metric","type":"metric","content":{"type":"function_avg","content":[{"type":"property"}]}} # MetricDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:
@@ -133,7 +133,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MetricsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the metric
 
     try:
@@ -210,7 +210,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MetricsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
     sort = 'name,desc' # str | Name of the attribute to use for sorting the results, together with direction (asc or desc) (optional)
@@ -292,7 +292,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MetricsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the metric
 
     try:
@@ -371,7 +371,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MetricsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     name = 'name_example' # str | Name of the metric
 
     try:
@@ -453,10 +453,10 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MetricsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the metric
     if_match = 'if_match_example' # str | ETag value used for conditional updates
-    metric_dto = cm_python_openapi_sdk.MetricDTO() # MetricDTO | 
+    metric_dto = {"id":"onb0i86sf4415ks7","name":"average_purchase_metric","type":"metric","title":"Updated title","content":{"type":"function_avg","content":[{"type":"property"}]},"accessInfo":{"createdAt":"2025-08-03T13:10:15Z","createdBy":"/rest/accounts/a2954434-00b1-70d4-92f1-dd99bb174f4c"},"links":[{"rel":"self","href":"/rest/projects/f76on62tb6bpitbb/md/metrics/onb0i86sf4415ks7"}],"version":1} # MetricDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **accept_date_ranges**
-> QueriesResponse accept_date_ranges(project_id, dwh_cluster_id, dwh_date_range_request)
+> QueriesResponse1 accept_date_ranges(project_id, dwh_cluster_id, dwh_date_range_request)
 
 Accept date ranges
 
@@ -27,7 +27,7 @@ This request starts an asynchronous action, which computes the date ranges resul
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.dwh_date_range_request import DwhDateRangeRequest
-from cm_python_openapi_sdk.models.queries_response import QueriesResponse
+from cm_python_openapi_sdk.models.queries_response1 import QueriesResponse1
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -51,8 +51,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DateRangesApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dwh_cluster_id = 'dwh_cluster_id_example' # str | Id of the dwh cluster
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
     dwh_date_range_request = cm_python_openapi_sdk.DwhDateRangeRequest() # DwhDateRangeRequest | 
 
     try:
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QueriesResponse**](QueriesResponse.md)
+[**QueriesResponse1**](QueriesResponse1.md)
 
 ### Authorization
 
@@ -135,9 +135,9 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DateRangesApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dwh_cluster_id = 'dwh_cluster_id_example' # str | Id of the dwh cluster
-    dwh_cache_id = 'q:vb2b3d8v91jao331:DqBZN5IjSwfufj-7rDMAOQ' # str | Id of the dwh cache
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
+    dwh_cache_id = 'q:f76on62tb6bpitbb:DqBZN5IjSwfufj-7rDMAOQ' # str | Id of the dwh cache
 
     try:
         # Get date ranges

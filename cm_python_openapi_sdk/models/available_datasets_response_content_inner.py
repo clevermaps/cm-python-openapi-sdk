@@ -20,6 +20,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from cm_python_openapi_sdk.models.available_datasets_for_metric import AvailableDatasetsForMetric
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class AvailableDatasetsResponseContentInner(BaseModel):
     AvailableDatasetsResponseContentInner
     """ # noqa: E501
     metric_id: Optional[StrictStr] = Field(default=None, alias="metricId")
-    available_datasets: Optional[List[Dict[str, Any]]] = Field(default=None, alias="availableDatasets")
+    available_datasets: Optional[List[AvailableDatasetsForMetric]] = Field(default=None, alias="availableDatasets")
     __properties: ClassVar[List[str]] = ["metricId", "availableDatasets"]
 
     model_config = ConfigDict(
@@ -70,6 +71,13 @@ class AvailableDatasetsResponseContentInner(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in available_datasets (list)
+        _items = []
+        if self.available_datasets:
+            for _item_available_datasets in self.available_datasets:
+                if _item_available_datasets:
+                    _items.append(_item_available_datasets.to_dict())
+            _dict['availableDatasets'] = _items
         return _dict
 
     @classmethod
@@ -83,7 +91,7 @@ class AvailableDatasetsResponseContentInner(BaseModel):
 
         _obj = cls.model_validate({
             "metricId": obj.get("metricId"),
-            "availableDatasets": obj.get("availableDatasets")
+            "availableDatasets": [AvailableDatasetsForMetric.from_dict(_item) for _item in obj["availableDatasets"]] if obj.get("availableDatasets") is not None else None
         })
         return _obj
 

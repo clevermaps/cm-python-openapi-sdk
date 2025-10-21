@@ -714,6 +714,7 @@ class DatasetsApi:
             '400': None,
             '409': None,
             '413': None,
+            '415': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -816,6 +817,7 @@ class DatasetsApi:
             '400': None,
             '409': None,
             '413': None,
+            '415': None,
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -918,6 +920,7 @@ class DatasetsApi:
             '400': None,
             '409': None,
             '413': None,
+            '415': None,
         }
         response_data = self.api_client.call_api(
             *_param,

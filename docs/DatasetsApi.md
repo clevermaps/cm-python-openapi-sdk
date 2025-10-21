@@ -51,8 +51,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DatasetsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dataset_dto = cm_python_openapi_sdk.DatasetDTO() # DatasetDTO | 
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dataset_dto = {"name":"clients","type":"dataset","title":"Clients","origin":"https://secure.clevermaps.io/rest/projects/f76on62tb6bpitbb/md/datasets?name=clients","properties":{"featureTitle":{"type":"property","value":"client_id"}},"ref":{"subtype":"basic","type":"dwh","table":"clients","primaryKey":"client_id","properties":[{"name":"client_id","title":"Client ID","column":"client_id","type":"integer","filterable":false},{"name":"postcode","title":"postcode","column":"postcode","type":"string","filterable":false}]}} # DatasetDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:
@@ -134,7 +134,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DatasetsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the dataset
 
     try:
@@ -213,9 +213,9 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DatasetsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     name = 'baskets' # str | Name of the dataset
-    body = 'body_example' # str | 
+    body = basket_id,date_iso,shop_id,client_id,amount,on_off_name,courier,value_name 2087008,2017-05-31,7,2003018,15.250000,Online,Picked up,£10 - £25 2087027,2017-05-14,4,2003410,63.640000,Online,Picked up,£50 - £100 2087039,2017-05-31,1,8139,85.640000,Offline,Picked up,£50 - £100 2087057,2017-05-18,1,8694,42.560000,Offline,Picked up,£25 - £50 2087070,2017-05-31,2,23128,95.180000,Online,Picked up,£50 - £100 # str | 
     subtype = 'basic' # str | Subtype of the dataset (optional) (default to 'basic')
     primary_key = 'basic_id' # str | Name of the property that will be marked as primary key (optional)
     geometry = 'geometry_example' # str | Name of the geometry key for geometryPolygon dataset subtype (optional)
@@ -270,6 +270,7 @@ Name | Type | Description  | Notes
 **400** | When a parameter is invalid, or CSV body parsing fails, or the CSV does not contain specific columns |  -  |
 **409** | When the specified name of the dataset already exists |  -  |
 **413** | When the CSV body is larger than 10 lines |  -  |
+**415** | Check Content-Type header - only text/csv, text/csv;charset&#x3D;UTF-8, text/csv;charset&#x3D;utf-8 is supported. |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -308,7 +309,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DatasetsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
     sort = 'name,desc' # str | Name of the attribute to use for sorting the results, together with direction (asc or desc) (optional)
@@ -392,7 +393,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DatasetsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the dataset
 
     try:
@@ -471,7 +472,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DatasetsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     name = 'name_example' # str | Name of the dataset
 
     try:
@@ -553,10 +554,10 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DatasetsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the dataset
     if_match = 'if_match_example' # str | ETag value used for conditional updates
-    dataset_dto = cm_python_openapi_sdk.DatasetDTO() # DatasetDTO | 
+    dataset_dto = {"id":"hb8ugmblksj0p0go","name":"clients","type":"dataset","title":"Updated clients dataset by adding address","origin":"https://secure.clevermaps.io/rest/projects/f76on62tb6bpitbb/md/datasets?name=clients","properties":{"featureTitle":{"type":"property","value":"client_id"}},"ref":{"subtype":"basic","type":"dwh","table":"clients","primaryKey":"client_id","properties":[{"name":"client_id","title":"Client ID","column":"client_id","type":"integer","filterable":false},{"name":"postcode","title":"postcode","column":"postcode","type":"string","filterable":false},{"name":"address","title":"Address","column":"address","type":"string","filterable":false}]},"accessInfo":{"createdAt":"2025-08-03T13:10:15Z","createdBy":"/rest/accounts/a2954434-00b1-70d4-92f1-dd99bb174f4c"},"links":[{"rel":"self","href":"/rest/projects/f76on62tb6bpitbb/md/datasets/hb8ugmblksj0p0go"}],"version":1} # DatasetDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:

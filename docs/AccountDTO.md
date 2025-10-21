@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **email** | **str** |  | 
 **consent_granted** | **bool** |  | [optional] 
 **status** | **str** |  | [optional] 
-**anonymous** | **bool** |  | [optional] 
 **phone_number** | **str** |  | [optional] 
 **preferences** | [**AccountPreferences**](AccountPreferences.md) |  | [optional] 
 **onboarding** | [**AccountOnboardingParameters**](AccountOnboardingParameters.md) |  | [optional] 

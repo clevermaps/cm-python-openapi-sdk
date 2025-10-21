@@ -145,9 +145,9 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.JobsApi(api_client)
     project_id = 'project_id_example' # str | Id of the project, used as query parameter
-    account_id = 'account_id_example' # str | Id of the account, used in query parameters (optional)
+    account_id = 'account_id_example' # str | Id of the account, used in query parameters for auditlog and jobs history. (optional)
     sort_direction = 'ASC' # str | Sort direction (optional)
-    last_evaluated_timestamp = '2020-11-18T08:39:56,199' # str | Last evaluated timestamp when requesting next page (UTC timestamp format) (optional)
+    last_evaluated_timestamp = 'last_evaluated_timestamp_example' # str | Last evaluated timestamp when requesting next page (UTC timestamp format) (optional)
     type = 'export' # str | Jobs type (optional)
     dataset = 'dataset_example' # str |  (optional)
 
@@ -168,7 +168,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| Id of the project, used as query parameter | 
- **account_id** | **str**| Id of the account, used in query parameters | [optional] 
+ **account_id** | **str**| Id of the account, used in query parameters for auditlog and jobs history. | [optional] 
  **sort_direction** | **str**| Sort direction | [optional] 
  **last_evaluated_timestamp** | **str**| Last evaluated timestamp when requesting next page (UTC timestamp format) | [optional] 
  **type** | **str**| Jobs type | [optional] 
@@ -249,7 +249,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.JobsApi(api_client)
-    general_job_request = cm_python_openapi_sdk.GeneralJobRequest() # GeneralJobRequest | Successful response
+    general_job_request = {"type":"dataDump","projectId":"f76on62tb6bpitbb","content":{"dataset":"mystores"}} # GeneralJobRequest | Successful response
 
     try:
         # Submit job execution

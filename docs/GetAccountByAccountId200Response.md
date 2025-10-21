@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **status** | **str** |  | 
 **preferences** | [**AccountPreferences**](AccountPreferences.md) |  | [optional] 
 **consent_granted** | **bool** |  | [optional] 
-**anonymous** | **bool** |  | [optional] 
 **phone_number** | **str** |  | [optional] 
 **onboarding** | [**AccountOnboardingParameters**](AccountOnboardingParameters.md) |  | [optional] 
 **links** | **List[object]** | define keys links and page that are mandatory for all pageble responses | [optional] 

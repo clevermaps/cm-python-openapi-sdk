@@ -298,7 +298,7 @@ class DataDumpApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/projects/{projectId}/data/dumps/{dumpId}',
+            resource_path='/projects/{projectId}/dwh/data/dumps/{dumpId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

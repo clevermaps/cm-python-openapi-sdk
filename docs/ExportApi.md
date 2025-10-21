@@ -44,7 +44,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ExportApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     export_id = '1fuYh8ApOR1rwu3Zo8xqI0p333jnrLEU' # str | ID of export returned as result of job
 
     try:

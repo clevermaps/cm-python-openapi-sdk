@@ -20,7 +20,7 @@ from cm_python_openapi_sdk.api.exports_api import ExportsApi
 from cm_python_openapi_sdk.api.geosearch_api import GeosearchApi
 from cm_python_openapi_sdk.api.indicator_drills_api import IndicatorDrillsApi
 from cm_python_openapi_sdk.api.indicators_api import IndicatorsApi
-from cm_python_openapi_sdk.api.invitation_api import InvitationApi
+from cm_python_openapi_sdk.api.invitations_api import InvitationsApi
 from cm_python_openapi_sdk.api.isochrone_api import IsochroneApi
 from cm_python_openapi_sdk.api.jobs_api import JobsApi
 from cm_python_openapi_sdk.api.maps_api import MapsApi
@@ -28,10 +28,11 @@ from cm_python_openapi_sdk.api.marker_selectors_api import MarkerSelectorsApi
 from cm_python_openapi_sdk.api.markers_api import MarkersApi
 from cm_python_openapi_sdk.api.members_api import MembersApi
 from cm_python_openapi_sdk.api.metric_ranges_api import MetricRangesApi
+from cm_python_openapi_sdk.api.metric_values_distribution_api import MetricValuesDistributionApi
 from cm_python_openapi_sdk.api.metrics_api import MetricsApi
 from cm_python_openapi_sdk.api.organizations_api import OrganizationsApi
 from cm_python_openapi_sdk.api.overlaps_api import OverlapsApi
-from cm_python_openapi_sdk.api.project_invitations_api import ProjectInvitationsApi
+from cm_python_openapi_sdk.api.project_invitation_api import ProjectInvitationApi
 from cm_python_openapi_sdk.api.project_settings_api import ProjectSettingsApi
 from cm_python_openapi_sdk.api.projects_api import ProjectsApi
 from cm_python_openapi_sdk.api.property_values_api import PropertyValuesApi

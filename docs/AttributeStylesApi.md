@@ -50,8 +50,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.AttributeStylesApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    attribute_style_dto = cm_python_openapi_sdk.AttributeStyleDTO() # AttributeStyleDTO | 
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    attribute_style_dto = {"name":"delivery_type_attribute_style","type":"attributeStyle","title":"Delivery type","content":{"property":"baskets.courier","categories":[{"title":null,"value":"Picked up","style":{"fillColor":"orange"}},{"title":null,"value":"Delivered","style":{"fillColor":"blue"}}]}} # AttributeStyleDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:
@@ -133,7 +133,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.AttributeStylesApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the attribute style
 
     try:
@@ -210,7 +210,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.AttributeStylesApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
     sort = 'name,desc' # str | Name of the attribute to use for sorting the results, together with direction (asc or desc) (optional)
@@ -292,7 +292,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.AttributeStylesApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the attribute style
 
     try:
@@ -371,7 +371,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.AttributeStylesApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     name = 'name_example' # str | Name of the attribute style
 
     try:
@@ -453,10 +453,10 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.AttributeStylesApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the attribute style
     if_match = 'if_match_example' # str | ETag value used for conditional updates
-    attribute_style_dto = cm_python_openapi_sdk.AttributeStyleDTO() # AttributeStyleDTO | 
+    attribute_style_dto = {"id":"sr1pkd7kmlluqvde","name":"delivery_type_attribute_style","type":"attributeStyle","title":"Updated Delivery type","content":{"property":"baskets.courier","categories":[{"title":null,"value":"Picked up","style":{"fillColor":"pink"}},{"title":null,"value":"Delivered","style":{"fillColor":"lime"}}]},"accessInfo":{"createdAt":"2024-02-08T15:46:21Z","createdBy":"/rest/accounts/e145a4e5-40c1-70dd-541c-c3a5c3d41g1h"},"links":[{"rel":"self","href":"/rest/projects/f76on62tb6bpitbb/md/attributeStyles/sr1pkd7kmlluqvde"}],"version":1} # AttributeStyleDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:

@@ -48,13 +48,13 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.AvailableDatasetsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dwh_cluster_id = 'dwh_cluster_id_example' # str | Id of the dwh cluster
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
     available_datasets_request = cm_python_openapi_sdk.AvailableDatasetsRequest() # AvailableDatasetsRequest | 
     type = 'dwh' # str | If the parameter present, only the datasets of given type(s) are returned. Parameter can be repeated. (optional)
     subtype = 'geometryPoint' # str | If the parameter present, only the dwh datasets of given subtype(s) are returned. Parameter can be repeated, e.g. `?subtype=geometryLine&subtype=geometryPolygon`  If a parameter `type=dwh` is present then a subtype parameter is ignored and all subtypes of dwh datasets are returned.  (optional)
     expand = 'expand_example' # str | Expand datasets to minimalize roundtrips. (optional)
-    var_from = 'clients.postcode_point' # str | Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alterantively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned.  (optional)
+    var_from = 'clients.postcode_point' # str | Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alternatively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned.  (optional)
 
     try:
         api_response = api_instance.available_datasets(project_id, dwh_cluster_id, available_datasets_request, type=type, subtype=subtype, expand=expand, var_from=var_from)
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
  **type** | **str**| If the parameter present, only the datasets of given type(s) are returned. Parameter can be repeated. | [optional] 
  **subtype** | **str**| If the parameter present, only the dwh datasets of given subtype(s) are returned. Parameter can be repeated, e.g. &#x60;?subtype&#x3D;geometryLine&amp;subtype&#x3D;geometryPolygon&#x60;  If a parameter &#x60;type&#x3D;dwh&#x60; is present then a subtype parameter is ignored and all subtypes of dwh datasets are returned.  | [optional] 
  **expand** | **str**| Expand datasets to minimalize roundtrips. | [optional] 
- **var_from** | **str**| Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alterantively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it&#39;s primary key and the connected datasets will be returned.  | [optional] 
+ **var_from** | **str**| Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alternatively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it&#39;s primary key and the connected datasets will be returned.  | [optional] 
 
 ### Return type
 

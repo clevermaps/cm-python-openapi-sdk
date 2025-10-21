@@ -50,8 +50,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ExportsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    export_dto = cm_python_openapi_sdk.ExportDTO() # ExportDTO | 
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    export_dto = {"name":"project_export_1","type":"export","title":"Export version 1","description":"All delayed orders made in specific city districts.","content":{"properties":["city_district_dwh.name","city_district_dwh.upper_name","orders_dwh.id","orders_dwh.id_user","orders_dwh.date","orders_dwh.price","orders_dwh.delay"]}} # ExportDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:
@@ -133,7 +133,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ExportsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the export
 
     try:
@@ -210,7 +210,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ExportsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
     sort = 'name,desc' # str | Name of the attribute to use for sorting the results, together with direction (asc or desc) (optional)
@@ -292,7 +292,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ExportsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the export
 
     try:
@@ -371,7 +371,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ExportsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     name = 'name_example' # str | Name of the export
 
     try:
@@ -453,10 +453,10 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ExportsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the export
     if_match = 'if_match_example' # str | ETag value used for conditional updates
-    export_dto = cm_python_openapi_sdk.ExportDTO() # ExportDTO | 
+    export_dto = {"id":"eqf3525q9jbs2hff","name":"project_export_1","type":"export","title":"Updated export version 1","description":"All delayed orders made in specific city districts.","content":{"properties":["city_district_dwh.name","city_district_dwh.upper_name","orders_dwh.id","orders_dwh.id_user","orders_dwh.date","orders_dwh.price","orders_dwh.delay","orders_dwh.address"]},"accessInfo":{"createdAt":"2025-08-03T13:10:15Z","createdBy":"/rest/accounts/a2954434-00b1-70d4-92f1-dd99bb174f4c"},"links":[{"rel":"self","href":"/rest/projects/f76on62tb6bpitbb/md/exports/eqf3525q9jbs2hff"}],"version":1} # ExportDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:

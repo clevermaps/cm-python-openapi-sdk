@@ -50,8 +50,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ProjectSettingsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    project_settings_dto = cm_python_openapi_sdk.ProjectSettingsDTO() # ProjectSettingsDTO | 
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    project_settings_dto = {"name":"project_settings_gb","type":"projectSettings","content":{"geoSearchCountries":["GB"]}} # ProjectSettingsDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:
@@ -133,7 +133,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ProjectSettingsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the project settings
 
     try:
@@ -210,7 +210,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ProjectSettingsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
     sort = 'name,desc' # str | Name of the attribute to use for sorting the results, together with direction (asc or desc) (optional)
@@ -292,7 +292,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ProjectSettingsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the project settings
 
     try:
@@ -371,7 +371,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ProjectSettingsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     name = 'name_example' # str | Name of the projectSettings
 
     try:
@@ -453,10 +453,10 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ProjectSettingsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the project settings
     if_match = 'if_match_example' # str | ETag value used for conditional updates
-    project_settings_dto = cm_python_openapi_sdk.ProjectSettingsDTO() # ProjectSettingsDTO | 
+    project_settings_dto = {"id":"qr0kekodkijcuhev","name":"project_settings_gb","type":"projectSettings","content":{"geoSearchCountries":["GB","CZ"]},"accessInfo":{"createdAt":"2025-08-03T13:10:15Z","createdBy":"/rest/accounts/a2954434-00b1-70d4-92f1-dd99bb174f4c"},"links":[{"rel":"self","href":"/rest/projects/f76on62tb6bpitbb/md/projectSettings/qr0kekodkijcuhev"}],"version":1} # ProjectSettingsDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:

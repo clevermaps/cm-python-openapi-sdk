@@ -22,7 +22,7 @@ from typing import Optional
 from typing_extensions import Annotated
 from cm_python_openapi_sdk.models.dwh_property_values_request import DwhPropertyValuesRequest
 from cm_python_openapi_sdk.models.property_values_response import PropertyValuesResponse
-from cm_python_openapi_sdk.models.queries_response import QueriesResponse
+from cm_python_openapi_sdk.models.queries_response1 import QueriesResponse1
 
 from cm_python_openapi_sdk.api_client import ApiClient, RequestSerialized
 from cm_python_openapi_sdk.api_response import ApiResponse
@@ -63,7 +63,7 @@ class PropertyValuesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> QueriesResponse:
+    ) -> QueriesResponse1:
         """Accept property values
 
         Gets list of distinct values of given dataset's property. The property is set by mandatory request body attribute `property`. The distinct values are returned as pageable response. By default, the values are ordered ascending by the property value. Optionaly the sort order can be changed and the values can be sorted by another propety (eg. sort day of week by day id instead of day name).  This resource is typically used for fetching of the multiSelect and singleSelect filter content.  This request starts an asynchronous action, which computes the property values result and returns the location URI of the result in `location` response header. To get the result, client must make another GET request on this URI (see [getPropertyValues](#operation/getPropertyValues)). 
@@ -116,7 +116,7 @@ class PropertyValuesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse",
+            '202': "QueriesResponse1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -150,7 +150,7 @@ class PropertyValuesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[QueriesResponse]:
+    ) -> ApiResponse[QueriesResponse1]:
         """Accept property values
 
         Gets list of distinct values of given dataset's property. The property is set by mandatory request body attribute `property`. The distinct values are returned as pageable response. By default, the values are ordered ascending by the property value. Optionaly the sort order can be changed and the values can be sorted by another propety (eg. sort day of week by day id instead of day name).  This resource is typically used for fetching of the multiSelect and singleSelect filter content.  This request starts an asynchronous action, which computes the property values result and returns the location URI of the result in `location` response header. To get the result, client must make another GET request on this URI (see [getPropertyValues](#operation/getPropertyValues)). 
@@ -203,7 +203,7 @@ class PropertyValuesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse",
+            '202': "QueriesResponse1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -290,7 +290,7 @@ class PropertyValuesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '202': "QueriesResponse",
+            '202': "QueriesResponse1",
         }
         response_data = self.api_client.call_api(
             *_param,

@@ -22,7 +22,6 @@ from typing import Optional
 from typing_extensions import Annotated
 from cm_python_openapi_sdk.models.create_organization_dto import CreateOrganizationDTO
 from cm_python_openapi_sdk.models.get_organizations200_response import GetOrganizations200Response
-from cm_python_openapi_sdk.models.organization_paged_model_dto import OrganizationPagedModelDTO
 from cm_python_openapi_sdk.models.organization_response_dto import OrganizationResponseDTO
 from cm_python_openapi_sdk.models.update_organization_dto import UpdateOrganizationDTO
 
@@ -60,7 +59,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> OrganizationPagedModelDTO:
+    ) -> OrganizationResponseDTO:
         """Creates a new organization.
 
         **Security:** Creating of organization is restricted to CleverMaps platform administrators. 
@@ -98,7 +97,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrganizationPagedModelDTO",
+            '200': "OrganizationResponseDTO",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -127,7 +126,7 @@ class OrganizationsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[OrganizationPagedModelDTO]:
+    ) -> ApiResponse[OrganizationResponseDTO]:
         """Creates a new organization.
 
         **Security:** Creating of organization is restricted to CleverMaps platform administrators. 
@@ -165,7 +164,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrganizationPagedModelDTO",
+            '200': "OrganizationResponseDTO",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -232,7 +231,7 @@ class OrganizationsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrganizationPagedModelDTO",
+            '200': "OrganizationResponseDTO",
         }
         response_data = self.api_client.call_api(
             *_param,
