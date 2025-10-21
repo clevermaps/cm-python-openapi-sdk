@@ -21,7 +21,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from cm_python_openapi_sdk.models.dwh_date_range_request_filter import DwhDateRangeRequestFilter
+from cm_python_openapi_sdk.models.dwh_date_range_filter import DwhDateRangeFilter
 from cm_python_openapi_sdk.models.execution_context import ExecutionContext
 from typing import Optional, Set
 from typing_extensions import Self
@@ -32,7 +32,7 @@ class DwhDateRangeRequest(BaseModel):
     """ # noqa: E501
     execution_context: Optional[ExecutionContext] = Field(default=None, alias="executionContext")
     var_from: Annotated[str, Field(strict=True)] = Field(description="defines the date property in a fact table", alias="from")
-    filter: Optional[DwhDateRangeRequestFilter] = None
+    filter: Optional[DwhDateRangeFilter] = None
     __properties: ClassVar[List[str]] = ["executionContext", "from", "filter"]
 
     @field_validator('var_from')
@@ -101,7 +101,7 @@ class DwhDateRangeRequest(BaseModel):
         _obj = cls.model_validate({
             "executionContext": ExecutionContext.from_dict(obj["executionContext"]) if obj.get("executionContext") is not None else None,
             "from": obj.get("from"),
-            "filter": DwhDateRangeRequestFilter.from_dict(obj["filter"]) if obj.get("filter") is not None else None
+            "filter": DwhDateRangeFilter.from_dict(obj["filter"]) if obj.get("filter") is not None else None
         })
         return _obj
 

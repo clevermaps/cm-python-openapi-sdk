@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **create_organization**
-> OrganizationPagedModelDTO create_organization(create_organization_dto)
+> OrganizationResponseDTO create_organization(create_organization_dto)
 
 Creates a new organization.
 
@@ -27,7 +27,7 @@ Creating of organization is restricted to CleverMaps platform administrators.
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.create_organization_dto import CreateOrganizationDTO
-from cm_python_openapi_sdk.models.organization_paged_model_dto import OrganizationPagedModelDTO
+from cm_python_openapi_sdk.models.organization_response_dto import OrganizationResponseDTO
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -51,7 +51,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.OrganizationsApi(api_client)
-    create_organization_dto = cm_python_openapi_sdk.CreateOrganizationDTO() # CreateOrganizationDTO | 
+    create_organization_dto = {"title":"New Organization","dwhClusterId":"cmstd1"} # CreateOrganizationDTO | 
 
     try:
         # Creates a new organization.
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrganizationPagedModelDTO**](OrganizationPagedModelDTO.md)
+[**OrganizationResponseDTO**](OrganizationResponseDTO.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Id of the organization
+    organization_id = 'bvc4hb9kufgaehed' # str | Id of the organization
 
     try:
         # Delete an organization.
@@ -204,7 +204,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Id of the organization
+    organization_id = 'bvc4hb9kufgaehed' # str | Id of the organization
 
     try:
         # Get organization detail.
@@ -282,7 +282,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     api_instance = cm_python_openapi_sdk.OrganizationsApi(api_client)
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
-    project_id = 'project_id_example' # str | Id of the project, used in query parameters (optional)
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project, used in query parameters (optional)
 
     try:
         # Get all organizations available for authenticated user.
@@ -365,8 +365,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.OrganizationsApi(api_client)
-    organization_id = 'organization_id_example' # str | Id of the organization
-    update_organization_dto = cm_python_openapi_sdk.UpdateOrganizationDTO() # UpdateOrganizationDTO | 
+    organization_id = 'bvc4hb9kufgaehed' # str | Id of the organization
+    update_organization_dto = {"title":"New Organization Name","invitationEmail":"invivations@organization.com","dwhClusterId":"cmstd1"} # UpdateOrganizationDTO | 
 
     try:
         # Update organization.

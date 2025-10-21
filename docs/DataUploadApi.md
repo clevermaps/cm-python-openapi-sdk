@@ -52,7 +52,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DataUploadApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'nogeLAvMPlITfWC66ztEDOW6Vl3bwRrn' # str | 
     data_complete_multipart_upload_request = cm_python_openapi_sdk.DataCompleteMultipartUploadRequest() # DataCompleteMultipartUploadRequest | 
 
@@ -154,7 +154,7 @@ Start a [dataPull](#operation/submitJobExecution) job using an **S3 URL**.
 ```json
 {
   "type": "dataPull",
-  "projectId": "ncesksvg7rjeri7v",
+  "projectId": "f76on62tb6bpitbb",
   "content": {
     "dataset": "mystores",
     "mode": "full",
@@ -175,7 +175,7 @@ Start a [dataPull](#operation/submitJobExecution) job using an **HTTPS URL**.
 ```json
 {
   "type": "dataPull",
-  "projectId": "ncesksvg7rjeri7v",
+  "projectId": "f76on62tb6bpitbb",
   "content": {
     "dataset": "mystores",
     "mode": "full",
@@ -207,7 +207,7 @@ With **CsvOptions**, you can specify how the CSV should be processed. The availa
 ```json
 {
   "type": "dataPull",
-  "projectId": "ncesksvg7rjeri7v",
+  "projectId": "f76on62tb6bpitbb",
   "content": {
     "dataset": "mystores",
     "mode": "full",
@@ -263,7 +263,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DataUploadApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     parts = 56 # int |  (optional)
 
     try:

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_audit_log_event**
-> AuditLogSingleResource get_audit_log_event(event_id, project_id)
+> AuditLogSingleResource1 get_audit_log_event(event_id, project_id)
 
 Get audit log event by eventId
 
@@ -25,7 +25,7 @@ Resource return only audit log events for those projects where the authenticated
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.audit_log_single_resource import AuditLogSingleResource
+from cm_python_openapi_sdk.models.audit_log_single_resource1 import AuditLogSingleResource1
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AuditLogSingleResource**](AuditLogSingleResource.md)
+[**AuditLogSingleResource1**](AuditLogSingleResource1.md)
 
 ### Authorization
 
@@ -134,12 +134,12 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.AuditLogApi(api_client)
     project_id = 'project_id_example' # str | Id of the project, used as query parameter
-    account_id = 'account_id_example' # str | Id of the account, used in query parameters (optional)
+    account_id = 'account_id_example' # str | Id of the account, used in query parameters for auditlog and jobs history. (optional)
     event_types = 'search' # str | Event type (optional)
     var_from = '2019-01-17T19:09:28,918' # str | Timestamp lower bound (UTC timestamp format) (optional)
     to = '2022-01-17T19:09:28,918' # str | Timestamp upper bound (UTC timestamp format) (optional)
     last_evaluated_event_id = 'last_evaluated_event_id_example' # str | Last evaluated event ID when requesting next page (optional)
-    last_evaluated_timestamp = '2020-11-18T08:39:56,199' # str | Last evaluated timestamp when requesting next page (UTC timestamp format) (optional)
+    last_evaluated_timestamp = 'last_evaluated_timestamp_example' # str | Last evaluated timestamp when requesting next page (UTC timestamp format) (optional)
     page_size = 56 # int | page size (optional)
     sort_direction = 'ASC' # str | Sort direction (optional)
 
@@ -160,7 +160,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| Id of the project, used as query parameter | 
- **account_id** | **str**| Id of the account, used in query parameters | [optional] 
+ **account_id** | **str**| Id of the account, used in query parameters for auditlog and jobs history. | [optional] 
  **event_types** | **str**| Event type | [optional] 
  **var_from** | **str**| Timestamp lower bound (UTC timestamp format) | [optional] 
  **to** | **str**| Timestamp upper bound (UTC timestamp format) | [optional] 

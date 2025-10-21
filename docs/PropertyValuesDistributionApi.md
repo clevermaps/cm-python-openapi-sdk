@@ -9,9 +9,9 @@ Method | HTTP request | Description
 
 
 # **accept_property_values_distribution**
-> QueriesResponse accept_property_values_distribution(project_id, dwh_cluster_id, dwh_property_values_distribution_request)
+> QueriesResponse1 accept_property_values_distribution(project_id, dwh_cluster_id, dwh_property_values_distribution_request)
 
-Computes the distribution (frequency) of given fact (numeric dataset property). Result is splitted into required number of equal size buckets. The frequency is the count of occurencies of given metric in these buckets.
+Computes the distribution (frequency) of given fact (numeric dataset property). Result is split into required number of equal size buckets. The frequency is the count of occurrences of given metric in these buckets.
 
 This resource is typically used for the histogram filter distribution.
 
@@ -25,7 +25,7 @@ This request starts an asynchronous action, which computes the property values d
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.dwh_property_values_distribution_request import DwhPropertyValuesDistributionRequest
-from cm_python_openapi_sdk.models.queries_response import QueriesResponse
+from cm_python_openapi_sdk.models.queries_response1 import QueriesResponse1
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -49,8 +49,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.PropertyValuesDistributionApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dwh_cluster_id = 'dwh_cluster_id_example' # str | Id of the dwh cluster
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
     dwh_property_values_distribution_request = cm_python_openapi_sdk.DwhPropertyValuesDistributionRequest() # DwhPropertyValuesDistributionRequest | 
 
     try:
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QueriesResponse**](QueriesResponse.md)
+[**QueriesResponse1**](QueriesResponse1.md)
 
 ### Authorization
 
@@ -131,10 +131,10 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.PropertyValuesDistributionApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dwh_cluster_id = 'dwh_cluster_id_example' # str | Id of the dwh cluster
-    dwh_cache_id = 'q:vb2b3d8v91jao331:DqBZN5IjSwfufj-7rDMAOQ' # str | Id of the dwh cache
-    null_cache_id = 'q:vb2b3d8v91jao331:Ntit7mTcDMxvj7DTI6wuFA' # str | The ID of a cached null values distribution result
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
+    dwh_cache_id = 'q:f76on62tb6bpitbb:DqBZN5IjSwfufj-7rDMAOQ' # str | Id of the dwh cache
+    null_cache_id = 'q:f76on62tb6bpitbb:Ntit7mTcDMxvj7DTI6wuFA' # str | The ID of a cached null values distribution result
     var_property = 'baskets.amount' # str | Dataset's property identifier
 
     try:

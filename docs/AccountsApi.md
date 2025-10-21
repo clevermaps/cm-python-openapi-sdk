@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**change_onboarding**](AccountsApi.md#change_onboarding) | **PUT** /accounts/{accountId}/onboarding | Change account onboarding
 [**change_preferences**](AccountsApi.md#change_preferences) | **PUT** /accounts/{accountId}/preferences | Change account preferences
+[**create_pipedrive_account**](AccountsApi.md#create_pipedrive_account) | **POST** /accounts/pipedrive | Create pipedrive account and save ID to Cognito profile
 [**delete_account_by_id**](AccountsApi.md#delete_account_by_id) | **DELETE** /accounts/{accountId} | Delete account.
 [**get_account_by_account_id**](AccountsApi.md#get_account_by_account_id) | **GET** /accounts/{accountId} | Get account by accountId
 [**get_account_by_email**](AccountsApi.md#get_account_by_email) | **GET** /accounts | Find if account with email exists.
@@ -55,7 +56,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.AccountsApi(api_client)
     account_id = 'account_id_example' # str | Id of the account
-    account_onboarding_parameters = cm_python_openapi_sdk.AccountOnboardingParameters() # AccountOnboardingParameters |  (optional)
+    account_onboarding_parameters = {"introShown":["/rest/projects/qkn86k5upo4m9b27/md/views/td9uijp62o8sa27b","/rest/projects/kfdkssvg7rjeri1c/md/views/ul81ijptko8s453t"],"tipsShown":["basicVisualization","extBlockRanking"]} # AccountOnboardingParameters |  (optional)
 
     try:
         # Change account onboarding
@@ -141,7 +142,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.AccountsApi(api_client)
     account_id = 'account_id_example' # str | Id of the account
-    account_preferences = cm_python_openapi_sdk.AccountPreferences() # AccountPreferences |  (optional)
+    account_preferences = {"language":"en","lastActiveProject":"/rest/projects/kfdkssvg7rjeri1c","sendNewsletter":false} # AccountPreferences |  (optional)
 
     try:
         # Change account preferences
@@ -182,12 +183,90 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **create_pipedrive_account**
+> create_pipedrive_account(create_person_request_dto=create_person_request_dto)
+
+Create pipedrive account and save ID to Cognito profile
+
+Create pipedrive account for currently authenticated user and save ID to Cognito profile.
+
+### Example
+
+* Bearer Authentication (bearerAuth):
+
+```python
+import cm_python_openapi_sdk
+from cm_python_openapi_sdk.models.create_person_request_dto import CreatePersonRequestDTO
+from cm_python_openapi_sdk.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://staging.dev.clevermaps.io/rest
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cm_python_openapi_sdk.Configuration(
+    host = "https://staging.dev.clevermaps.io/rest"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: bearerAuth
+configuration = cm_python_openapi_sdk.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = cm_python_openapi_sdk.AccountsApi(api_client)
+    create_person_request_dto = {"language":"cs","projectIdInvitation":"srb6iq85a8h0ors3"} # CreatePersonRequestDTO |  (optional)
+
+    try:
+        # Create pipedrive account and save ID to Cognito profile
+        api_instance.create_pipedrive_account(create_person_request_dto=create_person_request_dto)
+    except Exception as e:
+        print("Exception when calling AccountsApi->create_pipedrive_account: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_person_request_dto** | [**CreatePersonRequestDTO**](CreatePersonRequestDTO.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Account created |  -  |
+**409** | Account already exists |  -  |
+**500** | Could not create Pipedrive account. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **delete_account_by_id**
 > delete_account_by_id(account_id)
 
 Delete account.
 
-Deletes user account from Okta. Destroys Okta session. Delete from Intercom.
+Deletes user account.
 
 **Security:**
 User can delete only himself.

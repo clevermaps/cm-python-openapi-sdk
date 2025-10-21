@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **metric_id** | **str** |  | [optional] 
-**available_datasets** | **List[object]** |  | [optional] 
+**available_datasets** | [**List[AvailableDatasetsForMetric]**](AvailableDatasetsForMetric.md) |  | [optional] 
 
 ## Example
 

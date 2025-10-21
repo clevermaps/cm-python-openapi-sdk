@@ -35,12 +35,11 @@ class AccountDTO(BaseModel):
     email: StrictStr
     consent_granted: Optional[StrictBool] = Field(default=None, alias="consentGranted")
     status: Optional[StrictStr] = None
-    anonymous: Optional[StrictBool] = None
-    phone_number: Optional[Annotated[str, Field(min_length=6, strict=True, max_length=20)]] = Field(default=None, alias="phoneNumber")
+    phone_number: Optional[Annotated[str, Field(strict=True, max_length=20)]] = Field(default=None, alias="phoneNumber")
     preferences: Optional[AccountPreferences] = None
     onboarding: Optional[AccountOnboardingParameters] = None
     links: Optional[List[Dict[str, Any]]] = Field(default=None, description="define keys links and page that are mandatory for all pageble responses")
-    __properties: ClassVar[List[str]] = ["id", "fullName", "email", "consentGranted", "status", "anonymous", "phoneNumber", "preferences", "onboarding", "links"]
+    __properties: ClassVar[List[str]] = ["id", "fullName", "email", "consentGranted", "status", "phoneNumber", "preferences", "onboarding", "links"]
 
     @field_validator('status')
     def status_validate_enum(cls, value):
@@ -114,7 +113,6 @@ class AccountDTO(BaseModel):
             "email": obj.get("email"),
             "consentGranted": obj.get("consentGranted"),
             "status": obj.get("status"),
-            "anonymous": obj.get("anonymous"),
             "phoneNumber": obj.get("phoneNumber"),
             "preferences": AccountPreferences.from_dict(obj["preferences"]) if obj.get("preferences") is not None else None,
             "onboarding": AccountOnboardingParameters.from_dict(obj["onboarding"]) if obj.get("onboarding") is not None else None,

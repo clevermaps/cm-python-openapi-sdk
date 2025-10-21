@@ -56,8 +56,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.QueriesApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dwh_cluster_id = 'dwh_cluster_id_example' # str | Id of the dwh cluster
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
     dwh_query_request1 = cm_python_openapi_sdk.DwhQueryRequest1() # DwhQueryRequest1 | 
     size = 200 # int | The count of records to return for one page (optional) (default to 200)
     page = 0 # int | Number of the page (optional) (default to 0)
@@ -151,9 +151,9 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.QueriesApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dwh_cluster_id = 'dwh_cluster_id_example' # str | Id of the dwh cluster
-    dwh_cache_id = 'q:vb2b3d8v91jao331:DqBZN5IjSwfufj-7rDMAOQ' # str | Id of the dwh cache
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
+    dwh_cache_id = 'q:f76on62tb6bpitbb:DqBZN5IjSwfufj-7rDMAOQ' # str | Id of the dwh cache
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
 

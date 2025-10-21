@@ -40,8 +40,8 @@ class AccountPreferences(BaseModel):
         if value is None:
             return value
 
-        if not re.match(r"^[a-z0-9]{16}$", value):
-            raise ValueError(r"must validate the regular expression /^[a-z0-9]{16}$/")
+        if not re.match(r"^\/rest\/projects\/[a-z0-9]{16}$", value):
+            raise ValueError(r"must validate the regular expression /^\/rest\/projects\/[a-z0-9]{16}$/")
         return value
 
     @field_validator('last_active_organization')

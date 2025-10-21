@@ -128,7 +128,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ProjectsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
 
     try:
         # Delete project.
@@ -206,7 +206,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ProjectsApi(api_client)
-    organization_id = 'organization_id_example' # str | Id of the organization, used in query parameters (optional)
+    organization_id = 'bvc4hb9kufgaehed' # str | Id of the organization, used in query parameters (optional)
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
     sort = 'name,desc' # str | Name of the attribute to use for sorting the results, together with direction (asc or desc) (optional)
@@ -296,7 +296,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ProjectsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     expand = 'expand_example' # str | Expand selected attribute(s) to minimalize roundtrips. (optional)
 
     try:
@@ -379,8 +379,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ProjectsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    update_project_dto = cm_python_openapi_sdk.UpdateProjectDTO() # UpdateProjectDTO | 
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    update_project_dto = {"title":"New Title for Project","description":"Updated project description","status":"ENABLED","organizationId":"bvc4hb9kufgaehed"} # UpdateProjectDTO | 
 
     try:
         # Update the project.

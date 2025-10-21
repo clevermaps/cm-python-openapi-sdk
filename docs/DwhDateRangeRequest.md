@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **execution_context** | [**ExecutionContext**](ExecutionContext.md) |  | [optional] 
 **var_from** | **str** | defines the date property in a fact table | 
-**filter** | [**DwhDateRangeRequestFilter**](DwhDateRangeRequestFilter.md) |  | [optional] 
+**filter** | [**DwhDateRangeFilter**](DwhDateRangeFilter.md) |  | [optional] 
 
 ## Example
 

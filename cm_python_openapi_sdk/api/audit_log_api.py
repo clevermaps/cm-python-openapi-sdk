@@ -21,7 +21,7 @@ from pydantic import Field, StrictInt, StrictStr, field_validator
 from typing import Optional
 from typing_extensions import Annotated
 from cm_python_openapi_sdk.models.audit_log_paged_resource import AuditLogPagedResource
-from cm_python_openapi_sdk.models.audit_log_single_resource import AuditLogSingleResource
+from cm_python_openapi_sdk.models.audit_log_single_resource1 import AuditLogSingleResource1
 
 from cm_python_openapi_sdk.api_client import ApiClient, RequestSerialized
 from cm_python_openapi_sdk.api_response import ApiResponse
@@ -58,7 +58,7 @@ class AuditLogApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AuditLogSingleResource:
+    ) -> AuditLogSingleResource1:
         """Get audit log event by eventId
 
         Get audit log event by event ID for project.  **Security:** Resource return only audit log events for those projects where the authenticated user is Admin. 
@@ -99,7 +99,7 @@ class AuditLogApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuditLogSingleResource",
+            '200': "AuditLogSingleResource1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -129,7 +129,7 @@ class AuditLogApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AuditLogSingleResource]:
+    ) -> ApiResponse[AuditLogSingleResource1]:
         """Get audit log event by eventId
 
         Get audit log event by event ID for project.  **Security:** Resource return only audit log events for those projects where the authenticated user is Admin. 
@@ -170,7 +170,7 @@ class AuditLogApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuditLogSingleResource",
+            '200': "AuditLogSingleResource1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -241,7 +241,7 @@ class AuditLogApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuditLogSingleResource",
+            '200': "AuditLogSingleResource1",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -323,7 +323,7 @@ class AuditLogApi:
     def get_audit_logs(
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project, used as query parameter")],
-        account_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Id of the account, used in query parameters")] = None,
+        account_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Id of the account, used in query parameters for auditlog and jobs history.")] = None,
         event_types: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Event type")] = None,
         var_from: Annotated[Optional[StrictStr], Field(description="Timestamp lower bound (UTC timestamp format)")] = None,
         to: Annotated[Optional[StrictStr], Field(description="Timestamp upper bound (UTC timestamp format)")] = None,
@@ -350,7 +350,7 @@ class AuditLogApi:
 
         :param project_id: Id of the project, used as query parameter (required)
         :type project_id: str
-        :param account_id: Id of the account, used in query parameters
+        :param account_id: Id of the account, used in query parameters for auditlog and jobs history.
         :type account_id: str
         :param event_types: Event type
         :type event_types: str
@@ -422,7 +422,7 @@ class AuditLogApi:
     def get_audit_logs_with_http_info(
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project, used as query parameter")],
-        account_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Id of the account, used in query parameters")] = None,
+        account_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Id of the account, used in query parameters for auditlog and jobs history.")] = None,
         event_types: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Event type")] = None,
         var_from: Annotated[Optional[StrictStr], Field(description="Timestamp lower bound (UTC timestamp format)")] = None,
         to: Annotated[Optional[StrictStr], Field(description="Timestamp upper bound (UTC timestamp format)")] = None,
@@ -449,7 +449,7 @@ class AuditLogApi:
 
         :param project_id: Id of the project, used as query parameter (required)
         :type project_id: str
-        :param account_id: Id of the account, used in query parameters
+        :param account_id: Id of the account, used in query parameters for auditlog and jobs history.
         :type account_id: str
         :param event_types: Event type
         :type event_types: str
@@ -521,7 +521,7 @@ class AuditLogApi:
     def get_audit_logs_without_preload_content(
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project, used as query parameter")],
-        account_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Id of the account, used in query parameters")] = None,
+        account_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Id of the account, used in query parameters for auditlog and jobs history.")] = None,
         event_types: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Event type")] = None,
         var_from: Annotated[Optional[StrictStr], Field(description="Timestamp lower bound (UTC timestamp format)")] = None,
         to: Annotated[Optional[StrictStr], Field(description="Timestamp upper bound (UTC timestamp format)")] = None,
@@ -548,7 +548,7 @@ class AuditLogApi:
 
         :param project_id: Id of the project, used as query parameter (required)
         :type project_id: str
-        :param account_id: Id of the account, used in query parameters
+        :param account_id: Id of the account, used in query parameters for auditlog and jobs history.
         :type account_id: str
         :param event_types: Event type
         :type event_types: str

@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **format** | **str** |  | 
+**csv_header_overrides** | [**List[CsvHeaderOverride]**](CsvHeaderOverride.md) |  | [optional] 
 **csv_header_format** | **str** |  | [optional] 
 **query** | **object** |  | 
 **csv_options** | [**ExportRequestCsvOptions**](ExportRequestCsvOptions.md) |  | [optional] 

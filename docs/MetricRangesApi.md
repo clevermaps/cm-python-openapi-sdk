@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **accept_metric_ranges**
-> QueriesResponse accept_metric_ranges(project_id, dwh_cluster_id, dwh_query_request1)
+> QueriesResponse1 accept_metric_ranges(project_id, dwh_cluster_id, dwh_query_request2)
 
 Accept metric ranges
 
@@ -24,8 +24,8 @@ This request starts an asynchronous action, which computes the metric ranges res
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.dwh_query_request1 import DwhQueryRequest1
-from cm_python_openapi_sdk.models.queries_response import QueriesResponse
+from cm_python_openapi_sdk.models.dwh_query_request2 import DwhQueryRequest2
+from cm_python_openapi_sdk.models.queries_response1 import QueriesResponse1
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -49,13 +49,13 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MetricRangesApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dwh_cluster_id = 'dwh_cluster_id_example' # str | Id of the dwh cluster
-    dwh_query_request1 = cm_python_openapi_sdk.DwhQueryRequest1() # DwhQueryRequest1 | 
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
+    dwh_query_request2 = cm_python_openapi_sdk.DwhQueryRequest2() # DwhQueryRequest2 | 
 
     try:
         # Accept metric ranges
-        api_response = api_instance.accept_metric_ranges(project_id, dwh_cluster_id, dwh_query_request1)
+        api_response = api_instance.accept_metric_ranges(project_id, dwh_cluster_id, dwh_query_request2)
         print("The response of MetricRangesApi->accept_metric_ranges:\n")
         pprint(api_response)
     except Exception as e:
@@ -71,11 +71,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **project_id** | **str**| Id of the project | 
  **dwh_cluster_id** | **str**| Id of the dwh cluster | 
- **dwh_query_request1** | [**DwhQueryRequest1**](DwhQueryRequest1.md)|  | 
+ **dwh_query_request2** | [**DwhQueryRequest2**](DwhQueryRequest2.md)|  | 
 
 ### Return type
 
-[**QueriesResponse**](QueriesResponse.md)
+[**QueriesResponse1**](QueriesResponse1.md)
 
 ### Authorization
 
@@ -137,9 +137,9 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.MetricRangesApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dwh_cluster_id = 'dwh_cluster_id_example' # str | Id of the dwh cluster
-    dwh_cache_id = 'q:vb2b3d8v91jao331:DqBZN5IjSwfufj-7rDMAOQ' # str | Id of the dwh cache
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
+    dwh_cache_id = 'q:f76on62tb6bpitbb:DqBZN5IjSwfufj-7rDMAOQ' # str | Id of the dwh cache
 
     try:
         # Get metric ranges

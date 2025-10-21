@@ -87,7 +87,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.AccountsApi(api_client)
     account_id = 'account_id_example' # str | Id of the account
-    account_onboarding_parameters = cm_python_openapi_sdk.AccountOnboardingParameters() # AccountOnboardingParameters |  (optional)
+    account_onboarding_parameters = {"introShown":["/rest/projects/qkn86k5upo4m9b27/md/views/td9uijp62o8sa27b","/rest/projects/kfdkssvg7rjeri1c/md/views/ul81ijptko8s453t"],"tipsShown":["basicVisualization","extBlockRanking"]} # AccountOnboardingParameters |  (optional)
 
     try:
         # Change account onboarding
@@ -105,6 +105,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountsApi* | [**change_onboarding**](docs/AccountsApi.md#change_onboarding) | **PUT** /accounts/{accountId}/onboarding | Change account onboarding
 *AccountsApi* | [**change_preferences**](docs/AccountsApi.md#change_preferences) | **PUT** /accounts/{accountId}/preferences | Change account preferences
+*AccountsApi* | [**create_pipedrive_account**](docs/AccountsApi.md#create_pipedrive_account) | **POST** /accounts/pipedrive | Create pipedrive account and save ID to Cognito profile
 *AccountsApi* | [**delete_account_by_id**](docs/AccountsApi.md#delete_account_by_id) | **DELETE** /accounts/{accountId} | Delete account.
 *AccountsApi* | [**get_account_by_account_id**](docs/AccountsApi.md#get_account_by_account_id) | **GET** /accounts/{accountId} | Get account by accountId
 *AccountsApi* | [**get_account_by_email**](docs/AccountsApi.md#get_account_by_email) | **GET** /accounts | Find if account with email exists.
@@ -126,7 +127,7 @@ Class | Method | HTTP request | Description
 *DashboardsApi* | [**get_dashboard_by_id**](docs/DashboardsApi.md#get_dashboard_by_id) | **GET** /projects/{projectId}/md/dashboards/{id} | Gets dashboard by id
 *DashboardsApi* | [**get_dashboard_by_name**](docs/DashboardsApi.md#get_dashboard_by_name) | **GET** /projects/{projectId}/md/dashboards/{name} | Gets dashboard by name
 *DashboardsApi* | [**update_dashboard_by_id**](docs/DashboardsApi.md#update_dashboard_by_id) | **PUT** /projects/{projectId}/md/dashboards/{id} | Updates dashboard by id
-*DataDumpApi* | [**get_data_dump**](docs/DataDumpApi.md#get_data_dump) | **GET** /projects/{projectId}/data/dumps/{dumpId} | Get data dump file
+*DataDumpApi* | [**get_data_dump**](docs/DataDumpApi.md#get_data_dump) | **GET** /projects/{projectId}/dwh/data/dumps/{dumpId} | Get data dump file
 *DataPermissionsApi* | [**create_data_permission**](docs/DataPermissionsApi.md#create_data_permission) | **POST** /projects/{projectId}/md/dataPermissions | Creates new data permission
 *DataPermissionsApi* | [**delete_data_permission_by_id**](docs/DataPermissionsApi.md#delete_data_permission_by_id) | **DELETE** /projects/{projectId}/md/dataPermissions/{id} | Deletes data permission by id
 *DataPermissionsApi* | [**get_all_data_permissions**](docs/DataPermissionsApi.md#get_all_data_permissions) | **GET** /projects/{projectId}/md/dataPermissions | Returns paged collection of all data permissions in a project
@@ -166,8 +167,11 @@ Class | Method | HTTP request | Description
 *IndicatorsApi* | [**get_indicator_by_id**](docs/IndicatorsApi.md#get_indicator_by_id) | **GET** /projects/{projectId}/md/indicators/{id} | Gets indicator by id
 *IndicatorsApi* | [**get_indicator_by_name**](docs/IndicatorsApi.md#get_indicator_by_name) | **GET** /projects/{projectId}/md/indicators/{name} | Gets indicator by name
 *IndicatorsApi* | [**update_indicator_by_id**](docs/IndicatorsApi.md#update_indicator_by_id) | **PUT** /projects/{projectId}/md/indicators/{id} | Updates indicator by id
-*InvitationApi* | [**accept_project_invitation**](docs/InvitationApi.md#accept_project_invitation) | **POST** /invitations/{invitationHash} | Accept invitation.
-*InvitationApi* | [**get_invitation**](docs/InvitationApi.md#get_invitation) | **GET** /invitations/{invitationHash} | Get detail of an invitation.
+*InvitationsApi* | [**create_invitation**](docs/InvitationsApi.md#create_invitation) | **POST** /projects/{projectId}/invitations | Create new invitation to the project for a user.
+*InvitationsApi* | [**delete_invitation**](docs/InvitationsApi.md#delete_invitation) | **DELETE** /projects/{projectId}/invitations/{invitationId} | Delete invitation.
+*InvitationsApi* | [**get_invitation_by_id**](docs/InvitationsApi.md#get_invitation_by_id) | **GET** /projects/{projectId}/invitations/{invitationId} | Get detail of an invitation.
+*InvitationsApi* | [**get_invitations**](docs/InvitationsApi.md#get_invitations) | **GET** /projects/{projectId}/invitations | Get list of project invitations.
+*InvitationsApi* | [**update_invitation**](docs/InvitationsApi.md#update_invitation) | **PUT** /projects/{projectId}/invitations/{invitationId} | Update invitation.
 *IsochroneApi* | [**get_isochrone**](docs/IsochroneApi.md#get_isochrone) | **GET** /isochrone | Get isochrone
 *JobsApi* | [**get_job_status**](docs/JobsApi.md#get_job_status) | **GET** /jobs/{jobId} | Get job status
 *JobsApi* | [**get_jobs_history**](docs/JobsApi.md#get_jobs_history) | **GET** /jobs/history | Get jobs history
@@ -197,6 +201,8 @@ Class | Method | HTTP request | Description
 *MembersApi* | [**update_membership**](docs/MembersApi.md#update_membership) | **PUT** /projects/{projectId}/members/{membershipId} | Update membership by changing role or status in project.
 *MetricRangesApi* | [**accept_metric_ranges**](docs/MetricRangesApi.md#accept_metric_ranges) | **POST** /projects/{projectId}/dwh/{dwhClusterId}/metricRanges | Accept metric ranges
 *MetricRangesApi* | [**get_metric_ranges**](docs/MetricRangesApi.md#get_metric_ranges) | **GET** /projects/{projectId}/dwh/{dwhClusterId}/metricRanges/{dwhCacheId} | Get metric ranges
+*MetricValuesDistributionApi* | [**accept_metric_values_distributions**](docs/MetricValuesDistributionApi.md#accept_metric_values_distributions) | **POST** /projects/{projectId}/dwh/{dwhClusterId}/metricValuesDistributions | 
+*MetricValuesDistributionApi* | [**get_metric_values_distributions**](docs/MetricValuesDistributionApi.md#get_metric_values_distributions) | **GET** /projects/{projectId}/dwh/{dwhClusterId}/metricValuesDistributions/{dwhCacheId} | 
 *MetricsApi* | [**create_metric**](docs/MetricsApi.md#create_metric) | **POST** /projects/{projectId}/md/metrics | Creates new metric.
 *MetricsApi* | [**delete_metric_by_id**](docs/MetricsApi.md#delete_metric_by_id) | **DELETE** /projects/{projectId}/md/metrics/{id} | Deletes metric by id
 *MetricsApi* | [**get_all_metrics**](docs/MetricsApi.md#get_all_metrics) | **GET** /projects/{projectId}/md/metrics | Returns paged collection of all Metrics in a project.
@@ -210,11 +216,8 @@ Class | Method | HTTP request | Description
 *OrganizationsApi* | [**update_organization**](docs/OrganizationsApi.md#update_organization) | **PUT** /organizations/{organizationId} | Update organization.
 *OverlapsApi* | [**accept_overlaps**](docs/OverlapsApi.md#accept_overlaps) | **POST** /projects/{projectId}/dwh/{dwhClusterId}/overlaps | Accept overlaps
 *OverlapsApi* | [**get_overlaps**](docs/OverlapsApi.md#get_overlaps) | **GET** /projects/{projectId}/dwh/{dwhClusterId}/overlaps/{dwhCacheId} | Get overlaps
-*ProjectInvitationsApi* | [**create_invitation**](docs/ProjectInvitationsApi.md#create_invitation) | **POST** /projects/{projectId}/invitations | Create new invitation to the project for a user.
-*ProjectInvitationsApi* | [**delete_invitation**](docs/ProjectInvitationsApi.md#delete_invitation) | **DELETE** /projects/{projectId}/invitations/{invitationId} | Delete invitation.
-*ProjectInvitationsApi* | [**get_invitation_by_id**](docs/ProjectInvitationsApi.md#get_invitation_by_id) | **GET** /projects/{projectId}/invitations/{invitationId} | Get detail of an invitation.
-*ProjectInvitationsApi* | [**get_invitations**](docs/ProjectInvitationsApi.md#get_invitations) | **GET** /projects/{projectId}/invitations | Get list of project invitations.
-*ProjectInvitationsApi* | [**update_invitation**](docs/ProjectInvitationsApi.md#update_invitation) | **PUT** /projects/{projectId}/invitations/{invitationId} | Update invitation.
+*ProjectInvitationApi* | [**accept_project_invitation**](docs/ProjectInvitationApi.md#accept_project_invitation) | **POST** /invitations/{invitationHash} | Accept invitation.
+*ProjectInvitationApi* | [**get_invitation**](docs/ProjectInvitationApi.md#get_invitation) | **GET** /invitations/{invitationHash} | Get detail of an invitation.
 *ProjectSettingsApi* | [**create_project_settings**](docs/ProjectSettingsApi.md#create_project_settings) | **POST** /projects/{projectId}/md/projectSettings | Creates new project settings
 *ProjectSettingsApi* | [**delete_project_settings_by_id**](docs/ProjectSettingsApi.md#delete_project_settings_by_id) | **DELETE** /projects/{projectId}/md/projectSettings/{id} | Deletes project settings by id
 *ProjectSettingsApi* | [**get_all_project_settings**](docs/ProjectSettingsApi.md#get_all_project_settings) | **GET** /projects/{projectId}/md/projectSettings | Returns paged collection of all Project Settings objects in a project. This page will always contain only one object.
@@ -269,6 +272,8 @@ Class | Method | HTTP request | Description
  - [AuditLogPagedResourcePage](docs/AuditLogPagedResourcePage.md)
  - [AuditLogPagedResourcePageLastEvaluatedKey](docs/AuditLogPagedResourcePageLastEvaluatedKey.md)
  - [AuditLogSingleResource](docs/AuditLogSingleResource.md)
+ - [AuditLogSingleResource1](docs/AuditLogSingleResource1.md)
+ - [AvailableDatasetsForMetric](docs/AvailableDatasetsForMetric.md)
  - [AvailableDatasetsRequest](docs/AvailableDatasetsRequest.md)
  - [AvailableDatasetsResponse](docs/AvailableDatasetsResponse.md)
  - [AvailableDatasetsResponseContentInner](docs/AvailableDatasetsResponseContentInner.md)
@@ -291,7 +296,9 @@ Class | Method | HTTP request | Description
  - [CreateInvitation](docs/CreateInvitation.md)
  - [CreateMembershipDTO](docs/CreateMembershipDTO.md)
  - [CreateOrganizationDTO](docs/CreateOrganizationDTO.md)
+ - [CreatePersonRequestDTO](docs/CreatePersonRequestDTO.md)
  - [CreateProjectDTO](docs/CreateProjectDTO.md)
+ - [CsvHeaderOverride](docs/CsvHeaderOverride.md)
  - [CuzkParcelInfoDTO](docs/CuzkParcelInfoDTO.md)
  - [DashboardContentDTO](docs/DashboardContentDTO.md)
  - [DashboardDTO](docs/DashboardDTO.md)
@@ -342,15 +349,17 @@ Class | Method | HTTP request | Description
  - [DistributionDTO](docs/DistributionDTO.md)
  - [DoubleCountingWarnings](docs/DoubleCountingWarnings.md)
  - [DwhAbstractProperty](docs/DwhAbstractProperty.md)
+ - [DwhDateRangeFilter](docs/DwhDateRangeFilter.md)
  - [DwhDateRangeRequest](docs/DwhDateRangeRequest.md)
- - [DwhDateRangeRequestFilter](docs/DwhDateRangeRequestFilter.md)
  - [DwhDateRangeResponse](docs/DwhDateRangeResponse.md)
  - [DwhDateRangeResponseContentInner](docs/DwhDateRangeResponseContentInner.md)
  - [DwhForeignKeyDTO](docs/DwhForeignKeyDTO.md)
  - [DwhGeometryDTO](docs/DwhGeometryDTO.md)
  - [DwhMetricRangeResponse](docs/DwhMetricRangeResponse.md)
  - [DwhMetricRangeResponseContentInner](docs/DwhMetricRangeResponseContentInner.md)
+ - [DwhMetricValuesDistributionRequest](docs/DwhMetricValuesDistributionRequest.md)
  - [DwhMetricValuesDistributionResponse](docs/DwhMetricValuesDistributionResponse.md)
+ - [DwhMetricValuesDistributionResponse1](docs/DwhMetricValuesDistributionResponse1.md)
  - [DwhMetricValuesDistributionResponseContentInner](docs/DwhMetricValuesDistributionResponseContentInner.md)
  - [DwhMetricValuesDistributionResponseContentInnerContentInner](docs/DwhMetricValuesDistributionResponseContentInnerContentInner.md)
  - [DwhOverlapsRequest](docs/DwhOverlapsRequest.md)
@@ -372,6 +381,9 @@ Class | Method | HTTP request | Description
  - [DwhQueryPropertyTypesFunctionRowNumber](docs/DwhQueryPropertyTypesFunctionRowNumber.md)
  - [DwhQueryRequest](docs/DwhQueryRequest.md)
  - [DwhQueryRequest1](docs/DwhQueryRequest1.md)
+ - [DwhQueryRequest2](docs/DwhQueryRequest2.md)
+ - [DwhQueryRequest3](docs/DwhQueryRequest3.md)
+ - [DwhQueryRequest4](docs/DwhQueryRequest4.md)
  - [DwhQueryVariableType](docs/DwhQueryVariableType.md)
  - [ExecutionContext](docs/ExecutionContext.md)
  - [ExecutionDetail](docs/ExecutionDetail.md)
@@ -405,9 +417,11 @@ Class | Method | HTTP request | Description
  - [FunctionDateTruncateOptions](docs/FunctionDateTruncateOptions.md)
  - [FunctionDistance](docs/FunctionDistance.md)
  - [FunctionDistanceOptions](docs/FunctionDistanceOptions.md)
+ - [FunctionGreatestLeastTypeGeneral](docs/FunctionGreatestLeastTypeGeneral.md)
  - [FunctionH3Grid](docs/FunctionH3Grid.md)
  - [FunctionH3GridOptions](docs/FunctionH3GridOptions.md)
  - [FunctionInterval](docs/FunctionInterval.md)
+ - [FunctionLogExpTypeGeneral](docs/FunctionLogExpTypeGeneral.md)
  - [FunctionNtile](docs/FunctionNtile.md)
  - [FunctionNtileOptions](docs/FunctionNtileOptions.md)
  - [FunctionPercentToTotalTypeGeneral](docs/FunctionPercentToTotalTypeGeneral.md)
@@ -513,6 +527,8 @@ Class | Method | HTTP request | Description
  - [PropertyValuesResponse](docs/PropertyValuesResponse.md)
  - [PropertyValuesResponseContentInner](docs/PropertyValuesResponseContentInner.md)
  - [QueriesResponse](docs/QueriesResponse.md)
+ - [QueriesResponse1](docs/QueriesResponse1.md)
+ - [QueriesResponse2](docs/QueriesResponse2.md)
  - [QueryHitDTO](docs/QueryHitDTO.md)
  - [QueryResponse](docs/QueryResponse.md)
  - [QueryResponseItemWrapper](docs/QueryResponseItemWrapper.md)

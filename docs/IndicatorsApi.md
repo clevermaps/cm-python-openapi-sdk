@@ -50,8 +50,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.IndicatorsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    indicator_dto = cm_python_openapi_sdk.IndicatorDTO() # IndicatorDTO | 
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    indicator_dto = {"name":"average_purchase_indicator","type":"indicator","title":"Average purchase","description":"Average purchase value of a customer","content":{"metric":"/rest/projects/f76on62tb6bpitbb/md/metrics?name=average_purchase_metric","scale":"standard","distribution":"uniform","format":{"type":"number","fraction":1,"symbol":"£"}}} # IndicatorDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:
@@ -133,7 +133,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.IndicatorsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the indicator
 
     try:
@@ -210,7 +210,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.IndicatorsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
     sort = 'name,desc' # str | Name of the attribute to use for sorting the results, together with direction (asc or desc) (optional)
@@ -292,7 +292,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.IndicatorsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the indicator
 
     try:
@@ -371,7 +371,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.IndicatorsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     name = 'name_example' # str | Name of the indicator
 
     try:
@@ -453,10 +453,10 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.IndicatorsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the indicator
     if_match = 'if_match_example' # str | ETag value used for conditional updates
-    indicator_dto = cm_python_openapi_sdk.IndicatorDTO() # IndicatorDTO | 
+    indicator_dto = {"id":"utvm7qp1i0qu0eaa","name":"average_purchase_indicator","type":"indicator","title":"Updated Average purchase","description":"Average purchase value of a customer","content":{"metric":"/rest/projects/f76on62tb6bpitbb/md/metrics?name=average_purchase_metric","scale":"standard","distribution":"uniform","format":{"type":"number","fraction":1,"symbol":"$"}},"accessInfo":{"createdAt":"2025-08-03T13:10:15Z","createdBy":"/rest/accounts/a2954434-00b1-70d4-92f1-dd99bb174f4c"},"links":[{"rel":"self","href":"/rest/projects/f76on62tb6bpitbb/md/indicators/utvm7qp1i0qu0eaa"}],"version":1} # IndicatorDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:

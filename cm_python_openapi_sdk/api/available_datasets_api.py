@@ -50,7 +50,7 @@ class AvailableDatasetsApi:
         type: Annotated[Optional[StrictStr], Field(description="If the parameter present, only the datasets of given type(s) are returned. Parameter can be repeated.")] = None,
         subtype: Annotated[Optional[StrictStr], Field(description="If the parameter present, only the dwh datasets of given subtype(s) are returned. Parameter can be repeated, e.g. `?subtype=geometryLine&subtype=geometryPolygon`  If a parameter `type=dwh` is present then a subtype parameter is ignored and all subtypes of dwh datasets are returned. ")] = None,
         expand: Annotated[Optional[StrictStr], Field(description="Expand datasets to minimalize roundtrips.")] = None,
-        var_from: Annotated[Optional[StrictStr], Field(description="Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alterantively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned. ")] = None,
+        var_from: Annotated[Optional[StrictStr], Field(description="Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alternatively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned. ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -80,7 +80,7 @@ class AvailableDatasetsApi:
         :type subtype: str
         :param expand: Expand datasets to minimalize roundtrips.
         :type expand: str
-        :param var_from: Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alterantively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned. 
+        :param var_from: Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alternatively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned. 
         :type var_from: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -141,7 +141,7 @@ class AvailableDatasetsApi:
         type: Annotated[Optional[StrictStr], Field(description="If the parameter present, only the datasets of given type(s) are returned. Parameter can be repeated.")] = None,
         subtype: Annotated[Optional[StrictStr], Field(description="If the parameter present, only the dwh datasets of given subtype(s) are returned. Parameter can be repeated, e.g. `?subtype=geometryLine&subtype=geometryPolygon`  If a parameter `type=dwh` is present then a subtype parameter is ignored and all subtypes of dwh datasets are returned. ")] = None,
         expand: Annotated[Optional[StrictStr], Field(description="Expand datasets to minimalize roundtrips.")] = None,
-        var_from: Annotated[Optional[StrictStr], Field(description="Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alterantively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned. ")] = None,
+        var_from: Annotated[Optional[StrictStr], Field(description="Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alternatively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned. ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -171,7 +171,7 @@ class AvailableDatasetsApi:
         :type subtype: str
         :param expand: Expand datasets to minimalize roundtrips.
         :type expand: str
-        :param var_from: Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alterantively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned. 
+        :param var_from: Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alternatively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned. 
         :type var_from: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -232,7 +232,7 @@ class AvailableDatasetsApi:
         type: Annotated[Optional[StrictStr], Field(description="If the parameter present, only the datasets of given type(s) are returned. Parameter can be repeated.")] = None,
         subtype: Annotated[Optional[StrictStr], Field(description="If the parameter present, only the dwh datasets of given subtype(s) are returned. Parameter can be repeated, e.g. `?subtype=geometryLine&subtype=geometryPolygon`  If a parameter `type=dwh` is present then a subtype parameter is ignored and all subtypes of dwh datasets are returned. ")] = None,
         expand: Annotated[Optional[StrictStr], Field(description="Expand datasets to minimalize roundtrips.")] = None,
-        var_from: Annotated[Optional[StrictStr], Field(description="Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alterantively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned. ")] = None,
+        var_from: Annotated[Optional[StrictStr], Field(description="Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alternatively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned. ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -262,7 +262,7 @@ class AvailableDatasetsApi:
         :type subtype: str
         :param expand: Expand datasets to minimalize roundtrips.
         :type expand: str
-        :param var_from: Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alterantively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned. 
+        :param var_from: Specify the dataset foreign key to limit list of available datasets. This allows to find just datasets from one date dimension. Alternatively, you can specify the model subtree by setting a primary key of dataset. In this case, only the dataset specified by it's primary key and the connected datasets will be returned. 
         :type var_from: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request

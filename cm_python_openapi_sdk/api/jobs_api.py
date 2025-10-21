@@ -324,7 +324,7 @@ class JobsApi:
     def get_jobs_history(
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project, used as query parameter")],
-        account_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Id of the account, used in query parameters")] = None,
+        account_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Id of the account, used in query parameters for auditlog and jobs history.")] = None,
         sort_direction: Annotated[Optional[StrictStr], Field(description="Sort direction")] = None,
         last_evaluated_timestamp: Annotated[Optional[StrictStr], Field(description="Last evaluated timestamp when requesting next page (UTC timestamp format)")] = None,
         type: Annotated[Optional[StrictStr], Field(description="Jobs type")] = None,
@@ -348,7 +348,7 @@ class JobsApi:
 
         :param project_id: Id of the project, used as query parameter (required)
         :type project_id: str
-        :param account_id: Id of the account, used in query parameters
+        :param account_id: Id of the account, used in query parameters for auditlog and jobs history.
         :type account_id: str
         :param sort_direction: Sort direction
         :type sort_direction: str
@@ -411,7 +411,7 @@ class JobsApi:
     def get_jobs_history_with_http_info(
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project, used as query parameter")],
-        account_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Id of the account, used in query parameters")] = None,
+        account_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Id of the account, used in query parameters for auditlog and jobs history.")] = None,
         sort_direction: Annotated[Optional[StrictStr], Field(description="Sort direction")] = None,
         last_evaluated_timestamp: Annotated[Optional[StrictStr], Field(description="Last evaluated timestamp when requesting next page (UTC timestamp format)")] = None,
         type: Annotated[Optional[StrictStr], Field(description="Jobs type")] = None,
@@ -435,7 +435,7 @@ class JobsApi:
 
         :param project_id: Id of the project, used as query parameter (required)
         :type project_id: str
-        :param account_id: Id of the account, used in query parameters
+        :param account_id: Id of the account, used in query parameters for auditlog and jobs history.
         :type account_id: str
         :param sort_direction: Sort direction
         :type sort_direction: str
@@ -498,7 +498,7 @@ class JobsApi:
     def get_jobs_history_without_preload_content(
         self,
         project_id: Annotated[str, Field(strict=True, description="Id of the project, used as query parameter")],
-        account_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Id of the account, used in query parameters")] = None,
+        account_id: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="Id of the account, used in query parameters for auditlog and jobs history.")] = None,
         sort_direction: Annotated[Optional[StrictStr], Field(description="Sort direction")] = None,
         last_evaluated_timestamp: Annotated[Optional[StrictStr], Field(description="Last evaluated timestamp when requesting next page (UTC timestamp format)")] = None,
         type: Annotated[Optional[StrictStr], Field(description="Jobs type")] = None,
@@ -522,7 +522,7 @@ class JobsApi:
 
         :param project_id: Id of the project, used as query parameter (required)
         :type project_id: str
-        :param account_id: Id of the account, used in query parameters
+        :param account_id: Id of the account, used in query parameters for auditlog and jobs history.
         :type account_id: str
         :param sort_direction: Sort direction
         :type sort_direction: str

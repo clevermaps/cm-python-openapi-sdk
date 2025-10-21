@@ -4,7 +4,7 @@ All URIs are relative to *https://staging.dev.clevermaps.io/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_data_dump**](DataDumpApi.md#get_data_dump) | **GET** /projects/{projectId}/data/dumps/{dumpId} | Get data dump file
+[**get_data_dump**](DataDumpApi.md#get_data_dump) | **GET** /projects/{projectId}/dwh/data/dumps/{dumpId} | Get data dump file
 
 
 # **get_data_dump**
@@ -55,7 +55,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DataDumpApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     dump_id = '1fuYh8ApOR1rwu3Zo8xqI0p333jnrLEU' # str | ID of dump returned as result of job
 
     try:

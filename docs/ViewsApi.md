@@ -50,8 +50,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ViewsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    view_dto = cm_python_openapi_sdk.ViewDTO() # ViewDTO | 
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    view_dto = {"name":"catchment_area_view","type":"view","title":"Catchment Area Analysis","description":"Discover the areas with the biggest or lowest customer base and find out what turnover those customers generate. You can also evaluate the ranking of shops or pick-up partners that are used by customers from different regions.","content":{"icon":"catchment_area","dashboard":"/rest/projects/f76on62tb6bpitbb/md/dashboards?name=catchment_area_dashboard","markerSelector":"/rest/projects/f76on62tb6bpitbb/md/markerSelectors?name=shops_marker_selector","defaultGranularity":"/rest/projects/f76on62tb6bpitbb/md/datasets?name=district","filterGroup":[{"type":"globalDate","property":"baskets.date_iso"},{"type":"histogram","property":"baskets.amount","format":{"type":"number","fraction":0,"symbol":"£"}},{"type":"multiSelect","property":"baskets.on_off_name","orderBy":[{"property":"baskets.on_off_name","direction":"asc"}]},{"type":"multiSelect","property":"baskets.courier","orderBy":[{"property":"baskets.courier","direction":"asc"}]}],"defaultActiveFilters":[{"type":"globalDate","property":"baskets.date_iso","defaultValues":{"startDate":{"value":"2017-09-24"},"endDate":{"value":"2017-09-30"}}}],"mapOptions":{"center":{"lat":52.47,"lng":-1.88},"zoom":12,"minZoom":0,"maxZoom":18,"tileLayer":"mapbox"},"disableFitness":true}} # ViewDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:
@@ -133,7 +133,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ViewsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the view
 
     try:
@@ -210,7 +210,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ViewsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
     sort = 'name,desc' # str | Name of the attribute to use for sorting the results, together with direction (asc or desc) (optional)
@@ -292,7 +292,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ViewsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the view
 
     try:
@@ -371,7 +371,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ViewsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     name = 'name_example' # str | Name of the view
 
     try:
@@ -453,10 +453,10 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.ViewsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the view
     if_match = 'if_match_example' # str | ETag value used for conditional updates
-    view_dto = cm_python_openapi_sdk.ViewDTO() # ViewDTO | 
+    view_dto = {"id":"o4hdm1tu50h8emea","name":"catchment_area_view","type":"view","title":"Catchment Area Analysis","description":"Discover the areas with the biggest or lowest customer base and find out what turnover those customers generate. You can also evaluate the ranking of shops or pick-up partners that are used by customers from different regions.","content":{"icon":"catchment_area","dashboard":"/rest/projects/f76on62tb6bpitbb/md/dashboards?name=catchment_area_dashboard","markerSelector":"/rest/projects/f76on62tb6bpitbb/md/markerSelectors?name=shops_marker_selector","defaultGranularity":"/rest/projects/f76on62tb6bpitbb/md/datasets?name=district","filterGroup":[{"type":"globalDate","property":"baskets.date_iso"},{"type":"histogram","property":"baskets.amount","format":{"type":"number","fraction":0,"symbol":"£"}},{"type":"multiSelect","property":"baskets.on_off_name","orderBy":[{"property":"baskets.on_off_name","direction":"asc"}]},{"type":"multiSelect","property":"baskets.courier","orderBy":[{"property":"baskets.courier","direction":"asc"}]}],"defaultActiveFilters":[{"type":"globalDate","property":"baskets.date_iso","defaultValues":{"startDate":{"value":"2017-09-24"},"endDate":{"value":"2017-09-30"}}}],"mapOptions":{"center":{"lat":52.47,"lng":-1.88},"zoom":12,"minZoom":0,"maxZoom":18,"tileLayer":"mapbox"},"disableFitness":false},"accessInfo":{"createdAt":"2025-08-03T13:10:15Z","createdBy":"/rest/accounts/a2954434-00b1-70d4-92f1-dd99bb174f4c"},"links":[{"rel":"self","href":"/rest/projects/f76on62tb6bpitbb/md/views/o4hdm1tu50h8emea"}],"version":1} # ViewDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:

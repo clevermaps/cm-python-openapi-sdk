@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **accept_overlaps**
-> QueriesResponse accept_overlaps(project_id, dwh_cluster_id, dwh_overlaps_request)
+> QueriesResponse2 accept_overlaps(project_id, dwh_cluster_id, dwh_overlaps_request)
 
 Accept overlaps
 
@@ -32,7 +32,7 @@ This request starts an asynchronous action, which computes the overlaps result a
 ```python
 import cm_python_openapi_sdk
 from cm_python_openapi_sdk.models.dwh_overlaps_request import DwhOverlapsRequest
-from cm_python_openapi_sdk.models.queries_response import QueriesResponse
+from cm_python_openapi_sdk.models.queries_response2 import QueriesResponse2
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -56,8 +56,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.OverlapsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dwh_cluster_id = 'dwh_cluster_id_example' # str | Id of the dwh cluster
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
     dwh_overlaps_request = cm_python_openapi_sdk.DwhOverlapsRequest() # DwhOverlapsRequest | 
 
     try:
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**QueriesResponse**](QueriesResponse.md)
+[**QueriesResponse2**](QueriesResponse2.md)
 
 ### Authorization
 
@@ -141,9 +141,9 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.OverlapsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dwh_cluster_id = 'dwh_cluster_id_example' # str | Id of the dwh cluster
-    dwh_cache_id = 'q:vb2b3d8v91jao331:DqBZN5IjSwfufj-7rDMAOQ' # str | Id of the dwh cache
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
+    dwh_cache_id = 'q:f76on62tb6bpitbb:DqBZN5IjSwfufj-7rDMAOQ' # str | Id of the dwh cache
 
     try:
         # Get overlaps

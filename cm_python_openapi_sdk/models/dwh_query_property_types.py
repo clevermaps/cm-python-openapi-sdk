@@ -26,8 +26,10 @@ from cm_python_openapi_sdk.models.function_arithm_type_general import FunctionAr
 from cm_python_openapi_sdk.models.function_condition_type_general import FunctionConditionTypeGeneral
 from cm_python_openapi_sdk.models.function_date_trunc import FunctionDateTrunc
 from cm_python_openapi_sdk.models.function_distance import FunctionDistance
+from cm_python_openapi_sdk.models.function_greatest_least_type_general import FunctionGreatestLeastTypeGeneral
 from cm_python_openapi_sdk.models.function_h3_grid import FunctionH3Grid
 from cm_python_openapi_sdk.models.function_interval import FunctionInterval
+from cm_python_openapi_sdk.models.function_log_exp_type_general import FunctionLogExpTypeGeneral
 from cm_python_openapi_sdk.models.function_percent_to_total_type_general import FunctionPercentToTotalTypeGeneral
 from cm_python_openapi_sdk.models.function_round_type_general import FunctionRoundTypeGeneral
 from cm_python_openapi_sdk.models.function_today import FunctionToday
@@ -35,7 +37,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-DWHQUERYPROPERTYTYPES_ONE_OF_SCHEMAS = ["DwhQueryMetricType", "DwhQueryNumberType", "DwhQueryPropertyType", "DwhQueryVariableType", "FunctionAggTypeGeneral", "FunctionArithmTypeGeneral", "FunctionConditionTypeGeneral", "FunctionDateTrunc", "FunctionDistance", "FunctionH3Grid", "FunctionInterval", "FunctionNtile", "FunctionPercentToTotalTypeGeneral", "FunctionPercentile", "FunctionRank", "FunctionRoundTypeGeneral", "FunctionRowNumber", "FunctionToday"]
+DWHQUERYPROPERTYTYPES_ONE_OF_SCHEMAS = ["DwhQueryMetricType", "DwhQueryNumberType", "DwhQueryPropertyType", "DwhQueryVariableType", "FunctionAggTypeGeneral", "FunctionArithmTypeGeneral", "FunctionConditionTypeGeneral", "FunctionDateTrunc", "FunctionDistance", "FunctionGreatestLeastTypeGeneral", "FunctionH3Grid", "FunctionInterval", "FunctionLogExpTypeGeneral", "FunctionNtile", "FunctionPercentToTotalTypeGeneral", "FunctionPercentile", "FunctionRank", "FunctionRoundTypeGeneral", "FunctionRowNumber", "FunctionToday"]
 
 class DwhQueryPropertyTypes(BaseModel):
     """
@@ -55,30 +57,34 @@ class DwhQueryPropertyTypes(BaseModel):
     oneof_schema_6_validator: Optional[FunctionArithmTypeGeneral] = None
     # data type: FunctionConditionTypeGeneral
     oneof_schema_7_validator: Optional[FunctionConditionTypeGeneral] = None
+    # data type: FunctionGreatestLeastTypeGeneral
+    oneof_schema_8_validator: Optional[FunctionGreatestLeastTypeGeneral] = None
+    # data type: FunctionLogExpTypeGeneral
+    oneof_schema_9_validator: Optional[FunctionLogExpTypeGeneral] = None
     # data type: FunctionDateTrunc
-    oneof_schema_8_validator: Optional[FunctionDateTrunc] = None
+    oneof_schema_10_validator: Optional[FunctionDateTrunc] = None
     # data type: FunctionDistance
-    oneof_schema_9_validator: Optional[FunctionDistance] = None
+    oneof_schema_11_validator: Optional[FunctionDistance] = None
     # data type: FunctionH3Grid
-    oneof_schema_10_validator: Optional[FunctionH3Grid] = None
+    oneof_schema_12_validator: Optional[FunctionH3Grid] = None
     # data type: FunctionInterval
-    oneof_schema_11_validator: Optional[FunctionInterval] = None
+    oneof_schema_13_validator: Optional[FunctionInterval] = None
     # data type: FunctionNtile
-    oneof_schema_12_validator: Optional[FunctionNtile] = None
+    oneof_schema_14_validator: Optional[FunctionNtile] = None
     # data type: FunctionPercentToTotalTypeGeneral
-    oneof_schema_13_validator: Optional[FunctionPercentToTotalTypeGeneral] = None
+    oneof_schema_15_validator: Optional[FunctionPercentToTotalTypeGeneral] = None
     # data type: FunctionPercentile
-    oneof_schema_14_validator: Optional[FunctionPercentile] = None
+    oneof_schema_16_validator: Optional[FunctionPercentile] = None
     # data type: FunctionRank
-    oneof_schema_15_validator: Optional[FunctionRank] = None
+    oneof_schema_17_validator: Optional[FunctionRank] = None
     # data type: FunctionRoundTypeGeneral
-    oneof_schema_16_validator: Optional[FunctionRoundTypeGeneral] = None
+    oneof_schema_18_validator: Optional[FunctionRoundTypeGeneral] = None
     # data type: FunctionRowNumber
-    oneof_schema_17_validator: Optional[FunctionRowNumber] = None
+    oneof_schema_19_validator: Optional[FunctionRowNumber] = None
     # data type: FunctionToday
-    oneof_schema_18_validator: Optional[FunctionToday] = None
-    actual_instance: Optional[Union[DwhQueryMetricType, DwhQueryNumberType, DwhQueryPropertyType, DwhQueryVariableType, FunctionAggTypeGeneral, FunctionArithmTypeGeneral, FunctionConditionTypeGeneral, FunctionDateTrunc, FunctionDistance, FunctionH3Grid, FunctionInterval, FunctionNtile, FunctionPercentToTotalTypeGeneral, FunctionPercentile, FunctionRank, FunctionRoundTypeGeneral, FunctionRowNumber, FunctionToday]] = None
-    one_of_schemas: Set[str] = { "DwhQueryMetricType", "DwhQueryNumberType", "DwhQueryPropertyType", "DwhQueryVariableType", "FunctionAggTypeGeneral", "FunctionArithmTypeGeneral", "FunctionConditionTypeGeneral", "FunctionDateTrunc", "FunctionDistance", "FunctionH3Grid", "FunctionInterval", "FunctionNtile", "FunctionPercentToTotalTypeGeneral", "FunctionPercentile", "FunctionRank", "FunctionRoundTypeGeneral", "FunctionRowNumber", "FunctionToday" }
+    oneof_schema_20_validator: Optional[FunctionToday] = None
+    actual_instance: Optional[Union[DwhQueryMetricType, DwhQueryNumberType, DwhQueryPropertyType, DwhQueryVariableType, FunctionAggTypeGeneral, FunctionArithmTypeGeneral, FunctionConditionTypeGeneral, FunctionDateTrunc, FunctionDistance, FunctionGreatestLeastTypeGeneral, FunctionH3Grid, FunctionInterval, FunctionLogExpTypeGeneral, FunctionNtile, FunctionPercentToTotalTypeGeneral, FunctionPercentile, FunctionRank, FunctionRoundTypeGeneral, FunctionRowNumber, FunctionToday]] = None
+    one_of_schemas: Set[str] = { "DwhQueryMetricType", "DwhQueryNumberType", "DwhQueryPropertyType", "DwhQueryVariableType", "FunctionAggTypeGeneral", "FunctionArithmTypeGeneral", "FunctionConditionTypeGeneral", "FunctionDateTrunc", "FunctionDistance", "FunctionGreatestLeastTypeGeneral", "FunctionH3Grid", "FunctionInterval", "FunctionLogExpTypeGeneral", "FunctionNtile", "FunctionPercentToTotalTypeGeneral", "FunctionPercentile", "FunctionRank", "FunctionRoundTypeGeneral", "FunctionRowNumber", "FunctionToday" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -134,6 +140,16 @@ class DwhQueryPropertyTypes(BaseModel):
         # validate data type: FunctionConditionTypeGeneral
         if not isinstance(v, FunctionConditionTypeGeneral):
             error_messages.append(f"Error! Input type `{type(v)}` is not `FunctionConditionTypeGeneral`")
+        else:
+            match += 1
+        # validate data type: FunctionGreatestLeastTypeGeneral
+        if not isinstance(v, FunctionGreatestLeastTypeGeneral):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `FunctionGreatestLeastTypeGeneral`")
+        else:
+            match += 1
+        # validate data type: FunctionLogExpTypeGeneral
+        if not isinstance(v, FunctionLogExpTypeGeneral):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `FunctionLogExpTypeGeneral`")
         else:
             match += 1
         # validate data type: FunctionDateTrunc
@@ -193,10 +209,10 @@ class DwhQueryPropertyTypes(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in DwhQueryPropertyTypes with oneOf schemas: DwhQueryMetricType, DwhQueryNumberType, DwhQueryPropertyType, DwhQueryVariableType, FunctionAggTypeGeneral, FunctionArithmTypeGeneral, FunctionConditionTypeGeneral, FunctionDateTrunc, FunctionDistance, FunctionH3Grid, FunctionInterval, FunctionNtile, FunctionPercentToTotalTypeGeneral, FunctionPercentile, FunctionRank, FunctionRoundTypeGeneral, FunctionRowNumber, FunctionToday. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in DwhQueryPropertyTypes with oneOf schemas: DwhQueryMetricType, DwhQueryNumberType, DwhQueryPropertyType, DwhQueryVariableType, FunctionAggTypeGeneral, FunctionArithmTypeGeneral, FunctionConditionTypeGeneral, FunctionDateTrunc, FunctionDistance, FunctionGreatestLeastTypeGeneral, FunctionH3Grid, FunctionInterval, FunctionLogExpTypeGeneral, FunctionNtile, FunctionPercentToTotalTypeGeneral, FunctionPercentile, FunctionRank, FunctionRoundTypeGeneral, FunctionRowNumber, FunctionToday. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in DwhQueryPropertyTypes with oneOf schemas: DwhQueryMetricType, DwhQueryNumberType, DwhQueryPropertyType, DwhQueryVariableType, FunctionAggTypeGeneral, FunctionArithmTypeGeneral, FunctionConditionTypeGeneral, FunctionDateTrunc, FunctionDistance, FunctionH3Grid, FunctionInterval, FunctionNtile, FunctionPercentToTotalTypeGeneral, FunctionPercentile, FunctionRank, FunctionRoundTypeGeneral, FunctionRowNumber, FunctionToday. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in DwhQueryPropertyTypes with oneOf schemas: DwhQueryMetricType, DwhQueryNumberType, DwhQueryPropertyType, DwhQueryVariableType, FunctionAggTypeGeneral, FunctionArithmTypeGeneral, FunctionConditionTypeGeneral, FunctionDateTrunc, FunctionDistance, FunctionGreatestLeastTypeGeneral, FunctionH3Grid, FunctionInterval, FunctionLogExpTypeGeneral, FunctionNtile, FunctionPercentToTotalTypeGeneral, FunctionPercentile, FunctionRank, FunctionRoundTypeGeneral, FunctionRowNumber, FunctionToday. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -250,6 +266,18 @@ class DwhQueryPropertyTypes(BaseModel):
         # deserialize data into FunctionConditionTypeGeneral
         try:
             instance.actual_instance = FunctionConditionTypeGeneral.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into FunctionGreatestLeastTypeGeneral
+        try:
+            instance.actual_instance = FunctionGreatestLeastTypeGeneral.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into FunctionLogExpTypeGeneral
+        try:
+            instance.actual_instance = FunctionLogExpTypeGeneral.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -322,10 +350,10 @@ class DwhQueryPropertyTypes(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into DwhQueryPropertyTypes with oneOf schemas: DwhQueryMetricType, DwhQueryNumberType, DwhQueryPropertyType, DwhQueryVariableType, FunctionAggTypeGeneral, FunctionArithmTypeGeneral, FunctionConditionTypeGeneral, FunctionDateTrunc, FunctionDistance, FunctionH3Grid, FunctionInterval, FunctionNtile, FunctionPercentToTotalTypeGeneral, FunctionPercentile, FunctionRank, FunctionRoundTypeGeneral, FunctionRowNumber, FunctionToday. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into DwhQueryPropertyTypes with oneOf schemas: DwhQueryMetricType, DwhQueryNumberType, DwhQueryPropertyType, DwhQueryVariableType, FunctionAggTypeGeneral, FunctionArithmTypeGeneral, FunctionConditionTypeGeneral, FunctionDateTrunc, FunctionDistance, FunctionGreatestLeastTypeGeneral, FunctionH3Grid, FunctionInterval, FunctionLogExpTypeGeneral, FunctionNtile, FunctionPercentToTotalTypeGeneral, FunctionPercentile, FunctionRank, FunctionRoundTypeGeneral, FunctionRowNumber, FunctionToday. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into DwhQueryPropertyTypes with oneOf schemas: DwhQueryMetricType, DwhQueryNumberType, DwhQueryPropertyType, DwhQueryVariableType, FunctionAggTypeGeneral, FunctionArithmTypeGeneral, FunctionConditionTypeGeneral, FunctionDateTrunc, FunctionDistance, FunctionH3Grid, FunctionInterval, FunctionNtile, FunctionPercentToTotalTypeGeneral, FunctionPercentile, FunctionRank, FunctionRoundTypeGeneral, FunctionRowNumber, FunctionToday. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into DwhQueryPropertyTypes with oneOf schemas: DwhQueryMetricType, DwhQueryNumberType, DwhQueryPropertyType, DwhQueryVariableType, FunctionAggTypeGeneral, FunctionArithmTypeGeneral, FunctionConditionTypeGeneral, FunctionDateTrunc, FunctionDistance, FunctionGreatestLeastTypeGeneral, FunctionH3Grid, FunctionInterval, FunctionLogExpTypeGeneral, FunctionNtile, FunctionPercentToTotalTypeGeneral, FunctionPercentile, FunctionRank, FunctionRoundTypeGeneral, FunctionRowNumber, FunctionToday. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -339,7 +367,7 @@ class DwhQueryPropertyTypes(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], DwhQueryMetricType, DwhQueryNumberType, DwhQueryPropertyType, DwhQueryVariableType, FunctionAggTypeGeneral, FunctionArithmTypeGeneral, FunctionConditionTypeGeneral, FunctionDateTrunc, FunctionDistance, FunctionH3Grid, FunctionInterval, FunctionNtile, FunctionPercentToTotalTypeGeneral, FunctionPercentile, FunctionRank, FunctionRoundTypeGeneral, FunctionRowNumber, FunctionToday]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], DwhQueryMetricType, DwhQueryNumberType, DwhQueryPropertyType, DwhQueryVariableType, FunctionAggTypeGeneral, FunctionArithmTypeGeneral, FunctionConditionTypeGeneral, FunctionDateTrunc, FunctionDistance, FunctionGreatestLeastTypeGeneral, FunctionH3Grid, FunctionInterval, FunctionLogExpTypeGeneral, FunctionNtile, FunctionPercentToTotalTypeGeneral, FunctionPercentile, FunctionRank, FunctionRoundTypeGeneral, FunctionRowNumber, FunctionToday]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

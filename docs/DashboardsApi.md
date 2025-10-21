@@ -50,8 +50,8 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DashboardsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
-    dashboard_dto = cm_python_openapi_sdk.DashboardDTO() # DashboardDTO | 
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
+    dashboard_dto = {"name":"penetration_dashboard","type":"dashboard","content":{"blockRows":[{"type":"indicator","indicator":"/rest/projects/f76on62tb6bpitbb/md/indicators?name=orders_indicator","indicatorDrill":"/rest/projects/f76on62tb6bpitbb/md/indicatorDrills?name=orders_indicator_drill","layout":"primary"},{"type":"indicator","indicator":"/rest/projects/f76on62tb6bpitbb/md/indicators?name=revenue_indicator","indicatorDrill":"/rest/projects/f76on62tb6bpitbb/md/indicatorDrills?name=revenue_indicator_drill","layout":"primary"},{"type":"indicator","indicator":"/rest/projects/f76on62tb6bpitbb/md/indicators?name=customers_indicator","indicatorDrill":"/rest/projects/f76on62tb6bpitbb/md/indicatorDrills?name=customers_indicator_drill","layout":"primary"},{"type":"indicator","indicator":"/rest/projects/f76on62tb6bpitbb/md/indicators?name=average_order_indicator","indicatorDrill":"/rest/projects/f76on62tb6bpitbb/md/indicatorDrills?name=average_order_indicator_drill","layout":"primary"},{"type":"indicator","indicator":"/rest/projects/f76on62tb6bpitbb/md/indicators?name=orders_per_customer_indicator","indicatorDrill":"/rest/projects/f76on62tb6bpitbb/md/indicatorDrills?name=orders_per_customer_indicator_drill","layout":"primary"}]}} # DashboardDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:
@@ -133,7 +133,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DashboardsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the dashboard
 
     try:
@@ -210,7 +210,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DashboardsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
     sort = 'name,desc' # str | Name of the attribute to use for sorting the results, together with direction (asc or desc) (optional)
@@ -292,7 +292,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DashboardsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the dashboard
 
     try:
@@ -371,7 +371,7 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DashboardsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     name = 'name_example' # str | Name of the dashboard
 
     try:
@@ -453,10 +453,10 @@ configuration = cm_python_openapi_sdk.Configuration(
 with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = cm_python_openapi_sdk.DashboardsApi(api_client)
-    project_id = 'project_id_example' # str | Id of the project
+    project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'id_example' # str | Id of the dashboard
     if_match = 'if_match_example' # str | ETag value used for conditional updates
-    dashboard_dto = cm_python_openapi_sdk.DashboardDTO() # DashboardDTO | 
+    dashboard_dto = {"id":"nf1r3qcht0sbbnct","name":"penetration_dashboard","type":"dashboard","title":"Updated penetration dashboard with removed two blocks in blockRows.","content":{"blockRows":[{"type":"indicator","indicator":"/rest/projects/f76on62tb6bpitbb/md/indicators?name=orders_indicator","indicatorDrill":"/rest/projects/f76on62tb6bpitbb/md/indicatorDrills?name=orders_indicator_drill","layout":"primary"},{"type":"indicator","indicator":"/rest/projects/f76on62tb6bpitbb/md/indicators?name=revenue_indicator","indicatorDrill":"/rest/projects/f76on62tb6bpitbb/md/indicatorDrills?name=revenue_indicator_drill","layout":"primary"},{"type":"indicator","indicator":"/rest/projects/f76on62tb6bpitbb/md/indicators?name=customers_indicator","indicatorDrill":"/rest/projects/f76on62tb6bpitbb/md/indicatorDrills?name=customers_indicator_drill","layout":"primary"}]},"accessInfo":{"createdAt":"2025-08-03T13:21:40Z","createdBy":"/rest/accounts/a2954434-00b1-70d4-92f1-dd99bb174f4c"},"links":[{"rel":"self","href":"/rest/projects/f76on62tb6bpitbb/md/dashboards/nf1r3qcht0sbbnct"}],"version":1} # DashboardDTO | 
     x_can_strict_json_validation = False # bool |  (optional) (default to False)
 
     try:
