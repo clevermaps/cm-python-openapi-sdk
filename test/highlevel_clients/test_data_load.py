@@ -1,6 +1,8 @@
+import pytest
+
 from cm_python_highlevel_clients.load_data_client import LoadDataClient
 
-
+@pytest.mark.skip(reason="Integration test - run manually with actual credentials")
 def test_single_part_upload(csv_path: str, project_id: str, access_token: str):
     """
     Test single-part CSV upload (for files <= 50MB)
@@ -30,7 +32,7 @@ def test_single_part_upload(csv_path: str, project_id: str, access_token: str):
     else:
         print(f"Job {response.id} failed")
 
-
+@pytest.mark.skip(reason="Integration test - run manually with actual credentials")
 def test_multipart_upload(csv_path: str, project_id: str, access_token: str):
     """
     Test multipart CSV upload (for files > 50MB)
@@ -61,15 +63,16 @@ def test_multipart_upload(csv_path: str, project_id: str, access_token: str):
 
 
 if __name__ == "__main__":
-    PROJECT_ID = ""  # Replace with your CleverMaps project ID
-    ACCESS_TOKEN = ""
-    DATASET = ""  # Replace with your dataset name
-    CSV_PATH = ""  # Replace with your desired output path
-    CSV_PATH_MULTIPART = ""
-    # Test single-part upload
-    print("\nTesting single-part upload:")
-    test_single_part_upload(CSV_PATH, PROJECT_ID, ACCESS_TOKEN)
-
-    # Test multipart upload
-    print("\nTesting multipart upload:")
-    test_multipart_upload(CSV_PATH_MULTIPART, PROJECT_ID, ACCESS_TOKEN)
+    # PROJECT_ID = ""  # Replace with your CleverMaps project ID
+    # ACCESS_TOKEN = ""
+    # DATASET = ""  # Replace with your dataset name
+    # CSV_PATH = ""  # Replace with your desired output path
+    # CSV_PATH_MULTIPART = ""
+    # # Test single-part upload
+    # print("\nTesting single-part upload:")
+    # #test_single_part_upload(CSV_PATH, PROJECT_ID, ACCESS_TOKEN)
+    #
+    # # Test multipart upload
+    # print("\nTesting multipart upload:")
+    # #test_multipart_upload(CSV_PATH_MULTIPART, PROJECT_ID, ACCESS_TOKEN)
+    pass
