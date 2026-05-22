@@ -18,19 +18,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from cm_python_openapi_sdk.models.date_filter_default_value_type import DateFilterDefaultValueType
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DwhDateRangeRequestFilter(BaseModel):
+class FlowRunRequest(BaseModel):
     """
-    DwhDateRangeRequestFilter
+    FlowRunRequest
     """ # noqa: E501
-    start_date: Optional[DateFilterDefaultValueType] = Field(default=None, alias="startDate")
-    end_date: Optional[DateFilterDefaultValueType] = Field(default=None, alias="endDate")
-    __properties: ClassVar[List[str]] = ["startDate", "endDate"]
+    deployment_id: StrictStr = Field(alias="deploymentId")
+    parameters: Optional[Dict[str, Any]] = None
+    __properties: ClassVar[List[str]] = ["deploymentId", "parameters"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +49,7 @@ class DwhDateRangeRequestFilter(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DwhDateRangeRequestFilter from a JSON string"""
+        """Create an instance of FlowRunRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,17 +70,11 @@ class DwhDateRangeRequestFilter(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of start_date
-        if self.start_date:
-            _dict['startDate'] = self.start_date.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of end_date
-        if self.end_date:
-            _dict['endDate'] = self.end_date.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DwhDateRangeRequestFilter from a dict"""
+        """Create an instance of FlowRunRequest from a dict"""
         if obj is None:
             return None
 
@@ -89,8 +82,8 @@ class DwhDateRangeRequestFilter(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "startDate": DateFilterDefaultValueType.from_dict(obj["startDate"]) if obj.get("startDate") is not None else None,
-            "endDate": DateFilterDefaultValueType.from_dict(obj["endDate"]) if obj.get("endDate") is not None else None
+            "deploymentId": obj.get("deploymentId"),
+            "parameters": obj.get("parameters")
         })
         return _obj
 

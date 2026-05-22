@@ -53,7 +53,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     api_instance = cm_python_openapi_sdk.PropertyValuesApi(api_client)
     project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
-    dwh_property_values_request = cm_python_openapi_sdk.DwhPropertyValuesRequest() # DwhPropertyValuesRequest | 
+    dwh_property_values_request = {"property":"baskets.amount"} # DwhPropertyValuesRequest | 
     size = 200 # int | The count of records to return for one page (optional) (default to 200)
     page = 0 # int | Number of the page (optional) (default to 0)
     sort = 'name,desc' # str | Name of the attribute to use for sorting the results, together with direction (asc or desc) (optional)

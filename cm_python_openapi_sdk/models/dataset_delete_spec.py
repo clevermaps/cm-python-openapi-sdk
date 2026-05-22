@@ -18,25 +18,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List
 from typing_extensions import Annotated
 from typing import Optional, Set
 from typing_extensions import Self
 
-class TokenRequestDTO(BaseModel):
+class DatasetDeleteSpec(BaseModel):
     """
-    TokenRequestDTO
+    DatasetDeleteSpec
     """ # noqa: E501
-    refresh_token: Annotated[str, Field(strict=True, max_length=2000)]
-    __properties: ClassVar[List[str]] = ["refresh_token"]
-
-    @field_validator('refresh_token')
-    def refresh_token_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if not re.match(r"^[\w._-]+$", value):
-            raise ValueError(r"must validate the regular expression /^[\w._-]+$/")
-        return value
+    dataset: Annotated[str, Field(min_length=1, strict=True)]
+    filter_by: List[Any] = Field(alias="filterBy")
+    __properties: ClassVar[List[str]] = ["dataset", "filterBy"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -56,7 +50,7 @@ class TokenRequestDTO(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of TokenRequestDTO from a JSON string"""
+        """Create an instance of DatasetDeleteSpec from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -81,7 +75,7 @@ class TokenRequestDTO(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of TokenRequestDTO from a dict"""
+        """Create an instance of DatasetDeleteSpec from a dict"""
         if obj is None:
             return None
 
@@ -89,7 +83,8 @@ class TokenRequestDTO(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "refresh_token": obj.get("refresh_token")
+            "dataset": obj.get("dataset"),
+            "filterBy": obj.get("filterBy")
         })
         return _obj
 

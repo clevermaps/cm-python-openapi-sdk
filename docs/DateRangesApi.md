@@ -53,7 +53,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     api_instance = cm_python_openapi_sdk.DateRangesApi(api_client)
     project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
-    dwh_date_range_request = cm_python_openapi_sdk.DwhDateRangeRequest() # DwhDateRangeRequest | 
+    dwh_date_range_request = {"from":"baskets.date_iso","filter":{"startDate":{"function":{"type":"function_minus","content":[{"type":"function_today"},{"type":"function_interval","content":[{"type":"number","value":4}],"options":{"interval":"year"}}]}},"endDate":{"value":"2018-07-20"}}} # DwhDateRangeRequest | 
 
     try:
         # Accept date ranges

@@ -92,6 +92,9 @@ class DwhQueryPropertyTypes(BaseModel):
     )
 
 
+    discriminator_value_class_map: Dict[str, str] = {
+    }
+
     def __init__(self, *args, **kwargs) -> None:
         if args:
             if len(args) > 1:
@@ -226,6 +229,266 @@ class DwhQueryPropertyTypes(BaseModel):
         instance = cls.model_construct()
         error_messages = []
         match = 0
+
+        # use oneOf discriminator to lookup the data type
+        _data_type = json.loads(json_str).get("type")
+        if not _data_type:
+            raise ValueError("Failed to lookup data type from the field `type` in the input.")
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_avg":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_count":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_count_dist":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionDateTrunc`
+        if _data_type == "function_date_trunc":
+            instance.actual_instance = FunctionDateTrunc.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionDistance`
+        if _data_type == "function_distance":
+            instance.actual_instance = FunctionDistance.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionArithmTypeGeneral`
+        if _data_type == "function_divide":
+            instance.actual_instance = FunctionArithmTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionH3Grid`
+        if _data_type == "function_h3_grid":
+            instance.actual_instance = FunctionH3Grid.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionConditionTypeGeneral`
+        if _data_type == "function_ifnull":
+            instance.actual_instance = FunctionConditionTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionInterval`
+        if _data_type == "function_interval":
+            instance.actual_instance = FunctionInterval.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_max":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_min":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionArithmTypeGeneral`
+        if _data_type == "function_minus":
+            instance.actual_instance = FunctionArithmTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionArithmTypeGeneral`
+        if _data_type == "function_modulo":
+            instance.actual_instance = FunctionArithmTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionArithmTypeGeneral`
+        if _data_type == "function_multiply":
+            instance.actual_instance = FunctionArithmTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionNtile`
+        if _data_type == "function_ntile":
+            instance.actual_instance = FunctionNtile.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionPercentToTotalTypeGeneral`
+        if _data_type == "function_percent_to_total":
+            instance.actual_instance = FunctionPercentToTotalTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionPercentile`
+        if _data_type == "function_percentile":
+            instance.actual_instance = FunctionPercentile.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionArithmTypeGeneral`
+        if _data_type == "function_plus":
+            instance.actual_instance = FunctionArithmTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionRank`
+        if _data_type == "function_rank":
+            instance.actual_instance = FunctionRank.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionRoundTypeGeneral`
+        if _data_type == "function_round":
+            instance.actual_instance = FunctionRoundTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionRowNumber`
+        if _data_type == "function_row_number":
+            instance.actual_instance = FunctionRowNumber.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_stddev_pop":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_stddev_samp":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_sum":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionToday`
+        if _data_type == "function_today":
+            instance.actual_instance = FunctionToday.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_var_pop":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "function_var_samp":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `DwhQueryMetricType`
+        if _data_type == "metric":
+            instance.actual_instance = DwhQueryMetricType.from_json(json_str)
+            return instance
+
+        # check if data type is `DwhQueryNumberType`
+        if _data_type == "number":
+            instance.actual_instance = DwhQueryNumberType.from_json(json_str)
+            return instance
+
+        # check if data type is `DwhQueryPropertyType`
+        if _data_type == "property":
+            instance.actual_instance = DwhQueryPropertyType.from_json(json_str)
+            return instance
+
+        # check if data type is `DwhQueryVariableType`
+        if _data_type == "variable":
+            instance.actual_instance = DwhQueryVariableType.from_json(json_str)
+            return instance
+
+        # check if data type is `DwhQueryMetricType`
+        if _data_type == "DwhQueryMetricType":
+            instance.actual_instance = DwhQueryMetricType.from_json(json_str)
+            return instance
+
+        # check if data type is `DwhQueryNumberType`
+        if _data_type == "DwhQueryNumberType":
+            instance.actual_instance = DwhQueryNumberType.from_json(json_str)
+            return instance
+
+        # check if data type is `DwhQueryPropertyType`
+        if _data_type == "DwhQueryPropertyType":
+            instance.actual_instance = DwhQueryPropertyType.from_json(json_str)
+            return instance
+
+        # check if data type is `DwhQueryVariableType`
+        if _data_type == "DwhQueryVariableType":
+            instance.actual_instance = DwhQueryVariableType.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionAggTypeGeneral`
+        if _data_type == "FunctionAggTypeGeneral":
+            instance.actual_instance = FunctionAggTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionArithmTypeGeneral`
+        if _data_type == "FunctionArithmTypeGeneral":
+            instance.actual_instance = FunctionArithmTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionConditionTypeGeneral`
+        if _data_type == "FunctionConditionTypeGeneral":
+            instance.actual_instance = FunctionConditionTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionDateTrunc`
+        if _data_type == "FunctionDateTrunc":
+            instance.actual_instance = FunctionDateTrunc.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionDistance`
+        if _data_type == "FunctionDistance":
+            instance.actual_instance = FunctionDistance.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionGreatestLeastTypeGeneral`
+        if _data_type == "FunctionGreatestLeastTypeGeneral":
+            instance.actual_instance = FunctionGreatestLeastTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionH3Grid`
+        if _data_type == "FunctionH3Grid":
+            instance.actual_instance = FunctionH3Grid.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionInterval`
+        if _data_type == "FunctionInterval":
+            instance.actual_instance = FunctionInterval.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionLogExpTypeGeneral`
+        if _data_type == "FunctionLogExpTypeGeneral":
+            instance.actual_instance = FunctionLogExpTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionNtile`
+        if _data_type == "FunctionNtile":
+            instance.actual_instance = FunctionNtile.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionPercentToTotalTypeGeneral`
+        if _data_type == "FunctionPercentToTotalTypeGeneral":
+            instance.actual_instance = FunctionPercentToTotalTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionPercentile`
+        if _data_type == "FunctionPercentile":
+            instance.actual_instance = FunctionPercentile.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionRank`
+        if _data_type == "FunctionRank":
+            instance.actual_instance = FunctionRank.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionRoundTypeGeneral`
+        if _data_type == "FunctionRoundTypeGeneral":
+            instance.actual_instance = FunctionRoundTypeGeneral.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionRowNumber`
+        if _data_type == "FunctionRowNumber":
+            instance.actual_instance = FunctionRowNumber.from_json(json_str)
+            return instance
+
+        # check if data type is `FunctionToday`
+        if _data_type == "FunctionToday":
+            instance.actual_instance = FunctionToday.from_json(json_str)
+            return instance
 
         # deserialize data into DwhQueryNumberType
         try:

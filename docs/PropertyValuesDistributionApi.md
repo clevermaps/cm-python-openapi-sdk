@@ -51,7 +51,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     api_instance = cm_python_openapi_sdk.PropertyValuesDistributionApi(api_client)
     project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
-    dwh_property_values_distribution_request = cm_python_openapi_sdk.DwhPropertyValuesDistributionRequest() # DwhPropertyValuesDistributionRequest | 
+    dwh_property_values_distribution_request = {"property":"baskets.amount","buckets":5} # DwhPropertyValuesDistributionRequest | 
 
     try:
         api_response = api_instance.accept_property_values_distribution(project_id, dwh_cluster_id, dwh_property_values_distribution_request)

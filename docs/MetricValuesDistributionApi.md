@@ -26,15 +26,15 @@ Each method has a custom parameter in request body (see request examples bellow)
 
 **Dynamic buckets split**
 
-Metric range is split into required number of equal size buckets. 
+Metric range is split into required number of equal size buckets.
 The frequency is the count of occurrences of given metric in these buckets. The range values depends on a granularity - that is defined by query properties.
 
 **Static breakpoints for segments**
 
-Executes a multidimensional query and returns the number of records in each segment. 
-Segments are defined as static breakpoints of the metric distribution. 
-To the first segment are counted all regions whose value of metric is between <breakpoint[0], breakpoint[1]>. 
-The interval for second segment is (breakpoint[1], breakpoint[2]>. And the last segment is (breakpoint[last-1], breakpoint[last]>. 
+Executes a multidimensional query and returns the number of records in each segment.
+Segments are defined as static breakpoints of the metric distribution.
+To the first segment are counted all regions whose value of metric is between <breakpoint[0], breakpoint[1]>.
+The interval for second segment is (breakpoint[1], breakpoint[2]>. And the last segment is (breakpoint[last-1], breakpoint[last]>.
 The minimal required number of breakpoints is 2, it returns count of elements in one segment.
 
 
@@ -71,7 +71,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     api_instance = cm_python_openapi_sdk.MetricValuesDistributionApi(api_client)
     project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
-    dwh_metric_values_distribution_request = cm_python_openapi_sdk.DwhMetricValuesDistributionRequest() # DwhMetricValuesDistributionRequest | 
+    dwh_metric_values_distribution_request = {"buckets":10,"query":{"properties":[{"id":"msoa11cd","type":"property","value":"msoa_demo_uk.msoa11cd"},{"id":"turnover_metric","type":"function_sum","content":[{"type":"property","value":"baskets.amount"}]}],"filterBy":[{"property":"shops.shop_id","value":["9"],"operator":"in"},{"property":"dim_dates.date_iso","operator":"gte","value":"2017-09-05"},{"property":"dim_dates.date_iso","operator":"lte","value":"2017-09-21"},{"property":"baskets.amount","operator":"gte","value":5},{"property":"baskets.amount","operator":"lte","value":898.17}]}} # DwhMetricValuesDistributionRequest | 
 
     try:
         api_response = api_instance.accept_metric_values_distributions(project_id, dwh_cluster_id, dwh_metric_values_distribution_request)

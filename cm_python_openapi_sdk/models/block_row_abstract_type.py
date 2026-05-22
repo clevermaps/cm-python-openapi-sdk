@@ -23,12 +23,13 @@ from cm_python_openapi_sdk.models.categories_dto import CategoriesDTO
 from cm_python_openapi_sdk.models.distribution_dto import DistributionDTO
 from cm_python_openapi_sdk.models.indicator_link_dto import IndicatorLinkDTO
 from cm_python_openapi_sdk.models.ranking_dto import RankingDTO
+from cm_python_openapi_sdk.models.single_select_dto import SingleSelectDTO
 from cm_python_openapi_sdk.models.time_series_dto import TimeSeriesDTO
 from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-BLOCKROWABSTRACTTYPE_ONE_OF_SCHEMAS = ["BlockRowDTO", "CategoriesDTO", "DistributionDTO", "IndicatorGroupDTO", "IndicatorLinkDTO", "RankingDTO", "TimeSeriesDTO"]
+BLOCKROWABSTRACTTYPE_ONE_OF_SCHEMAS = ["BlockRowDTO", "CategoriesDTO", "DistributionDTO", "IndicatorGroupDTO", "IndicatorLinkDTO", "RankingDTO", "SingleSelectDTO", "TimeSeriesDTO"]
 
 class BlockRowAbstractType(BaseModel):
     """
@@ -48,8 +49,10 @@ class BlockRowAbstractType(BaseModel):
     oneof_schema_6_validator: Optional[RankingDTO] = None
     # data type: TimeSeriesDTO
     oneof_schema_7_validator: Optional[TimeSeriesDTO] = None
-    actual_instance: Optional[Union[BlockRowDTO, CategoriesDTO, DistributionDTO, IndicatorGroupDTO, IndicatorLinkDTO, RankingDTO, TimeSeriesDTO]] = None
-    one_of_schemas: Set[str] = { "BlockRowDTO", "CategoriesDTO", "DistributionDTO", "IndicatorGroupDTO", "IndicatorLinkDTO", "RankingDTO", "TimeSeriesDTO" }
+    # data type: SingleSelectDTO
+    oneof_schema_8_validator: Optional[SingleSelectDTO] = None
+    actual_instance: Optional[Union[BlockRowDTO, CategoriesDTO, DistributionDTO, IndicatorGroupDTO, IndicatorLinkDTO, RankingDTO, SingleSelectDTO, TimeSeriesDTO]] = None
+    one_of_schemas: Set[str] = { "BlockRowDTO", "CategoriesDTO", "DistributionDTO", "IndicatorGroupDTO", "IndicatorLinkDTO", "RankingDTO", "SingleSelectDTO", "TimeSeriesDTO" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -110,12 +113,17 @@ class BlockRowAbstractType(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `TimeSeriesDTO`")
         else:
             match += 1
+        # validate data type: SingleSelectDTO
+        if not isinstance(v, SingleSelectDTO):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `SingleSelectDTO`")
+        else:
+            match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in BlockRowAbstractType with oneOf schemas: BlockRowDTO, CategoriesDTO, DistributionDTO, IndicatorGroupDTO, IndicatorLinkDTO, RankingDTO, TimeSeriesDTO. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in BlockRowAbstractType with oneOf schemas: BlockRowDTO, CategoriesDTO, DistributionDTO, IndicatorGroupDTO, IndicatorLinkDTO, RankingDTO, SingleSelectDTO, TimeSeriesDTO. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in BlockRowAbstractType with oneOf schemas: BlockRowDTO, CategoriesDTO, DistributionDTO, IndicatorGroupDTO, IndicatorLinkDTO, RankingDTO, TimeSeriesDTO. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in BlockRowAbstractType with oneOf schemas: BlockRowDTO, CategoriesDTO, DistributionDTO, IndicatorGroupDTO, IndicatorLinkDTO, RankingDTO, SingleSelectDTO, TimeSeriesDTO. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -165,6 +173,11 @@ class BlockRowAbstractType(BaseModel):
             instance.actual_instance = RankingDTO.from_json(json_str)
             return instance
 
+        # check if data type is `SingleSelectDTO`
+        if _data_type == "singleSelect":
+            instance.actual_instance = SingleSelectDTO.from_json(json_str)
+            return instance
+
         # check if data type is `TimeSeriesDTO`
         if _data_type == "timeSeries":
             instance.actual_instance = TimeSeriesDTO.from_json(json_str)
@@ -198,6 +211,11 @@ class BlockRowAbstractType(BaseModel):
         # check if data type is `RankingDTO`
         if _data_type == "RankingDTO":
             instance.actual_instance = RankingDTO.from_json(json_str)
+            return instance
+
+        # check if data type is `SingleSelectDTO`
+        if _data_type == "SingleSelectDTO":
+            instance.actual_instance = SingleSelectDTO.from_json(json_str)
             return instance
 
         # check if data type is `TimeSeriesDTO`
@@ -247,13 +265,19 @@ class BlockRowAbstractType(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into SingleSelectDTO
+        try:
+            instance.actual_instance = SingleSelectDTO.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into BlockRowAbstractType with oneOf schemas: BlockRowDTO, CategoriesDTO, DistributionDTO, IndicatorGroupDTO, IndicatorLinkDTO, RankingDTO, TimeSeriesDTO. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into BlockRowAbstractType with oneOf schemas: BlockRowDTO, CategoriesDTO, DistributionDTO, IndicatorGroupDTO, IndicatorLinkDTO, RankingDTO, SingleSelectDTO, TimeSeriesDTO. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into BlockRowAbstractType with oneOf schemas: BlockRowDTO, CategoriesDTO, DistributionDTO, IndicatorGroupDTO, IndicatorLinkDTO, RankingDTO, TimeSeriesDTO. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into BlockRowAbstractType with oneOf schemas: BlockRowDTO, CategoriesDTO, DistributionDTO, IndicatorGroupDTO, IndicatorLinkDTO, RankingDTO, SingleSelectDTO, TimeSeriesDTO. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -267,7 +291,7 @@ class BlockRowAbstractType(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], BlockRowDTO, CategoriesDTO, DistributionDTO, IndicatorGroupDTO, IndicatorLinkDTO, RankingDTO, TimeSeriesDTO]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], BlockRowDTO, CategoriesDTO, DistributionDTO, IndicatorGroupDTO, IndicatorLinkDTO, RankingDTO, SingleSelectDTO, TimeSeriesDTO]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

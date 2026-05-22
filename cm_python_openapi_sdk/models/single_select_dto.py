@@ -18,24 +18,38 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
-from typing import Any, ClassVar, Dict, List
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from cm_python_openapi_sdk.models.default_values_single_select_dto import DefaultValuesSingleSelectDTO
+from cm_python_openapi_sdk.models.order_by_dto import OrderByDTO
 from typing import Optional, Set
 from typing_extensions import Self
 
-class TokenRequestDTO(BaseModel):
+class SingleSelectDTO(BaseModel):
     """
-    TokenRequestDTO
+    SingleSelectDTO
     """ # noqa: E501
-    refresh_token: Annotated[str, Field(strict=True, max_length=2000)]
-    __properties: ClassVar[List[str]] = ["refresh_token"]
+    type: StrictStr
+    var_property: Annotated[str, Field(strict=True)] = Field(alias="property")
+    order_by: Optional[List[OrderByDTO]] = Field(default=None, alias="orderBy")
+    default_values: Optional[DefaultValuesSingleSelectDTO] = Field(default=None, alias="defaultValues")
+    collapsed: Optional[StrictBool] = None
+    visualized: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["type", "property", "orderBy", "defaultValues", "collapsed", "visualized"]
 
-    @field_validator('refresh_token')
-    def refresh_token_validate_regular_expression(cls, value):
+    @field_validator('type')
+    def type_validate_enum(cls, value):
+        """Validates the enum"""
+        if value not in set(['singleSelect']):
+            raise ValueError("must be one of enum values ('singleSelect')")
+        return value
+
+    @field_validator('var_property')
+    def var_property_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if not re.match(r"^[\w._-]+$", value):
-            raise ValueError(r"must validate the regular expression /^[\w._-]+$/")
+        if not re.match(r"^[a-z][a-z0-9_-]*\.[a-z][a-z0-9_-]*$", value):
+            raise ValueError(r"must validate the regular expression /^[a-z][a-z0-9_-]*\.[a-z][a-z0-9_-]*$/")
         return value
 
     model_config = ConfigDict(
@@ -56,7 +70,7 @@ class TokenRequestDTO(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of TokenRequestDTO from a JSON string"""
+        """Create an instance of SingleSelectDTO from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,11 +91,21 @@ class TokenRequestDTO(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in order_by (list)
+        _items = []
+        if self.order_by:
+            for _item_order_by in self.order_by:
+                if _item_order_by:
+                    _items.append(_item_order_by.to_dict())
+            _dict['orderBy'] = _items
+        # override the default output from pydantic by calling `to_dict()` of default_values
+        if self.default_values:
+            _dict['defaultValues'] = self.default_values.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of TokenRequestDTO from a dict"""
+        """Create an instance of SingleSelectDTO from a dict"""
         if obj is None:
             return None
 
@@ -89,7 +113,12 @@ class TokenRequestDTO(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "refresh_token": obj.get("refresh_token")
+            "type": obj.get("type"),
+            "property": obj.get("property"),
+            "orderBy": [OrderByDTO.from_dict(_item) for _item in obj["orderBy"]] if obj.get("orderBy") is not None else None,
+            "defaultValues": DefaultValuesSingleSelectDTO.from_dict(obj["defaultValues"]) if obj.get("defaultValues") is not None else None,
+            "collapsed": obj.get("collapsed"),
+            "visualized": obj.get("visualized")
         })
         return _obj
 

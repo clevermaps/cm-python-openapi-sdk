@@ -21,7 +21,7 @@ from pydantic import Field, StrictInt, StrictStr, field_validator
 from typing import Optional
 from typing_extensions import Annotated
 from cm_python_openapi_sdk.models.audit_log_paged_resource import AuditLogPagedResource
-from cm_python_openapi_sdk.models.audit_log_single_resource1 import AuditLogSingleResource1
+from cm_python_openapi_sdk.models.audit_log_single_resource import AuditLogSingleResource
 
 from cm_python_openapi_sdk.api_client import ApiClient, RequestSerialized
 from cm_python_openapi_sdk.api_response import ApiResponse
@@ -58,7 +58,7 @@ class AuditLogApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> AuditLogSingleResource1:
+    ) -> AuditLogSingleResource:
         """Get audit log event by eventId
 
         Get audit log event by event ID for project.  **Security:** Resource return only audit log events for those projects where the authenticated user is Admin. 
@@ -99,7 +99,7 @@ class AuditLogApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuditLogSingleResource1",
+            '200': "AuditLogSingleResource",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -129,7 +129,7 @@ class AuditLogApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[AuditLogSingleResource1]:
+    ) -> ApiResponse[AuditLogSingleResource]:
         """Get audit log event by eventId
 
         Get audit log event by event ID for project.  **Security:** Resource return only audit log events for those projects where the authenticated user is Admin. 
@@ -170,7 +170,7 @@ class AuditLogApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuditLogSingleResource1",
+            '200': "AuditLogSingleResource",
         }
         response_data = self.api_client.call_api(
             *_param,
@@ -241,7 +241,7 @@ class AuditLogApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "AuditLogSingleResource1",
+            '200': "AuditLogSingleResource",
         }
         response_data = self.api_client.call_api(
             *_param,

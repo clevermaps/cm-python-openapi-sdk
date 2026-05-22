@@ -50,7 +50,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     api_instance = cm_python_openapi_sdk.AvailableDatasetsApi(api_client)
     project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
-    available_datasets_request = cm_python_openapi_sdk.AvailableDatasetsRequest() # AvailableDatasetsRequest | 
+    available_datasets_request = {"metrics":[{"id":"customers_metric","type":"function_count","content":[{"type":"property","value":"clients.client_id"}]}]} # AvailableDatasetsRequest | 
     type = 'dwh' # str | If the parameter present, only the datasets of given type(s) are returned. Parameter can be repeated. (optional)
     subtype = 'geometryPoint' # str | If the parameter present, only the dwh datasets of given subtype(s) are returned. Parameter can be repeated, e.g. `?subtype=geometryLine&subtype=geometryPolygon`  If a parameter `type=dwh` is present then a subtype parameter is ignored and all subtypes of dwh datasets are returned.  (optional)
     expand = 'expand_example' # str | Expand datasets to minimalize roundtrips. (optional)

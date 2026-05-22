@@ -47,7 +47,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     api_instance = cm_python_openapi_sdk.ExplainApi(api_client)
     project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
-    dwh_query_request1 = cm_python_openapi_sdk.DwhQueryRequest1() # DwhQueryRequest1 | 
+    dwh_query_request1 = {"properties":[{"id":"_split_property","type":"property","value":"baskets.value_name"},{"id":"turnover_metric","type":"function_sum","content":[{"type":"property","value":"baskets.amount"}]}],"filterBy":[{"property":"dim_dates.date_iso","operator":"gte","value":"2017-09-24"},{"property":"dim_dates.date_iso","operator":"lte","value":"2017-09-30"},{"property":"baskets.amount","operator":"gte","value":5},{"property":"baskets.amount","operator":"lte","value":898.17}],"having":[],"orderBy":[{"property":"baskets.value_cat","direction":"asc","sort":"asc"}]} # DwhQueryRequest1 | 
     page = 0 # int | Number of the page (optional) (default to 0)
     size = 100 # int | The count of records to return for one page (optional) (default to 100)
 

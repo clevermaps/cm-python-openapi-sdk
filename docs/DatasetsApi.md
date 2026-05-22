@@ -215,7 +215,13 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     api_instance = cm_python_openapi_sdk.DatasetsApi(api_client)
     project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     name = 'baskets' # str | Name of the dataset
-    body = basket_id,date_iso,shop_id,client_id,amount,on_off_name,courier,value_name 2087008,2017-05-31,7,2003018,15.250000,Online,Picked up,£10 - £25 2087027,2017-05-14,4,2003410,63.640000,Online,Picked up,£50 - £100 2087039,2017-05-31,1,8139,85.640000,Offline,Picked up,£50 - £100 2087057,2017-05-18,1,8694,42.560000,Offline,Picked up,£25 - £50 2087070,2017-05-31,2,23128,95.180000,Online,Picked up,£50 - £100 # str | 
+    body = basket_id,date_iso,shop_id,client_id,amount,on_off_name,courier,value_name
+2087008,2017-05-31,7,2003018,15.250000,Online,Picked up,£10 - £25
+2087027,2017-05-14,4,2003410,63.640000,Online,Picked up,£50 - £100
+2087039,2017-05-31,1,8139,85.640000,Offline,Picked up,£50 - £100
+2087057,2017-05-18,1,8694,42.560000,Offline,Picked up,£25 - £50
+2087070,2017-05-31,2,23128,95.180000,Online,Picked up,£50 - £100
+ # str | 
     subtype = 'basic' # str | Subtype of the dataset (optional) (default to 'basic')
     primary_key = 'basic_id' # str | Name of the property that will be marked as primary key (optional)
     geometry = 'geometry_example' # str | Name of the geometry key for geometryPolygon dataset subtype (optional)

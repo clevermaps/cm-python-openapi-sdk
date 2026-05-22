@@ -19,9 +19,11 @@ import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
 from cm_python_openapi_sdk.models.bulk_point_query_job_request import BulkPointQueryJobRequest
+from cm_python_openapi_sdk.models.data_delete_job_request import DataDeleteJobRequest
 from cm_python_openapi_sdk.models.data_dump_job_request import DataDumpJobRequest
 from cm_python_openapi_sdk.models.data_pull_job_request import DataPullJobRequest
 from cm_python_openapi_sdk.models.export_job_request import ExportJobRequest
+from cm_python_openapi_sdk.models.flow_run_job_request import FlowRunJobRequest
 from cm_python_openapi_sdk.models.import_project_job_request import ImportProjectJobRequest
 from cm_python_openapi_sdk.models.truncate_job_request import TruncateJobRequest
 from cm_python_openapi_sdk.models.validate_job_request import ValidateJobRequest
@@ -29,7 +31,7 @@ from pydantic import StrictStr, Field
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-GENERALJOBREQUEST_ONE_OF_SCHEMAS = ["BulkPointQueryJobRequest", "DataDumpJobRequest", "DataPullJobRequest", "ExportJobRequest", "ImportProjectJobRequest", "TruncateJobRequest", "ValidateJobRequest"]
+GENERALJOBREQUEST_ONE_OF_SCHEMAS = ["BulkPointQueryJobRequest", "DataDeleteJobRequest", "DataDumpJobRequest", "DataPullJobRequest", "ExportJobRequest", "FlowRunJobRequest", "ImportProjectJobRequest", "TruncateJobRequest", "ValidateJobRequest"]
 
 class GeneralJobRequest(BaseModel):
     """
@@ -49,8 +51,12 @@ class GeneralJobRequest(BaseModel):
     oneof_schema_6_validator: Optional[TruncateJobRequest] = None
     # data type: ImportProjectJobRequest
     oneof_schema_7_validator: Optional[ImportProjectJobRequest] = None
-    actual_instance: Optional[Union[BulkPointQueryJobRequest, DataDumpJobRequest, DataPullJobRequest, ExportJobRequest, ImportProjectJobRequest, TruncateJobRequest, ValidateJobRequest]] = None
-    one_of_schemas: Set[str] = { "BulkPointQueryJobRequest", "DataDumpJobRequest", "DataPullJobRequest", "ExportJobRequest", "ImportProjectJobRequest", "TruncateJobRequest", "ValidateJobRequest" }
+    # data type: FlowRunJobRequest
+    oneof_schema_8_validator: Optional[FlowRunJobRequest] = None
+    # data type: DataDeleteJobRequest
+    oneof_schema_9_validator: Optional[DataDeleteJobRequest] = None
+    actual_instance: Optional[Union[BulkPointQueryJobRequest, DataDeleteJobRequest, DataDumpJobRequest, DataPullJobRequest, ExportJobRequest, FlowRunJobRequest, ImportProjectJobRequest, TruncateJobRequest, ValidateJobRequest]] = None
+    one_of_schemas: Set[str] = { "BulkPointQueryJobRequest", "DataDeleteJobRequest", "DataDumpJobRequest", "DataPullJobRequest", "ExportJobRequest", "FlowRunJobRequest", "ImportProjectJobRequest", "TruncateJobRequest", "ValidateJobRequest" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -111,12 +117,22 @@ class GeneralJobRequest(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `ImportProjectJobRequest`")
         else:
             match += 1
+        # validate data type: FlowRunJobRequest
+        if not isinstance(v, FlowRunJobRequest):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `FlowRunJobRequest`")
+        else:
+            match += 1
+        # validate data type: DataDeleteJobRequest
+        if not isinstance(v, DataDeleteJobRequest):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `DataDeleteJobRequest`")
+        else:
+            match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in GeneralJobRequest with oneOf schemas: BulkPointQueryJobRequest, DataDumpJobRequest, DataPullJobRequest, ExportJobRequest, ImportProjectJobRequest, TruncateJobRequest, ValidateJobRequest. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in GeneralJobRequest with oneOf schemas: BulkPointQueryJobRequest, DataDeleteJobRequest, DataDumpJobRequest, DataPullJobRequest, ExportJobRequest, FlowRunJobRequest, ImportProjectJobRequest, TruncateJobRequest, ValidateJobRequest. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in GeneralJobRequest with oneOf schemas: BulkPointQueryJobRequest, DataDumpJobRequest, DataPullJobRequest, ExportJobRequest, ImportProjectJobRequest, TruncateJobRequest, ValidateJobRequest. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in GeneralJobRequest with oneOf schemas: BulkPointQueryJobRequest, DataDeleteJobRequest, DataDumpJobRequest, DataPullJobRequest, ExportJobRequest, FlowRunJobRequest, ImportProjectJobRequest, TruncateJobRequest, ValidateJobRequest. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -141,6 +157,11 @@ class GeneralJobRequest(BaseModel):
             instance.actual_instance = BulkPointQueryJobRequest.from_json(json_str)
             return instance
 
+        # check if data type is `DataDeleteJobRequest`
+        if _data_type == "dataDelete":
+            instance.actual_instance = DataDeleteJobRequest.from_json(json_str)
+            return instance
+
         # check if data type is `DataDumpJobRequest`
         if _data_type == "dataDump":
             instance.actual_instance = DataDumpJobRequest.from_json(json_str)
@@ -154,6 +175,11 @@ class GeneralJobRequest(BaseModel):
         # check if data type is `ExportJobRequest`
         if _data_type == "export":
             instance.actual_instance = ExportJobRequest.from_json(json_str)
+            return instance
+
+        # check if data type is `FlowRunJobRequest`
+        if _data_type == "flowJob":
+            instance.actual_instance = FlowRunJobRequest.from_json(json_str)
             return instance
 
         # check if data type is `ImportProjectJobRequest`
@@ -176,6 +202,11 @@ class GeneralJobRequest(BaseModel):
             instance.actual_instance = BulkPointQueryJobRequest.from_json(json_str)
             return instance
 
+        # check if data type is `DataDeleteJobRequest`
+        if _data_type == "DataDeleteJobRequest":
+            instance.actual_instance = DataDeleteJobRequest.from_json(json_str)
+            return instance
+
         # check if data type is `DataDumpJobRequest`
         if _data_type == "DataDumpJobRequest":
             instance.actual_instance = DataDumpJobRequest.from_json(json_str)
@@ -189,6 +220,11 @@ class GeneralJobRequest(BaseModel):
         # check if data type is `ExportJobRequest`
         if _data_type == "ExportJobRequest":
             instance.actual_instance = ExportJobRequest.from_json(json_str)
+            return instance
+
+        # check if data type is `FlowRunJobRequest`
+        if _data_type == "FlowRunJobRequest":
+            instance.actual_instance = FlowRunJobRequest.from_json(json_str)
             return instance
 
         # check if data type is `ImportProjectJobRequest`
@@ -248,13 +284,25 @@ class GeneralJobRequest(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into FlowRunJobRequest
+        try:
+            instance.actual_instance = FlowRunJobRequest.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into DataDeleteJobRequest
+        try:
+            instance.actual_instance = DataDeleteJobRequest.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into GeneralJobRequest with oneOf schemas: BulkPointQueryJobRequest, DataDumpJobRequest, DataPullJobRequest, ExportJobRequest, ImportProjectJobRequest, TruncateJobRequest, ValidateJobRequest. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into GeneralJobRequest with oneOf schemas: BulkPointQueryJobRequest, DataDeleteJobRequest, DataDumpJobRequest, DataPullJobRequest, ExportJobRequest, FlowRunJobRequest, ImportProjectJobRequest, TruncateJobRequest, ValidateJobRequest. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into GeneralJobRequest with oneOf schemas: BulkPointQueryJobRequest, DataDumpJobRequest, DataPullJobRequest, ExportJobRequest, ImportProjectJobRequest, TruncateJobRequest, ValidateJobRequest. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into GeneralJobRequest with oneOf schemas: BulkPointQueryJobRequest, DataDeleteJobRequest, DataDumpJobRequest, DataPullJobRequest, ExportJobRequest, FlowRunJobRequest, ImportProjectJobRequest, TruncateJobRequest, ValidateJobRequest. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -268,7 +316,7 @@ class GeneralJobRequest(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], BulkPointQueryJobRequest, DataDumpJobRequest, DataPullJobRequest, ExportJobRequest, ImportProjectJobRequest, TruncateJobRequest, ValidateJobRequest]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], BulkPointQueryJobRequest, DataDeleteJobRequest, DataDumpJobRequest, DataPullJobRequest, ExportJobRequest, FlowRunJobRequest, ImportProjectJobRequest, TruncateJobRequest, ValidateJobRequest]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None
