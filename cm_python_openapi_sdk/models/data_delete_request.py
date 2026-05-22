@@ -18,25 +18,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List
 from typing_extensions import Annotated
+from cm_python_openapi_sdk.models.dataset_delete_spec import DatasetDeleteSpec
 from typing import Optional, Set
 from typing_extensions import Self
 
-class TokenRequestDTO(BaseModel):
+class DataDeleteRequest(BaseModel):
     """
-    TokenRequestDTO
+    DataDeleteRequest
     """ # noqa: E501
-    refresh_token: Annotated[str, Field(strict=True, max_length=2000)]
-    __properties: ClassVar[List[str]] = ["refresh_token"]
-
-    @field_validator('refresh_token')
-    def refresh_token_validate_regular_expression(cls, value):
-        """Validates the regular expression"""
-        if not re.match(r"^[\w._-]+$", value):
-            raise ValueError(r"must validate the regular expression /^[\w._-]+$/")
-        return value
+    datasets: Annotated[List[DatasetDeleteSpec], Field(min_length=1)]
+    __properties: ClassVar[List[str]] = ["datasets"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -56,7 +50,7 @@ class TokenRequestDTO(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of TokenRequestDTO from a JSON string"""
+        """Create an instance of DataDeleteRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,11 +71,18 @@ class TokenRequestDTO(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of each item in datasets (list)
+        _items = []
+        if self.datasets:
+            for _item_datasets in self.datasets:
+                if _item_datasets:
+                    _items.append(_item_datasets.to_dict())
+            _dict['datasets'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of TokenRequestDTO from a dict"""
+        """Create an instance of DataDeleteRequest from a dict"""
         if obj is None:
             return None
 
@@ -89,7 +90,7 @@ class TokenRequestDTO(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "refresh_token": obj.get("refresh_token")
+            "datasets": [DatasetDeleteSpec.from_dict(_item) for _item in obj["datasets"]] if obj.get("datasets") is not None else None
         })
         return _obj
 

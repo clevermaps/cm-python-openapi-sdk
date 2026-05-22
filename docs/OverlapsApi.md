@@ -58,7 +58,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     api_instance = cm_python_openapi_sdk.OverlapsApi(api_client)
     project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     dwh_cluster_id = 'cmstd1' # str | Id of the dwh cluster
-    dwh_overlaps_request = cm_python_openapi_sdk.DwhOverlapsRequest() # DwhOverlapsRequest | 
+    dwh_overlaps_request = {"operators":["subtract","intersect"],"objects":[{"property":"shops.shop_id","value":"2","operator":"eq"},{"property":"shops.shop_id","value":"7","operator":"eq"}],"granularity":"ward","query":{"properties":[{"id":"turnover_metric","type":"function_sum","content":[{"type":"property","value":"baskets.amount"}]}],"filterBy":[{"property":"baskets.date_iso","operator":"gte","value":"2017-09-24"},{"property":"baskets.date_iso","operator":"lte","value":"2017-09-30"},{"property":"baskets.amount","operator":"gte","value":5},{"property":"baskets.amount","operator":"lte","value":899.98}]}} # DwhOverlapsRequest | 
 
     try:
         # Accept overlaps

@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **filterable** | **bool** |  | [optional] 
 **hide_null_items** | **bool** |  | [optional] 
 **size_limit** | **int** |  | [optional] 
-**order_by** | [**OrderByDTO**](OrderByDTO.md) |  | [optional] 
+**order_by** | [**List[OrderByDTO]**](OrderByDTO.md) |  | [optional] 
 **vertical** | **bool** |  | [optional] 
 **condensed** | **bool** |  | [optional] 
 **dual_property** | **str** |  | [optional] 
@@ -33,6 +33,8 @@ Name | Type | Description | Notes
 **default_period** | **str** |  | [optional] 
 **additional_series** | [**List[AdditionalSeriesLinkDTO]**](AdditionalSeriesLinkDTO.md) |  | [optional] 
 **annotations** | [**List[AnnotationLinkDTO]**](AnnotationLinkDTO.md) |  | [optional] 
+**var_property** | **str** |  | 
+**default_values** | [**DefaultValuesSingleSelectDTO**](DefaultValuesSingleSelectDTO.md) |  | [optional] 
 
 ## Example
 

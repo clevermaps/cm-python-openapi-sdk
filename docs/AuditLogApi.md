@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_audit_log_event**
-> AuditLogSingleResource1 get_audit_log_event(event_id, project_id)
+> AuditLogSingleResource get_audit_log_event(event_id, project_id)
 
 Get audit log event by eventId
 
@@ -25,7 +25,7 @@ Resource return only audit log events for those projects where the authenticated
 
 ```python
 import cm_python_openapi_sdk
-from cm_python_openapi_sdk.models.audit_log_single_resource1 import AuditLogSingleResource1
+from cm_python_openapi_sdk.models.audit_log_single_resource import AuditLogSingleResource
 from cm_python_openapi_sdk.rest import ApiException
 from pprint import pprint
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AuditLogSingleResource1**](AuditLogSingleResource1.md)
+[**AuditLogSingleResource**](AuditLogSingleResource.md)
 
 ### Authorization
 

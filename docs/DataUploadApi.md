@@ -54,7 +54,7 @@ with cm_python_openapi_sdk.ApiClient(configuration) as api_client:
     api_instance = cm_python_openapi_sdk.DataUploadApi(api_client)
     project_id = 'srb6iq85a8h0ors3' # str | Id of the project
     id = 'nogeLAvMPlITfWC66ztEDOW6Vl3bwRrn' # str | 
-    data_complete_multipart_upload_request = cm_python_openapi_sdk.DataCompleteMultipartUploadRequest() # DataCompleteMultipartUploadRequest | 
+    data_complete_multipart_upload_request = {"id":"nogeLAvMPlITfWC66ztEDOW6Vl3bwRrn","uploadId":"0dDWEWa_xVvHaUyOWf_.CyJKy0QcMo571dPYTJQh3TGo0JJpON4i0IUFBjonNfD_z.ysklpvzZ05WWhRDJagMpseZrj3lbn5FWC0sK29VssEaxcUkIICDbdQKEr2NxfC","partETags":[{"partNumber":1,"eTag":"4b0b7e0723ae56384a8ff111e9814708"},{"partNumber":2,"eTag":"2620487060bd5d65edd493169194fef7"},{"partNumber":3,"eTag":"ec6916f14eb44f599b6a43d278da6916"}]} # DataCompleteMultipartUploadRequest | 
 
     try:
         # Complete multipart upload

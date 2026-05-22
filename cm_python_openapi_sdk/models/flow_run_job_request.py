@@ -21,21 +21,31 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 from typing import Any, ClassVar, Dict, List
 from typing_extensions import Annotated
+from cm_python_openapi_sdk.models.flow_run_request import FlowRunRequest
 from typing import Optional, Set
 from typing_extensions import Self
 
-class TokenRequestDTO(BaseModel):
+class FlowRunJobRequest(BaseModel):
     """
-    TokenRequestDTO
+    FlowRunJobRequest
     """ # noqa: E501
-    refresh_token: Annotated[str, Field(strict=True, max_length=2000)]
-    __properties: ClassVar[List[str]] = ["refresh_token"]
+    type: Annotated[str, Field(strict=True)]
+    project_id: Annotated[str, Field(strict=True)] = Field(alias="projectId")
+    content: FlowRunRequest
+    __properties: ClassVar[List[str]] = ["type", "projectId", "content"]
 
-    @field_validator('refresh_token')
-    def refresh_token_validate_regular_expression(cls, value):
+    @field_validator('type')
+    def type_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if not re.match(r"^[\w._-]+$", value):
-            raise ValueError(r"must validate the regular expression /^[\w._-]+$/")
+        if not re.match(r"^[a-zA-Z]+$", value):
+            raise ValueError(r"must validate the regular expression /^[a-zA-Z]+$/")
+        return value
+
+    @field_validator('project_id')
+    def project_id_validate_regular_expression(cls, value):
+        """Validates the regular expression"""
+        if not re.match(r"^[a-z0-9]{16}$", value):
+            raise ValueError(r"must validate the regular expression /^[a-z0-9]{16}$/")
         return value
 
     model_config = ConfigDict(
@@ -56,7 +66,7 @@ class TokenRequestDTO(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of TokenRequestDTO from a JSON string"""
+        """Create an instance of FlowRunJobRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,11 +87,14 @@ class TokenRequestDTO(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of content
+        if self.content:
+            _dict['content'] = self.content.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of TokenRequestDTO from a dict"""
+        """Create an instance of FlowRunJobRequest from a dict"""
         if obj is None:
             return None
 
@@ -89,7 +102,9 @@ class TokenRequestDTO(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "refresh_token": obj.get("refresh_token")
+            "type": obj.get("type"),
+            "projectId": obj.get("projectId"),
+            "content": FlowRunRequest.from_dict(obj["content"]) if obj.get("content") is not None else None
         })
         return _obj
 

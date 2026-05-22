@@ -112,6 +112,7 @@ Retrieves the job history for a project.
 - **validate**: Validates the project.
 - **truncate**: Truncates the project's data, dropping all DWH, metadata, and full-text search data.
 - **importProject**: Imports a project into another one (server-side cloning).
+- **dataDelete**: Deletes rows from one or more datasets matching the specified filter conditions.
 
 
 ### Example
@@ -210,9 +211,11 @@ Starts the execution of a new project task. Tasks are processed asynchronously, 
 - **validate**: Validates the project.
 - **truncate**: Truncates the project's data, dropping all DWH, metadata, and full-text search data.
 - **importProject**: Imports a project into another one (server-side cloning).
+- **flowRun**: Starts a data pipeline.
+- **dataDelete**: Deletes rows from one or more datasets matching the specified filter conditions.
 
 ### Security
-- **dataPull, importProject**: Requires `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles.
+- **dataPull, importProject, flowRun, dataDelete**: Requires `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles.
 - **dataDump, truncate**: Requires the `ADMIN` project role.
 - **export, bulkPointQuery**: Requires `VIEWER`, `VIEW_CREATOR`, `METADATA_EDITOR`, `DATA_EDITOR`, `VIEW_CREATOR`, or `ADMIN` project roles.
 - **validate**: Requires `METADATA_EDITOR`, `LOAD_DATA`, `DATA_EDITOR`, or `ADMIN` project roles.

@@ -15,10 +15,10 @@
 
 import unittest
 
-from cm_python_openapi_sdk.models.dwh_date_range_request_filter import DwhDateRangeRequestFilter
+from cm_python_openapi_sdk.models.dataset_delete_spec import DatasetDeleteSpec
 
-class TestDwhDateRangeRequestFilter(unittest.TestCase):
-    """DwhDateRangeRequestFilter unit test stubs"""
+class TestDatasetDeleteSpec(unittest.TestCase):
+    """DatasetDeleteSpec unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,26 +26,32 @@ class TestDwhDateRangeRequestFilter(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DwhDateRangeRequestFilter:
-        """Test DwhDateRangeRequestFilter
+    def make_instance(self, include_optional) -> DatasetDeleteSpec:
+        """Test DatasetDeleteSpec
             include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `DwhDateRangeRequestFilter`
+        # uncomment below to create an instance of `DatasetDeleteSpec`
         """
-        model = DwhDateRangeRequestFilter()
+        model = DatasetDeleteSpec()
         if include_optional:
-            return DwhDateRangeRequestFilter(
-                start_date = None,
-                end_date = None
+            return DatasetDeleteSpec(
+                dataset = '0',
+                filter_by = [
+                    null
+                    ]
             )
         else:
-            return DwhDateRangeRequestFilter(
+            return DatasetDeleteSpec(
+                dataset = '0',
+                filter_by = [
+                    null
+                    ],
         )
         """
 
-    def testDwhDateRangeRequestFilter(self):
-        """Test DwhDateRangeRequestFilter"""
+    def testDatasetDeleteSpec(self):
+        """Test DatasetDeleteSpec"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
